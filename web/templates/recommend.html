@@ -1,0 +1,992 @@
+{% extends "base.html" %}
+
+{% block title %}🍽️ Get Recommendations - Food Recommendation System{% endblock %}
+
+{% block content %}
+<!-- Authentication Check Message -->
+<div id="auth-required" class="bg-amber-50 border border-amber-200 rounded-2xl p-8 mb-8">
+    <div class="text-center">
+        <div class="bg-amber-100 rounded-full p-4 w-16 h-16 mx-auto mb-4">
+            <i data-lucide="lock" class="w-8 h-8 text-amber-600 mx-auto"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-amber-800 mb-2">Authentication Required</h2>
+        <p class="text-amber-700 mb-6">Please log in or create an account to access personalized food recommendations.</p>
+        <div class="flex justify-center space-x-4">
+            <a href="/login" class="bg-food-green text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors flex items-center space-x-2">
+                <i data-lucide="log-in" class="w-5 h-5"></i>
+                <span>Login</span>
+            </a>
+            <a href="/register" class="bg-food-orange text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors flex items-center space-x-2">
+                <i data-lucide="user-plus" class="w-5 h-5"></i>
+                <span>Create Account</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Welcome Section -->
+<div id="welcome-section" style="display: none;" class="hidden bg-white rounded-2xl shadow-xl p-8 mb-8 ">
+    <div class="flex items-center mb-6">
+        <div class="bg-food-green bg-opacity-20 rounded-full p-3 mr-4">
+            <i data-lucide="heart" class="w-8 h-8 text-food-green"></i>
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold text-gray-800">Get Food Recommendations</h2>
+            <p class="text-gray-600">Personalized suggestions based on your preferences</p>
+        </div>
+    </div>
+    
+    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+        <div class="flex items-center">
+            <i data-lucide="user-check" class="w-5 h-5 text-green-600 mr-2"></i>
+            <p class="text-green-800 text-sm">Welcome back! <span id="user-welcome-name" class="font-semibold"></span></p>
+        </div>
+    </div>
+</div>
+
+<!-- Preferences Form -->
+<div id="preferences-section" class="hidden bg-white rounded-2xl shadow-xl p-8">
+    <div class="flex items-center mb-6">
+        <div class="bg-food-green bg-opacity-20 rounded-full p-3 mr-4">
+            <i data-lucide="heart" class="w-8 h-8 text-food-green"></i>
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold text-gray-800">Get Food Recommendations</h2>
+            <p class="text-gray-600">Personalized suggestions based on your preferences</p>
+        </div>
+    </div>
+    <form id="recommendation-form" class="space-y-6">
+        <!-- Budget and Cuisine Preference Side by Side -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Budget -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <label class="block text-sm font-medium text-gray-700 mb-2">💰 Budget</label>
+                <input type="number" id="budget" placeholder="3000" min="1" step="0.01"
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-food-green focus:border-transparent">
+                <p class="text-sm text-gray-500 mt-1">Enter your total budget (e.g., 3000)</p>
+            </div>
+            
+            <!-- Cuisine Preference (Required) -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <label class="block text-sm font-medium text-gray-700 mb-3">🌍 Preferred Cuisine (Required)</label>
+                <select id="cuisine" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-food-green focus:border-transparent" onchange="loadCategories()">
+                    <option value="">Select a cuisine...</option>
+                    <!-- Options will be loaded dynamically -->
+                </select>
+                <p class="text-sm text-gray-500 mt-1">Select your preferred cuisine type</p>
+            </div>
+        </div>
+        
+        <!-- Food Categories and Category Priority Side by Side -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Food Categories (Multiple Selection) -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <label class="block text-sm font-medium text-gray-700 mb-3">🍽️ Food Categories</label>
+                <div id="categories-grid" class="grid grid-cols-2 gap-3 mb-3">
+                    <div class="text-sm text-gray-500">Please select a cuisine first</div>
+                </div>
+                <p class="text-sm text-gray-500">Select categories you want to include</p>
+            </div>
+            
+            <!-- Category Priority -->
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <label class="block text-sm font-medium text-gray-700 mb-3">📋 Category Priority</label>
+                <div id="priority-list" class="min-h-[120px] border-2 border-dashed border-gray-300 rounded-lg p-4 mb-3">
+                    <div id="priority-placeholder" class="text-center text-gray-500 text-sm py-8">
+                        <i data-lucide="move" class="w-6 h-6 mx-auto mb-2 opacity-50"></i>
+                        <p>Select food categories to set their priority order</p>
+                        <p class="text-xs mt-1">Drag and drop to reorder</p>
+                    </div>
+                </div>
+                <input type="hidden" id="category-priority" name="category-priority">
+                <p class="text-sm text-gray-500 mb-2">Drag selected categories to arrange by importance (highest priority first)</p>
+                <div class="mt-2">
+                    <label class="flex items-center">
+                        <input type="checkbox" id="require-each-category" class="mr-2 text-food-green focus:ring-food-green">
+                        <span class="text-sm text-gray-700">Require at least one item from each category</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Context Information -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <label class="block text-sm font-medium text-gray-700 mb-3">🕐 Current Context</label>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Time of Day</label>
+                    <select id="time-of-day" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-food-green focus:border-transparent">
+                        <option value="morning">Morning</option>
+                        <option value="afternoon" selected>Afternoon</option>
+                        <option value="evening">Evening</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm text-gray-600 mb-1">Current Weather</label>
+                    <select id="weather" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-food-green focus:border-transparent">
+                        <option value="sunny" selected>Sunny</option>
+                        <option value="rainy">Rainy</option>
+                    </select>
+                </div>
+            </div>
+            <p class="text-sm text-gray-500 mt-1">This helps personalize recommendations based on current conditions</p>
+        </div>
+        
+        <!-- Additional Options -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <label class="block text-sm font-medium text-gray-700 mb-3">⚙️ Recommendation Settings</label>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div class="flex items-start">
+                    <i data-lucide="info" class="w-5 h-5 text-blue-600 mr-2 mt-0.5"></i>
+                    <div class="text-sm text-blue-700">
+                        <strong>How it works:</strong> The system uses an intelligent knapsack algorithm combined with your preferences to find the optimal combination of items within your budget, considering context like time of day and weather.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <button type="button" onclick="getRecommendations()" 
+                    class="bg-food-green text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-600 transition-colors flex items-center space-x-3 text-lg mx-auto">
+                <i data-lucide="search" class="w-6 h-6"></i>
+                <span>Get Recommendations</span>
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Recommendations Results -->
+<div id="recommendations-section" class="hidden mt-8">
+    <div class="bg-white rounded-2xl shadow-xl p-8">
+        <div class="flex items-center justify-between mb-6">
+            <div>
+                <h3 class="text-2xl font-bold text-gray-800">Your Food Recommendations</h3>
+                <p class="text-gray-600">Based on your preferences and budget</p>
+            </div>
+            <button onclick="getNewRecommendations()" class="bg-food-orange text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors flex items-center space-x-2">
+                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                <span>New Recommendations</span>
+            </button>
+        </div>
+        
+        <div id="recommendations-grid" class="space-y-6">
+            <!-- Recommendations will be populated here with organized categories -->
+        </div>
+        
+        <!-- Cart Actions -->
+        <div id="cart-actions" class="hidden mt-8 bg-gradient-to-r from-food-green to-food-orange rounded-2xl p-6">
+            <div class="text-center mb-6">
+                <h4 class="text-2xl font-bold text-white mb-2">Ready to Order?</h4>
+                <p class="text-white opacity-90">Add these recommendations to your cart and proceed to checkout</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-4 max-w-md mx-auto">
+                <button onclick="placeOrderDirect()" 
+                        class="bg-white text-food-green px-6 py-4 rounded-xl hover:bg-gray-50 transition-colors font-bold flex items-center justify-center space-x-3 shadow-lg">
+                    <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                    <span>Place Order</span>
+                </button>
+                
+                <button onclick="adjustAndOrder()" 
+                        class="bg-white bg-opacity-20 text-white px-6 py-4 rounded-xl hover:bg-opacity-30 transition-colors font-bold flex items-center justify-center space-x-3 border-2 border-white">
+                    <i data-lucide="edit" class="w-6 h-6"></i>
+                    <span>Adjust & Order</span>
+                </button>
+            </div>
+            
+            <div class="mt-4 text-center">
+                <p class="text-white text-sm opacity-75">
+                    <i data-lucide="info" class="w-4 h-4 inline mr-1"></i>
+                    You can modify quantities and add more items in the cart
+                </p>
+            </div>
+        </div>
+        
+        <!-- SHAP Explanations Section -->
+        <div id="shap-explanations-section" class="hidden mt-8 bg-white rounded-2xl shadow-xl p-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 rounded-full p-3 mr-4">
+                    <i data-lucide="lightbulb" class="w-8 h-8 text-blue-600"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800">SHAP Explanations</h3>
+                    <p class="text-gray-600">Understanding why these items were recommended</p>
+                </div>
+            </div>
+            
+            <div id="shap-explanations-grid" class="space-y-6">
+                <!-- SHAP explanations will be populated here -->
+            </div>
+            
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                <div class="flex items-start space-x-3">
+                    <i data-lucide="info" class="w-5 h-5 text-blue-600 mt-0.5"></i>
+                    <div>
+                        <h4 class="font-semibold text-blue-800 mb-1">What are SHAP Explanations?</h4>
+                        <p class="text-sm text-blue-700">
+                            SHAP (SHapley Additive exPlanations) values show how each factor (price, time, weather, etc.) 
+                            influenced our recommendation algorithm. Positive values increase the recommendation score, 
+                            while negative values decrease it.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+            <h4 class="font-semibold text-gray-800 mb-2">💡 Tips for Better Recommendations</h4>
+            <ul class="text-sm text-gray-600 space-y-1">
+                <li>• Rate items you've tried to improve future recommendations</li>
+                <li>• Update your preferences regularly based on your changing tastes</li>
+                <li>• Try recommendations from different cuisines to expand your palate</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+.priority-item.dragging {
+    opacity: 0.5;
+    transform: rotate(2deg);
+}
+
+.priority-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.priority-item {
+    transition: all 0.2s ease;
+}
+
+#priority-list {
+    transition: border-color 0.2s ease;
+}
+
+#priority-list:hover {
+    border-color: rgba(16, 185, 129, 0.5);
+}
+
+.category-checkbox:checked + span {
+    color: #10b981;
+    font-weight: 500;
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Recommendations specific JavaScript
+let currentUser = null;
+
+// Check authentication on page load
+document.addEventListener('DOMContentLoaded', function() {
+    checkAuthentication();
+    loadCuisines();
+});
+
+// Load available cuisines from the database
+function loadCuisines() {
+    fetch('/api/cuisines')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const cuisineSelect = document.getElementById('cuisine');
+                cuisineSelect.innerHTML = '<option value="">Select a cuisine...</option>';
+                
+                data.cuisines.forEach(cuisine => {
+                    const option = document.createElement('option');
+                    option.value = cuisine;
+                    option.textContent = cuisine;
+                    cuisineSelect.appendChild(option);
+                });
+            } else {
+                console.error('Failed to load cuisines:', data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error loading cuisines:', error);
+        });
+}
+
+// Load categories based on selected cuisine
+function loadCategories() {
+    const cuisine = document.getElementById('cuisine').value;
+    const categoriesGrid = document.getElementById('categories-grid');
+    
+    if (!cuisine) {
+        categoriesGrid.innerHTML = '<div class="text-sm text-gray-500">Please select a cuisine first</div>';
+        clearPriorityList();
+        return;
+    }
+    
+    fetch(`/api/categories?cuisine=${encodeURIComponent(cuisine)}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                categoriesGrid.innerHTML = '';
+                
+                // Add warning if cuisine has limited categories and supplements are used
+                if (data.warning_needed) {
+                    const warningDiv = document.createElement('div');
+                    warningDiv.className = 'col-span-2 bg-amber-50 border border-amber-200 rounded-lg p-3 mb-3';
+                    warningDiv.innerHTML = `
+                        <div class="flex items-start">
+                            <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <div class="text-sm text-amber-700">
+                                <strong>Limited ${cuisine} options:</strong> This cuisine has limited categories. 
+                                Categories marked with (International) supplement missing options from International cuisine.
+                            </div>
+                        </div>
+                    `;
+                    categoriesGrid.appendChild(warningDiv);
+                }
+                
+                // Add native categories
+                data.native_categories.forEach(category => {
+                    const label = document.createElement('label');
+                    label.className = 'flex items-center cursor-pointer bg-green-50 border border-green-200 rounded p-2';
+                    
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.value = category;
+                    checkbox.className = 'category-checkbox mr-2 text-food-green focus:ring-food-green';
+                    checkbox.addEventListener('change', updatePriorityList);
+                    
+                    const span = document.createElement('span');
+                    span.className = 'text-sm font-medium text-green-800';
+                    span.textContent = category;
+                    
+                    label.appendChild(checkbox);
+                    label.appendChild(span);
+                    categoriesGrid.appendChild(label);
+                });
+                
+                // Add supplemented categories (from International cuisine)
+                data.supplemented_categories.forEach(category => {
+                    const label = document.createElement('label');
+                    label.className = 'flex items-center cursor-pointer bg-blue-50 border border-blue-200 rounded p-2';
+                    
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.value = category;
+                    checkbox.className = 'category-checkbox mr-2 text-blue-600 focus:ring-blue-600';
+                    checkbox.addEventListener('change', updatePriorityList);
+                    
+                    const span = document.createElement('span');
+                    span.className = 'text-sm';
+                    span.innerHTML = `${category} <span class="text-xs text-blue-600 font-medium">(International)</span>`;
+                    
+                    label.appendChild(checkbox);
+                    label.appendChild(span);
+                    categoriesGrid.appendChild(label);
+                });
+                
+                if (data.categories.length === 0) {
+                    categoriesGrid.innerHTML = '<div class="text-sm text-gray-500">No categories available for this cuisine</div>';
+                }
+                
+                // Re-initialize Lucide icons for the warning icon
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+                
+                // Clear priority list when cuisine changes
+                clearPriorityList();
+            } else {
+                categoriesGrid.innerHTML = '<div class="text-sm text-red-500">Failed to load categories</div>';
+                console.error('Failed to load categories:', data.message);
+            }
+        })
+        .catch(error => {
+            categoriesGrid.innerHTML = '<div class="text-sm text-red-500">Error loading categories</div>';
+            console.error('Error loading categories:', error);
+        });
+}
+
+// Update priority list based on selected categories
+function updatePriorityList() {
+    const selectedCategories = Array.from(document.querySelectorAll('.category-checkbox:checked')).map(cb => cb.value);
+    const priorityList = document.getElementById('priority-list');
+    const placeholder = document.getElementById('priority-placeholder');
+    
+    // Get current order from existing items
+    const currentOrder = Array.from(priorityList.querySelectorAll('.priority-item')).map(item => item.dataset.category);
+    
+    // Clear current items except placeholder
+    priorityList.querySelectorAll('.priority-item').forEach(item => item.remove());
+    
+    if (selectedCategories.length === 0) {
+        placeholder.style.display = 'block';
+        updateHiddenInput([]);
+        return;
+    }
+    
+    placeholder.style.display = 'none';
+    
+    // Create ordered list: keep existing order, then add new ones
+    const orderedCategories = [];
+    currentOrder.forEach(cat => {
+        if (selectedCategories.includes(cat)) {
+            orderedCategories.push(cat);
+        }
+    });
+    selectedCategories.forEach(cat => {
+        if (!orderedCategories.includes(cat)) {
+            orderedCategories.push(cat);
+        }
+    });
+    
+    // Create draggable items
+    orderedCategories.forEach((category, index) => {
+        const item = createPriorityItem(category, index + 1);
+        priorityList.appendChild(item);
+    });
+    
+    updateHiddenInput(orderedCategories);
+    initializeDragAndDrop();
+}
+
+// Create a draggable priority item
+function createPriorityItem(category, position) {
+    const item = document.createElement('div');
+    item.className = 'priority-item flex items-center justify-between bg-food-green bg-opacity-10 border border-food-green border-opacity-30 rounded-lg p-3 mb-2 cursor-move hover:bg-food-green hover:bg-opacity-20 transition-colors';
+    item.draggable = true;
+    item.dataset.category = category;
+    
+    item.innerHTML = `
+        <div class="flex items-center">
+            <div class="flex items-center justify-center w-6 h-6 bg-food-green text-white text-xs font-bold rounded-full mr-3">
+                ${position}
+            </div>
+            <span class="font-medium text-gray-700">${category}</span>
+        </div>
+        <div class="flex items-center space-x-2">
+            <i data-lucide="grip-vertical" class="w-4 h-4 text-gray-400"></i>
+        </div>
+    `;
+    
+    return item;
+}
+
+// Clear priority list
+function clearPriorityList() {
+    const priorityList = document.getElementById('priority-list');
+    const placeholder = document.getElementById('priority-placeholder');
+    
+    priorityList.querySelectorAll('.priority-item').forEach(item => item.remove());
+    placeholder.style.display = 'block';
+    updateHiddenInput([]);
+}
+
+// Initialize drag and drop functionality
+function initializeDragAndDrop() {
+    const priorityList = document.getElementById('priority-list');
+    let draggedElement = null;
+    
+    // Remove existing listeners to avoid duplicates
+    priorityList.removeEventListener('dragstart', handleDragStart);
+    priorityList.removeEventListener('dragend', handleDragEnd);
+    priorityList.removeEventListener('dragover', handleDragOver);
+    
+    priorityList.addEventListener('dragstart', handleDragStart);
+    priorityList.addEventListener('dragend', handleDragEnd);
+    priorityList.addEventListener('dragover', handleDragOver);
+    
+    function handleDragStart(e) {
+        if (e.target.classList.contains('priority-item')) {
+            draggedElement = e.target;
+            e.target.classList.add('dragging');
+        }
+    }
+    
+    function handleDragEnd(e) {
+        if (e.target.classList.contains('priority-item')) {
+            e.target.classList.remove('dragging');
+            draggedElement = null;
+            updatePriorityPositions();
+        }
+    }
+    
+    function handleDragOver(e) {
+        e.preventDefault();
+        if (!draggedElement) return;
+        
+        const afterElement = getDragAfterElement(priorityList, e.clientY);
+        if (afterElement == null) {
+            priorityList.appendChild(draggedElement);
+        } else {
+            priorityList.insertBefore(draggedElement, afterElement);
+        }
+    }
+    
+    // Initialize Lucide icons for the new elements
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+}
+
+// Get the element after which the dragged element should be inserted
+function getDragAfterElement(container, y) {
+    const draggableElements = [...container.querySelectorAll('.priority-item:not(.dragging)')];
+    
+    return draggableElements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        
+        if (offset < 0 && offset > closest.offset) {
+            return { offset: offset, element: child };
+        } else {
+            return closest;
+        }
+    }, { offset: Number.NEGATIVE_INFINITY }).element;
+}
+
+// Update position numbers and hidden input after drag
+function updatePriorityPositions() {
+    const items = document.querySelectorAll('.priority-item');
+    const categories = [];
+    
+    items.forEach((item, index) => {
+        const positionElement = item.querySelector('.w-6.h-6');
+        if (positionElement) {
+            positionElement.textContent = index + 1;
+        }
+        categories.push(item.dataset.category);
+    });
+    
+    updateHiddenInput(categories);
+}
+
+// Update hidden input field
+function updateHiddenInput(categories) {
+    const hiddenInput = document.getElementById('category-priority');
+    hiddenInput.value = categories.join(',');
+}
+
+function checkAuthentication() {
+    const userData = sessionStorage.getItem('currentUser');
+    const authRequired = document.getElementById('auth-required');
+    const welcomeSection = document.getElementById('welcome-section');
+    const preferencesSection = document.getElementById('preferences-section');
+    
+    if (userData) {
+        currentUser = JSON.parse(userData);
+        document.getElementById('user-welcome-name').textContent = currentUser.name;
+        
+        // Hide auth required, show authenticated sections
+        authRequired.classList.add('hidden');
+        welcomeSection.classList.remove('hidden');
+        preferencesSection.classList.remove('hidden');
+    } else {
+        // Show auth required, hide authenticated sections
+        authRequired.classList.remove('hidden');
+        welcomeSection.classList.add('hidden');
+        preferencesSection.classList.add('hidden');
+    }
+}
+
+function getRecommendations() {
+    if (!currentUser) {
+        showMessage('Please login or register first', 'error');
+        return;
+    }
+    
+    const budget = document.getElementById('budget').value;
+    const cuisine = document.getElementById('cuisine').value;
+    const timeOfDay = document.getElementById('time-of-day').value;
+    const weather = document.getElementById('weather').value;
+    const categoryPriority = document.getElementById('category-priority').value;
+    const requireEachCategory = document.getElementById('require-each-category').checked;
+    
+    // Get selected categories
+    const selectedCategories = Array.from(document.querySelectorAll('.category-checkbox:checked')).map(cb => cb.value);
+    
+    if (!budget) {
+        showMessage('Please enter your budget', 'error');
+        return;
+    }
+    
+    if (!cuisine) {
+        showMessage('Please select a preferred cuisine', 'error');
+        return;
+    }
+    
+    if (selectedCategories.length === 0) {
+        showMessage('Please select at least one food category', 'error');
+        return;
+    }
+    
+    showLoading('Getting recommendations...');
+    
+    fetch('/api/recommend', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            user_id: currentUser.user_id,
+            budget: parseFloat(budget),
+            cuisine: cuisine,
+            categories: selectedCategories,
+            category_priority: categoryPriority.split(',').map(c => c.trim()).filter(c => c),
+            time_of_day: timeOfDay,
+            weather: weather,
+            require_each_category: requireEachCategory
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        hideLoading();
+        if (data.success) {
+            displayRecommendations(data.recommendations, data.explanations);
+            document.getElementById('recommendations-section').classList.remove('hidden');
+            
+            // Get category count for better message
+            const categories = [...new Set(data.recommendations.map(item => item.category || 'Other'))];
+            showMessage(`Found ${data.recommendations.length} recommendations across ${categories.length} categories!`, 'success');
+        } else {
+            showMessage('Failed to get recommendations: ' + data.message, 'error');
+        }
+    })
+    .catch(error => {
+        hideLoading();
+        showMessage('Failed to get recommendations: ' + error.message, 'error');
+    });
+}
+
+function displayRecommendations(recommendations, explanations = {}) {
+    const grid = document.getElementById('recommendations-grid');
+    
+    if (!recommendations || recommendations.length === 0) {
+        grid.innerHTML = `
+            <div class="col-span-full text-center py-8">
+                <i data-lucide="search-x" class="w-16 h-16 text-gray-400 mx-auto mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-600 mb-2">No recommendations found</h3>
+                <p class="text-gray-500">Try adjusting your preferences or budget</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Group recommendations by category
+    const groupedRecommendations = {};
+    let totalCost = 0;
+    
+    recommendations.forEach(item => {
+        const category = item.category || 'Other';
+        if (!groupedRecommendations[category]) {
+            groupedRecommendations[category] = [];
+        }
+        groupedRecommendations[category].push(item);
+        totalCost += item.price;
+    });
+    
+    // Define category order and icons
+    const categoryOrder = ['food', 'appetizer', 'soup', 'drink', 'dessert', 'snack'];
+    const categoryIcons = {
+        'food': 'utensils',
+        'appetizer': 'cookie',
+        'soup': 'soup',
+        'drink': 'coffee',
+        'dessert': 'cake',
+        'snack': 'apple',
+        'other': 'more-horizontal'
+    };
+    
+    const categoryColors = {
+        'food': 'bg-orange-100 text-orange-800 border-orange-200',
+        'appetizer': 'bg-purple-100 text-purple-800 border-purple-200',
+        'soup': 'bg-yellow-100 text-yellow-800 border-yellow-200',
+        'drink': 'bg-blue-100 text-blue-800 border-blue-200',
+        'dessert': 'bg-pink-100 text-pink-800 border-pink-200',
+        'snack': 'bg-green-100 text-green-800 border-green-200',
+        'other': 'bg-gray-100 text-gray-800 border-gray-200'
+    };
+    
+    // Sort categories by defined order
+    const sortedCategories = Object.keys(groupedRecommendations).sort((a, b) => {
+        const indexA = categoryOrder.indexOf(a.toLowerCase());
+        const indexB = categoryOrder.indexOf(b.toLowerCase());
+        if (indexA === -1 && indexB === -1) return a.localeCompare(b);
+        if (indexA === -1) return 1;
+        if (indexB === -1) return -1;
+        return indexA - indexB;
+    });
+    
+    let html = `
+        <!-- Summary Section -->
+        <div class="col-span-full mb-6">
+            <div class="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg p-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Recommendation Summary</h4>
+                        <p class="text-sm text-gray-600">${recommendations.length} items across ${sortedCategories.length} categories</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-2xl font-bold text-food-green">Rs.${totalCost.toFixed(2)}</div>
+                        <div class="text-sm text-gray-600">Total Cost</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Display each category
+    sortedCategories.forEach(category => {
+        const items = groupedRecommendations[category];
+        const categoryTotal = items.reduce((sum, item) => sum + item.price, 0);
+        const categoryKey = category.toLowerCase();
+        const iconName = categoryIcons[categoryKey] || categoryIcons['other'];
+        const colorClass = categoryColors[categoryKey] || categoryColors['other'];
+        
+        html += `
+            <!-- ${category} Category -->
+            <div class="col-span-full mb-4">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center space-x-2">
+                        <div class="p-2 ${colorClass} rounded-lg border">
+                            <i data-lucide="${iconName}" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800 capitalize">${category}</h3>
+                            <p class="text-sm text-gray-600">${items.length} item${items.length > 1 ? 's' : ''} • Rs.${categoryTotal.toFixed(2)}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        `;
+        
+        // Display items in this category
+        items.forEach(item => {
+            // Get item ID (could be item_id or name depending on the data structure)
+            const itemIdentifier = item.item_id || item.id || item.name || item.item_name;
+            
+            html += `
+                <div class="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow border border-gray-200 hover:border-food-green">
+                    <div class="flex justify-between items-start mb-3">
+                        <h4 class="font-semibold text-gray-800 text-base leading-tight">${item.item_name || item.name}</h4>
+                        <span class="text-food-green font-bold text-lg ml-2">Rs.${item.price.toFixed(2)}</span>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded mr-1">${item.cuisine}</span>
+                        <span class="px-2 py-1 ${colorClass} text-xs rounded">${item.category}</span>
+                    </div>
+                    
+                    ${item.explanation ? `
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-3">
+                            <h5 class="text-xs font-medium text-blue-800 mb-1">Why recommended:</h5>
+                            <p class="text-xs text-blue-700">${item.explanation}</p>
+                        </div>
+                    ` : ''}
+                    
+                    <div class="flex justify-between items-center pt-2 border-t border-gray-100">
+                        <span class="text-xs text-gray-500">Rating: ${item.rating ? item.rating.toFixed(1) : 'N/A'}</span>
+                        <span class="text-xs text-gray-500">Relevance: ${item.relevance ? item.relevance.toFixed(2) : 'N/A'}</span>
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += `
+                </div>
+            </div>
+        `;
+    });
+    
+    grid.innerHTML = html;
+    
+    // Re-initialize icons
+    lucide.createIcons();
+    
+    // Show cart actions if recommendations are available
+    if (recommendations && recommendations.length > 0) {
+        document.getElementById('cart-actions').classList.remove('hidden');
+        // Store current recommendations for cart operations
+        window.currentRecommendations = recommendations;
+    } else {
+        document.getElementById('cart-actions').classList.add('hidden');
+    }
+    
+    // Display SHAP explanations if available
+    displayShapExplanations(explanations);
+}
+
+function displayShapExplanations(explanations) {
+    const shapSection = document.getElementById('shap-explanations-section');
+    const shapGrid = document.getElementById('shap-explanations-grid');
+    
+    if (!explanations || !Array.isArray(explanations) || explanations.length === 0) {
+        shapSection.classList.add('hidden');
+        return;
+    }
+    
+    let shapHtml = '';
+    
+    explanations.forEach((explanation, index) => {
+        const itemName = explanation.item_name || 'Unknown Item';
+        const predictedRating = explanation.predicted_rating || 0;
+        const baseValue = explanation.base_value || 0;
+        const topFeatures = explanation.top_contributing_features || [];
+        
+        shapHtml += `
+            <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-800">${itemName}</h4>
+                        <p class="text-sm text-gray-600">Item ${index + 1} explanation</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-xl font-bold text-blue-600">${predictedRating.toFixed(3)}</div>
+                        <div class="text-xs text-gray-500">Predicted Rating</div>
+                    </div>
+                </div>
+                
+                <div class="mb-4 p-3 bg-gray-50 rounded-lg">
+                    <div class="text-sm text-gray-600 mb-1">Base Rating: ${baseValue.toFixed(3)}</div>
+                    <div class="text-xs text-gray-500">This is the average rating the model expects for any item</div>
+                </div>
+                
+                <div class="mb-4">
+                    <h5 class="font-semibold text-gray-700 mb-3 flex items-center">
+                        <i data-lucide="trending-up" class="w-4 h-4 mr-2"></i>
+                        Top Contributing Factors
+                    </h5>
+                    
+                    <div class="space-y-2">
+                        ${topFeatures.slice(0, 5).map((feature, featureIndex) => {
+                            const featureName = feature.feature || 'Unknown';
+                            const featureValue = feature.value || 0;
+                            const shapContribution = feature.shap_contribution || 0;
+                            const impact = feature.impact || 'neutral';
+                            
+                            // Format feature name for display
+                            const displayName = featureName
+                                .replace(/_/g, ' ')
+                                .replace(/\b\w/g, l => l.toUpperCase());
+                            
+                            // Determine impact color and icon
+                            let impactColor, impactIcon;
+                            if (impact === 'positive') {
+                                impactColor = 'text-green-600 bg-green-50 border-green-200';
+                                impactIcon = 'trending-up';
+                            } else if (impact === 'negative') {
+                                impactColor = 'text-red-600 bg-red-50 border-red-200';
+                                impactIcon = 'trending-down';
+                            } else {
+                                impactColor = 'text-gray-600 bg-gray-50 border-gray-200';
+                                impactIcon = 'minus';
+                            }
+                            
+                            return `
+                                <div class="flex items-center justify-between p-3 border rounded-lg ${impactColor}">
+                                    <div class="flex items-center space-x-3">
+                                        <i data-lucide="${impactIcon}" class="w-4 h-4"></i>
+                                        <div>
+                                            <div class="font-medium text-sm">${displayName}</div>
+                                            <div class="text-xs opacity-80">Value: ${featureValue}</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="font-bold text-sm">${shapContribution >= 0 ? '+' : ''}${shapContribution.toFixed(4)}</div>
+                                        <div class="text-xs opacity-80 capitalize">${impact}</div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-200 pt-4">
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-600">Explanation Accuracy</span>
+                        <span class="font-medium text-gray-800">
+                            ${((Math.abs(baseValue + topFeatures.reduce((sum, f) => sum + (f.shap_contribution || 0), 0) - predictedRating) < 0.001) ? '✅ Verified' : '⚠️ Approximated')}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    shapGrid.innerHTML = shapHtml;
+    
+    // Show the SHAP explanations section
+    shapSection.classList.remove('hidden');
+    
+    // Re-initialize icons for the new content
+    lucide.createIcons();
+}
+
+function getNewRecommendations() {
+    getRecommendations();
+}
+
+// Cart functionality
+function placeOrderDirect() {
+    if (!currentUser) {
+        showMessage('Please login to place an order', 'error');
+        return;
+    }
+    
+    if (!window.currentRecommendations || window.currentRecommendations.length === 0) {
+        showMessage('No recommendations available to order', 'error');
+        return;
+    }
+    
+    // Add all recommendations to cart
+    const cartItems = window.currentRecommendations.map(item => ({
+        item_id: item.item_id || item.id,
+        item_name: item.item_name || item.name,
+        price: parseFloat(item.price),
+        cuisine: item.cuisine,
+        category: item.category,
+        quantity: 1,
+        special_instructions: ''
+    }));
+    
+    // Save to localStorage and go to cart
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    showMessage(`${cartItems.length} items added to cart!`, 'success');
+    
+    setTimeout(() => {
+        window.location.href = '/cart';
+    }, 1500);
+}
+
+function adjustAndOrder() {
+    if (!currentUser) {
+        showMessage('Please login to place an order', 'error');
+        return;
+    }
+    
+    if (!window.currentRecommendations || window.currentRecommendations.length === 0) {
+        showMessage('No recommendations available to order', 'error');
+        return;
+    }
+    
+    // Add all recommendations to cart
+    const cartItems = window.currentRecommendations.map(item => ({
+        item_id: item.item_id || item.id,
+        item_name: item.item_name || item.name,
+        price: parseFloat(item.price),
+        cuisine: item.cuisine,
+        category: item.category,
+        quantity: 1,
+        special_instructions: ''
+    }));
+    
+    // Save to localStorage and go to cart for adjustment
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    showMessage(`${cartItems.length} items added to cart for adjustment!`, 'success');
+    
+    setTimeout(() => {
+        window.location.href = '/cart';
+    }, 1500);
+}
+</script>
+{% endblock %}

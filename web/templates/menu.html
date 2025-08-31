@@ -1,0 +1,445 @@
+{% extends "base.html" %}
+
+{% block title %}🍽️ Menu - Savory Delights{% endblock %}
+
+{% block content %}
+    <!-- Header Section -->
+    <div class="text-center mb-12">
+        <h1 class="text-5xl font-bold text-gray-800 mb-4">Our Menu</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Discover our carefully crafted dishes, each prepared with passion and the finest ingredients. Our AI system can help you find the perfect meal based on your preferences.</p>
+    </div>
+
+    <!-- Get Recommendations CTA -->
+    <div class="bg-gradient-to-r from-food-orange to-red-500 rounded-2xl p-8 mb-12 text-center text-white">
+        <h2 class="text-3xl font-bold mb-4">🤖 Get Personalized Recommendations</h2>
+        <p class="text-lg mb-6">Let our AI find the perfect dishes for you based on your taste preferences and dietary needs!</p>
+        <a href="/recommend" class="bg-white text-food-orange px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors inline-flex items-center space-x-2">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+            <span>Get My Recommendations</span>
+        </a>
+    </div>
+
+    <!-- Menu Loading State -->
+    <div id="menu-loading" class="text-center py-12">
+        <div class="animate-spin rounded-full h-16 w-16 border-b-4 border-food-orange mx-auto mb-4"></div>
+        <p class="text-gray-600">Loading our delicious menu...</p>
+    </div>
+
+    <!-- Menu Filters -->
+    <div id="menu-filters" class="hidden mb-8">
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Filter Menu</h3>
+            <div class="grid md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                    <select id="category-filter" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-food-orange focus:border-transparent">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Cuisine</label>
+                    <select id="cuisine-filter" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-food-orange focus:border-transparent">
+                        <option value="">All Cuisines</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+                    <select id="price-filter" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-food-orange focus:border-transparent">
+                        <option value="">All Prices</option>
+                        <option value="0-10">Rs. 0 - Rs. 1000</option>
+                        <option value="10-20">Rs. 1000 - Rs. 2000</option>
+                        <option value="20-30">Rs. 2000 - Rs. 3000</option>
+                        <option value="30+">Rs. 3000+</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Search</label>
+                    <input type="text" id="search-input" placeholder="Search dishes..." class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-food-orange focus:border-transparent">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Items Grid -->
+    <div id="menu-items" class="hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <!-- Menu items will be populated by JavaScript -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="menu-empty" class="hidden text-center py-12">
+        <i data-lucide="search-x" class="w-16 h-16 text-gray-400 mx-auto mb-4"></i>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">No items found</h3>
+        <p class="text-gray-600">Try adjusting your filters or search terms.</p>
+    </div>
+
+    <!-- Menu Item Modal -->
+    <div id="item-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 id="modal-title" class="text-3xl font-bold text-gray-800"></h2>
+                    <button onclick="closeItemModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <i data-lucide="x" class="w-8 h-8"></i>
+                    </button>
+                </div>
+                
+                <div id="modal-content">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+                
+                <div class="flex space-x-4 mt-8">
+                    <button id="add-to-cart-btn" onclick="addToCart()" class="flex-1 bg-food-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors flex items-center justify-center space-x-2">
+                        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                        <span>Add to Cart</span>
+                    </button>
+                    <button onclick="closeItemModal()" class="px-6 py-3 border border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let menuItems = [];
+let filteredItems = [];
+let selectedItem = null;
+
+// Load menu items on page load
+document.addEventListener('DOMContentLoaded', function() {
+    loadMenuItems();
+    setupFilters();
+});
+
+async function loadMenuItems() {
+    try {
+        showLoading('Loading menu items...');
+        const response = await fetch('/api/menu-items');
+        const data = await response.json();
+        
+        if (data.success) {
+            menuItems = data.items;
+            filteredItems = [...menuItems];
+            populateFilters();
+            displayMenuItems();
+            
+            // Show menu content
+            document.getElementById('menu-loading').classList.add('hidden');
+            document.getElementById('menu-filters').classList.remove('hidden');
+            document.getElementById('menu-items').classList.remove('hidden');
+        } else {
+            throw new Error(data.message || 'Failed to load menu items');
+        }
+    } catch (error) {
+        console.error('Error loading menu:', error);
+        showMessage('Failed to load menu items. Please try again.', 'error');
+        document.getElementById('menu-loading').innerHTML = `
+            <div class="text-center py-12">
+                <i data-lucide="alert-circle" class="w-16 h-16 text-red-500 mx-auto mb-4"></i>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Error Loading Menu</h3>
+                <p class="text-gray-600 mb-4">We couldn't load the menu items. Please try refreshing the page.</p>
+                <button onclick="loadMenuItems()" class="bg-food-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors">
+                    Try Again
+                </button>
+            </div>
+        `;
+        lucide.createIcons();
+    } finally {
+        hideLoading();
+    }
+}
+
+function populateFilters() {
+    const categories = [...new Set(menuItems.map(item => item.predicted_category).filter(Boolean))];
+    const cuisines = [...new Set(menuItems.map(item => item.predicted_cuisine).filter(Boolean))];
+    
+    const categorySelect = document.getElementById('category-filter');
+    const cuisineSelect = document.getElementById('cuisine-filter');
+    
+    categories.forEach(category => {
+        const option = document.createElement('option');
+        option.value = category;
+        option.textContent = category;
+        categorySelect.appendChild(option);
+    });
+    
+    cuisines.forEach(cuisine => {
+        const option = document.createElement('option');
+        option.value = cuisine;
+        option.textContent = cuisine;
+        cuisineSelect.appendChild(option);
+    });
+}
+
+function setupFilters() {
+    const categoryFilter = document.getElementById('category-filter');
+    const cuisineFilter = document.getElementById('cuisine-filter');
+    const priceFilter = document.getElementById('price-filter');
+    const searchInput = document.getElementById('search-input');
+    
+    [categoryFilter, cuisineFilter, priceFilter].forEach(filter => {
+        filter.addEventListener('change', applyFilters);
+    });
+    
+    searchInput.addEventListener('input', debounce(applyFilters, 300));
+}
+
+function applyFilters() {
+    const category = document.getElementById('category-filter').value;
+    const cuisine = document.getElementById('cuisine-filter').value;
+    const priceRange = document.getElementById('price-filter').value;
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    
+    filteredItems = menuItems.filter(item => {
+        // Category filter
+        if (category && item.predicted_category !== category) return false;
+        
+        // Cuisine filter
+        if (cuisine && item.predicted_cuisine !== cuisine) return false;
+        
+        // Price filter
+        if (priceRange) {
+            const price = parseFloat(item.price || 0);
+            if (priceRange === '0-10' && price > 1000) return false;
+            if (priceRange === '10-20' && (price <= 1000 || price > 2000)) return false;
+            if (priceRange === '20-30' && (price <= 2000 || price > 3000)) return false;
+            if (priceRange === '30+' && price <= 3000) return false;
+        }
+        
+        // Search filter
+        if (searchTerm) {
+            const searchableText = `${item.item_name} ${item.predicted_category} ${item.predicted_cuisine} ${item.predicted_tags || ''}`.toLowerCase();
+            if (!searchableText.includes(searchTerm)) return false;
+        }
+        
+        return true;
+    });
+    
+    displayMenuItems();
+}
+
+function displayMenuItems() {
+    const container = document.getElementById('menu-items');
+    const emptyState = document.getElementById('menu-empty');
+    
+    if (filteredItems.length === 0) {
+        container.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+        return;
+    }
+    
+    container.classList.remove('hidden');
+    emptyState.classList.add('hidden');
+    
+    container.innerHTML = filteredItems.map(item => `
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-1 border-2 border-transparent hover:border-food-orange" onclick="openItemModal(${item.item_id})">
+            ${item.image_url ? `
+                <div class="relative overflow-hidden rounded-t-xl">
+                    <img src="${item.image_url}" alt="${item.item_name}" class="w-full h-48 object-cover transition-transform hover:scale-105" onerror="this.parentElement.style.display='none'">
+                    <div class="absolute top-2 right-2 bg-white bg-opacity-90 backdrop-blur-sm rounded-lg px-2 py-1">
+                        <span class="text-lg font-bold text-food-orange">Rs. ${parseFloat(item.price || 0).toFixed(2)}</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="mb-4">
+                        <h3 class="text-xl font-bold text-gray-800 line-clamp-2">${item.item_name}</h3>
+                    </div>
+            ` : `
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-gray-800 line-clamp-2">${item.item_name}</h3>
+                        <span class="text-2xl font-bold text-food-orange">Rs. ${parseFloat(item.price || 0).toFixed(2)}</span>
+                    </div>
+            `}
+                
+                <div class="space-y-2 mb-4">
+                    ${item.predicted_category ? `
+                        <div class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                            ${item.predicted_category}
+                        </div>
+                    ` : ''}
+                    ${item.predicted_cuisine ? `
+                        <div class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium ml-2">
+                            ${item.predicted_cuisine}
+                        </div>
+                    ` : ''}
+                </div>
+                
+                ${item.predicted_tags ? `
+                    <div class="mb-4">
+                        <div class="flex flex-wrap gap-1">
+                            ${item.predicted_tags.split(',').slice(0, 3).map(tag => `
+                                <span class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">${tag.trim()}</span>
+                            `).join('')}
+                            ${item.predicted_tags.split(',').length > 3 ? '<span class="text-gray-400 text-xs">+more</span>' : ''}
+                        </div>
+                    </div>
+                ` : ''}
+                
+                <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                    <button class="text-food-orange hover:text-orange-600 font-medium text-sm flex items-center space-x-1">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        <span>View Details</span>
+                    </button>
+                    <button onclick="event.stopPropagation(); quickAddToCart(${item.item_id})" class="bg-food-orange text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors flex items-center space-x-1">
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                        <span>Add to Cart</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    lucide.createIcons();
+}
+
+function openItemModal(itemId) {
+    selectedItem = menuItems.find(item => item.item_id === itemId);
+    if (!selectedItem) return;
+    
+    const modal = document.getElementById('item-modal');
+    const title = document.getElementById('modal-title');
+    const content = document.getElementById('modal-content');
+    
+    title.textContent = selectedItem.item_name;
+    
+    content.innerHTML = `
+        <div class="space-y-6">
+            ${selectedItem.image_url ? `
+                <div class="relative overflow-hidden rounded-xl">
+                    <img src="${selectedItem.image_url}" alt="${selectedItem.item_name}" class="w-full h-64 object-cover" onerror="this.parentElement.style.display='none'">
+                </div>
+            ` : ''}
+            
+            <div class="flex justify-between items-center">
+                <span class="text-3xl font-bold text-food-orange">Rs. ${parseFloat(selectedItem.price || 0).toFixed(2)}</span>
+                <div class="flex space-x-2">
+                    ${selectedItem.predicted_category ? `
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                            ${selectedItem.predicted_category}
+                        </span>
+                    ` : ''}
+                    ${selectedItem.predicted_cuisine ? `
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            ${selectedItem.predicted_cuisine}
+                        </span>
+                    ` : ''}
+                </div>
+            </div>
+            
+            ${selectedItem.predicted_tags ? `
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Tags</h4>
+                    <div class="flex flex-wrap gap-2">
+                        ${selectedItem.predicted_tags.split(',').map(tag => `
+                            <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">${tag.trim()}</span>
+                        `).join('')}
+                    </div>
+                </div>
+            ` : ''}
+            
+            <div>
+                <h4 class="font-semibold text-gray-800 mb-2">Nutritional Information</h4>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    ${selectedItem.calories ? `<div><span class="text-gray-600">Calories:</span> <span class="font-medium">${selectedItem.calories}</span></div>` : ''}
+                    ${selectedItem.protein ? `<div><span class="text-gray-600">Protein:</span> <span class="font-medium">${selectedItem.protein}g</span></div>` : ''}
+                    ${selectedItem.carbs ? `<div><span class="text-gray-600">Carbs:</span> <span class="font-medium">${selectedItem.carbs}g</span></div>` : ''}
+                    ${selectedItem.fat ? `<div><span class="text-gray-600">Fat:</span> <span class="font-medium">${selectedItem.fat}g</span></div>` : ''}
+                    ${selectedItem.fiber ? `<div><span class="text-gray-600">Fiber:</span> <span class="font-medium">${selectedItem.fiber}g</span></div>` : ''}
+                    ${selectedItem.sugar ? `<div><span class="text-gray-600">Sugar:</span> <span class="font-medium">${selectedItem.sugar}g</span></div>` : ''}
+                </div>
+            </div>
+        </div>
+    `;
+    
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    lucide.createIcons();
+}
+
+function closeItemModal() {
+    document.getElementById('item-modal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+    selectedItem = null;
+}
+
+function addToCart() {
+    if (!selectedItem) return;
+    quickAddToCart(selectedItem.item_id);
+    closeItemModal();
+}
+
+function quickAddToCart(itemId) {
+    const item = menuItems.find(item => item.item_id === itemId);
+    if (!item) return;
+    
+    // Get current cart
+    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    
+    // Check if item already exists in cart
+    const existingItem = cart.find(cartItem => cartItem.id === itemId);
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            id: item.item_id,
+            name: item.item_name,
+            price: parseFloat(item.price || 0),
+            quantity: 1,
+            category: item.predicted_category,
+            cuisine: item.predicted_cuisine
+        });
+    }
+    
+    // Save cart
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    // Show success message
+    showMessage(`${item.item_name} added to cart!`, 'success');
+    
+    // Update cart counter if it exists
+    updateCartCounter();
+}
+
+function updateCartCounter() {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    
+    const cartCounters = document.querySelectorAll('.cart-counter');
+    cartCounters.forEach(counter => {
+        if (totalItems > 0) {
+            counter.textContent = totalItems;
+            counter.classList.remove('hidden');
+        } else {
+            counter.classList.add('hidden');
+        }
+    });
+}
+
+// Utility function for debouncing
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Close modal when clicking outside
+document.getElementById('item-modal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeItemModal();
+    }
+});
+
+// Initialize cart counter on page load
+document.addEventListener('DOMContentLoaded', updateCartCounter);
+</script>
+{% endblock %}

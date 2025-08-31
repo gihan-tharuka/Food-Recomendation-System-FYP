@@ -1,0 +1,238 @@
+item_id,restaurent_name,item_name,description,cuisine,category,is_morning,is_afternoon,is_evening,is_sunny,is_rainy,portion_size,price
+1298,Spicia,Seafood Tom Yum (Small),"A hot and sour Thai soup with assorted seafood, served hot and tangy with herbs",Thai,Soup,0,1,1,1,0,Small,840
+1299,Spicia,Seafood Tom Yum (Regular),"A hot and sour Thai soup with assorted seafood, served hot and tangy with herbs",Thai,Soup,0,1,1,1,0,Regular,1160
+1300,Spicia,Chicken Tom Yum (Small),"A hot and sour Thai soup with chicken, served hot with herbs and spices",Thai,Soup,0,1,1,1,0,Small,600
+1301,Spicia,Chicken Tom Yum (Regular),"A hot and sour Thai soup with chicken, served hot with herbs and spices",Thai,Soup,0,1,1,1,0,Regular,840
+1302,Spicia,Sweet Corn Soup - Crab (Small),"Sweet corn soup with crab, served warm and mildly sweet",Chinese,Soup,0,1,1,0,1,Small,750
+1303,Spicia,Sweet Corn Soup - Crab (Regular),"Sweet corn soup with crab, served warm and mildly sweet",Chinese,Soup,0,1,1,0,1,Regular,1000
+1304,Spicia,Sweet Corn Soup - Chicken (Small),"Sweet corn soup with chicken, served warm and mildly sweet",Chinese,Soup,0,1,1,0,1,Small,530
+1305,Spicia,Sweet Corn Soup - Chicken (Regular),"Sweet corn soup with chicken, served warm and mildly sweet",Chinese,Soup,0,1,1,0,1,Regular,780
+1306,Spicia,Sweet Corn Soup - Vegetable (Small),"Sweet corn soup with vegetables, served warm and mildly sweet",Chinese,Soup,0,1,1,0,1,Small,480
+1307,Spicia,Sweet Corn Soup - Vegetable (Regular),"Sweet corn soup with vegetables, served warm and mildly sweet",Chinese,Soup,0,1,1,0,1,Regular,700
+1308,Spicia,Mixed Mee Hoon Soup (Small),"Oriental noodle soup with a combination of meat and seafood, served hot",Asian,Soup,0,1,1,1,0,Small,770
+1309,Spicia,Mixed Mee Hoon Soup (Regular),"Oriental noodle soup with a combination of meat and seafood, served hot",Asian,Soup,0,1,1,1,0,Regular,1120
+1310,Spicia,Seafood Soup (Small),"A clear soup with assorted seafood, served hot",Asian,Soup,0,1,1,1,0,Small,840
+1311,Spicia,Seafood Soup (Regular),"A clear soup with assorted seafood, served hot",Asian,Soup,0,1,1,1,0,Regular,1160
+1312,Spicia,Prawn and Cucumber Soup,"Light prawn soup with cucumber, served warm",Asian,Soup,0,1,1,0,1,-,900
+1313,Spicia,Spicy Vegetable Soup,Hot vegetable soup with spices,Asian,Soup,0,1,1,1,0,-,770
+1314,Spicia,Chicken Hot and Spicy Soup,Hot chicken soup with chili spices,Asian,Soup,0,1,1,1,0,-,850
+1315,Spicia,Spicy Beef Soup,Spicy beef broth served hot,Asian,Soup,0,1,1,1,0,-,1000
+1316,Spicia,Cream of Mushroom and Spinach Soup,"Creamy mushroom and spinach soup, served hot",Western,Soup,0,1,1,0,1,-,950
+1317,Spicia,Cream of Chicken,"A rich creamy soup with chicken pieces, garnished with coriander",Western,Soup,0,1,1,0,1,-,950
+1318,Spicia,Laksa Seafood Soup,Spicy soup with seafood and coconut milk,Malaysian,Soup,0,1,1,1,0,-,1150
+1319,Spicia,Tomato Egg Soup,Sweet and sour tomato soup with egg,Asian,Soup,0,1,1,0,1,-,750
+1320,Spicia,Chinese Omelette - Vegetables,Chinese omelette with vegetables,Chinese,Omelette,1,1,1,0,1,-,690
+1321,Spicia,Chinese Omelette - Chicken,Chinese omelette with chicken,Chinese,Omelette,1,1,1,0,1,-,810
+1322,Spicia,Chinese Omelette - Prawn,Chinese omelette with prawn,Chinese,Omelette,1,1,1,0,1,-,950
+1323,Spicia,Sri Lankan Omelette,Sri Lankan style omelette,Sri Lankan,Omelette,1,1,1,0,1,-,360
+1324,Spicia,Fried Egg,"Classic fried egg, served hot",International,Side dish,1,1,1,0,1,-,300
+1325,Spicia,Cheese Omelette,Omelette made with cheese,International,Omelette,1,1,1,0,1,-,480
+1326,Spicia,Chicken Omelette - Sri Lankan Style,Sri Lankan style chicken omelette,Sri Lankan,Omelette,1,1,1,0,1,-,690
+1327,Spicia,Mixed Omelette,Omelette with assorted fillings,International,Omelette,1,1,1,0,1,-,890
+1328,Spicia,Bacon and Sausages Omelette,Omelette with bacon and sausages,Western,Omelette,1,1,1,0,1,-,890
+1329,Spicia,Kang Kung with Garlic (S),Stir-fried kang kung with garlic and dry chillies in a mild sauce; light and warm vegetable dish,Asian,Side dish,0,1,1,1,0,Small,360
+1330,Spicia,Kang Kung with Garlic (R),Stir-fried kang kung with garlic and dry chillies in a mild sauce; light and warm vegetable dish,Asian,Side dish,0,1,1,1,0,Regular,420
+1331,Spicia,Mixed Vegetables with Mushrooms and Baby Corn (S),Assorted vegetables stir-fried with mushrooms and baby corn in a mild sauce,Asian,Side dish,0,1,1,1,0,Small,530
+1332,Spicia,Mixed Vegetables with Mushrooms and Baby Corn (R),Assorted vegetables stir-fried with mushrooms and baby corn in a mild sauce,Asian,Side dish,0,1,1,1,0,Regular,700
+1333,Spicia,Chop Suey (S),Assorted vegetables stir-fried in a mild sauce; light and warm,Asian,Side dish,0,1,1,1,0,Small,480
+1334,Spicia,Chop Suey (R),Assorted vegetables stir-fried in a mild sauce; light and warm,Asian,Side dish,0,1,1,1,0,Regular,660
+1335,Spicia,String Beans Szechuan Style with Cashew (S),Dry braised string beans in a spicy sauce with cashews; warm and moderately spicy,Asian,Side dish,0,1,1,1,0,Small,500
+1336,Spicia,String Beans Szechuan Style with Cashew (R),Dry braised string beans in a spicy sauce with cashews; warm and moderately spicy,Asian,Side dish,0,1,1,1,0,Regular,670
+1337,Spicia,Devilled Mushrooms (S),Mushrooms stir-fried in a spicy sauce; warm and savory,Asian,Side dish,0,1,1,1,0,Small,530
+1338,Spicia,Devilled Mushrooms (R),Mushrooms stir-fried in a spicy sauce; warm and savory,Asian,Side dish,0,1,1,1,0,Regular,710
+1339,Spicia,Hot Batter Mushrooms (S),Deep-fried mushrooms in a crispy batter; hot and crunchy,Asian,Side dish,0,1,1,1,0,Small,530
+1340,Spicia,Hot Batter Mushrooms (R),Deep-fried mushrooms in a crispy batter; hot and crunchy,Asian,Side dish,0,1,1,1,0,Regular,670
+1341,Spicia,Hot Batter Baby Corn (S),Deep-fried baby corn in a crispy batter; hot and crunchy,Asian,Side dish,0,1,1,1,0,Small,720
+1342,Spicia,Hot Batter Baby Corn (R),Deep-fried baby corn in a crispy batter; hot and crunchy,Asian,Side dish,0,1,1,1,0,Regular,900
+1343,Spicia,Mushrooms with Oyster Sauce (S),Deep-fried mushrooms in oyster sauce; warm and savory,Asian,Side dish,0,1,1,1,0,Small,500
+1344,Spicia,Mushrooms with Oyster Sauce (R),Deep-fried mushrooms in oyster sauce; warm and savory,Asian,Side dish,0,1,1,1,0,Regular,720
+1345,Spicia,Spicy Potatoes (S),Fried potato wedges in a spicy sauce; hot and flavorful,Asian,Side dish,0,1,1,1,0,Small,630
+1346,Spicia,Spicy Potatoes (R),Fried potato wedges in a spicy sauce; hot and flavorful,Asian,Side dish,0,1,1,1,0,Regular,820
+1347,Spicia,Garlic Spinach (S),Stir-fried spinach with garlic and dry chillies in a mild sauce,Asian,Side dish,0,1,1,1,0,Small,400
+1348,Spicia,Garlic Spinach (R),Stir-fried spinach with garlic and dry chillies in a mild sauce,Asian,Side dish,0,1,1,1,0,Regular,530
+1349,Spicia,Chinese Chilli Vegetables (S),Stir-fried assorted mixed vegetables served with garlic sauce,Chinese,Side dish,0,1,1,1,0,Small,530
+1350,Spicia,Chinese Chilli Vegetables (R),Stir-fried assorted mixed vegetables served with garlic sauce,Chinese,Side dish,0,1,1,1,0,Regular,760
+1351,Spicia,Stir-Fried Pak Choi (S),Stir-fried pak choi with garlic and onions; light and fresh,Asian,Side dish,0,1,1,1,0,Small,530
+1352,Spicia,Stir-Fried Pak Choi (R),Stir-fried pak choi with garlic and onions; light and fresh,Asian,Side dish,0,1,1,1,0,Regular,700
+1353,Spicia,Devilled Button Mushrooms,Mushrooms stir-fried in a spicy sauce; hot and savory,Asian,Side dish,0,1,1,1,0,Regular,800
+1354,Spicia,House Special Vietnamese Rice (S),"Fried rice tossed with prawns, cuttlefish, chicken, and vegetables. Savory, medium-heavy, served hot.",Vietnamese,Main,0,1,1,1,0,Small,950
+1355,Spicia,House Special Vietnamese Rice (R),"Fried rice tossed with prawns, cuttlefish, chicken, and vegetables. Savory, medium-heavy, served hot.",Vietnamese,Main,0,1,1,1,0,Regular,1200
+1356,Spicia,Spisia Chop Suey Rice (S),"Creamy vegetable chop suey fried rice with a combination of meat and seafood. Medium-heavy, creamy, served hot.",Chinese,Main,0,1,1,1,0,Small,950
+1357,Spicia,Spisia Chop Suey Rice (R),"Creamy vegetable chop suey fried rice with a combination of meat and seafood. Medium-heavy, creamy, served hot.",Chinese,Main,0,1,1,1,0,Regular,1200
+1358,Spicia,Ginger Rice with Chicken (S),"Stir fried ginger-flavoured rice with chicken. Medium spice, aromatic, served hot.",Chinese,Main,0,1,1,1,0,Small,700
+1359,Spicia,Ginger Rice with Chicken (R),"Stir fried ginger-flavoured rice with chicken. Medium spice, aromatic, served hot.",Chinese,Main,0,1,1,1,0,Regular,900
+1360,Spicia,Wok Fried Rice with Prawns (S),"Stir-fried rice with vegetables, egg, and prawns. Savory, served hot.",Chinese,Main,0,1,1,1,0,Small,800
+1361,Spicia,Wok Fried Rice with Prawns (R),"Stir-fried rice with vegetables, egg, and prawns. Savory, served hot.",Chinese,Main,0,1,1,1,0,Regular,1050
+1362,Spicia,Wok Fried Rice with Chicken (S),"Stir-fried rice with vegetables, egg, and chicken. Savory, served hot.",Chinese,Main,0,1,1,1,0,Small,750
+1363,Spicia,Wok Fried Rice with Chicken (R),"Stir-fried rice with vegetables, egg, and chicken. Savory, served hot.",Chinese,Main,0,1,1,1,0,Regular,900
+1364,Spicia,Wok Fried Rice with Beef (S),"Stir-fried rice with vegetables, egg, and beef. Savory, served hot.",Chinese,Main,0,1,1,1,0,Small,750
+1365,Spicia,Wok Fried Rice with Beef (R),"Stir-fried rice with vegetables, egg, and beef. Savory, served hot.",Chinese,Main,0,1,1,1,0,Regular,900
+1366,Spicia,Wok Fried Rice with Vegetables and Egg (S),"Stir-fried rice with vegetables and egg. Light-medium, vegetarian-friendly, served hot.",Chinese,Main,0,1,1,1,0,Small,700
+1367,Spicia,Wok Fried Rice with Vegetables and Egg (R),"Stir-fried rice with vegetables and egg. Light-medium, vegetarian-friendly, served hot.",Chinese,Main,0,1,1,1,0,Regular,900
+1368,Spicia,Wok Fried Rice with Bacon and Egg (S),"Stir-fried rice with vegetables, bacon, and egg. Savory, served hot.",Chinese,Main,0,1,1,1,0,Small,750
+1369,Spicia,Wok Fried Rice with Bacon and Egg (R),"Stir-fried rice with vegetables, bacon, and egg. Savory, served hot.",Chinese,Main,0,1,1,1,0,Regular,950
+1370,Spicia,Seafood Rice (R),"Rice with assorted seafood stir-fried in a tangy sauce. Medium spice, served hot.",Asian,Main,0,1,1,1,0,Regular,1280
+1371,Spicia,Pineapple Rice,"Pineapple fried rice with cashew nuts, carrots, and sliced chicken. Sweet-savory, served hot.",Asian,Main,0,1,1,1,0,Regular,960
+1372,Spicia,Spicy Thai Seafood Rice (S),"Assorted seafood fried rice, Thai style, spicy, served hot.",Thai,Main,0,1,1,1,0,Small,900
+1373,Spicia,Spicy Thai Seafood Rice (R),"Assorted seafood fried rice, Thai style, spicy, served hot.",Thai,Main,0,1,1,1,0,Regular,1200
+1374,Spicia,Steamed Rice - Premium Basmati (S),"Steamed premium basmati rice, light, neutral flavor, served hot.",Asian,Main,1,1,1,1,0,Small,330
+1375,Spicia,Steamed Rice - Premium Basmati (R),"Steamed premium basmati rice, light, neutral flavor, served hot.",Asian,Main,1,1,1,1,0,Regular,470
+1376,Spicia,Mixed Fried Rice (S),"Fried rice with a combination of seafood, chicken, beef, and pork. Savory, served hot.",Asian,Main,0,1,1,1,0,Small,850
+1377,Spicia,Mixed Fried Rice (R),"Fried rice with a combination of seafood, chicken, beef, and pork. Savory, served hot.",Asian,Main,0,1,1,1,0,Regular,1050
+1378,Spicia,Nasi Goreng,"Spicy rice mixed with prawns and chicken, served with a fried egg. Medium-heavy, served hot.",Indonesian,Main,0,1,1,1,0,Regular,1050
+1379,Spicia,Mongolian Rice (S),"Stir-fried spicy rice with assorted meat, seafood, and vegetables. Medium spice, served hot.",Mongolian,Main,0,1,1,1,0,Small,850
+1380,Spicia,Mongolian Rice (R),"Stir-fried spicy rice with assorted meat, seafood, and vegetables. Medium spice, served hot.",Mongolian,Main,0,1,1,1,0,Regular,1180
+1381,Spicia,Savoury Rice,"Stir-fried butter rice with vegetables and meat. Mild flavor, served hot.",Asian,Main,0,1,1,1,0,Regular,800
+1382,Spicia,Garlic Rice,"Garlic-flavored rice tossed with spring onions and sausages. Savory, aromatic, served hot.",Asian,Main,0,1,1,1,0,Regular,650
+1383,Spicia,Spisia Special Kebab Rice,"Stir-fried yellow rice topped with chicken, beef, fish, or sausages in kebab style. Savory, served hot.",Asian,Main,0,1,1,1,0,Regular,1450
+1384,Spicia,Vegetable Chop Suey Rice,"Rice topped with chop suey vegetables. Light-medium, vegetarian, served hot.",Asian,Main,0,1,1,1,0,Regular,900
+1385,Spicia,Indonesian Fried Rice,"Fried rice mixed with prawns and dry chicken. Savory, served hot.",Indonesian,Main,0,1,1,1,0,Regular,1200
+1386,Spicia,Thai Spicy Vegetable Rice (S),"Spicy stir-fried rice with vegetables, Thai style, served hot.",Thai,Main,0,1,1,1,0,Small,650
+1387,Spicia,Thai Spicy Vegetable Rice (R),"Spicy stir-fried rice with vegetables, Thai style, served hot.",Thai,Main,0,1,1,1,0,Regular,840
+1388,Spicia,Prawns in Red Chilli and Garlic Sauce (Small),"Stir fried prawns with garlic, chillies, tomato, and oyster sauce; medium-heavy, served hot, spicy and savory",Asian,Side dish,0,1,1,0,1,Small,1140
+1389,Spicia,Prawns in Red Chilli and Garlic Sauce (Regular),"Stir fried prawns with garlic, chillies, tomato, and oyster sauce; medium-heavy, served hot, spicy and savory",Asian,Side dish,0,1,1,0,1,Regular,1380
+1390,Spicia,Spicy Prawns (Small),"Stir fried prawns in a spicy sauce; medium-heavy, served hot, spicy",Asian,Side dish,0,1,1,0,1,Small,1140
+1391,Spicia,Spicy Prawns (Regular),"Stir fried prawns in a spicy sauce; medium-heavy, served hot, spicy",Asian,Side dish,0,1,1,0,1,Regular,1380
+1392,Spicia,Thai Chilli Prawns (Small),"Deep fried prawns in a hot/sweet Thai sauce; medium-heavy, sweet-spicy",Thai,Side dish,0,1,1,0,1,Small,1140
+1393,Spicia,Thai Chilli Prawns (Regular),"Deep fried prawns in a hot/sweet Thai sauce; medium-heavy, sweet-spicy",Thai,Side dish,0,1,1,0,1,Regular,1380
+1394,Spicia,Devilled Prawns (Small),"Stir fried prawns in a devilled sauce; spicy, savory, served hot",Sri Lankan,Side dish,0,1,1,0,1,Small,1140
+1395,Spicia,Devilled Prawns (Regular),"Stir fried prawns in a devilled sauce; spicy, savory, served hot",Sri Lankan,Side dish,0,1,1,0,1,Regular,1380
+1396,Spicia,Hot Garlic Prawns (Small),"Pan fried prawns in a hot garlic sauce; medium-heavy, spicy-garlicky",Asian,Side dish,0,1,1,0,1,Small,1140
+1397,Spicia,Hot Garlic Prawns (Regular),"Pan fried prawns in a hot garlic sauce; medium-heavy, spicy-garlicky",Asian,Side dish,0,1,1,0,1,Regular,1380
+1398,Spicia,Sweet and Sour Prawns (Small),"Batter fried prawns with sweet and sour sauce; medium, sweet-tangy",Chinese,Side dish,0,1,1,1,0,Small,1140
+1399,Spicia,Sweet and Sour Prawns (Regular),"Batter fried prawns with sweet and sour sauce; medium, sweet-tangy",Chinese,Side dish,0,1,1,1,0,Regular,1380
+1400,Spicia,Hot Batter Prawns (Small),"Deep fried prawns with bell pepper in chilli oil; medium-heavy, spicy",Asian,Side dish,0,1,1,0,1,Small,1140
+1401,Spicia,Hot Batter Prawns (Regular),"Deep fried prawns with bell pepper in chilli oil; medium-heavy, spicy",Asian,Side dish,0,1,1,0,1,Regular,1380
+1402,Spicia,Indonesian Prawns (Small),Prawns in Indonesian-style mild and sweet creamy curry,Indonesian,Side dish,0,1,1,1,0,Small,1140
+1403,Spicia,Indonesian Prawns (Regular),Prawns in Indonesian-style mild and sweet creamy curry,Indonesian,Side dish,0,1,1,1,0,Regular,1380
+1404,Spicia,Peanut Prawns (Small),"Battered fried prawns with chilli pieces, spring onions, topped with crunchy peanuts; medium-heavy, spicy",Asian,Side dish,0,1,1,0,1,Small,1140
+1405,Spicia,Peanut Prawns (Regular),"Battered fried prawns with chilli pieces, spring onions, topped with crunchy peanuts; medium-heavy, spicy",Asian,Side dish,0,1,1,0,1,Regular,1380
+1406,Spicia,Kang Kung Prawns (Small),"Stir fried prawns and kang kung in garlic-infused soya sauce; savory, mild",Asian,Side dish,0,1,1,1,0,Small,900
+1407,Spicia,Kang Kung Prawns (Regular),"Stir fried prawns and kang kung in garlic-infused soya sauce; savory, mild",Asian,Side dish,0,1,1,1,0,Regular,1140
+1408,Spicia,Prawns with White Garlic Sauce (Small),"Stir fried prawns with white garlic sauce; savory, mild",Asian,Side dish,0,1,1,1,0,Small,1140
+1409,Spicia,Prawns with White Garlic Sauce (Regular),"Stir fried prawns with white garlic sauce; savory, mild",Asian,Side dish,0,1,1,1,0,Regular,1380
+1410,Spicia,Black Pepper Prawns (Small),"Roasted prawns with black pepper soya sauce; medium-heavy, peppery",Asian,Side dish,0,1,1,0,1,Small,1140
+1411,Spicia,Black Pepper Prawns (Regular),"Roasted prawns with black pepper soya sauce; medium-heavy, peppery",Asian,Side dish,0,1,1,0,1,Regular,1380
+1412,Spicia,Singapore Chilli Prawns (Small),"Light batter fried prawns with spring onions, chilli sauce, and egg; spicy, savory",Singaporean,Side dish,0,1,1,0,1,Small,1140
+1413,Spicia,Singapore Chilli Prawns (Regular),"Light batter fried prawns with spring onions, chilli sauce, and egg; spicy, savory",Singaporean,Side dish,0,1,1,0,1,Regular,1380
+1414,Spicia,China Prawns (Small),Chinese-style prawns in savory sauce,Chinese,Side dish,0,1,1,1,0,Small,1140
+1415,Spicia,China Prawns (Regular),Chinese-style prawns in savory sauce,Chinese,Side dish,0,1,1,1,0,Regular,1180
+1416,Spicia,Prawns with Spinach (Small),Stir fried prawns with spinach; mild savory flavor,Asian,Side dish,0,1,1,1,0,Small,900
+1417,Spicia,Prawns with Spinach (Regular),Stir fried prawns with spinach; mild savory flavor,Asian,Side dish,0,1,1,1,0,Regular,1140
+1418,Spicia,Chilli Crab,"Spicy crab dish with chillies; served hot, savory",Asian,Side dish,0,1,1,0,1,400g min,420
+1419,Spicia,Fried Crab in Ginger and Garlic Sauce,Crab fried with ginger and garlic; savory and aromatic,Asian,Side dish,0,1,1,1,0,400g min,420
+1420,Spicia,Sri Lankan Crab Curry,"Traditional Sri Lankan crab curry; spicy, coconut-based",Sri Lankan,Side dish,0,1,1,0,1,400g min,420
+1421,Spicia,Pepper Crab,"Crab cooked in pepper sauce; spicy, savory",Asian,Side dish,0,1,1,0,1,400g min,420
+1422,Spicia,Roast chicken in mushroom sauce (S),"Roasted chicken with oyster mushrooms in black mushroom sauce; savory, served hot",International,Side dish,0,1,1,0,1,Small,820
+1423,Spicia,Roast chicken in mushroom sauce (R),"Roasted chicken with oyster mushrooms in black mushroom sauce; savory, served hot",International,Side dish,0,1,1,0,1,Regular,1230
+1424,Spicia,Spicy chicken (S),Sliced chicken in a spicy sauce; hot and bold flavor,International,Side dish,0,1,1,1,0,Small,820
+1425,Spicia,Spicy chicken (R),Sliced chicken in a spicy sauce; hot and bold flavor,International,Side dish,0,1,1,1,0,Regular,940
+1426,Spicia,Devilled chicken (S),"Fried chicken with chili and tomato sauce; spicy, tangy",International,Side dish,0,1,1,1,0,Small,820
+1427,Spicia,Devilled chicken (R),"Fried chicken with chili and tomato sauce; spicy, tangy",International,Side dish,0,1,1,1,0,Regular,1230
+1428,Spicia,Dry red chilli chicken (S),"Chicken with dry chili and celery; hot, aromatic",Asian,Side dish,0,1,1,1,0,Small,700
+1429,Spicia,Dry red chilli chicken (R),"Chicken with dry chili and celery; hot, aromatic",Asian,Side dish,0,1,1,1,0,Regular,920
+1430,Spicia,Diced chicken with cashew nuts (S),Diced chicken and cashew nuts in oyster sauce; mild nutty flavor,Asian,Side dish,0,1,1,0,1,Small,750
+1431,Spicia,Diced chicken with cashew nuts (R),Diced chicken and cashew nuts in oyster sauce; mild nutty flavor,Asian,Side dish,0,1,1,0,1,Regular,920
+1432,Spicia,Lemon chicken (S),Deep fried chicken strips in orange and lemon sauce; tangy and sweet,Asian,Side dish,0,1,1,0,1,Small,700
+1433,Spicia,Lemon chicken (R),Deep fried chicken strips in orange and lemon sauce; tangy and sweet,Asian,Side dish,0,1,1,0,1,Regular,920
+1434,Spicia,Sweet and sour chicken (S),Batter fried chicken in sweet and sour sauce; balanced flavor,Asian,Side dish,0,1,1,0,1,Small,800
+1435,Spicia,Sweet and sour chicken (R),Batter fried chicken in sweet and sour sauce; balanced flavor,Asian,Side dish,0,1,1,0,1,Regular,980
+1436,Spicia,Hot garlic chicken (S),Pan fried sliced chicken in hot garlic sauce; garlicky and spicy,Asian,Side dish,0,1,1,1,0,Small,700
+1437,Spicia,Hot garlic chicken (R),Pan fried sliced chicken in hot garlic sauce; garlicky and spicy,Asian,Side dish,0,1,1,1,0,Regular,920
+1438,Spicia,Hot batter chicken (S),Deep fried chicken strips with bell pepper in chili oil; crispy and spicy,Asian,Side dish,0,1,1,1,0,Small,740
+1439,Spicia,Hot batter chicken (R),Deep fried chicken strips with bell pepper in chili oil; crispy and spicy,Asian,Side dish,0,1,1,1,0,Regular,940
+1440,Spicia,Chilli chicken with cashew nuts (S),"Chicken in spicy thick sauce with carrots, red chilies, roasted cashew nuts",Asian,Side dish,0,1,1,1,0,Small,750
+1441,Spicia,Chilli chicken with cashew nuts (R),"Chicken in spicy thick sauce with carrots, red chilies, roasted cashew nuts",Asian,Side dish,0,1,1,1,0,Regular,940
+1442,Spicia,Manchurian chicken (S),Light batter fried chicken in hot & sweet tamarind sauce topped with coriander,Indonesian,Side dish,0,1,1,1,0,Small,700
+1443,Spicia,Manchurian chicken (R),Light batter fried chicken in hot & sweet tamarind sauce topped with coriander,Indonesian,Side dish,0,1,1,1,0,Regular,940
+1444,Spicia,Pepper chicken (S),Roasted chicken in black pepper soya sauce with capsicum and onion rings,Asian,Side dish,0,1,1,1,0,Small,990
+1445,Spicia,Pepper chicken (R),Roasted chicken in black pepper soya sauce with capsicum and onion rings,Asian,Side dish,0,1,1,1,0,Regular,1230
+1446,Spicia,Indonesian chicken (S),Chicken in Indonesian style mild sweet creamy curry,Indonesian,Side dish,0,1,1,0,1,Small,700
+1447,Spicia,Indonesian chicken (R),Chicken in Indonesian style mild sweet creamy curry,Indonesian,Side dish,0,1,1,0,1,Regular,920
+1448,Spicia,Kang kung chicken (S),Stir fried chicken and kang kung in garlic infused soya sauce,Asian,Side dish,0,1,1,0,1,Small,560
+1449,Spicia,Kang kung chicken (R),Stir fried chicken and kang kung in garlic infused soya sauce,Asian,Side dish,0,1,1,0,1,Regular,760
+1450,Spicia,Chicken bistu (S),Deep fried chicken with oyster and soya sauce,Asian,Side dish,0,1,1,0,1,Small,990
+1451,Spicia,Chicken bistu (R),Deep fried chicken with oyster and soya sauce,Asian,Side dish,0,1,1,0,1,Regular,1230
+1452,Spicia,Chicken drumsticks (S),Butter fried drumsticks with hot garlic sauce,Asian,Side dish,0,1,1,1,0,Small,700
+1453,Spicia,Chicken drumsticks (R),Butter fried drumsticks with hot garlic sauce,Asian,Side dish,0,1,1,1,0,Regular,920
+1454,Spicia,Fried chicken with onion salad (S),Deep fried chicken strips with tangy onion salad,Asian,Side dish,0,1,1,0,1,Small,690
+1455,Spicia,Fried chicken with onion salad (R),Deep fried chicken strips with tangy onion salad,Asian,Side dish,0,1,1,0,1,Regular,890
+1456,Spicia,Peanut chicken,"Chicken cooked with peanut flavor; nutty, savory",Asian,Side dish,0,1,1,0,1,-,860
+1457,Spicia,China chicken (S),Chinese-style chicken preparation,Chinese,Side dish,0,1,1,0,1,Small,780
+1458,Spicia,China chicken (R),Chinese-style chicken preparation,Chinese,Side dish,0,1,1,0,1,Regular,950
+1459,Spicia,Singapore Chilli Fish (S),"Light batter fried fish with spring onions, chilli sauce and egg. Served hot, mildly spicy with a crispy texture and tangy notes.",Singaporean,Side dish,0,1,1,1,0,Small,810
+1460,Spicia,Singapore Chilli Fish (R),"Light batter fried fish with spring onions, chilli sauce and egg. Served hot, mildly spicy with a crispy texture and tangy notes.",Singaporean,Side dish,0,1,1,1,0,Regular,1040
+1461,Spicia,Thai Style Fish (S),"Light batter fried fish with a Thai touch served in coconut cream with kaffir leaves. Creamy and aromatic, medium spice.",Thai,Side dish,0,1,1,1,0,Small,720
+1462,Spicia,Thai Style Fish (R),"Light batter fried fish with a Thai touch served in coconut cream with kaffir leaves. Creamy and aromatic, medium spice.",Thai,Side dish,0,1,1,1,0,Regular,1000
+1463,Spicia,Sweet and Sour Fish (S),"Batter fried fish with a sweet and sour sauce. Balanced flavour, served hot.",Asian,Side dish,0,1,1,1,0,Small,720
+1464,Spicia,Sweet and Sour Fish (R),"Batter fried fish with a sweet and sour sauce. Balanced flavour, served hot.",Asian,Side dish,0,1,1,1,0,Regular,1000
+1465,Spicia,Hot Batter Fish (S),"Deep fried fish strips with bell pepper in chilli oil. Crispy, hot and spicy.",Asian,Side dish,0,1,1,1,0,Small,810
+1466,Spicia,Hot Batter Fish (R),"Deep fried fish strips with bell pepper in chilli oil. Crispy, hot and spicy.",Asian,Side dish,0,1,1,1,0,Regular,1020
+1467,Spicia,Spicy Fish (S),"Batter fried fish in a spicy sauce. Medium-heavy, served hot.",Asian,Side dish,0,1,1,1,0,Small,720
+1468,Spicia,Spicy Fish (R),"Batter fried fish in a spicy sauce. Medium-heavy, served hot.",Asian,Side dish,0,1,1,1,0,Regular,1020
+1469,Spicia,Devilled Fish (S),"Fried fish with chilli and tomato sauce. Spicy and tangy, served hot.",Sri Lankan,Side dish,0,1,1,1,0,Small,800
+1470,Spicia,Devilled Fish (R),"Fried fish with chilli and tomato sauce. Spicy and tangy, served hot.",Sri Lankan,Side dish,0,1,1,1,0,Regular,1020
+1471,Spicia,Fish Bistu (S),"Deep fried fish with oyster and soya sauce. Savoury, slightly salty, served hot.",Asian,Side dish,0,1,1,1,0,Small,720
+1472,Spicia,Fish Bistu (R),"Deep fried fish with oyster and soya sauce. Savoury, slightly salty, served hot.",Asian,Side dish,0,1,1,1,0,Regular,1000
+1473,Spicia,Crispy Fish (S),"Deep fried fish with hot sauce. Crispy texture, spicy flavour.",Asian,Side dish,0,1,1,1,0,Small,660
+1474,Spicia,Crispy Fish (R),"Deep fried fish with hot sauce. Crispy texture, spicy flavour.",Asian,Side dish,0,1,1,1,0,Regular,950
+1475,Spicia,Pepper Fish (S),"Roasted fish in a black pepper soya sauce. Peppery, savoury, hot served.",Asian,Side dish,0,1,1,1,0,Small,800
+1476,Spicia,Pepper Fish (R),"Roasted fish in a black pepper soya sauce. Peppery, savoury, hot served.",Asian,Side dish,0,1,1,1,0,Regular,1110
+1477,Spicia,Hot Garlic Fish (S),"Pan fried sliced fish in a hot garlic sauce. Savoury, aromatic, spicy.",Asian,Side dish,0,1,1,1,0,Small,800
+1478,Spicia,Hot Garlic Fish (R),"Pan fried sliced fish in a hot garlic sauce. Savoury, aromatic, spicy.",Asian,Side dish,0,1,1,1,0,Regular,1100
+1479,Spicia,Deep Fried Fish with Onion Salad (S),Deep fried fish slices served with a tangy onion salad. Crispy and refreshing combination.,Asian,Side dish,0,1,1,1,0,Small,720
+1480,Spicia,Deep Fried Fish with Onion Salad (R),Deep fried fish slices served with a tangy onion salad. Crispy and refreshing combination.,Asian,Side dish,0,1,1,1,0,Regular,940
+1481,Spicia,Black Pepper Fish – Roasted (S),"Roasted fish with black pepper in soya sauce. Peppery, savoury, served hot.",Asian,Side dish,0,1,1,1,0,Small,800
+1482,Spicia,Black Pepper Fish – Roasted (R),"Roasted fish with black pepper in soya sauce. Peppery, savoury, served hot.",Asian,Side dish,0,1,1,1,0,Regular,1010
+1483,Spicia,Vanilla milkshake,"Creamy, sweet, cold vanilla-flavored milkshake",International,Beverage,1,1,1,1,0,-,360
+1484,Spicia,Strawberry milkshake,"Creamy, sweet, cold strawberry-flavored milkshake",International,Beverage,1,1,1,1,0,-,370
+1485,Spicia,Chocolate milkshake,"Creamy, sweet, cold chocolate-flavored milkshake",International,Beverage,1,1,1,1,0,-,370
+1486,Spicia,Mixed fruit milkshake,Creamy cold milkshake with a blend of mixed fruits,International,Beverage,1,1,1,1,0,-,420
+1487,Spicia,Mango juice,"Fresh, sweet mango juice served cold",International,Beverage,1,1,1,1,0,-,320
+1488,Spicia,Pineapple juice,"Fresh, tangy-sweet pineapple juice served cold",International,Beverage,1,1,1,1,0,-,320
+1489,Spicia,Orange juice,"Fresh, tangy orange juice served cold",International,Beverage,1,1,1,1,0,-,450
+1490,Spicia,Mixed fruit juice,Fresh blend of assorted fruit juices served cold,International,Beverage,1,1,1,1,0,-,380
+1491,Spicia,Papaya juice,"Fresh, smooth, sweet papaya juice served cold",International,Beverage,1,1,1,1,0,-,300
+1492,Spicia,Lime juice,Refreshing tangy lime juice served cold,International,Beverage,1,1,1,1,0,-,300
+1493,Spicia,Lime and soda,"Sparkling lime-flavored drink, refreshing and tangy",International,Beverage,1,1,1,1,0,-,300
+1494,Spicia,Snowfall,"Sweet, cold beverage (exact ingredients not specified)",International,Beverage,1,1,1,1,0,-,320
+1495,Spicia,Pepsi 300ml,Chilled carbonated cola drink,International,Beverage,1,1,1,1,0,300ml,150
+1496,Spicia,Pepsi (1500ml),Chilled carbonated cola drink,International,Beverage,1,1,1,1,0,1500ml,400
+1497,Spicia,7up 300ml,Chilled lemon-lime carbonated drink,International,Beverage,1,1,1,1,0,300ml,150
+1498,Spicia,Cream soda 400ml,"Sweet, chilled cream soda drink",International,Beverage,1,1,1,1,0,400ml,150
+1499,Spicia,Ginger beer 400ml,Chilled ginger-flavored carbonated drink,International,Beverage,1,1,1,1,0,400ml,150
+1500,Spicia,Soda (400ml),Chilled soda water,International,Beverage,1,1,1,1,0,400ml,150
+1501,Spicia,Soda (500ml),Chilled soda water,International,Beverage,1,1,1,1,0,500ml,250
+1502,Spicia,Soda 1500ml,Chilled soda water,International,Beverage,1,1,1,1,0,1500ml,350
+1503,Spicia,Mineral water 1000ml,Chilled bottled mineral water,International,Beverage,1,1,1,1,0,1000ml,100
+1504,Spicia,Fresh fruit salad,"Fresh, light, sweet fruit mix served cold",International,Dessert,1,1,1,1,0,-,300
+1505,Spicia,Fresh fruit salad with ice cream,Fresh fruit salad served with a scoop of ice cream,International,Dessert,1,1,1,1,0,-,350
+1506,Spicia,Creame caramel,"Soft, sweet caramel custard served cold",Western,Dessert,0,1,1,1,0,-,220
+1507,Spicia,Watalappam,Sweet Sri Lankan coconut jaggery pudding,Sri Lankan,Dessert,0,1,1,1,0,-,220
+1508,Spicia,Vanilla ice cream,"Sweet, cold vanilla-flavored ice cream",International,Dessert,1,1,1,1,0,-,300
+1509,Spicia,Chocolate ice cream,"Sweet, cold chocolate-flavored ice cream",International,Dessert,1,1,1,1,0,-,320
+1510,Spicia,Strawberry ice cream,"Sweet, cold strawberry-flavored ice cream",International,Dessert,1,1,1,1,0,-,320
+1511,Spicia,Three scoops ice cream - vanilla/chocolate/strawberry,Trio of ice cream scoops in assorted flavors,International,Dessert,1,1,1,1,0,-,500
+1512,Spicia,Seasonal fruit platter,Assorted fresh fruits served cold,Asian,Dessert,1,1,1,1,0,-,220
+1513,Spicia,Chocolate biscuit pudding,Chilled layered chocolate biscuit dessert,Western,Dessert,0,1,1,1,0,-,220
+1514,Spicia,Chocolate mousse,"Smooth, chilled chocolate dessert",Western,Dessert,0,1,1,1,0,-,250
+1515,Spicia,Brownie,"Dense, rich chocolate brownie (served warm or room temp)",Western,Dessert,0,1,1,0,1,-,250
+1516,Spicia,Mixed grill,"Crab, prawns, fish, chicken, pork and beef altogether served with a fried egg and boiled vegetables; hearty, heavy, hot-served platter",International,Side dish,0,1,1,0,1,-,2280
+1517,Spicia,Up country pepper beef steak,"Grilled fillet beef with a pineapple pepper sauce; heavy, hot, peppery-sweet",Western,Side dish,0,1,1,0,1,-,1300
+1518,Spicia,Fillet beef steak,"Grilled beef with boiled vegetables served with BBQ sauce; heavy, hot, smoky-sweet",Western,Side dish,0,1,1,0,1,-,1300
+1519,Spicia,Mixed seafood platter,"Assorted seafood platter; medium-heavy, hot, savoury seafood flavors",International,Side dish,0,1,1,0,1,-,2050
+1520,Spicia,Fish and chips,"Crumb fried white fish served with chips and salad with a white sauce; medium, hot, crispy, savoury",Western,Side dish,0,1,1,0,1,-,990
+1521,Spicia,Vegetables - Boiled and buttered vegetables,"Boiled vegetables tossed in butter; light-medium, hot, mildly savoury",International,Side dish,1,1,1,0,1,-,780
+1522,Spicia,Chicken - Grilled chicken with boiled vegetables,"Grilled chicken with boiled vegetables; medium, hot, savoury",International,Side dish,0,1,1,0,1,-,960
+1523,Spicia,Beef - Grilled beef with boiled vegetables,"Grilled beef served with boiled vegetables; medium-heavy, hot, savoury",International,Side dish,0,1,1,0,1,-,1000
+1524,Spicia,Pork - Grilled pork with boiled vegetables,"Grilled pork with boiled vegetables; medium-heavy, hot, savoury",International,Side dish,0,1,1,0,1,-,960
+1525,Spicia,Fish - Grilled fish with boiled vegetables,"Grilled fish with boiled vegetables; medium, hot, savoury",International,Side dish,0,1,1,0,1,-,1000
+1526,Spicia,Fried sausages,"Deep fried sausages with onion rings; medium, hot, savoury",International,Side dish,0,1,1,0,1,-,800
+1527,Spicia,Spicy sausages,"Fried sausages in a spicy sauce; medium, hot, spicy",International,Side dish,0,1,1,0,1,-,900
+1528,Spicia,Devilled sausages,"Fried sausages with tomato sauce; medium, hot, tangy-savoury",International,Side dish,0,1,1,0,1,-,900
+1529,Spicia,Silver beef,"Deep fried beef combined with black bean sauce and oyster sauce; medium-heavy, hot, savoury umami",Chinese,Side dish,0,1,1,0,1,-,1000
+1530,Spicia,Chicken with black bean sauce,"Deep fried chicken, combined with black bean sauce; medium, hot, savoury umami",Chinese,Side dish,0,1,1,0,1,-,1000
+1531,Spicia,Black pepper pork,"Roasted pork with black pepper in a soya sauce; medium-heavy, hot, peppery-savoury",Chinese,Side dish,0,1,1,0,1,-,1000
+1532,Spicia,Pepper fish,"Roasted fish in a black pepper soya sauce; medium, hot, peppery-savoury",Chinese,Side dish,0,1,1,0,1,-,1000
+1533,Spicia,Black pepper cuttlefish,"Roasted cuttlefish with black pepper in a soya sauce; medium, hot, peppery-savoury",Chinese,Side dish,0,1,1,0,1,-,1200
+1534,Spicia,Sweet and sour sizzling prawns,"Deep fried prawns topped with a sweet and sour sauce; medium, hot, tangy-sweet",Chinese,Side dish,0,1,1,0,1,-,1220

@@ -1,0 +1,536 @@
+{% extends "staff-base.html" %}
+
+{% block title %}Manage Ratings - Staff Dashboard{% endblock %}
+
+{% block page_title %}Manage Ratings{% endblock %}
+
+{% block extra_head %}
+<style>
+.modal {
+    transition: opacity 0.25s ease;
+}
+.modal-body {
+    transition: all 0.25s ease;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+    <!-- Header -->
+    <div class="mb-8 flex justify-between items-center">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900">Rating Management</h2>
+            <p class="text-gray-600">Monitor and manage user ratings and feedback</p>
+        </div>
+        <button onclick="openAddRatingModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center space-x-2">
+                <i data-lucide="plus" class="w-5 h-5"></i>
+                <span>Add Rating</span>
+            </button>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm border">
+                <div class="flex items-center">
+                    <div class="p-2 bg-blue-100 rounded-lg">
+                        <i data-lucide="star" class="w-6 h-6 text-blue-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-600">Total Ratings</p>
+                        <p id="total-ratings" class="text-2xl font-bold text-gray-900">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border">
+                <div class="flex items-center">
+                    <div class="p-2 bg-green-100 rounded-lg">
+                        <i data-lucide="trending-up" class="w-6 h-6 text-green-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-600">Average Rating</p>
+                        <p id="average-rating" class="text-2xl font-bold text-gray-900">0.0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border">
+                <div class="flex items-center">
+                    <div class="p-2 bg-yellow-100 rounded-lg">
+                        <i data-lucide="heart" class="w-6 h-6 text-yellow-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-600">High Ratings (4+)</p>
+                        <p id="high-ratings" class="text-2xl font-bold text-gray-900">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border">
+                <div class="flex items-center">
+                    <div class="p-2 bg-red-100 rounded-lg">
+                        <i data-lucide="alert-triangle" class="w-6 h-6 text-red-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-600">Low Ratings (2-)</p>
+                        <p id="low-ratings" class="text-2xl font-bold text-gray-900">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-white rounded-lg shadow-sm border p-6 mb-8">
+            <div class="grid md:grid-cols-5 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Search</label>
+                    <input type="text" id="search-input" placeholder="Search by user or food..." 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">User</label>
+                    <select id="user-filter" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">All Users</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Rating</label>
+                    <select id="rating-filter" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">All Ratings</option>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="2">2 Stars</option>
+                        <option value="1">1 Star</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Sort By</label>
+                    <select id="sort-by" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="created_at">Date Added</option>
+                        <option value="rating">Rating Value</option>
+                        <option value="user_id">User</option>
+                        <option value="food_id">Food Item</option>
+                    </select>
+                </div>
+                <div class="flex items-end">
+                    <button onclick="refreshRatings()" class="w-full bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 flex items-center justify-center space-x-2">
+                        <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                        <span>Refresh</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ratings Table -->
+        <div class="bg-white rounded-lg shadow-sm border overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h3 class="text-lg font-medium text-gray-900">All Ratings</h3>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Food Item</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rating</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ratings-table-body" class="bg-white divide-y divide-gray-200">
+                        <!-- Ratings will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading-state" class="text-center py-8 hidden">
+            <i data-lucide="loader-2" class="w-8 h-8 animate-spin text-blue-600 mx-auto"></i>
+            <p class="text-gray-600 mt-2">Loading ratings...</p>
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="text-center py-8 hidden">
+            <i data-lucide="star" class="w-12 h-12 text-gray-400 mx-auto"></i>
+            <p class="text-gray-600 mt-2">No ratings found</p>
+        </div>
+    </div>
+
+    <!-- Add/Edit Rating Modal -->
+    <div id="rating-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full modal hidden">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white modal-body">
+            <div class="mt-3">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 id="modal-title" class="text-lg font-medium text-gray-900">Add New Rating</h3>
+                    <button onclick="closeRatingModal()" class="text-gray-400 hover:text-gray-600">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                
+                <form id="rating-form" class="space-y-4">
+                    <input type="hidden" id="rating-id" name="rating_id">
+                    
+                    <div>
+                        <label for="rating-user" class="block text-sm font-medium text-gray-700 mb-1">User</label>
+                        <select id="rating-user" name="user_id" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">Select User</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="rating-food" class="block text-sm font-medium text-gray-700 mb-1">Food ID</label>
+                        <input type="number" id="rating-food" name="food_id" required min="1"
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label for="rating-value" class="block text-sm font-medium text-gray-700 mb-1">Rating</label>
+                        <select id="rating-value" name="rating" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">Select Rating</option>
+                            <option value="1">1 Star - Poor</option>
+                            <option value="2">2 Stars - Fair</option>
+                            <option value="3">3 Stars - Good</option>
+                            <option value="4">4 Stars - Very Good</option>
+                            <option value="5">5 Stars - Excellent</option>
+                        </select>
+                    </div>
+                    
+                    <div class="flex justify-end space-x-3 pt-4">
+                        <button type="button" onclick="closeRatingModal()" 
+                                class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300">
+                            Cancel
+                        </button>
+                        <button type="submit" 
+                                class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                            <span id="submit-text">Add Rating</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full modal hidden">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white modal-body">
+            <div class="mt-3 text-center">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
+                    <i data-lucide="alert-triangle" class="w-6 h-6 text-red-600"></i>
+                </div>
+                <h3 class="text-lg font-medium text-gray-900 mt-4">Delete Rating</h3>
+                <div class="mt-2 px-7 py-3">
+                    <p class="text-sm text-gray-500">
+                        Are you sure you want to delete this rating? This action cannot be undone.
+                    </p>
+                </div>
+                <div class="flex justify-center space-x-3 pt-4">
+                    <button onclick="closeDeleteModal()" 
+                            class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300">
+                        Cancel
+                    </button>
+                    <button onclick="confirmDeleteRating()" 
+                            class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">
+                        Delete Rating
+                    </button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+let currentRatings = [];
+let allUsers = [];
+let ratingToDelete = null;
+
+// Initialize functions
+document.addEventListener('DOMContentLoaded', function() {
+    loadUsers();
+    loadRatings();
+    setupEventListeners();
+});
+
+        function setupEventListeners() {
+            // Search and filter
+            document.getElementById('search-input').addEventListener('input', filterRatings);
+            document.getElementById('user-filter').addEventListener('change', filterRatings);
+            document.getElementById('rating-filter').addEventListener('change', filterRatings);
+            document.getElementById('sort-by').addEventListener('change', filterRatings);
+
+            // Form submission
+            document.getElementById('rating-form').addEventListener('submit', handleRatingSubmit);
+        }
+
+        function loadUsers() {
+            fetch('/api/users')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        allUsers = data.users.filter(user => user.role === 'customer');
+                        populateUserFilters();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading users:', error);
+                });
+        }
+
+        function populateUserFilters() {
+            const userFilter = document.getElementById('user-filter');
+            const ratingUser = document.getElementById('rating-user');
+            
+            // Clear existing options
+            userFilter.innerHTML = '<option value="">All Users</option>';
+            ratingUser.innerHTML = '<option value="">Select User</option>';
+            
+            allUsers.forEach(user => {
+                userFilter.innerHTML += `<option value="${user.user_id}">${user.name}</option>`;
+                ratingUser.innerHTML += `<option value="${user.user_id}">${user.name} (${user.email})</option>`;
+            });
+        }
+
+        function loadRatings() {
+            showLoading();
+            
+            fetch('/api/ratings')
+                .then(response => response.json())
+                .then(data => {
+                    hideLoading();
+                    if (data.success) {
+                        currentRatings = data.ratings;
+                        displayRatings(currentRatings);
+                        updateStatistics(currentRatings);
+                    } else {
+                        showError('Failed to load ratings: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    hideLoading();
+                    showError('Error loading ratings: ' + error.message);
+                });
+        }
+
+        function displayRatings(ratings) {
+            const tbody = document.getElementById('ratings-table-body');
+            
+            if (ratings.length === 0) {
+                document.getElementById('empty-state').classList.remove('hidden');
+                tbody.innerHTML = '';
+                return;
+            }
+
+            document.getElementById('empty-state').classList.add('hidden');
+            
+            tbody.innerHTML = ratings.map(rating => {
+                const user = allUsers.find(u => u.user_id === rating.user_id);
+                const userName = user ? user.name : 'Unknown User';
+                
+                return `
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 h-8 w-8">
+                                    <div class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i data-lucide="user" class="w-4 h-4 text-blue-600"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-3">
+                                    <div class="text-sm font-medium text-gray-900">${userName}</div>
+                                    <div class="text-sm text-gray-500">ID: ${rating.user_id.substring(0, 8)}...</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900">Food ID: ${rating.food_id}</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                                ${generateStars(rating.rating)}
+                                <span class="ml-2 text-sm text-gray-600">(${rating.rating})</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            ${new Date(rating.created_at).toLocaleDateString()}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                            <button onclick="editRating('${rating.user_id}', ${rating.food_id})" 
+                                    class="text-blue-600 hover:text-blue-900 mr-3">
+                                <i data-lucide="edit" class="w-4 h-4"></i>
+                            </button>
+                            <button onclick="deleteRating('${rating.user_id}', ${rating.food_id})" 
+                                    class="text-red-600 hover:text-red-900">
+                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+            
+            lucide.createIcons();
+        }
+
+        function generateStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    stars += '<i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>';
+                } else {
+                    stars += '<i data-lucide="star" class="w-4 h-4 text-gray-300"></i>';
+                }
+            }
+            return stars;
+        }
+
+        function updateStatistics(ratings) {
+            const total = ratings.length;
+            const average = total > 0 ? (ratings.reduce((sum, r) => sum + r.rating, 0) / total).toFixed(1) : 0;
+            const highRatings = ratings.filter(r => r.rating >= 4).length;
+            const lowRatings = ratings.filter(r => r.rating <= 2).length;
+
+            document.getElementById('total-ratings').textContent = total;
+            document.getElementById('average-rating').textContent = average;
+            document.getElementById('high-ratings').textContent = highRatings;
+            document.getElementById('low-ratings').textContent = lowRatings;
+        }
+
+        function filterRatings() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const userFilter = document.getElementById('user-filter').value;
+            const ratingFilter = document.getElementById('rating-filter').value;
+            const sortBy = document.getElementById('sort-by').value;
+
+            let filtered = currentRatings.filter(rating => {
+                const user = allUsers.find(u => u.user_id === rating.user_id);
+                const userName = user ? user.name.toLowerCase() : '';
+                
+                const matchesSearch = userName.includes(searchTerm) || 
+                                    rating.food_id.toString().includes(searchTerm);
+                const matchesUser = !userFilter || rating.user_id === userFilter;
+                const matchesRating = !ratingFilter || rating.rating.toString() === ratingFilter;
+                
+                return matchesSearch && matchesUser && matchesRating;
+            });
+
+            // Sort
+            filtered.sort((a, b) => {
+                if (sortBy === 'rating') return b.rating - a.rating;
+                if (sortBy === 'user_id') return a.user_id.localeCompare(b.user_id);
+                if (sortBy === 'food_id') return a.food_id - b.food_id;
+                return new Date(b.created_at) - new Date(a.created_at);
+            });
+
+            displayRatings(filtered);
+            updateStatistics(filtered);
+        }
+
+        function openAddRatingModal() {
+            document.getElementById('modal-title').textContent = 'Add New Rating';
+            document.getElementById('submit-text').textContent = 'Add Rating';
+            document.getElementById('rating-form').reset();
+            document.getElementById('rating-id').value = '';
+            document.getElementById('rating-modal').classList.remove('hidden');
+        }
+
+        function editRating(userId, foodId) {
+            const rating = currentRatings.find(r => r.user_id === userId && r.food_id === foodId);
+            if (!rating) return;
+
+            document.getElementById('modal-title').textContent = 'Edit Rating';
+            document.getElementById('submit-text').textContent = 'Update Rating';
+            document.getElementById('rating-id').value = `${userId}_${foodId}`;
+            document.getElementById('rating-user').value = rating.user_id;
+            document.getElementById('rating-food').value = rating.food_id;
+            document.getElementById('rating-value').value = rating.rating;
+            document.getElementById('rating-modal').classList.remove('hidden');
+        }
+
+        function closeRatingModal() {
+            document.getElementById('rating-modal').classList.add('hidden');
+        }
+
+        function handleRatingSubmit(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const ratingId = formData.get('rating_id');
+            const ratingData = {
+                user_id: formData.get('user_id'),
+                food_id: parseInt(formData.get('food_id')),
+                rating: parseInt(formData.get('rating'))
+            };
+
+            const url = ratingId ? `/api/ratings/${ratingData.user_id}/${ratingData.food_id}` : '/api/ratings';
+            const method = ratingId ? 'PUT' : 'POST';
+
+            fetch(url, {
+                method: method,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(ratingData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    closeRatingModal();
+                    loadRatings();
+                    showSuccess(ratingId ? 'Rating updated successfully' : 'Rating added successfully');
+                } else {
+                    showError(data.message);
+                }
+            })
+            .catch(error => {
+                showError('Error saving rating: ' + error.message);
+            });
+        }
+
+        function deleteRating(userId, foodId) {
+            ratingToDelete = { userId, foodId };
+            document.getElementById('delete-modal').classList.remove('hidden');
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('delete-modal').classList.add('hidden');
+            ratingToDelete = null;
+        }
+
+        function confirmDeleteRating() {
+            if (!ratingToDelete) return;
+
+            fetch(`/api/ratings/${ratingToDelete.userId}/${ratingToDelete.foodId}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                closeDeleteModal();
+                if (data.success) {
+                    loadRatings();
+                    showSuccess('Rating deleted successfully');
+                } else {
+                    showError(data.message);
+                }
+            })
+            .catch(error => {
+                closeDeleteModal();
+                showError('Error deleting rating: ' + error.message);
+            });
+        }
+
+        function refreshRatings() {
+            loadRatings();
+        }
+
+        function showLoading() {
+            document.getElementById('loading-state').classList.remove('hidden');
+        }
+
+        function hideLoading() {
+            document.getElementById('loading-state').classList.add('hidden');
+        }
+
+        function showSuccess(message) {
+            alert(message);
+        }
+
+        function showError(message) {
+            alert('Error: ' + message);
+        }
+{% endblock %}

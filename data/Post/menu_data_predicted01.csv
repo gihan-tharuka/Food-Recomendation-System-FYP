@@ -1,0 +1,28 @@
+item_id,item_name,price,cuisine,category,is_morning,is_afternoon,is_evening,is_sunny,is_rainy
+1,Pizza,12,Italian,food,0,1,1,0,1
+2,Pasta,10,Italian,food,0,1,1,0,1
+3,Lasagna,15,Italian,food,0,1,1,0,1
+4,Cola,3,Sri Lankan,drink,0,1,0,0,1
+5,Espresso,4,Italian,drink,0,1,1,0,1
+6,Red Wine,8,Italian,food,0,1,1,0,1
+7,Cake,5,Sri Lankan,dessert,0,1,1,0,1
+8,Tiramisu,7,Italian,food,0,1,1,0,1
+9,Gelato,6,Italian,dessert,0,1,1,0,1
+10,Tacos,9,Italian,food,0,1,1,0,1
+11,Burrito,11,Italian,food,0,1,1,0,1
+12,Quesadilla,10,Italian,food,0,1,1,0,1
+13,Lemonade,4,American,drink,0,1,1,1,0
+14,Horchata,5,American,dessert,0,1,1,0,1
+15,Margarita,9,Italian,food,0,1,1,0,1
+16,Churros,6,Italian,food,0,1,1,0,1
+17,Flan,5,American,dessert,0,1,1,0,1
+18,Tres Leches,7,Italian,food,0,1,1,0,1
+19,Sushi,14,Japanese,food,0,1,1,0,1
+20,Ramen,13,Japanese,food,0,1,1,0,1
+21,Tempura,12,Japanese,food,0,1,1,0,1
+22,Green Tea,2,Japanese,drink,1,1,0,1,0
+23,Sake,10,Japanese,food,0,1,1,0,1
+24,Matcha Latte,6,Japanese,food,0,1,1,0,1
+25,Mochi,6,Japanese,dessert,0,1,1,0,1
+26,Dorayaki,4,Japanese,dessert,0,1,1,0,1
+27,Anmitsu,8,Japanese,food,0,1,1,0,1

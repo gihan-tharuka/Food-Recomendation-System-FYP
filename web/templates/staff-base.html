@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Staff Dashboard - Food Recommendation System{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'food-orange': '#FF6B35',
+                        'food-green': '#4ECDC4',
+                        'food-yellow': '#FFE66D',
+                        'food-red': '#FF4757',
+                        'food-blue': '#3742FA',
+                        'restaurant-gold': '#D4AF37',
+                        'restaurant-dark': '#2C1810'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Base Styles -->
+    <style>
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+        .sidebar-item {
+            transition: all 0.2s ease;
+        }
+        .sidebar-item:hover {
+            background-color: #f3f4f6;
+            padding-left: 1rem;
+        }
+        .sidebar-item.active {
+            background-color: #fef2f2;
+            border-right: 3px solid #dc2626;
+            color: #dc2626;
+        }
+        .sidebar {
+            transition: transform 0.3s ease;
+            height: calc(100vh - 64px); /* Subtract top nav height */
+            overflow-y: auto;
+        }
+        .main-content {
+            height: calc(100vh - 64px); /* Subtract top nav height */
+            overflow-y: auto;
+        }
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+        }
+        .content-wrapper {
+            margin-top: 64px; /* Add top nav height */
+            height: calc(100vh - 64px);
+            display: flex;
+        }
+        .sidebar-overlay {
+            position: fixed;
+            top: 64px; /* Start below the fixed nav */
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 20;
+        }
+        @media (max-width: 768px) {
+            .sidebar.closed {
+                transform: translateX(-100%);
+            }
+            .sidebar {
+                top: 64px; /* Position below fixed nav on mobile */
+                height: calc(100vh - 64px);
+            }
+        }
+    </style>
+    
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-gray-50">
+    <!-- Fixed Top Navigation Bar -->
+    <nav class="top-nav bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i data-lucide="shield-check" class="w-8 h-8 text-red-600"></i>
+                    <span class="ml-2 text-xl font-bold text-gray-900">{% block page_title %}Staff Dashboard{% endblock %}</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Mobile menu toggle -->
+                    <button id="sidebar-toggle" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </button>
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="user-check" class="w-5 h-5 text-gray-600"></i>
+                        <span id="user-name" class="text-gray-700 font-medium"></span>
+                        <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">Staff</span>
+                    </div>
+                    <button onclick="logout()" class="flex items-center space-x-2 px-4 py-2 text-red-600 hover:bg-red-50 rounded-md transition-colors">
+                        <i data-lucide="log-out" class="w-4 h-4"></i>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Wrapper with Fixed Positioning -->
+    <div class="content-wrapper">
+        <!-- Include Sidebar -->
+        {% include 'includes/staff-sidebar.html' %}
+
+        <!-- Main Content Area with Scroll -->
+        <main class="main-content flex-1 md:ml-0">
+            <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+    </div>
+
+    <!-- Base Scripts -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Check authentication and load user info
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuth();
+            initializeSidebar();
+        });
+
+        function checkAuth() {
+            const userData = sessionStorage.getItem('currentUser');
+            if (!userData) {
+                window.location.href = '/login';
+                return;
+            }
+
+            const user = JSON.parse(userData);
+            
+            // Check if user is staff
+            if (user.role !== 'staff') {
+                window.location.href = '/dashboard';
+                return;
+            }
+
+            document.getElementById('user-name').textContent = user.name;
+        }
+
+        function initializeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebarClose = document.getElementById('sidebar-close');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+            // Toggle sidebar on mobile
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', function() {
+                    sidebar.classList.remove('closed');
+                    sidebarOverlay.classList.remove('hidden');
+                });
+            }
+
+            // Close sidebar
+            function closeSidebar() {
+                sidebar.classList.add('closed');
+                sidebarOverlay.classList.add('hidden');
+            }
+
+            if (sidebarClose) {
+                sidebarClose.addEventListener('click', closeSidebar);
+            }
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', closeSidebar);
+            }
+
+            // Set active sidebar item based on current page
+            setActiveSidebarItem();
+        }
+
+        function setActiveSidebarItem() {
+            const currentPath = window.location.pathname;
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+            
+            sidebarItems.forEach(item => {
+                item.classList.remove('active');
+                
+                const dataPage = item.getAttribute('data-page');
+                if (dataPage) {
+                    if ((currentPath === '/staff-dashboard' && dataPage === 'dashboard') ||
+                        (currentPath === '/train' && dataPage === 'train') ||
+                        (currentPath === '/predict' && dataPage === 'predict') ||
+                        (currentPath === '/manage-menu' && dataPage === 'manage-menu') ||
+                        (currentPath === '/manage-users' && dataPage === 'manage-users') ||
+                        (currentPath === '/manage-ratings' && dataPage === 'manage-ratings') ||
+                        (currentPath === '/manage-orders' && dataPage === 'manage-orders') ||
+                        (currentPath === '/info' && dataPage === 'info')) {
+                        item.classList.add('active');
+                    }
+                }
+            });
+        }
+
+        function logout() {
+            sessionStorage.removeItem('currentUser');
+            window.location.href = '/login';
+        }
+
+        // Show message function
+        function showMessage(message, type = 'info', duration = 3000) {
+            const container = document.getElementById('message-container');
+            if (!container) return;
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto overflow-hidden transition-all transform translate-x-full`;
+            
+            const bgColor = type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-blue-500';
+            const icon = type === 'success' ? 'check-circle' : type === 'error' ? 'x-circle' : 'info';
+            
+            messageDiv.innerHTML = `
+                <div class="p-4">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-8 h-8 ${bgColor} rounded-full flex items-center justify-center">
+                                <i data-lucide="${icon}" class="w-5 h-5 text-white"></i>
+                            </div>
+                        </div>
+                        <div class="ml-3 w-0 flex-1 pt-0.5">
+                            <p class="text-sm font-medium text-gray-900">${message}</p>
+                        </div>
+                        <div class="ml-4 flex-shrink-0 flex">
+                            <button class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500" onclick="this.parentElement.parentElement.parentElement.parentElement.remove()">
+                                <i data-lucide="x" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(messageDiv);
+            lucide.createIcons();
+            
+            // Animate in
+            setTimeout(() => {
+                messageDiv.classList.remove('translate-x-full');
+            }, 100);
+            
+            // Auto remove
+            setTimeout(() => {
+                messageDiv.classList.add('translate-x-full');
+                setTimeout(() => {
+                    if (messageDiv.parentElement) {
+                        messageDiv.remove();
+                    }
+                }, 300);
+            }, duration);
+        }
+
+        // Show loading overlay
+        function showLoading(message = 'Processing...') {
+            const overlay = document.getElementById('loading-overlay');
+            const messageElement = document.getElementById('loading-message');
+            if (overlay) {
+                overlay.classList.remove('hidden');
+                if (messageElement) {
+                    messageElement.textContent = message;
+                }
+            }
+        }
+
+        // Hide loading overlay
+        function hideLoading() {
+            const overlay = document.getElementById('loading-overlay');
+            if (overlay) {
+                overlay.classList.add('hidden');
+            }
+        }
+
+        // Make functions globally available
+        window.showMessage = showMessage;
+        window.showLoading = showLoading;
+        window.hideLoading = hideLoading;
+    </script>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-6 flex items-center space-x-4">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-food-orange"></div>
+            <div id="loading-message" class="text-gray-700">Processing...</div>
+        </div>
+    </div>
+
+    <!-- Message Container -->
+    <div id="message-container" class="fixed top-4 right-4 z-40"></div>
+    </script>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

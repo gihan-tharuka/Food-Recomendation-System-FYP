@@ -1,0 +1,275 @@
+{% extends "base.html" %}
+
+{% block title %}🍽️ Savory Delights - Fine Dining & AI-Powered Recommendations{% endblock %}
+
+{% block content %}
+        <!-- Hero Section -->
+        <div class="relative bg-gradient-to-r from-food-orange via-orange-600 to-red-500 rounded-3xl overflow-hidden mb-12">
+            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div class="relative px-8 py-16 text-center text-white">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Welcome to Savory Delights</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Experience culinary excellence with our AI-powered food recommendation system. Discover your perfect meal based on your unique taste preferences.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="/menu" class="bg-white text-food-orange px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                        <span>View Our Menu</span>
+                    </a>
+                    <a href="/recommend" class="bg-food-orange border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 transition-colors flex items-center justify-center space-x-2">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                        <span>Get Recommendations</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
+                <div class="bg-food-orange bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="brain" class="w-10 h-10 text-food-orange"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">AI-Powered Recommendations</h3>
+                <p class="text-gray-600">Our advanced AI analyzes your preferences, dietary restrictions, and past orders to suggest the perfect dishes for you.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
+                <div class="bg-food-green bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="chef-hat" class="w-10 h-10 text-food-green"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Expert Culinary Team</h3>
+                <p class="text-gray-600">Our skilled chefs craft each dish with passion and precision, using only the finest ingredients and traditional techniques.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
+                <div class="bg-food-blue bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="star" class="w-10 h-10 text-food-blue"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Premium Experience</h3>
+                <p class="text-gray-600">From the moment you enter to your last bite, we provide an exceptional dining experience that creates lasting memories.</p>
+            </div>
+        </div>
+
+        <!-- Quick Actions for Authenticated Users -->
+        <div id="user-actions" class="hidden mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Your Personalized Experience</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Get Recommendations -->
+                <a href="/recommend" class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-food-orange group transform hover:-translate-y-1">
+                    <div class="p-6 text-center">
+                        <div class="bg-food-orange bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-opacity-30 transition-all">
+                            <i data-lucide="heart" class="w-8 h-8 text-food-orange"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Get Recommendations</h3>
+                        <p class="text-gray-600 text-sm">Discover your perfect meal</p>
+                    </div>
+                </a>
+
+                <!-- My Account -->
+                <a href="/account" class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-food-green group transform hover:-translate-y-1">
+                    <div class="p-6 text-center">
+                        <div class="bg-food-green bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-opacity-30 transition-all">
+                            <i data-lucide="user" class="w-8 h-8 text-food-green"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">My Account</h3>
+                        <p class="text-gray-600 text-sm">Manage your profile & orders</p>
+                    </div>
+                </a>
+
+                <!-- My Ratings -->
+                <a href="/my-ratings" class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-food-blue group transform hover:-translate-y-1">
+                    <div class="p-6 text-center">
+                        <div class="bg-food-blue bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-opacity-30 transition-all">
+                            <i data-lucide="star" class="w-8 h-8 text-food-blue"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">My Ratings</h3>
+                        <p class="text-gray-600 text-sm">View your reviews & ratings</p>
+                    </div>
+                </a>
+
+                <!-- Browse Menu -->
+                <a href="/menu" class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-food-yellow group transform hover:-translate-y-1">
+                    <div class="p-6 text-center">
+                        <div class="bg-food-yellow bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-opacity-30 transition-all">
+                            <i data-lucide="book-open" class="w-8 h-8 text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Browse Menu</h3>
+                        <p class="text-gray-600 text-sm">Explore our full menu</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Staff Tools (Only for Staff) -->
+        <div id="staff-tools" class="hidden mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Staff Tools</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Train Models -->
+                <a href="/train" class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-purple-500 group transform hover:-translate-y-1">
+                    <div class="p-6 text-center">
+                        <div class="bg-purple-500 bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-opacity-30 transition-all">
+                            <i data-lucide="zap" class="w-8 h-8 text-purple-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Train Models</h3>
+                        <p class="text-gray-600 text-sm">Train AI recommendation models</p>
+                    </div>
+                </a>
+
+                <!-- Generate Predictions -->
+                <a href="/predict" class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-indigo-500 group transform hover:-translate-y-1">
+                    <div class="p-6 text-center">
+                        <div class="bg-indigo-500 bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-opacity-30 transition-all">
+                            <i data-lucide="crystal-ball" class="w-8 h-8 text-indigo-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Generate Predictions</h3>
+                        <p class="text-gray-600 text-sm">Predict food categories & tags</p>
+                    </div>
+                </a>
+
+                <!-- Manage Users -->
+                <a href="/manage-users" class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-pink-500 group transform hover:-translate-y-1">
+                    <div class="p-6 text-center">
+                        <div class="bg-pink-500 bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-opacity-30 transition-all">
+                            <i data-lucide="users" class="w-8 h-8 text-pink-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Manage Users</h3>
+                        <p class="text-gray-600 text-sm">User administration</p>
+                    </div>
+                </a>
+
+                <!-- System Info -->
+                <a href="/info" class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-teal-500 group transform hover:-translate-y-1">
+                    <div class="p-6 text-center">
+                        <div class="bg-teal-500 bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-opacity-30 transition-all">
+                            <i data-lucide="info" class="w-8 h-8 text-teal-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">System Info</h3>
+                        <p class="text-gray-600 text-sm">View model status & stats</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Call to Action Section -->
+        <div class="text-center py-16">
+            <div class="bg-white rounded-3xl shadow-xl p-12 max-w-4xl mx-auto">
+                <i data-lucide="utensils" class="w-20 h-20 text-food-orange mx-auto mb-6"></i>
+                
+                <!-- Guest Content -->
+                <div id="guest-content">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Ready to Begin Your Culinary Journey?</h2>
+                    <p class="text-xl text-gray-600 mb-8">Join Savory Delights today and discover a world of personalized dining experiences!</p>
+                    
+                    <div class="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-2xl p-8 mb-8">
+                        <h3 class="text-2xl font-bold text-orange-800 mb-4">🌟 Why Choose Savory Delights?</h3>
+                        <div class="grid md:grid-cols-2 gap-6 text-left">
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-green-500 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-orange-800">Personalized Recommendations</h4>
+                                    <p class="text-orange-700 text-sm">AI-powered suggestions based on your taste</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-green-500 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-orange-800">Premium Quality</h4>
+                                    <p class="text-orange-700 text-sm">Fresh ingredients, expert preparation</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-green-500 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-orange-800">Order Tracking</h4>
+                                    <p class="text-orange-700 text-sm">Real-time updates on your orders</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-green-500 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-orange-800">Rating System</h4>
+                                    <p class="text-orange-700 text-sm">Help us improve with your feedback</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="/register" class="bg-food-orange text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-colors flex items-center justify-center space-x-2">
+                            <i data-lucide="user-plus" class="w-6 h-6"></i>
+                            <span>Join Now</span>
+                        </a>
+                        <a href="/login" class="bg-food-green text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-600 transition-colors flex items-center justify-center space-x-2">
+                            <i data-lucide="log-in" class="w-6 h-6"></i>
+                            <span>Sign In</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Authenticated User Content -->
+                <div id="user-content" class="hidden">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Welcome back, <span id="user-welcome-name" class="text-food-orange"></span>!</h2>
+                    <p class="text-xl text-gray-600 mb-8">Ready to discover your next favorite dish?</p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="/recommend" class="bg-food-orange text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-colors flex items-center justify-center space-x-2">
+                            <i data-lucide="sparkles" class="w-6 h-6"></i>
+                            <span>Get Recommendations</span>
+                        </a>
+                        <a href="/menu" class="bg-food-green text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-600 transition-colors flex items-center justify-center space-x-2">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                            <span>Browse Menu</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Check authentication status on index page
+document.addEventListener('DOMContentLoaded', function() {
+    checkAuthStatusOnIndex();
+});
+
+function checkAuthStatusOnIndex() {
+    const currentUser = sessionStorage.getItem('currentUser');
+    const guestContent = document.getElementById('guest-content');
+    const userContent = document.getElementById('user-content');
+    const userActions = document.getElementById('user-actions');
+    const staffTools = document.getElementById('staff-tools');
+    const userWelcomeName = document.getElementById('user-welcome-name');
+    
+    if (currentUser) {
+        const user = JSON.parse(currentUser);
+        
+        // Show authenticated user content
+        guestContent.classList.add('hidden');
+        userContent.classList.remove('hidden');
+        userActions.classList.remove('hidden');
+        
+        // Update user name
+        if (userWelcomeName) {
+            userWelcomeName.textContent = user.name || user.username || 'User';
+        }
+        
+        // Show staff tools if user is staff
+        if (user.role === 'staff' && staffTools) {
+            staffTools.classList.remove('hidden');
+        }
+    } else {
+        // Show guest content
+        guestContent.classList.remove('hidden');
+        userContent.classList.add('hidden');
+        userActions.classList.add('hidden');
+        if (staffTools) {
+            staffTools.classList.add('hidden');
+        }
+    }
+    
+    // Initialize Lucide icons
+    lucide.createIcons();
+}
+</script>
+{% endblock %}

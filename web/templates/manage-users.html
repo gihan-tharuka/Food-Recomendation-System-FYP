@@ -1,0 +1,644 @@
+{% extends "staff-base.html" %}
+
+{% block title %}Manage Users - Staff Dashboard{% endblock %}
+
+{% block page_title %}Manage Users{% endblock %}
+
+{% block extra_head %}
+<style>
+.modal {
+    transition: opacity 0.25s ease;
+}
+.modal-body {
+    transition: all 0.25s ease;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+    <!-- Header -->
+    <div class="mb-8 flex justify-between items-center">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900">User Management</h2>
+            <p class="text-gray-600">Manage customer accounts and staff members</p>
+        </div>
+        <button onclick="openAddUserModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center space-x-2">
+                <i data-lucide="user-plus" class="w-5 h-5"></i>
+                <span>Add New User</span>
+            </button>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="grid md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-lg shadow-sm border p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Total Users</p>
+                        <p id="total-users" class="text-2xl font-bold text-gray-900">---</p>
+                    </div>
+                    <i data-lucide="users" class="w-8 h-8 text-blue-500"></i>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm border p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Customers</p>
+                        <p id="total-customers" class="text-2xl font-bold text-gray-900">---</p>
+                    </div>
+                    <i data-lucide="user" class="w-8 h-8 text-green-500"></i>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm border p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Staff Members</p>
+                        <p id="total-staff" class="text-2xl font-bold text-gray-900">---</p>
+                    </div>
+                    <i data-lucide="shield" class="w-8 h-8 text-purple-500"></i>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm border p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">New This Month</p>
+                        <p id="new-users-month" class="text-2xl font-bold text-gray-900">---</p>
+                    </div>
+                    <i data-lucide="user-plus" class="w-8 h-8 text-orange-500"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-white rounded-lg shadow-sm border p-6 mb-8">
+            <div class="grid md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Search Users</label>
+                    <input type="text" id="search-input" placeholder="Search by name or email..." 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Filter by Role</label>
+                    <select id="role-filter" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="">All Roles</option>
+                        <option value="customer">Customers</option>
+                        <option value="staff">Staff</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Sort By</label>
+                    <select id="sort-by" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="created_at">Registration Date</option>
+                        <option value="name">Name</option>
+                        <option value="email">Email</option>
+                    </select>
+                </div>
+                <div class="flex items-end">
+                    <button onclick="refreshUsers()" class="w-full bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 flex items-center justify-center space-x-2">
+                        <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                        <span>Refresh</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Users Table -->
+        <div class="bg-white rounded-lg shadow-sm border overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h3 class="text-lg font-medium text-gray-900">All Users</h3>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Registration Date</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table-body" class="bg-white divide-y divide-gray-200">
+                        <!-- Users will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div id="users-pagination-container" class="hidden px-6 py-4 border-t border-gray-200 bg-gray-50">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-2 text-sm text-gray-700">
+                        <span>Showing</span>
+                        <span id="users-items-start">1</span>
+                        <span>to</span>
+                        <span id="users-items-end">10</span>
+                        <span>of</span>
+                        <span id="users-total-items-count">0</span>
+                        <span>users</span>
+                    </div>
+                    
+                    <div class="flex items-center space-x-2">
+                        <div class="flex items-center space-x-1 text-sm text-gray-700">
+                            <span>Users per page:</span>
+                            <select id="users-items-per-page" class="px-2 py-1 border border-gray-300 rounded text-sm">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex items-center space-x-1">
+                            <button id="users-prev-page" onclick="changeUsersPage(usersCurrentPage - 1)" 
+                                    class="px-3 py-1 border border-gray-300 rounded text-sm bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    disabled>
+                                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                            </button>
+                            
+                            <div id="users-page-numbers" class="flex items-center space-x-1">
+                                <!-- Page numbers will be populated here -->
+                            </div>
+                            
+                            <button id="users-next-page" onclick="changeUsersPage(usersCurrentPage + 1)" 
+                                    class="px-3 py-1 border border-gray-300 rounded text-sm bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    disabled>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading-state" class="text-center py-8 hidden">
+            <i data-lucide="loader-2" class="w-8 h-8 animate-spin text-blue-600 mx-auto"></i>
+            <p class="text-gray-600 mt-2">Loading users...</p>
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="text-center py-8 hidden">
+            <i data-lucide="users" class="w-12 h-12 text-gray-400 mx-auto"></i>
+            <p class="text-gray-600 mt-2">No users found</p>
+        </div>
+    </div>
+
+    <!-- Add/Edit User Modal -->
+    <div id="user-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full modal hidden">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white modal-body">
+            <div class="mt-3">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 id="modal-title" class="text-lg font-medium text-gray-900">Add New User</h3>
+                    <button onclick="closeUserModal()" class="text-gray-400 hover:text-gray-600">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                
+                <form id="user-form" class="space-y-4">
+                    <input type="hidden" id="user-id" name="user_id">
+                    
+                    <div>
+                        <label for="user-name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="user-name" name="name" required
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label for="user-email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="user-email" name="email" required
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    
+                    <div id="password-field">
+                        <label for="user-password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <input type="password" id="user-password" name="password" minlength="6"
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <p class="text-xs text-gray-500 mt-1">Leave blank to keep current password (for editing)</p>
+                    </div>
+                    
+                    <div>
+                        <label for="user-role" class="block text-sm font-medium text-gray-700 mb-1">Role</label>
+                        <select id="user-role" name="role" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="customer">Customer</option>
+                            <option value="staff">Staff</option>
+                        </select>
+                    </div>
+                    
+                    <div class="flex justify-end space-x-3 pt-4">
+                        <button type="button" onclick="closeUserModal()" 
+                                class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300">
+                            Cancel
+                        </button>
+                        <button type="submit" 
+                                class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                            <span id="submit-text">Create User</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full modal hidden">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white modal-body">
+            <div class="mt-3 text-center">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
+                    <i data-lucide="alert-triangle" class="w-6 h-6 text-red-600"></i>
+                </div>
+                <h3 class="text-lg font-medium text-gray-900 mt-4">Delete User</h3>
+                <div class="mt-2 px-7 py-3">
+                    <p class="text-sm text-gray-500">
+                        Are you sure you want to delete <span id="delete-user-name" class="font-medium"></span>? 
+                        This action cannot be undone and will also delete all associated ratings.
+                    </p>
+                </div>
+                <div class="flex justify-center space-x-3 pt-4">
+                    <button onclick="closeDeleteModal()" 
+                            class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300">
+                        Cancel
+                    </button>
+                    <button onclick="confirmDeleteUser()" 
+                            class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">
+                        Delete User
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let currentUsers = [];
+let userToDelete = null;
+
+// Pagination variables for users
+let usersCurrentPage = 1;
+let usersItemsPerPage = 10;
+let usersFilteredItems = [];
+
+        function setupEventListeners() {
+            // Search and filter
+            document.getElementById('search-input').addEventListener('input', filterUsers);
+            document.getElementById('role-filter').addEventListener('change', filterUsers);
+            document.getElementById('sort-by').addEventListener('change', filterUsers);
+
+            // Form submission
+            document.getElementById('user-form').addEventListener('submit', handleUserSubmit);
+            
+            // Pagination for users
+            document.getElementById('users-items-per-page').addEventListener('change', function() {
+                usersItemsPerPage = parseInt(this.value);
+                usersCurrentPage = 1;
+                displayUsers(usersFilteredItems);
+            });
+        }
+
+        function loadUsers() {
+            showLoading();
+            
+            fetch('/api/users')
+                .then(response => response.json())
+                .then(data => {
+                    hideLoading();
+                    if (data.success) {
+                        currentUsers = data.users;
+                        usersFilteredItems = [...currentUsers]; // Initialize filtered items
+                        displayUsers(usersFilteredItems);
+                        updateStatistics(currentUsers);
+                    } else {
+                        showError('Failed to load users: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    hideLoading();
+                    showError('Error loading users: ' + error.message);
+                });
+        }
+
+        function displayUsers(users) {
+            const tbody = document.getElementById('users-table-body');
+            
+            if (users.length === 0) {
+                document.getElementById('empty-state').classList.remove('hidden');
+                document.getElementById('users-pagination-container').classList.add('hidden');
+                tbody.innerHTML = '';
+                return;
+            }
+
+            document.getElementById('empty-state').classList.add('hidden');
+            document.getElementById('users-pagination-container').classList.remove('hidden');
+            
+            // Calculate pagination
+            const totalItems = users.length;
+            const totalPages = Math.ceil(totalItems / usersItemsPerPage);
+            const startIndex = (usersCurrentPage - 1) * usersItemsPerPage;
+            const endIndex = Math.min(startIndex + usersItemsPerPage, totalItems);
+            const currentItems = users.slice(startIndex, endIndex);
+            
+            // Update pagination info
+            document.getElementById('users-items-start').textContent = totalItems > 0 ? startIndex + 1 : 0;
+            document.getElementById('users-items-end').textContent = endIndex;
+            document.getElementById('users-total-items-count').textContent = totalItems;
+            
+            tbody.innerHTML = currentItems.map(user => `
+                <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-10 w-10">
+                                <div class="h-10 w-10 rounded-full bg-${user.role === 'staff' ? 'red' : 'blue'}-100 flex items-center justify-center">
+                                    <i data-lucide="${user.role === 'staff' ? 'shield-check' : 'user'}" class="w-5 h-5 text-${user.role === 'staff' ? 'red' : 'blue'}-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <div class="text-sm font-medium text-gray-900">${user.name}</div>
+                                <div class="text-sm text-gray-500">${user.email}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
+                                     ${user.role === 'staff' ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800'}">
+                            ${user.role.charAt(0).toUpperCase() + user.role.slice(1)}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        ${new Date(user.created_at).toLocaleDateString()}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <button onclick="editUser('${user.user_id}')" 
+                                class="text-blue-600 hover:text-blue-900 mr-3">
+                            <i data-lucide="edit" class="w-4 h-4"></i>
+                        </button>
+                        <button onclick="deleteUser('${user.user_id}', '${user.name}')" 
+                                class="text-red-600 hover:text-red-900">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+            
+            // Update pagination controls
+            updateUsersPaginationControls(totalPages);
+            
+            lucide.createIcons();
+        }
+
+        function filterUsers() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const roleFilter = document.getElementById('role-filter').value;
+            const sortBy = document.getElementById('sort-by').value;
+
+            usersFilteredItems = currentUsers.filter(user => {
+                const matchesSearch = user.name.toLowerCase().includes(searchTerm) || 
+                                    user.email.toLowerCase().includes(searchTerm);
+                const matchesRole = !roleFilter || user.role === roleFilter;
+                return matchesSearch && matchesRole;
+            });
+
+            // Sort
+            usersFilteredItems.sort((a, b) => {
+                if (sortBy === 'name') return a.name.localeCompare(b.name);
+                if (sortBy === 'email') return a.email.localeCompare(b.email);
+                return new Date(b.created_at) - new Date(a.created_at);
+            });
+
+            usersCurrentPage = 1; // Reset to first page when filtering
+            displayUsers(usersFilteredItems);
+        }
+
+        function updateStatistics(users) {
+            const totalUsers = users.length;
+            const customers = users.filter(user => user.role === 'customer').length;
+            const staff = users.filter(user => user.role === 'staff').length;
+            
+            // Calculate new users this month
+            const currentDate = new Date();
+            const currentMonth = currentDate.getMonth();
+            const currentYear = currentDate.getFullYear();
+            
+            const newThisMonth = users.filter(user => {
+                const userDate = new Date(user.created_at);
+                return userDate.getMonth() === currentMonth && userDate.getFullYear() === currentYear;
+            }).length;
+
+            // Update the statistics cards
+            document.getElementById('total-users').textContent = totalUsers;
+            document.getElementById('total-customers').textContent = customers;
+            document.getElementById('total-staff').textContent = staff;
+            document.getElementById('new-users-month').textContent = newThisMonth;
+        }
+
+        function openAddUserModal() {
+            document.getElementById('modal-title').textContent = 'Add New User';
+            document.getElementById('submit-text').textContent = 'Create User';
+            document.getElementById('user-form').reset();
+            document.getElementById('user-id').value = '';
+            document.getElementById('password-field').style.display = 'block';
+            document.getElementById('user-password').required = true;
+            document.getElementById('user-modal').classList.remove('hidden');
+        }
+
+        function editUser(userId) {
+            const user = currentUsers.find(u => u.user_id === userId);
+            if (!user) return;
+
+            document.getElementById('modal-title').textContent = 'Edit User';
+            document.getElementById('submit-text').textContent = 'Update User';
+            document.getElementById('user-id').value = user.user_id;
+            document.getElementById('user-name').value = user.name;
+            document.getElementById('user-email').value = user.email;
+            document.getElementById('user-role').value = user.role;
+            document.getElementById('user-password').value = '';
+            document.getElementById('user-password').required = false;
+            document.getElementById('user-modal').classList.remove('hidden');
+        }
+
+        function closeUserModal() {
+            document.getElementById('user-modal').classList.add('hidden');
+        }
+
+        function handleUserSubmit(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const userId = formData.get('user_id');
+            const userData = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                role: formData.get('role')
+            };
+
+            // Only include password if provided
+            const password = formData.get('password');
+            if (password) {
+                userData.password = password;
+            }
+
+            const url = userId ? `/api/users/${userId}` : '/api/users';
+            const method = userId ? 'PUT' : 'POST';
+
+            fetch(url, {
+                method: method,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(userData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    closeUserModal();
+                    loadUsers();
+                    showSuccess(userId ? 'User updated successfully' : 'User created successfully');
+                } else {
+                    showError(data.message);
+                }
+            })
+            .catch(error => {
+                showError('Error saving user: ' + error.message);
+            });
+        }
+
+        function deleteUser(userId, userName) {
+            userToDelete = userId;
+            document.getElementById('delete-user-name').textContent = userName;
+            document.getElementById('delete-modal').classList.remove('hidden');
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('delete-modal').classList.add('hidden');
+            userToDelete = null;
+        }
+
+        function confirmDeleteUser() {
+            if (!userToDelete) return;
+
+            fetch(`/api/users/${userToDelete}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                closeDeleteModal();
+                if (data.success) {
+                    loadUsers();
+                    showSuccess('User deleted successfully');
+                } else {
+                    showError(data.message);
+                }
+            })
+            .catch(error => {
+                closeDeleteModal();
+                showError('Error deleting user: ' + error.message);
+            });
+        }
+
+        function refreshUsers() {
+            loadUsers();
+        }
+
+        function showLoading() {
+            document.getElementById('loading-state').classList.remove('hidden');
+        }
+
+        function hideLoading() {
+            document.getElementById('loading-state').classList.add('hidden');
+        }
+
+        function showSuccess(message) {
+            // Simple alert for now - you can replace with a toast notification
+            alert(message);
+        }
+
+        function showError(message) {
+            alert('Error: ' + message);
+        }
+
+        function logout() {
+            sessionStorage.removeItem('currentUser');
+            window.location.href = '/login';
+        }
+
+        // Users Pagination Functions
+        function updateUsersPaginationControls(totalPages) {
+            const prevButton = document.getElementById('users-prev-page');
+            const nextButton = document.getElementById('users-next-page');
+            const pageNumbers = document.getElementById('users-page-numbers');
+            
+            // Update prev/next buttons
+            prevButton.disabled = usersCurrentPage === 1;
+            nextButton.disabled = usersCurrentPage === totalPages || totalPages === 0;
+            
+            // Generate page numbers
+            pageNumbers.innerHTML = '';
+            
+            if (totalPages <= 1) return;
+            
+            // Calculate page range to show
+            const maxPagesToShow = 5;
+            let startPage = Math.max(1, usersCurrentPage - Math.floor(maxPagesToShow / 2));
+            let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+            
+            // Adjust start page if we're near the end
+            if (endPage - startPage < maxPagesToShow - 1) {
+                startPage = Math.max(1, endPage - maxPagesToShow + 1);
+            }
+            
+            // Show first page and ellipsis if needed
+            if (startPage > 1) {
+                pageNumbers.appendChild(createUsersPageButton(1));
+                if (startPage > 2) {
+                    pageNumbers.appendChild(createUsersEllipsis());
+                }
+            }
+            
+            // Show page numbers
+            for (let i = startPage; i <= endPage; i++) {
+                pageNumbers.appendChild(createUsersPageButton(i));
+            }
+            
+            // Show ellipsis and last page if needed
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    pageNumbers.appendChild(createUsersEllipsis());
+                }
+                pageNumbers.appendChild(createUsersPageButton(totalPages));
+            }
+        }
+        
+        function createUsersPageButton(pageNum) {
+            const button = document.createElement('button');
+            button.textContent = pageNum;
+            button.className = `px-3 py-1 border text-sm ${
+                usersCurrentPage === pageNum 
+                    ? 'bg-blue-600 text-white border-blue-600' 
+                    : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+            }`;
+            button.onclick = () => changeUsersPage(pageNum);
+            return button;
+        }
+        
+        function createUsersEllipsis() {
+            const span = document.createElement('span');
+            span.textContent = '...';
+            span.className = 'px-2 py-1 text-gray-500';
+            return span;
+        }
+        
+        function changeUsersPage(newPage) {
+            const totalPages = Math.ceil(usersFilteredItems.length / usersItemsPerPage);
+            
+            if (newPage < 1 || newPage > totalPages) return;
+            
+            usersCurrentPage = newPage;
+            displayUsers(usersFilteredItems);
+        }
+
+        // Initialize page when DOM content is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            loadUsers();
+            setupEventListeners();
+        });
+</script>
+{% endblock %}

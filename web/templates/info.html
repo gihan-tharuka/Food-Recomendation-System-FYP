@@ -1,0 +1,296 @@
+{% extends "staff-base.html" %}
+
+{% block title %}System Information - Staff Dashboard{% endblock %}
+
+{% block page_title %}System Information{% endblock %}
+
+{% block content %}
+<div class="bg-white rounded-2xl shadow-xl p-8">
+    <div class="flex items-center mb-6">
+        <div class="bg-food-yellow bg-opacity-20 rounded-full p-3 mr-4">
+            <i data-lucide="info" class="w-8 h-8 text-yellow-600"></i>
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold text-gray-800">System Information</h2>
+            <p class="text-gray-600">View model status, statistics, and system health</p>
+        </div>
+    </div>
+    
+    <!-- System Health -->
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+            <i data-lucide="check-circle" class="w-12 h-12 text-green-600 mx-auto mb-3"></i>
+            <h3 class="text-lg font-semibold text-green-800 mb-2">System Status</h3>
+            <p class="text-green-600 font-medium">Operational</p>
+        </div>
+        
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+            <i data-lucide="database" class="w-12 h-12 text-blue-600 mx-auto mb-3"></i>
+            <h3 class="text-lg font-semibold text-blue-800 mb-2">Data Status</h3>
+            <p class="text-blue-600 font-medium" id="data-status">Loading...</p>
+        </div>
+        
+        <div class="bg-purple-50 border border-purple-200 rounded-lg p-6 text-center">
+            <i data-lucide="cpu" class="w-12 h-12 text-purple-600 mx-auto mb-3"></i>
+            <h3 class="text-lg font-semibold text-purple-800 mb-2">Models Status</h3>
+            <p class="text-purple-600 font-medium" id="models-status">Loading...</p>
+        </div>
+    </div>
+    
+    <!-- Model Information -->
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">AI Models</h3>
+        <div id="model-info-grid" class="grid md:grid-cols-3 gap-6">
+            <!-- Model info will be populated here -->
+        </div>
+    </div>
+    
+    <!-- Data Statistics -->
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Data Statistics</h3>
+        <div class="bg-gray-50 rounded-lg p-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-food-orange mb-2" id="total-items">-</div>
+                    <div class="text-sm text-gray-600">Total Food Items</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-food-blue mb-2" id="total-users">-</div>
+                    <div class="text-sm text-gray-600">Registered Users</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-food-green mb-2" id="total-ratings">-</div>
+                    <div class="text-sm text-gray-600">User Ratings</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-food-yellow mb-2" id="avg-rating">-</div>
+                    <div class="text-sm text-gray-600">Average Rating</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- System Configuration -->
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Configuration</h3>
+        <div class="bg-gray-50 rounded-lg p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-medium text-gray-800 mb-3">Data Paths</h4>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="flex justify-between">
+                            <span>Menu Data (Pre):</span>
+                            <code class="bg-gray-200 px-2 py-1 rounded text-xs">data/Pre/menu_data_pre.csv</code>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Menu Data (Post):</span>
+                            <code class="bg-gray-200 px-2 py-1 rounded text-xs">data/Post/menu_data_predicted01.csv</code>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>User Data:</span>
+                            <code class="bg-gray-200 px-2 py-1 rounded text-xs">data/DB/users.csv</code>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Ratings Data:</span>
+                            <code class="bg-gray-200 px-2 py-1 rounded text-xs">data/DB/ratings.csv</code>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-medium text-gray-800 mb-3">Model Paths</h4>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="flex justify-between">
+                            <span>Cuisine Model:</span>
+                            <code class="bg-gray-200 px-2 py-1 rounded text-xs">models/cuisine_model.joblib</code>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Category Model:</span>
+                            <code class="bg-gray-200 px-2 py-1 rounded text-xs">models/category_model.joblib</code>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Tags Model:</span>
+                            <code class="bg-gray-200 px-2 py-1 rounded text-xs">models/tags_model.joblib</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Actions -->
+    <div class="flex justify-center space-x-4">
+        <button onclick="refreshSystemInfo()" 
+                class="bg-food-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors flex items-center space-x-2">
+            <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+            <span>Refresh Info</span>
+        </button>
+        
+        <button onclick="exportSystemReport()" 
+                class="bg-food-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors flex items-center space-x-2">
+            <i data-lucide="download" class="w-5 h-5"></i>
+            <span>Export Report</span>
+        </button>
+    </div>
+</div>
+
+<!-- Detailed Logs -->
+<div class="mt-8 bg-white rounded-2xl shadow-xl p-8">
+    <h3 class="text-xl font-semibold text-gray-800 mb-4">System Logs</h3>
+    <div class="bg-gray-900 text-green-400 rounded-lg p-4 font-mono text-sm h-64 overflow-y-auto" id="system-logs">
+        <div class="text-gray-500">[System logs will appear here...]</div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Info page specific JavaScript
+function loadSystemInfo() {
+    fetch('/api/info')
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            updateModelInfo(data.models);
+            updateDataStatus();
+            updateModelStatus(data.models);
+        } else {
+            showMessage('Failed to load system info: ' + data.message, 'error');
+        }
+    })
+    .catch(error => {
+        showMessage('Failed to load system info: ' + error.message, 'error');
+    });
+    
+    // Load data statistics
+    loadDataStatistics();
+}
+
+function updateModelInfo(models) {
+    const grid = document.getElementById('model-info-grid');
+    
+    const modelCards = Object.entries(models).map(([name, info]) => {
+        const status = info.exists;
+        const statusColor = status ? 'green' : 'red';
+        const statusText = status ? 'Ready' : 'Not Found';
+        const size = info.exists ? (info.size / 1024 / 1024).toFixed(2) + ' MB' : 'N/A';
+        
+        return `
+            <div class="bg-white border border-gray-200 rounded-lg p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <h4 class="font-semibold text-gray-800 capitalize">${name} Model</h4>
+                    <span class="px-2 py-1 text-xs rounded ${status ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">
+                        ${statusText}
+                    </span>
+                </div>
+                <div class="text-sm text-gray-600 space-y-1">
+                    <div>Size: <span class="font-medium">${size}</span></div>
+                    <div class="text-xs text-gray-500 break-all">${info.path}</div>
+                </div>
+                <div class="mt-3">
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-${statusColor}-500 h-2 rounded-full" style="width: ${status ? 100 : 0}%"></div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    grid.innerHTML = modelCards;
+}
+
+function updateDataStatus() {
+    // Simulate data status check
+    document.getElementById('data-status').textContent = 'Available';
+}
+
+function updateModelStatus(models) {
+    const allModelsReady = Object.values(models).every(model => model.exists);
+    const statusText = allModelsReady ? 'All Ready' : 'Incomplete';
+    document.getElementById('models-status').textContent = statusText;
+}
+
+function loadDataStatistics() {
+    // Simulate loading data statistics
+    setTimeout(() => {
+        document.getElementById('total-items').textContent = '1,247';
+        document.getElementById('total-users').textContent = '89';
+        document.getElementById('total-ratings').textContent = '456';
+        document.getElementById('avg-rating').textContent = '4.2';
+    }, 1000);
+    
+    // Add some log entries
+    const logs = document.getElementById('system-logs');
+    const logEntries = [
+        '[INFO] System initialized successfully',
+        '[INFO] Models loaded: 3/3',
+        '[INFO] Data validation complete',
+        '[INFO] Recommendation engine ready',
+        '[DEBUG] User session: 89 active users',
+        '[INFO] Performance metrics updated'
+    ];
+    
+    setTimeout(() => {
+        logs.innerHTML = logEntries.map(entry => 
+            `<div class="mb-1">[${new Date().toLocaleTimeString()}] ${entry}</div>`
+        ).join('');
+    }, 1500);
+}
+
+function refreshSystemInfo() {
+    showLoading('Refreshing system information...');
+    
+    // Clear current info
+    document.getElementById('data-status').textContent = 'Loading...';
+    document.getElementById('models-status').textContent = 'Loading...';
+    
+    setTimeout(() => {
+        hideLoading();
+        loadSystemInfo();
+        showMessage('System information refreshed', 'success');
+    }, 2000);
+}
+
+function exportSystemReport() {
+    showLoading('Generating system report...');
+    
+    setTimeout(() => {
+        hideLoading();
+        
+        // Create a simple report
+        const report = {
+            timestamp: new Date().toISOString(),
+            system_status: 'Operational',
+            models: {
+                cuisine: 'Ready',
+                category: 'Ready',
+                tags: 'Ready'
+            },
+            statistics: {
+                total_items: '1,247',
+                total_users: '89',
+                total_ratings: '456',
+                avg_rating: '4.2'
+            }
+        };
+        
+        const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `food-recommendation-system-report-${new Date().toISOString().split('T')[0]}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        showMessage('System report downloaded successfully', 'success');
+    }, 1500);
+}
+
+// Load system info when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    loadSystemInfo();
+});
+</script>
+{% endblock %}

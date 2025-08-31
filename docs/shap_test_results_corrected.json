@@ -1,0 +1,1403 @@
+{
+  "test_info": {
+    "description": "SHAP Explanations Test",
+    "budget": 8000,
+    "cuisine": "Chinese",
+    "categories": [
+      "Main",
+      "Soup"
+    ],
+    "priority": [
+      "Main",
+      "Side dish"
+    ],
+    "time": "evening",
+    "weather": "sunny"
+  },
+  "recommendations": [
+    {
+      "item_id": 1302,
+      "item_name": "Sweet Corn Soup - Crab (Small)",
+      "description": "Sweet corn soup with crab, served warm and mildly sweet",
+      "category": "Soup",
+      "price": 750.0,
+      "relevance": 3.5,
+      "rating": 3.0
+    },
+    {
+      "item_id": 1304,
+      "item_name": "Sweet Corn Soup - Chicken (Small)",
+      "description": "Sweet corn soup with chicken, served warm and mildly sweet",
+      "category": "Soup",
+      "price": 530.0,
+      "relevance": 5.5,
+      "rating": 5.0
+    },
+    {
+      "item_id": 1305,
+      "item_name": "Sweet Corn Soup - Chicken (Regular)",
+      "description": "Sweet corn soup with chicken, served warm and mildly sweet",
+      "category": "Soup",
+      "price": 780.0,
+      "relevance": 5.5,
+      "rating": 5.0
+    },
+    {
+      "item_id": 1306,
+      "item_name": "Sweet Corn Soup - Vegetable (Small)",
+      "description": "Sweet corn soup with vegetables, served warm and mildly sweet",
+      "category": "Soup",
+      "price": 480.0,
+      "relevance": 4.5,
+      "rating": 4.0
+    },
+    {
+      "item_id": 1398,
+      "item_name": "Sweet and Sour Prawns (Small)",
+      "description": "Batter fried prawns with sweet and sour sauce; medium, sweet-tangy",
+      "category": "Main",
+      "price": 1140.0,
+      "relevance": 5.0,
+      "rating": 4.0
+    },
+    {
+      "item_id": 1414,
+      "item_name": "China Prawns (Small)",
+      "description": "Chinese-style prawns in savory sauce",
+      "category": "Main",
+      "price": 1140.0,
+      "relevance": 5.0,
+      "rating": 4.0
+    },
+    {
+      "item_id": 1415,
+      "item_name": "China Prawns (Regular)",
+      "description": "Chinese-style prawns in savory sauce",
+      "category": "Main",
+      "price": 1180.0,
+      "relevance": 6.0,
+      "rating": 5.0
+    },
+    {
+      "item_id": 1529,
+      "item_name": "Silver beef",
+      "description": "Deep fried beef combined with black bean sauce and oyster sauce; medium-heavy, hot, savoury umami",
+      "category": "Main",
+      "price": 1000.0,
+      "relevance": 5.5,
+      "rating": 5.0
+    },
+    {
+      "item_id": 1530,
+      "item_name": "Chicken with black bean sauce",
+      "description": "Deep fried chicken, combined with black bean sauce; medium, hot, savoury umami",
+      "category": "Main",
+      "price": 1000.0,
+      "relevance": 4.5,
+      "rating": 4.0
+    }
+  ],
+  "shap_explanations": [
+    {
+      "item_id": 1302,
+      "item_name": "Sweet Corn Soup - Crab (Small)",
+      "predicted_rating": 3.925,
+      "base_value": 4.135384615384615,
+      "shap_values": {
+        "price": -0.14080850588846358,
+        "is_morning": 0.047908146852875325,
+        "is_afternoon": 0.0,
+        "is_evening": 0.0,
+        "is_sunny": 0.11641112234542456,
+        "is_rainy": 0.15067645158570897,
+        "is_cloudy": 0.0,
+        "user_avg_rating": -0.2086337207768248,
+        "user_rating_count": -0.17593810950333597,
+        "category_appetizer": 0.0,
+        "category_main": 0.0,
+        "category_dessert": 0.0,
+        "category_beverage": 0.0,
+        "cuisine_italian": 0.0,
+        "cuisine_chinese": 0.0,
+        "cuisine_indian": 0.0,
+        "cuisine_mexican": 0.0
+      },
+      "feature_contributions": {
+        "price": {
+          "value": 750.0,
+          "shap_contribution": -0.14080850588846358,
+          "impact": "negative"
+        },
+        "is_morning": {
+          "value": 0.0,
+          "shap_contribution": 0.047908146852875325,
+          "impact": "positive"
+        },
+        "is_afternoon": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_evening": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_sunny": {
+          "value": 1.0,
+          "shap_contribution": 0.11641112234542456,
+          "impact": "positive"
+        },
+        "is_rainy": {
+          "value": 0.0,
+          "shap_contribution": 0.15067645158570897,
+          "impact": "positive"
+        },
+        "is_cloudy": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "user_avg_rating": {
+          "value": 1.368421052631579,
+          "shap_contribution": -0.2086337207768248,
+          "impact": "negative"
+        },
+        "user_rating_count": {
+          "value": 7.0,
+          "shap_contribution": -0.17593810950333597,
+          "impact": "negative"
+        },
+        "category_appetizer": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_main": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_dessert": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_beverage": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_italian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_chinese": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_indian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_mexican": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        }
+      },
+      "top_contributing_features": [
+        {
+          "feature": "user_avg_rating",
+          "value": 1.368421052631579,
+          "shap_contribution": -0.2086337207768248,
+          "impact": "negative"
+        },
+        {
+          "feature": "user_rating_count",
+          "value": 7.0,
+          "shap_contribution": -0.17593810950333597,
+          "impact": "negative"
+        },
+        {
+          "feature": "is_rainy",
+          "value": 0.0,
+          "shap_contribution": 0.15067645158570897,
+          "impact": "positive"
+        },
+        {
+          "feature": "price",
+          "value": 750.0,
+          "shap_contribution": -0.14080850588846358,
+          "impact": "negative"
+        },
+        {
+          "feature": "is_sunny",
+          "value": 1.0,
+          "shap_contribution": 0.11641112234542456,
+          "impact": "positive"
+        }
+      ]
+    },
+    {
+      "item_id": 1304,
+      "item_name": "Sweet Corn Soup - Chicken (Small)",
+      "predicted_rating": 4.1,
+      "base_value": 4.135384615384615,
+      "shap_values": {
+        "price": 0.14304844000528225,
+        "is_morning": 0.05157891748143275,
+        "is_afternoon": 0.0,
+        "is_evening": 0.0,
+        "is_sunny": 0.07418382430812401,
+        "is_rainy": 0.1070376444847103,
+        "is_cloudy": 0.0,
+        "user_avg_rating": -0.22015703830996342,
+        "user_rating_count": -0.19107640335420123,
+        "category_appetizer": 0.0,
+        "category_main": 0.0,
+        "category_dessert": 0.0,
+        "category_beverage": 0.0,
+        "cuisine_italian": 0.0,
+        "cuisine_chinese": 0.0,
+        "cuisine_indian": 0.0,
+        "cuisine_mexican": 0.0
+      },
+      "feature_contributions": {
+        "price": {
+          "value": 530.0,
+          "shap_contribution": 0.14304844000528225,
+          "impact": "positive"
+        },
+        "is_morning": {
+          "value": 0.0,
+          "shap_contribution": 0.05157891748143275,
+          "impact": "positive"
+        },
+        "is_afternoon": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_evening": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_sunny": {
+          "value": 1.0,
+          "shap_contribution": 0.07418382430812401,
+          "impact": "positive"
+        },
+        "is_rainy": {
+          "value": 0.0,
+          "shap_contribution": 0.1070376444847103,
+          "impact": "positive"
+        },
+        "is_cloudy": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "user_avg_rating": {
+          "value": 1.368421052631579,
+          "shap_contribution": -0.22015703830996342,
+          "impact": "negative"
+        },
+        "user_rating_count": {
+          "value": 7.0,
+          "shap_contribution": -0.19107640335420123,
+          "impact": "negative"
+        },
+        "category_appetizer": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_main": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_dessert": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_beverage": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_italian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_chinese": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_indian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_mexican": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        }
+      },
+      "top_contributing_features": [
+        {
+          "feature": "user_avg_rating",
+          "value": 1.368421052631579,
+          "shap_contribution": -0.22015703830996342,
+          "impact": "negative"
+        },
+        {
+          "feature": "user_rating_count",
+          "value": 7.0,
+          "shap_contribution": -0.19107640335420123,
+          "impact": "negative"
+        },
+        {
+          "feature": "price",
+          "value": 530.0,
+          "shap_contribution": 0.14304844000528225,
+          "impact": "positive"
+        },
+        {
+          "feature": "is_rainy",
+          "value": 0.0,
+          "shap_contribution": 0.1070376444847103,
+          "impact": "positive"
+        },
+        {
+          "feature": "is_sunny",
+          "value": 1.0,
+          "shap_contribution": 0.07418382430812401,
+          "impact": "positive"
+        }
+      ]
+    },
+    {
+      "item_id": 1305,
+      "item_name": "Sweet Corn Soup - Chicken (Regular)",
+      "predicted_rating": 4.155,
+      "base_value": 4.135384615384615,
+      "shap_values": {
+        "price": 0.013634957621445471,
+        "is_morning": 0.05766225307459637,
+        "is_afternoon": 0.0,
+        "is_evening": 0.0,
+        "is_sunny": 0.08261108012802923,
+        "is_rainy": 0.1150966347727653,
+        "is_cloudy": 0.0,
+        "user_avg_rating": -0.11469826986684373,
+        "user_rating_count": -0.13469127111460838,
+        "category_appetizer": 0.0,
+        "category_main": 0.0,
+        "category_dessert": 0.0,
+        "category_beverage": 0.0,
+        "cuisine_italian": 0.0,
+        "cuisine_chinese": 0.0,
+        "cuisine_indian": 0.0,
+        "cuisine_mexican": 0.0
+      },
+      "feature_contributions": {
+        "price": {
+          "value": 780.0,
+          "shap_contribution": 0.013634957621445471,
+          "impact": "positive"
+        },
+        "is_morning": {
+          "value": 0.0,
+          "shap_contribution": 0.05766225307459637,
+          "impact": "positive"
+        },
+        "is_afternoon": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_evening": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_sunny": {
+          "value": 1.0,
+          "shap_contribution": 0.08261108012802923,
+          "impact": "positive"
+        },
+        "is_rainy": {
+          "value": 0.0,
+          "shap_contribution": 0.1150966347727653,
+          "impact": "positive"
+        },
+        "is_cloudy": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "user_avg_rating": {
+          "value": 1.368421052631579,
+          "shap_contribution": -0.11469826986684373,
+          "impact": "negative"
+        },
+        "user_rating_count": {
+          "value": 7.0,
+          "shap_contribution": -0.13469127111460838,
+          "impact": "negative"
+        },
+        "category_appetizer": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_main": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_dessert": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_beverage": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_italian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_chinese": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_indian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_mexican": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        }
+      },
+      "top_contributing_features": [
+        {
+          "feature": "user_rating_count",
+          "value": 7.0,
+          "shap_contribution": -0.13469127111460838,
+          "impact": "negative"
+        },
+        {
+          "feature": "is_rainy",
+          "value": 0.0,
+          "shap_contribution": 0.1150966347727653,
+          "impact": "positive"
+        },
+        {
+          "feature": "user_avg_rating",
+          "value": 1.368421052631579,
+          "shap_contribution": -0.11469826986684373,
+          "impact": "negative"
+        },
+        {
+          "feature": "is_sunny",
+          "value": 1.0,
+          "shap_contribution": 0.08261108012802923,
+          "impact": "positive"
+        },
+        {
+          "feature": "is_morning",
+          "value": 0.0,
+          "shap_contribution": 0.05766225307459637,
+          "impact": "positive"
+        }
+      ]
+    },
+    {
+      "item_id": 1306,
+      "item_name": "Sweet Corn Soup - Vegetable (Small)",
+      "predicted_rating": 4.05,
+      "base_value": 4.135384615384615,
+      "shap_values": {
+        "price": 0.0880902460253492,
+        "is_morning": 0.0500822619630381,
+        "is_afternoon": 0.0,
+        "is_evening": 0.0,
+        "is_sunny": 0.07687613200043172,
+        "is_rainy": 0.11080018629073037,
+        "is_cloudy": 0.0,
+        "user_avg_rating": -0.22015703830996342,
+        "user_rating_count": -0.19107640335420123,
+        "category_appetizer": 0.0,
+        "category_main": 0.0,
+        "category_dessert": 0.0,
+        "category_beverage": 0.0,
+        "cuisine_italian": 0.0,
+        "cuisine_chinese": 0.0,
+        "cuisine_indian": 0.0,
+        "cuisine_mexican": 0.0
+      },
+      "feature_contributions": {
+        "price": {
+          "value": 480.0,
+          "shap_contribution": 0.0880902460253492,
+          "impact": "positive"
+        },
+        "is_morning": {
+          "value": 0.0,
+          "shap_contribution": 0.0500822619630381,
+          "impact": "positive"
+        },
+        "is_afternoon": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_evening": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_sunny": {
+          "value": 1.0,
+          "shap_contribution": 0.07687613200043172,
+          "impact": "positive"
+        },
+        "is_rainy": {
+          "value": 0.0,
+          "shap_contribution": 0.11080018629073037,
+          "impact": "positive"
+        },
+        "is_cloudy": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "user_avg_rating": {
+          "value": 1.368421052631579,
+          "shap_contribution": -0.22015703830996342,
+          "impact": "negative"
+        },
+        "user_rating_count": {
+          "value": 7.0,
+          "shap_contribution": -0.19107640335420123,
+          "impact": "negative"
+        },
+        "category_appetizer": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_main": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_dessert": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_beverage": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_italian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_chinese": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_indian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_mexican": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        }
+      },
+      "top_contributing_features": [
+        {
+          "feature": "user_avg_rating",
+          "value": 1.368421052631579,
+          "shap_contribution": -0.22015703830996342,
+          "impact": "negative"
+        },
+        {
+          "feature": "user_rating_count",
+          "value": 7.0,
+          "shap_contribution": -0.19107640335420123,
+          "impact": "negative"
+        },
+        {
+          "feature": "is_rainy",
+          "value": 0.0,
+          "shap_contribution": 0.11080018629073037,
+          "impact": "positive"
+        },
+        {
+          "feature": "price",
+          "value": 480.0,
+          "shap_contribution": 0.0880902460253492,
+          "impact": "positive"
+        },
+        {
+          "feature": "is_sunny",
+          "value": 1.0,
+          "shap_contribution": 0.07687613200043172,
+          "impact": "positive"
+        }
+      ]
+    },
+    {
+      "item_id": 1398,
+      "item_name": "Sweet and Sour Prawns (Small)",
+      "predicted_rating": 4.056666666666667,
+      "base_value": 4.135384615384615,
+      "shap_values": {
+        "price": -0.07321329824150617,
+        "is_morning": 0.05931656847810386,
+        "is_afternoon": 0.0,
+        "is_evening": 0.0,
+        "is_sunny": 0.01978185701095414,
+        "is_rainy": 0.045648723123795094,
+        "is_cloudy": 0.0,
+        "user_avg_rating": -0.08372574950229592,
+        "user_rating_count": -0.04652604958699974,
+        "category_appetizer": 0.0,
+        "category_main": 0.0,
+        "category_dessert": 0.0,
+        "category_beverage": 0.0,
+        "cuisine_italian": 0.0,
+        "cuisine_chinese": 0.0,
+        "cuisine_indian": 0.0,
+        "cuisine_mexican": 0.0
+      },
+      "feature_contributions": {
+        "price": {
+          "value": 1140.0,
+          "shap_contribution": -0.07321329824150617,
+          "impact": "negative"
+        },
+        "is_morning": {
+          "value": 0.0,
+          "shap_contribution": 0.05931656847810386,
+          "impact": "positive"
+        },
+        "is_afternoon": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_evening": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_sunny": {
+          "value": 1.0,
+          "shap_contribution": 0.01978185701095414,
+          "impact": "positive"
+        },
+        "is_rainy": {
+          "value": 0.0,
+          "shap_contribution": 0.045648723123795094,
+          "impact": "positive"
+        },
+        "is_cloudy": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "user_avg_rating": {
+          "value": 1.368421052631579,
+          "shap_contribution": -0.08372574950229592,
+          "impact": "negative"
+        },
+        "user_rating_count": {
+          "value": 7.0,
+          "shap_contribution": -0.04652604958699974,
+          "impact": "negative"
+        },
+        "category_appetizer": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_main": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_dessert": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_beverage": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_italian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_chinese": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_indian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_mexican": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        }
+      },
+      "top_contributing_features": [
+        {
+          "feature": "user_avg_rating",
+          "value": 1.368421052631579,
+          "shap_contribution": -0.08372574950229592,
+          "impact": "negative"
+        },
+        {
+          "feature": "price",
+          "value": 1140.0,
+          "shap_contribution": -0.07321329824150617,
+          "impact": "negative"
+        },
+        {
+          "feature": "is_morning",
+          "value": 0.0,
+          "shap_contribution": 0.05931656847810386,
+          "impact": "positive"
+        },
+        {
+          "feature": "user_rating_count",
+          "value": 7.0,
+          "shap_contribution": -0.04652604958699974,
+          "impact": "negative"
+        },
+        {
+          "feature": "is_rainy",
+          "value": 0.0,
+          "shap_contribution": 0.045648723123795094,
+          "impact": "positive"
+        }
+      ]
+    },
+    {
+      "item_id": 1414,
+      "item_name": "China Prawns (Small)",
+      "predicted_rating": 4.056666666666667,
+      "base_value": 4.135384615384615,
+      "shap_values": {
+        "price": -0.07321329824150617,
+        "is_morning": 0.05931656847810386,
+        "is_afternoon": 0.0,
+        "is_evening": 0.0,
+        "is_sunny": 0.01978185701095414,
+        "is_rainy": 0.045648723123795094,
+        "is_cloudy": 0.0,
+        "user_avg_rating": -0.08372574950229592,
+        "user_rating_count": -0.04652604958699974,
+        "category_appetizer": 0.0,
+        "category_main": 0.0,
+        "category_dessert": 0.0,
+        "category_beverage": 0.0,
+        "cuisine_italian": 0.0,
+        "cuisine_chinese": 0.0,
+        "cuisine_indian": 0.0,
+        "cuisine_mexican": 0.0
+      },
+      "feature_contributions": {
+        "price": {
+          "value": 1140.0,
+          "shap_contribution": -0.07321329824150617,
+          "impact": "negative"
+        },
+        "is_morning": {
+          "value": 0.0,
+          "shap_contribution": 0.05931656847810386,
+          "impact": "positive"
+        },
+        "is_afternoon": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_evening": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_sunny": {
+          "value": 1.0,
+          "shap_contribution": 0.01978185701095414,
+          "impact": "positive"
+        },
+        "is_rainy": {
+          "value": 0.0,
+          "shap_contribution": 0.045648723123795094,
+          "impact": "positive"
+        },
+        "is_cloudy": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "user_avg_rating": {
+          "value": 1.368421052631579,
+          "shap_contribution": -0.08372574950229592,
+          "impact": "negative"
+        },
+        "user_rating_count": {
+          "value": 7.0,
+          "shap_contribution": -0.04652604958699974,
+          "impact": "negative"
+        },
+        "category_appetizer": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_main": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_dessert": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_beverage": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_italian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_chinese": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_indian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_mexican": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        }
+      },
+      "top_contributing_features": [
+        {
+          "feature": "user_avg_rating",
+          "value": 1.368421052631579,
+          "shap_contribution": -0.08372574950229592,
+          "impact": "negative"
+        },
+        {
+          "feature": "price",
+          "value": 1140.0,
+          "shap_contribution": -0.07321329824150617,
+          "impact": "negative"
+        },
+        {
+          "feature": "is_morning",
+          "value": 0.0,
+          "shap_contribution": 0.05931656847810386,
+          "impact": "positive"
+        },
+        {
+          "feature": "user_rating_count",
+          "value": 7.0,
+          "shap_contribution": -0.04652604958699974,
+          "impact": "negative"
+        },
+        {
+          "feature": "is_rainy",
+          "value": 0.0,
+          "shap_contribution": 0.045648723123795094,
+          "impact": "positive"
+        }
+      ]
+    },
+    {
+      "item_id": 1415,
+      "item_name": "China Prawns (Regular)",
+      "predicted_rating": 4.276666666666666,
+      "base_value": 4.135384615384615,
+      "shap_values": {
+        "price": 0.14006406379572645,
+        "is_morning": 0.06290189007648163,
+        "is_afternoon": 0.0,
+        "is_evening": 0.0,
+        "is_sunny": 0.03151719339193528,
+        "is_rainy": 0.06879494473516087,
+        "is_cloudy": 0.0,
+        "user_avg_rating": -0.0695187703112524,
+        "user_rating_count": -0.09247727040600084,
+        "category_appetizer": 0.0,
+        "category_main": 0.0,
+        "category_dessert": 0.0,
+        "category_beverage": 0.0,
+        "cuisine_italian": 0.0,
+        "cuisine_chinese": 0.0,
+        "cuisine_indian": 0.0,
+        "cuisine_mexican": 0.0
+      },
+      "feature_contributions": {
+        "price": {
+          "value": 1180.0,
+          "shap_contribution": 0.14006406379572645,
+          "impact": "positive"
+        },
+        "is_morning": {
+          "value": 0.0,
+          "shap_contribution": 0.06290189007648163,
+          "impact": "positive"
+        },
+        "is_afternoon": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_evening": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_sunny": {
+          "value": 1.0,
+          "shap_contribution": 0.03151719339193528,
+          "impact": "positive"
+        },
+        "is_rainy": {
+          "value": 0.0,
+          "shap_contribution": 0.06879494473516087,
+          "impact": "positive"
+        },
+        "is_cloudy": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "user_avg_rating": {
+          "value": 1.368421052631579,
+          "shap_contribution": -0.0695187703112524,
+          "impact": "negative"
+        },
+        "user_rating_count": {
+          "value": 7.0,
+          "shap_contribution": -0.09247727040600084,
+          "impact": "negative"
+        },
+        "category_appetizer": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_main": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_dessert": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_beverage": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_italian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_chinese": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_indian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_mexican": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        }
+      },
+      "top_contributing_features": [
+        {
+          "feature": "price",
+          "value": 1180.0,
+          "shap_contribution": 0.14006406379572645,
+          "impact": "positive"
+        },
+        {
+          "feature": "user_rating_count",
+          "value": 7.0,
+          "shap_contribution": -0.09247727040600084,
+          "impact": "negative"
+        },
+        {
+          "feature": "user_avg_rating",
+          "value": 1.368421052631579,
+          "shap_contribution": -0.0695187703112524,
+          "impact": "negative"
+        },
+        {
+          "feature": "is_rainy",
+          "value": 0.0,
+          "shap_contribution": 0.06879494473516087,
+          "impact": "positive"
+        },
+        {
+          "feature": "is_morning",
+          "value": 0.0,
+          "shap_contribution": 0.06290189007648163,
+          "impact": "positive"
+        }
+      ]
+    },
+    {
+      "item_id": 1529,
+      "item_name": "Silver beef",
+      "predicted_rating": 4.144166666666666,
+      "base_value": 4.135384615384615,
+      "shap_values": {
+        "price": -0.025111519558878928,
+        "is_morning": 0.06420755878966271,
+        "is_afternoon": 0.0,
+        "is_evening": 0.0,
+        "is_sunny": 0.022125163465685924,
+        "is_rainy": 0.04816506299307614,
+        "is_cloudy": 0.0,
+        "user_avg_rating": -0.07890128125007824,
+        "user_rating_count": -0.021702933157416306,
+        "category_appetizer": 0.0,
+        "category_main": 0.0,
+        "category_dessert": 0.0,
+        "category_beverage": 0.0,
+        "cuisine_italian": 0.0,
+        "cuisine_chinese": 0.0,
+        "cuisine_indian": 0.0,
+        "cuisine_mexican": 0.0
+      },
+      "feature_contributions": {
+        "price": {
+          "value": 1000.0,
+          "shap_contribution": -0.025111519558878928,
+          "impact": "negative"
+        },
+        "is_morning": {
+          "value": 0.0,
+          "shap_contribution": 0.06420755878966271,
+          "impact": "positive"
+        },
+        "is_afternoon": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_evening": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_sunny": {
+          "value": 1.0,
+          "shap_contribution": 0.022125163465685924,
+          "impact": "positive"
+        },
+        "is_rainy": {
+          "value": 0.0,
+          "shap_contribution": 0.04816506299307614,
+          "impact": "positive"
+        },
+        "is_cloudy": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "user_avg_rating": {
+          "value": 1.368421052631579,
+          "shap_contribution": -0.07890128125007824,
+          "impact": "negative"
+        },
+        "user_rating_count": {
+          "value": 7.0,
+          "shap_contribution": -0.021702933157416306,
+          "impact": "negative"
+        },
+        "category_appetizer": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_main": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_dessert": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_beverage": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_italian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_chinese": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_indian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_mexican": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        }
+      },
+      "top_contributing_features": [
+        {
+          "feature": "user_avg_rating",
+          "value": 1.368421052631579,
+          "shap_contribution": -0.07890128125007824,
+          "impact": "negative"
+        },
+        {
+          "feature": "is_morning",
+          "value": 0.0,
+          "shap_contribution": 0.06420755878966271,
+          "impact": "positive"
+        },
+        {
+          "feature": "is_rainy",
+          "value": 0.0,
+          "shap_contribution": 0.04816506299307614,
+          "impact": "positive"
+        },
+        {
+          "feature": "price",
+          "value": 1000.0,
+          "shap_contribution": -0.025111519558878928,
+          "impact": "negative"
+        },
+        {
+          "feature": "is_sunny",
+          "value": 1.0,
+          "shap_contribution": 0.022125163465685924,
+          "impact": "positive"
+        }
+      ]
+    },
+    {
+      "item_id": 1530,
+      "item_name": "Chicken with black bean sauce",
+      "predicted_rating": 4.144166666666666,
+      "base_value": 4.135384615384615,
+      "shap_values": {
+        "price": -0.025111519558878928,
+        "is_morning": 0.06420755878966271,
+        "is_afternoon": 0.0,
+        "is_evening": 0.0,
+        "is_sunny": 0.022125163465685924,
+        "is_rainy": 0.04816506299307614,
+        "is_cloudy": 0.0,
+        "user_avg_rating": -0.07890128125007824,
+        "user_rating_count": -0.021702933157416306,
+        "category_appetizer": 0.0,
+        "category_main": 0.0,
+        "category_dessert": 0.0,
+        "category_beverage": 0.0,
+        "cuisine_italian": 0.0,
+        "cuisine_chinese": 0.0,
+        "cuisine_indian": 0.0,
+        "cuisine_mexican": 0.0
+      },
+      "feature_contributions": {
+        "price": {
+          "value": 1000.0,
+          "shap_contribution": -0.025111519558878928,
+          "impact": "negative"
+        },
+        "is_morning": {
+          "value": 0.0,
+          "shap_contribution": 0.06420755878966271,
+          "impact": "positive"
+        },
+        "is_afternoon": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_evening": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "is_sunny": {
+          "value": 1.0,
+          "shap_contribution": 0.022125163465685924,
+          "impact": "positive"
+        },
+        "is_rainy": {
+          "value": 0.0,
+          "shap_contribution": 0.04816506299307614,
+          "impact": "positive"
+        },
+        "is_cloudy": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "user_avg_rating": {
+          "value": 1.368421052631579,
+          "shap_contribution": -0.07890128125007824,
+          "impact": "negative"
+        },
+        "user_rating_count": {
+          "value": 7.0,
+          "shap_contribution": -0.021702933157416306,
+          "impact": "negative"
+        },
+        "category_appetizer": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_main": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_dessert": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "category_beverage": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_italian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_chinese": {
+          "value": 1.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_indian": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        },
+        "cuisine_mexican": {
+          "value": 0.0,
+          "shap_contribution": 0.0,
+          "impact": "neutral"
+        }
+      },
+      "top_contributing_features": [
+        {
+          "feature": "user_avg_rating",
+          "value": 1.368421052631579,
+          "shap_contribution": -0.07890128125007824,
+          "impact": "negative"
+        },
+        {
+          "feature": "is_morning",
+          "value": 0.0,
+          "shap_contribution": 0.06420755878966271,
+          "impact": "positive"
+        },
+        {
+          "feature": "is_rainy",
+          "value": 0.0,
+          "shap_contribution": 0.04816506299307614,
+          "impact": "positive"
+        },
+        {
+          "feature": "price",
+          "value": 1000.0,
+          "shap_contribution": -0.025111519558878928,
+          "impact": "negative"
+        },
+        {
+          "feature": "is_sunny",
+          "value": 1.0,
+          "shap_contribution": 0.022125163465685924,
+          "impact": "positive"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "num_recommendations": 9,
+    "num_explanations": 9,
+    "shap_success": true
+  }
+}

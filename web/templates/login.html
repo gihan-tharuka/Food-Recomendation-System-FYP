@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}🔐 Login - Food Recommendation System{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto bg-white rounded-2xl shadow-xl p-8">
+    <div class="text-center mb-8">
+        <div class="bg-food-green bg-opacity-20 rounded-full p-4 w-16 h-16 mx-auto mb-4">
+            <i data-lucide="log-in" class="w-8 h-8 text-food-green mx-auto"></i>
+        </div>
+        <h2 class="text-3xl font-bold text-gray-800">Welcome Back</h2>
+        <p class="text-gray-600 mt-2">Sign in to get personalized food recommendations</p>
+    </div>
+    
+    <form id="login-form" class="space-y-6">
+        <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+            <input type="email" id="email" required
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-food-green focus:border-transparent transition-colors"
+                   placeholder="Enter your email address">
+        </div>
+        
+        <div>
+            <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+            <input type="password" id="password" required
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-food-green focus:border-transparent transition-colors"
+                   placeholder="Enter your password">
+        </div>
+        
+        <button type="submit" 
+                class="w-full bg-food-green text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors flex items-center justify-center space-x-2">
+            <i data-lucide="log-in" class="w-5 h-5"></i>
+            <span>Sign In</span>
+        </button>
+    </form>
+    
+    <div class="mt-8 text-center">
+        <p class="text-gray-600">Don't have an account?</p>
+        <a href="/register" class="text-food-orange hover:text-orange-600 font-semibold transition-colors">
+            Create a new account
+        </a>
+    </div>
+    
+    <div class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+        <div class="flex items-start">
+            <i data-lucide="info" class="w-5 h-5 text-blue-600 mr-2 mt-0.5"></i>
+            <div class="text-sm text-blue-700">
+                <strong>Secure Login:</strong> Your password is encrypted and secure. We never store your password in plain text.
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    loginUser();
+});
+
+function loginUser() {
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+    
+    if (!email || !password) {
+        showMessage('Please enter both email and password', 'error');
+        return;
+    }
+    
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        showMessage('Please enter a valid email address', 'error');
+        return;
+    }
+    
+    showLoading('Signing in...');
+    
+    fetch('/api/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: email, password: password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        hideLoading();
+        if (data.success) {
+            // Store user data in sessionStorage for access across pages
+            sessionStorage.setItem('currentUser', JSON.stringify(data.user));
+            showMessage('Welcome back, ' + data.user.name + '!', 'success');
+            // Redirect to appropriate dashboard based on role
+            setTimeout(() => {
+                if (data.user.role === 'staff') {
+                    window.location.href = '/staff-dashboard';
+                } else {
+                    window.location.href = '/dashboard';
+                }
+            }, 1500);
+        } else {
+            showMessage('Login failed: ' + data.message, 'error');
+        }
+    })
+    .catch(error => {
+        hideLoading();
+        showMessage('Login failed: ' + error.message, 'error');
+    });
+}
+</script>
+{% endblock %}

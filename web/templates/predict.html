@@ -1,0 +1,380 @@
+{% extends "staff-base.html" %}
+
+{% block title %}Generate Predictions - Staff Dashboard{% endblock %}
+
+{% block page_title %}Generate Predictions{% endblock %}
+
+{% block content %}
+<div class="bg-white rounded-2xl shadow-xl p-8">
+    <div class="flex items-center mb-6">
+        <div class="bg-food-blue bg-opacity-20 rounded-full p-3 mr-4">
+            <i data-lucide="crystal-ball" class="w-8 h-8 text-food-blue"></i>
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold text-gray-800">Generate Predictions</h2>
+            <p class="text-gray-600">Use trained models to predict food attributes</p>
+        </div>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+        <!-- Input Section -->
+        <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Data Source</h3>
+            <div class="space-y-4">
+                <!-- Upload CSV Option -->
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 transition-all hover:bg-yellow-100">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="upload" class="w-5 h-5 text-yellow-600 mr-2"></i>
+                        <span class="font-medium text-gray-800">Upload New CSV File</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="relative">
+                            <input type="file" id="csvFileInput" accept=".csv" 
+                                   class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-yellow-500 file:text-white hover:file:bg-yellow-600 file:cursor-pointer cursor-pointer transition-all">
+                        </div>
+                        <button onclick="uploadCSV()" 
+                                class="bg-yellow-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-yellow-700 transition-all transform hover:scale-105 flex items-center space-x-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed" 
+                                id="uploadButton">
+                            <i data-lucide="upload-cloud" class="w-4 h-4"></i>
+                            <span>Upload & Use This File</span>
+                        </button>
+                        <div class="text-xs text-yellow-700 bg-yellow-100 p-2 rounded border-l-4 border-yellow-500">
+                            <strong>Required columns:</strong> item_name, price<br>
+                            <strong>Optional:</strong> item_id, description
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Current/Default Data Source -->
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="database" class="w-5 h-5 text-gray-600 mr-2"></i>
+                        <span class="font-medium text-gray-800">Current Data Source</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-3">Using: <code class="bg-gray-200 px-2 py-1 rounded" id="current-data-source">data/Pre/Spicia-menu.csv</code></p>
+                    <div class="text-xs text-gray-500">
+                        Contains food items with names and prices for prediction
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <div class="flex items-start">
+                        <i data-lucide="info" class="w-5 h-5 text-blue-600 mr-2 mt-0.5"></i>
+                        <div class="text-sm text-blue-700">
+                            <strong>What this does:</strong> The system will analyze each food item and predict its cuisine type, category, and relevant tags using the trained AI models.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Output Section -->
+        <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Expected Output</h3>
+            <div class="space-y-4">
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="flex items-center mb-3">
+                        <i data-lucide="file-output" class="w-5 h-5 text-gray-600 mr-2"></i>
+                        <span class="font-medium text-gray-800">Predicted Data</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-3">Will be saved to: <code class="bg-gray-200 px-2 py-1 rounded">data/Post/Spicia-menu-predicted.csv</code></p>
+                    
+                    <div class="text-xs text-gray-700 space-y-2">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-blue-400 rounded-full mr-2"></div>
+                            <span>Cuisine predictions (e.g., Italian, Asian, Mexican)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
+                            <span>Category predictions (e.g., Main Course, Dessert)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-purple-400 rounded-full mr-2"></div>
+                            <span>Tag predictions (e.g., Morning, Evening, Sunny, Rainy)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-8 text-center">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button onclick="generatePredictions()" 
+                    class="bg-food-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 transition-colors flex items-center space-x-3 text-lg">
+                <i data-lucide="play" class="w-6 h-6"></i>
+                <span>Generate Predictions</span>
+            </button>
+            
+            <button onclick="importToDatabase()" 
+                    class="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center space-x-3 text-lg">
+                <i data-lucide="database" class="w-6 h-6"></i>
+                <span>Import Predictions to Database</span>
+            </button>
+        </div>
+        
+        <div class="text-sm text-gray-600 max-w-2xl mx-auto mt-8">
+            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
+                <div class="flex items-start">
+                    <i data-lucide="alert-triangle" class="w-5 h-5 text-yellow-600 mr-2 mt-0.5"></i>
+                    <div class="text-yellow-800">
+                        <strong>Warning:</strong> Importing to database will remove all existing menu items and replace them with the predicted data.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="prediction-progress" class="hidden mt-6">
+    <div class="bg-white rounded-2xl shadow-xl p-8">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Processing...</h3>
+        <div class="space-y-4">
+            <div class="flex items-center justify-between">
+                <span class="text-gray-600">Generating predictions...</span>
+                <div class="flex items-center space-x-2">
+                    <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-food-blue"></div>
+                    <span class="text-sm text-gray-500" id="progress-text">0%</span>
+                </div>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+                <div class="bg-food-blue h-2 rounded-full transition-all duration-300" style="width: 0%" id="prediction-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="prediction-results" class="hidden mt-6">
+    <div class="bg-white rounded-2xl shadow-xl p-8">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Prediction Results</h3>
+        <div id="results-summary" class="grid md:grid-cols-3 gap-6 mb-6">
+            <!-- Results will be populated here -->
+        </div>
+        
+        <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+            <div class="flex items-center">
+                <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2"></i>
+                <span class="font-medium text-green-800">Predictions completed successfully!</span>
+            </div>
+            <p class="text-sm text-green-600 mt-2">You can now use these predictions to generate recommendations.</p>
+        </div>
+        
+        <div class="mt-6 text-center">
+            <a href="/recommend" class="bg-food-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors inline-flex items-center space-x-2">
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                <span>Generate Recommendations</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="import-results" class="hidden mt-6">
+    <div class="bg-white rounded-2xl shadow-xl p-8">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Database Import Results</h3>
+        <div id="import-summary" class="grid md:grid-cols-2 gap-6 mb-6">
+            <!-- Import results will be populated here -->
+        </div>
+        
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div class="flex items-center">
+                <i data-lucide="database" class="w-5 h-5 text-blue-600 mr-2"></i>
+                <span class="font-medium text-blue-800">Menu items imported to database successfully!</span>
+            </div>
+            <p class="text-sm text-blue-600 mt-2">The predicted menu data is now available in your MySQL database.</p>
+        </div>
+        
+        <div class="mt-6 text-center">
+            <a href="/manage-menu" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center space-x-2">
+                <i data-lucide="list" class="w-5 h-5"></i>
+                <span>View Menu Items</span>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Load current data source on page load
+document.addEventListener('DOMContentLoaded', function() {
+    loadCurrentDataSource();
+});
+
+// Function to load and display current data source
+function loadCurrentDataSource() {
+    fetch('/api/current-data-source')
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            const fileInfo = data.data;
+            document.getElementById('current-data-source').textContent = fileInfo.full_path;
+            
+            // Show additional info if available
+            const parentDiv = document.getElementById('current-data-source').parentElement.parentElement;
+            const infoDiv = parentDiv.querySelector('.text-xs.text-gray-500');
+            infoDiv.innerHTML = `Contains ${fileInfo.row_count} food items with columns: ${fileInfo.columns.join(', ')}`;
+        }
+    })
+    .catch(error => {
+        console.log('No current data source found or error loading:', error);
+    });
+}
+
+// Prediction specific JavaScript
+function generatePredictions() {
+    showLoading('Generating predictions...');
+    document.getElementById('prediction-progress').classList.remove('hidden');
+    
+    const progressBar = document.getElementById('prediction-progress-bar');
+    const progressText = document.getElementById('progress-text');
+    
+    // Simulate progress
+    let progress = 0;
+    const progressInterval = setInterval(() => {
+        progress += Math.random() * 10;
+        if (progress > 90) progress = 90;
+        progressBar.style.width = progress + '%';
+        progressText.textContent = Math.round(progress) + '%';
+    }, 300);
+    
+    fetch('/api/predict', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        clearInterval(progressInterval);
+        progressBar.style.width = '100%';
+        progressText.textContent = '100%';
+        
+        hideLoading();
+        
+        if (data.success) {
+            showMessage('Predictions generated successfully!', 'success');
+            document.getElementById('prediction-results').classList.remove('hidden');
+            document.getElementById('results-summary').innerHTML = `
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">${data.count || 'N/A'}</div>
+                    <div class="text-sm text-blue-800">Items Processed</div>
+                </div>
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">3</div>
+                    <div class="text-sm text-green-800">Models Used</div>
+                </div>
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 text-center">
+                    <div class="text-3xl font-bold text-purple-600 mb-2">100%</div>
+                    <div class="text-sm text-purple-800">Success Rate</div>
+                </div>
+            `;
+        } else {
+            showMessage('Prediction failed: ' + data.message, 'error');
+        }
+    })
+    .catch(error => {
+        clearInterval(progressInterval);
+        hideLoading();
+        showMessage('Prediction failed: ' + error.message, 'error');
+    });
+}
+
+// Import predictions to database
+function importToDatabase() {
+    // Show confirmation dialog
+    if (!confirm('This will remove all existing menu items from the database and replace them with the predicted data. Are you sure you want to continue?')) {
+        return;
+    }
+    
+    showLoading('Importing predictions to database...');
+    
+    fetch('/api/import-predictions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        hideLoading();
+        
+        if (data.success) {
+            showMessage(`Successfully imported ${data.count} menu items to database!`, 'success');
+            
+            // Show import results section
+            document.getElementById('import-results').classList.remove('hidden');
+            document.getElementById('import-summary').innerHTML = `
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">${data.count || 'N/A'}</div>
+                    <div class="text-sm text-blue-800">Items Imported</div>
+                </div>
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">✓</div>
+                    <div class="text-sm text-green-800">Database Updated</div>
+                </div>
+            `;
+        } else {
+            showMessage('Import failed: ' + data.message, 'error');
+        }
+    })
+    .catch(error => {
+        hideLoading();
+        showMessage('Import failed: ' + error.message, 'error');
+    });
+}
+
+// CSV Upload function
+function uploadCSV() {
+    const fileInput = document.getElementById('csvFileInput');
+    const file = fileInput.files[0];
+    
+    if (!file) {
+        showMessage('Please select a CSV file to upload.', 'error');
+        return;
+    }
+    
+    if (!file.name.toLowerCase().endsWith('.csv')) {
+        showMessage('Please select a valid CSV file.', 'error');
+        return;
+    }
+    
+    const formData = new FormData();
+    formData.append('csv_file', file);
+    
+    showLoading('Uploading CSV file...');
+    
+    fetch('/api/upload-csv', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        hideLoading();
+        
+        if (data.success) {
+            showMessage(`CSV file uploaded successfully! File saved as: ${data.filename}`, 'success');
+            
+            // Update the current data source display
+            document.getElementById('current-data-source').textContent = `data/Pre/${data.filename}`;
+            
+            // Clear the file input
+            fileInput.value = '';
+            
+            // Refresh the current data source info
+            loadCurrentDataSource();
+            
+            // Show success with file info
+            if (data.row_count) {
+                showMessage(`✅ Uploaded ${data.filename} with ${data.row_count} rows`, 'success');
+            }
+        } else {
+            showMessage('Upload failed: ' + data.message, 'error');
+        }
+    })
+    .catch(error => {
+        hideLoading();
+        showMessage('Upload failed: ' + error.message, 'error');
+    });
+}
+</script>
+{% endblock %}

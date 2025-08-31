@@ -1,0 +1,626 @@
+{% extends "base.html" %}
+
+{% block title %}🧾 Order Receipt - Food Recommendation System{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Receipt Header -->
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <!-- Header Section -->
+            <div class="bg-gradient-to-r from-food-green to-green-600 text-white p-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-bold mb-2">Order Receipt</h1>
+                        <p class="text-green-100">Thank you for your order!</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                            <i data-lucide="check-circle" class="w-12 h-12 mx-auto mb-2"></i>
+                            <p class="text-sm font-medium">Order Confirmed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Details Section -->
+            <div class="p-8">
+                <!-- Loading State -->
+                <div id="loading-state" class="text-center py-12">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-food-green mx-auto mb-4"></div>
+                    <p class="text-gray-600">Loading order details...</p>
+                </div>
+
+                <!-- Error State -->
+                <div id="error-state" class="hidden text-center py-12">
+                    <i data-lucide="alert-circle" class="w-16 h-16 text-red-400 mx-auto mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-600 mb-2">Order Not Found</h3>
+                    <p class="text-gray-500 mb-6">We couldn't find the order details.</p>
+                    <a href="/dashboard" class="bg-food-green text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors">
+                        Go to Dashboard
+                    </a>
+                </div>
+
+                <!-- Receipt Content -->
+                <div id="receipt-content" class="hidden">
+                    <!-- Order Information -->
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Order Information</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Order Number:</span>
+                                    <span id="order-number" class="font-semibold text-gray-800"></span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Order Date:</span>
+                                    <span id="order-date" class="font-semibold text-gray-800"></span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Status:</span>
+                                    <span id="order-status" class="px-3 py-1 rounded-full text-sm font-medium"></span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Payment Method:</span>
+                                    <span id="payment-method" class="font-semibold text-gray-800"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Customer Information</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Name:</span>
+                                    <span id="customer-name" class="font-semibold text-gray-800"></span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Email:</span>
+                                    <span id="customer-email" class="font-semibold text-gray-800"></span>
+                                </div>
+                            </div>
+                            
+                            <!-- Special Instructions -->
+                            <div id="special-instructions-section" class="hidden mt-4">
+                                <h4 class="text-md font-semibold text-gray-800 mb-2">Special Instructions</h4>
+                                <p id="special-instructions" class="text-gray-600 bg-gray-50 p-3 rounded-lg"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Items -->
+                    <div class="mb-8">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-6">Order Items</h3>
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Details</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Qty</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="order-items" class="bg-white divide-y divide-gray-200">
+                                    <!-- Items will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Order Summary</h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Subtotal:</span>
+                                <span id="subtotal" class="font-semibold text-gray-800"></span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Service Charge (5%):</span>
+                                <span id="service-charge" class="font-semibold text-gray-800"></span>
+                            </div>
+                            <div class="border-t border-gray-300 pt-2 mt-2">
+                                <div class="flex justify-between text-lg">
+                                    <span class="font-bold text-gray-800">Total Amount:</span>
+                                    <span id="total-amount" class="font-bold text-food-green"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <button onclick="downloadReceipt()" class="bg-food-green text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors flex items-center space-x-2">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                            <span>Download Receipt</span>
+                        </button>
+                        
+                        <button onclick="showRatingModal()" class="bg-food-blue text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors flex items-center space-x-2">
+                            <i data-lucide="star" class="w-5 h-5"></i>
+                            <span>Rate Ordered Items</span>
+                        </button>
+                        
+                        <button onclick="reorderItems()" class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors flex items-center space-x-2">
+                            <i data-lucide="repeat" class="w-5 h-5"></i>
+                            <span>Reorder</span>
+                        </button>
+                        
+                        <a href="/dashboard" class="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors flex items-center space-x-2">
+                            <i data-lucide="home" class="w-5 h-5"></i>
+                            <span>Back to Dashboard</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QR Code Section (for future enhancement) -->
+        <div id="receipt-qr" class="hidden bg-white rounded-2xl shadow-xl p-8 mt-8 text-center">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Digital Receipt</h3>
+            <div id="qr-code" class="flex justify-center mb-4">
+                <!-- QR code will be generated here -->
+            </div>
+            <p class="text-sm text-gray-600">Scan QR code to access your receipt online</p>
+        </div>
+    </div>
+
+    <!-- Rating Modal -->
+    <div id="rating-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between p-6 border-b border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-900">Rate Your Ordered Items</h3>
+                <button onclick="closeRatingModal()" class="text-gray-400 hover:text-gray-600">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <p class="text-gray-600 mb-6">Please rate each item to help us improve our recommendations for you.</p>
+                
+                <div id="rating-items" class="space-y-6">
+                    <!-- Rating items will be populated here -->
+                </div>
+                
+                <div class="flex justify-end space-x-4 mt-8 pt-6 border-t border-gray-200">
+                    <button onclick="closeRatingModal()" class="px-6 py-2 text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors">
+                        Cancel
+                    </button>
+                    <button onclick="submitRatings()" class="px-6 py-2 bg-food-green text-white rounded-lg hover:bg-green-600 transition-colors">
+                        Submit Ratings
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentUser = null;
+    let orderData = null;
+    let orderItems = [];
+    let ratings = {};
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+        checkAuthentication();
+        loadOrderFromURL();
+    });
+
+    function checkAuthentication() {
+        const userData = sessionStorage.getItem('currentUser');
+        if (!userData) {
+            window.location.href = '/login';
+            return;
+        }
+        currentUser = JSON.parse(userData);
+    }
+
+    function loadOrderFromURL() {
+        // Get order ID from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('order_id');
+        
+        if (!orderId) {
+            showError();
+            return;
+        }
+        
+        loadOrderDetails(orderId);
+    }
+
+    function loadOrderDetails(orderId) {
+        fetch(`/api/orders/${orderId}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('loading-state').classList.add('hidden');
+                
+                if (data.success && data.order && data.order.length > 0) {
+                    orderData = data.order[0]; // Get order info from first row
+                    orderItems = data.order.filter(item => item.item_id); // Get items
+                    displayOrderDetails();
+                } else {
+                    showError();
+                }
+            })
+            .catch(error => {
+                document.getElementById('loading-state').classList.add('hidden');
+                console.error('Error loading order details:', error);
+                showError();
+            });
+    }
+
+    function showError() {
+        document.getElementById('loading-state').classList.add('hidden');
+        document.getElementById('error-state').classList.remove('hidden');
+    }
+
+    function displayOrderDetails() {
+        // Order Information
+        document.getElementById('order-number').textContent = `#${orderData.order_id}`;
+        
+        const orderDate = new Date(orderData.order_date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        document.getElementById('order-date').textContent = orderDate;
+        
+        // Order Status
+        const statusColors = {
+            'pending': 'bg-yellow-100 text-yellow-800',
+            'confirmed': 'bg-blue-100 text-blue-800',
+            'preparing': 'bg-orange-100 text-orange-800',
+            'ready': 'bg-green-100 text-green-800',
+            'delivered': 'bg-green-100 text-green-800',
+            'cancelled': 'bg-red-100 text-red-800'
+        };
+        const statusElement = document.getElementById('order-status');
+        statusElement.textContent = orderData.order_status.charAt(0).toUpperCase() + orderData.order_status.slice(1);
+        statusElement.className = `px-3 py-1 rounded-full text-sm font-medium ${statusColors[orderData.order_status] || 'bg-gray-100 text-gray-800'}`;
+        
+        document.getElementById('payment-method').textContent = orderData.payment_method.charAt(0).toUpperCase() + orderData.payment_method.slice(1);
+        
+        // Customer Information
+        document.getElementById('customer-name').textContent = orderData.customer_name;
+        document.getElementById('customer-email').textContent = orderData.customer_email;
+        
+        // Special Instructions
+        if (orderData.notes && orderData.notes.trim()) {
+            document.getElementById('special-instructions').textContent = orderData.notes;
+            document.getElementById('special-instructions-section').classList.remove('hidden');
+        }
+        
+        // Order Items
+        displayOrderItems();
+        
+        // Order Summary
+        displayOrderSummary();
+        
+        // Show receipt content
+        document.getElementById('receipt-content').classList.remove('hidden');
+        
+        // Initialize Lucide icons
+        lucide.createIcons();
+    }
+
+    function displayOrderItems() {
+        const itemsContainer = document.getElementById('order-items');
+        
+        itemsContainer.innerHTML = orderItems.map(item => `
+            <tr>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm font-medium text-gray-900">${item.item_name}</div>
+                </td>
+                <td class="px-6 py-4">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">${item.cuisine}</span>
+                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">${item.category}</span>
+                    </div>
+                    ${item.special_instructions ? `<div class="text-xs text-orange-600 mt-1">Note: ${item.special_instructions}</div>` : ''}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    ${item.quantity}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    Rs. ${parseFloat(item.item_price).toFixed(2)}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    Rs. ${parseFloat(item.subtotal).toFixed(2)}
+                </td>
+            </tr>
+        `).join('');
+    }
+
+    function displayOrderSummary() {
+        const subtotal = orderItems.reduce((sum, item) => sum + parseFloat(item.subtotal), 0);
+        const serviceCharge = subtotal * 0.05;
+        const totalAmount = parseFloat(orderData.total_amount);
+        
+        document.getElementById('subtotal').textContent = `Rs. ${subtotal.toFixed(2)}`;
+        document.getElementById('service-charge').textContent = `Rs. ${serviceCharge.toFixed(2)}`;
+        document.getElementById('total-amount').textContent = `Rs. ${totalAmount.toFixed(2)}`;
+    }
+
+    function downloadReceipt() {
+        // Create a printable version
+        const printWindow = window.open('', '_blank');
+        const receiptHTML = generatePrintableReceipt();
+        
+        printWindow.document.write(receiptHTML);
+        printWindow.document.close();
+        printWindow.focus();
+        
+        // Trigger print dialog
+        setTimeout(() => {
+            printWindow.print();
+            printWindow.close();
+        }, 500);
+    }
+
+    function generatePrintableReceipt() {
+        const orderDate = new Date(orderData.order_date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+
+        const itemsHTML = orderItems.map(item => `
+            <tr>
+                <td style="padding: 8px; border-bottom: 1px solid #eee;">${item.item_name}</td>
+                <td style="padding: 8px; border-bottom: 1px solid #eee; text-align: center;">${item.quantity}</td>
+                <td style="padding: 8px; border-bottom: 1px solid #eee; text-align: right;">Rs. ${parseFloat(item.item_price).toFixed(2)}</td>
+                <td style="padding: 8px; border-bottom: 1px solid #eee; text-align: right;">Rs. ${parseFloat(item.subtotal).toFixed(2)}</td>
+            </tr>
+        `).join('');
+
+        const subtotal = orderItems.reduce((sum, item) => sum + parseFloat(item.subtotal), 0);
+        const serviceCharge = subtotal * 0.05;
+
+        return `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Receipt - Order #${orderData.order_id}</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 20px; }
+                    .header { text-align: center; margin-bottom: 30px; }
+                    .order-info { margin-bottom: 20px; }
+                    .order-info div { margin-bottom: 5px; }
+                    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+                    th { background-color: #f8f9fa; padding: 10px; text-align: left; border-bottom: 2px solid #dee2e6; }
+                    .summary { margin-top: 20px; text-align: right; }
+                    .total { font-weight: bold; font-size: 1.2em; }
+                    @media print {
+                        body { margin: 0; }
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="header">
+                    <h1>🍽️ Food Recommendation System</h1>
+                    <h2>Order Receipt</h2>
+                </div>
+                
+                <div class="order-info">
+                    <div><strong>Order Number:</strong> #${orderData.order_id}</div>
+                    <div><strong>Date:</strong> ${orderDate}</div>
+                    <div><strong>Customer:</strong> ${orderData.customer_name}</div>
+                    <div><strong>Email:</strong> ${orderData.customer_email}</div>
+                    <div><strong>Payment Method:</strong> ${orderData.payment_method.charAt(0).toUpperCase() + orderData.payment_method.slice(1)}</div>
+                    ${orderData.notes ? `<div><strong>Special Instructions:</strong> ${orderData.notes}</div>` : ''}
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th style="text-align: center;">Qty</th>
+                            <th style="text-align: right;">Price</th>
+                            <th style="text-align: right;">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${itemsHTML}
+                    </tbody>
+                </table>
+                
+                <div class="summary">
+                    <div>Subtotal: Rs. ${subtotal.toFixed(2)}</div>
+                    <div>Service Charge (5%): Rs. ${serviceCharge.toFixed(2)}</div>
+                    <div class="total">Total Amount: Rs. ${parseFloat(orderData.total_amount).toFixed(2)}</div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px; color: #666;">
+                    <p>Thank you for your order!</p>
+                    <p>Food Recommendation System</p>
+                </div>
+            </body>
+            </html>
+        `;
+    }
+
+    function showRatingModal() {
+        displayRatingItems();
+        document.getElementById('rating-modal').classList.remove('hidden');
+        lucide.createIcons();
+    }
+
+    function closeRatingModal() {
+        document.getElementById('rating-modal').classList.add('hidden');
+        ratings = {}; // Reset ratings
+    }
+
+    function displayRatingItems() {
+        const ratingContainer = document.getElementById('rating-items');
+        
+        ratingContainer.innerHTML = orderItems.map(item => `
+            <div class="border border-gray-200 rounded-lg p-4">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-gray-800 mb-2">${item.item_name}</h4>
+                        <div class="flex gap-2 mb-2">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">${item.cuisine}</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">${item.category}</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Quantity: ${item.quantity} | Price: Rs. ${parseFloat(item.item_price).toFixed(2)}</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-3">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Rate this item:</label>
+                        <div class="flex items-center space-x-1" data-item-id="${item.item_id}">
+                            ${[1, 2, 3, 4, 5].map(star => `
+                                <button type="button" 
+                                        class="star-btn w-8 h-8 text-gray-300 hover:text-yellow-400 transition-colors focus:outline-none" 
+                                        data-rating="${star}"
+                                        onclick="setRating(${item.item_id}, ${star})">
+                                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </button>
+                            `).join('')}
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Click to rate from 1 to 5 stars</p>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Additional comments (optional):</label>
+                        <textarea id="comment-${item.item_id}" 
+                                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-food-green focus:border-food-green text-sm"
+                                  rows="2" 
+                                  placeholder="Share your thoughts about this item..."></textarea>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function setRating(itemId, rating) {
+        ratings[itemId] = rating;
+        
+        // Update star display
+        const container = document.querySelector(`[data-item-id="${itemId}"]`);
+        const stars = container.querySelectorAll('.star-btn');
+        
+        stars.forEach((star, index) => {
+            const starNumber = index + 1; // Convert 0-based index to 1-based star number
+            
+            if (starNumber <= rating) {
+                // Highlight the star - make it yellow/gold
+                star.classList.remove('text-gray-300');
+                star.classList.add('text-yellow-400');
+            } else {
+                // Reset the star to default gray
+                star.classList.remove('text-yellow-400');
+                star.classList.add('text-gray-300');
+            }
+        });
+        
+        // Debug log to see what's happening
+        console.log(`Rating set for item ${itemId}: ${rating} stars`);
+        console.log('Stars state:', Array.from(stars).map((star, index) => ({
+            starNumber: index + 1,
+            isHighlighted: star.classList.contains('text-yellow-400'),
+            classes: star.className
+        })));
+    }
+
+    function submitRatings() {
+        // Validate that all items have ratings
+        const unratedItems = orderItems.filter(item => !ratings[item.item_id]);
+        if (unratedItems.length > 0) {
+            alert(`Please rate all items before submitting. Missing ratings for: ${unratedItems.map(item => item.item_name).join(', ')}`);
+            return;
+        }
+        
+        // Prepare ratings data
+        const ratingsData = orderItems.map(item => ({
+            user_id: currentUser.user_id || currentUser.id,
+            item_id: item.item_id,
+            rating: ratings[item.item_id],
+            comment: document.getElementById(`comment-${item.item_id}`).value.trim() || null
+        }));
+        
+        // Submit ratings
+        fetch('/api/ratings/bulk', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ ratings: ratingsData })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showMessage('Thank you for your ratings! This helps us improve our recommendations.', 'success');
+                closeRatingModal();
+            } else {
+                throw new Error(data.message || 'Failed to submit ratings');
+            }
+        })
+        .catch(error => {
+            console.error('Error submitting ratings:', error);
+            showMessage('Failed to submit ratings: ' + error.message, 'error');
+        });
+    }
+
+    function reorderItems() {
+        // Add all order items to cart
+        const cartItems = orderItems.map(item => ({
+            item_id: item.item_id,
+            item_name: item.item_name,
+            price: parseFloat(item.item_price),
+            cuisine: item.cuisine,
+            category: item.category,
+            quantity: item.quantity,
+            special_instructions: item.special_instructions || ''
+        }));
+        
+        // Save to localStorage
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        showMessage(`${cartItems.length} items added to cart!`, 'success');
+        
+        setTimeout(() => {
+            window.location.href = '/cart';
+        }, 1500);
+    }
+
+    function showMessage(text, type = 'info') {
+        const message = document.createElement('div');
+        message.className = 'fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg text-white font-medium z-50 transform translate-x-full transition-transform duration-300';
+        
+        if (type === 'success') {
+            message.className += ' bg-green-500';
+        } else if (type === 'error') {
+            message.className += ' bg-red-500';
+        } else {
+            message.className += ' bg-blue-500';
+        }
+        
+        message.textContent = text;
+        document.body.appendChild(message);
+        
+        // Animate in
+        setTimeout(() => {
+            message.classList.remove('translate-x-full');
+        }, 100);
+        
+        // Remove after delay
+        setTimeout(() => {
+            message.classList.add('translate-x-full');
+            setTimeout(() => {
+                document.body.removeChild(message);
+            }, 300);
+        }, 3000);
+    }
+
+    // Initialize Lucide icons
+    lucide.createIcons();
+</script>
+{% endblock %}

@@ -1,0 +1,478 @@
+{% extends "staff-base.html" %}
+
+{% block title %}Staff Dashboard - Food Recommendation System{% endblock %}
+
+{% block page_title %}Staff Dashboard{% endblock %}
+
+{% block extra_head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+        <!-- Welcome Section -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Restaurant Staff Dashboard</h1>
+            <p class="text-gray-600">Manage the food recommendation system and monitor system performance.</p>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">System Statistics</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Total Menu Items -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-orange-100 rounded-lg">
+                            <i data-lucide="utensils" class="w-6 h-6 text-orange-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Menu Items</p>
+                            <p id="total-menu-items" class="text-2xl font-bold text-gray-900">---</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Users -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-blue-100 rounded-lg">
+                            <i data-lucide="users" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Total Users</p>
+                            <p id="total-users-stat" class="text-2xl font-bold text-gray-900">---</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Ratings -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-yellow-100 rounded-lg">
+                            <i data-lucide="star" class="w-6 h-6 text-yellow-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Total Ratings</p>
+                            <p id="total-ratings-stat" class="text-2xl font-bold text-gray-900">---</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Average Rating -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-green-100 rounded-lg">
+                            <i data-lucide="trending-up" class="w-6 h-6 text-green-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Avg Rating</p>
+                            <p id="avg-rating-stat" class="text-2xl font-bold text-gray-900">---</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Analytics Overview</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Ratings Distribution Chart -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-900">Ratings Distribution</h3>
+                        <i data-lucide="bar-chart-3" class="w-5 h-5 text-gray-400"></i>
+                    </div>
+                    <div class="h-64">
+                        <canvas id="ratingsChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Popular Cuisines Chart -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-900">Popular Cuisines</h3>
+                        <i data-lucide="pie-chart" class="w-5 h-5 text-gray-400"></i>
+                    </div>
+                    <div class="h-64">
+                        <canvas id="cuisinesChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- User Registration Trends -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-900">User Registration Trends</h3>
+                        <i data-lucide="trending-up" class="w-5 h-5 text-gray-400"></i>
+                    </div>
+                    <div class="h-64">
+                        <canvas id="userTrendsChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Menu Categories Chart -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-900">Menu Categories</h3>
+                        <i data-lucide="layers" class="w-5 h-5 text-gray-400"></i>
+                    </div>
+                    <div class="h-64">
+                        <canvas id="categoriesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity Section -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Recent Activity</h2>
+            <div class="bg-white rounded-lg shadow-sm border">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-900">System Activity</h3>
+                </div>
+                <div id="activity-feed" class="divide-y divide-gray-200">
+                    <!-- Activity items will be populated here -->
+                    <div class="px-6 py-4">
+                        <p class="text-gray-500 text-center">Loading recent activity...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Load dashboard statistics
+    function loadDashboardStats() {
+        // Load menu items count
+        fetch('/api/menu-items')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('total-menu-items').textContent = data.items.length;
+                }
+            })
+            .catch(error => console.error('Error loading menu stats:', error));
+
+        // Load users count
+        fetch('/api/users')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('total-users-stat').textContent = data.users.length;
+                }
+            })
+            .catch(error => console.error('Error loading user stats:', error));
+
+        // Load ratings count and average
+        fetch('/api/ratings')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const ratings = data.ratings;
+                    document.getElementById('total-ratings-stat').textContent = ratings.length;
+                    
+                    if (ratings.length > 0) {
+                        const avgRating = ratings.reduce((sum, rating) => sum + rating.rating, 0) / ratings.length;
+                        document.getElementById('avg-rating-stat').textContent = avgRating.toFixed(1);
+                    } else {
+                        document.getElementById('avg-rating-stat').textContent = '0.0';
+                    }
+                }
+            })
+            .catch(error => console.error('Error loading rating stats:', error));
+    }
+
+    // Create charts
+    function createCharts() {
+        // Ratings Distribution Chart
+        const ratingsCtx = document.getElementById('ratingsChart').getContext('2d');
+        new Chart(ratingsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['1 Star', '2 Stars', '3 Stars', '4 Stars', '5 Stars'],
+                datasets: [{
+                    label: 'Number of Ratings',
+                    data: [0, 0, 0, 0, 0], // Will be updated with real data
+                    backgroundColor: [
+                        '#ef4444', '#f97316', '#eab308', '#22c55e', '#16a34a'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Popular Cuisines Chart
+        const cuisinesCtx = document.getElementById('cuisinesChart').getContext('2d');
+        new Chart(cuisinesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: [], // Will be populated with real data
+                datasets: [{
+                    data: [],
+                    backgroundColor: [
+                        '#3b82f6', '#ef4444', '#22c55e', '#f59e0b', '#8b5cf6',
+                        '#06b6d4', '#84cc16', '#f97316', '#ec4899'
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            usePointStyle: true
+                        }
+                    }
+                }
+            }
+        });
+
+        // User Registration Trends Chart
+        const userTrendsCtx = document.getElementById('userTrendsChart').getContext('2d');
+        new Chart(userTrendsCtx, {
+            type: 'line',
+            data: {
+                labels: [], // Will be populated with dates
+                datasets: [{
+                    label: 'New Registrations',
+                    data: [],
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Menu Categories Chart
+        const categoriesCtx = document.getElementById('categoriesChart').getContext('2d');
+        new Chart(categoriesCtx, {
+            type: 'polarArea',
+            data: {
+                labels: [], // Will be populated with categories
+                datasets: [{
+                    data: [],
+                    backgroundColor: [
+                        'rgba(239, 68, 68, 0.8)',
+                        'rgba(34, 197, 94, 0.8)',
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(139, 92, 246, 0.8)'
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // Load chart data
+    function loadChartData() {
+        // Load ratings data for charts
+        fetch('/api/ratings')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    updateRatingsChart(data.ratings);
+                }
+            })
+            .catch(error => console.error('Error loading ratings for chart:', error));
+
+        // Load menu data for charts
+        fetch('/api/menu-items')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    updateCuisinesChart(data.items);
+                    updateCategoriesChart(data.items);
+                }
+            })
+            .catch(error => console.error('Error loading menu data for chart:', error));
+
+        // Load user data for trends chart
+        fetch('/api/users')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    updateUserTrendsChart(data.users);
+                }
+            })
+            .catch(error => console.error('Error loading user data for chart:', error));
+    }
+
+    // Update ratings chart with real data
+    function updateRatingsChart(ratings) {
+        const ratingCounts = [0, 0, 0, 0, 0];
+        ratings.forEach(rating => {
+            const ratingValue = Math.floor(rating.rating);
+            if (ratingValue >= 1 && ratingValue <= 5) {
+                ratingCounts[ratingValue - 1]++;
+            }
+        });
+
+        const chart = Chart.getChart('ratingsChart');
+        if (chart) {
+            chart.data.datasets[0].data = ratingCounts;
+            chart.update();
+        }
+    }
+
+    // Update cuisines chart with real data
+    function updateCuisinesChart(menuItems) {
+        const cuisineCounts = {};
+        menuItems.forEach(item => {
+            const cuisine = item.cuisine || 'Unknown';
+            cuisineCounts[cuisine] = (cuisineCounts[cuisine] || 0) + 1;
+        });
+
+        const labels = Object.keys(cuisineCounts);
+        const data = Object.values(cuisineCounts);
+
+        const chart = Chart.getChart('cuisinesChart');
+        if (chart) {
+            chart.data.labels = labels;
+            chart.data.datasets[0].data = data;
+            chart.update();
+        }
+    }
+
+    // Update categories chart with real data
+    function updateCategoriesChart(menuItems) {
+        const categoryCounts = {};
+        menuItems.forEach(item => {
+            const category = item.category || 'Unknown';
+            categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+        });
+
+        const labels = Object.keys(categoryCounts);
+        const data = Object.values(categoryCounts);
+
+        const chart = Chart.getChart('categoriesChart');
+        if (chart) {
+            chart.data.labels = labels;
+            chart.data.datasets[0].data = data;
+            chart.update();
+        }
+    }
+
+    // Update user trends chart with real data
+    function updateUserTrendsChart(users) {
+        // Group users by registration date (last 7 days)
+        const last7Days = [];
+        const registrationCounts = [];
+        
+        for (let i = 6; i >= 0; i--) {
+            const date = new Date();
+            date.setDate(date.getDate() - i);
+            const dateStr = date.toISOString().split('T')[0];
+            last7Days.push(date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+            
+            const count = users.filter(user => {
+                const userDate = new Date(user.created_at).toISOString().split('T')[0];
+                return userDate === dateStr;
+            }).length;
+            
+            registrationCounts.push(count);
+        }
+
+        const chart = Chart.getChart('userTrendsChart');
+        if (chart) {
+            chart.data.labels = last7Days;
+            chart.data.datasets[0].data = registrationCounts;
+            chart.update();
+        }
+    }
+
+    // Load recent activity
+    function loadRecentActivity() {
+        // Mock activity data - in a real app, this would come from an API
+        const activities = [
+            { type: 'user', message: 'New user registered', time: '2 minutes ago', icon: 'user-plus', color: 'blue' },
+            { type: 'rating', message: 'New rating submitted for Pizza', time: '15 minutes ago', icon: 'star', color: 'yellow' },
+            { type: 'menu', message: 'Menu item updated: Pasta', time: '1 hour ago', icon: 'edit', color: 'orange' },
+            { type: 'training', message: 'ML models training completed', time: '2 hours ago', icon: 'brain', color: 'purple' },
+            { type: 'user', message: 'Staff member logged in', time: '3 hours ago', icon: 'shield', color: 'red' }
+        ];
+
+        const activityDiv = document.getElementById('activity-feed');
+        const activityHTML = activities.map(activity => {
+            return `
+                <div class="px-6 py-4 flex items-center">
+                    <div class="p-2 bg-${activity.color}-100 rounded-lg mr-4">
+                        <i data-lucide="${activity.icon}" class="w-4 h-4 text-${activity.color}-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-sm text-gray-900">${activity.message}</p>
+                        <p class="text-xs text-gray-500">${activity.time}</p>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        activityDiv.innerHTML = activityHTML;
+        lucide.createIcons(); // Re-initialize icons
+    }
+
+    // Initialize dashboard when DOM content is loaded
+    // Initialize dashboard when DOM content is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        loadDashboardStats();
+        loadRecentActivity();
+        createCharts();
+        loadChartData();
+    });
+</script>
+{% endblock %}

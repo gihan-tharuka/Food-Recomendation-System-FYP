@@ -1,0 +1,238 @@
+item_id,item_name,price,pred_cuisine,pred_category,pred_is_morning,pred_is_evening,pred_is_sunny,pred_is_rainy
+1298,Seafood Tom Yum,840,Thai,Soup,0,1,1,0
+1299,Seafood Tom Yum,1160,Thai,Soup,0,1,1,0
+1300,Chicken Tom Yum,600,Thai,Soup,0,1,1,0
+1301,Chicken Tom Yum,840,Thai,Soup,0,1,1,0
+1302,Sweet Corn Soup - Crab,750,Chinese,Soup,0,1,0,1
+1303,Sweet Corn Soup - Crab,1000,Chinese,Soup,0,1,0,1
+1304,Sweet Corn Soup - Chicken,530,Chinese,Soup,1,1,0,1
+1305,Sweet Corn Soup - Chicken,780,Chinese,Soup,0,1,0,1
+1306,Sweet Corn Soup - Vegetable,480,Chinese,Soup,1,1,0,1
+1307,Sweet Corn Soup - Vegetable,700,Chinese,Soup,0,1,0,1
+1308,Mixed Mee Hoon Soup,770,Chinese,Soup,0,1,1,0
+1309,Mixed Mee Hoon Soup,1120,Chinese,Soup,0,1,0,0
+1310,Seafood Soup,840,Chinese,Soup,0,1,0,1
+1311,Seafood Soup,1160,Chinese,Soup,0,1,0,1
+1312,Prawn and Cucumber Soup,900,Chinese,Soup,0,1,0,1
+1313,Spicy Vegetable Soup,770,Chinese,Soup,0,1,1,0
+1314,Chicken Hot and Spicy Soup,850,Chinese,Soup,0,1,0,0
+1315,Spicy Beef Soup,1000,Chinese,Soup,0,1,0,1
+1316,Cream of Mushroom and Spinach Soup,950,Continental,Soup,0,1,0,1
+1317,Cream of Chicken,950,Continental,Soup,0,1,1,0
+1318,Laksa Seafood Soup,1150,Chinese,Soup,0,1,1,0
+1319,Tomato Egg Soup,750,Chinese,Soup,0,1,0,1
+1320,Chinese Omelette - Vegetables,690,Chinese,Beverage,1,1,1,0
+1321,Chinese Omelette - Chicken,810,Chinese,Main,1,1,1,0
+1322,Chinese Omelette - Prawn,950,Chinese,Main,1,1,1,0
+1323,Sri Lankan Omelette,360,Sri Lankan,Beverage,1,1,1,0
+1324,Fried Egg,300,Asian,Side Dish,1,1,1,0
+1325,Cheese Omelette,480,Western,Side dish,1,1,1,0
+1326,Chicken Omelette - Sri Lankan Style,690,Sri Lankan,Main,1,1,1,0
+1327,Mixed Omelette,890,Chinese,Main,1,1,1,0
+1328,Bacon and Sausages Omelette,890,Western,Beverage,1,1,0,1
+1329,Kang Kung with Garlic,360,Asian,Beverage,1,1,1,0
+1330,Kang Kung with Garlic,420,Asian,Beverage,0,1,1,0
+1331,Mixed Vegetables with Mushrooms and Baby Corn,530,Asian,Beverage,0,1,1,0
+1332,Mixed Vegetables with Mushrooms and Baby Corn,700,Asian,Beverage,0,1,1,0
+1333,Chop Suey,480,Asian,Beverage,1,1,1,0
+1334,Chop Suey,660,Asian,Beverage,1,1,1,0
+1335,String Beans Szechuan Style with Cashew,500,Chinese,Beverage,1,1,1,0
+1336,String Beans Szechuan Style with Cashew,670,Chinese,Beverage,0,1,1,0
+1337,Devilled Mushrooms,530,Asian,Side dish,0,1,1,0
+1338,Devilled Mushrooms,710,Asian,Beverage,0,1,1,0
+1339,Hot Batter Mushrooms,530,Asian,Beverage,0,1,1,0
+1340,Hot Batter Mushrooms,670,Asian,Beverage,0,1,1,0
+1341,Hot Batter Baby Corn,720,Asian,Beverage,0,1,1,0
+1342,Hot Batter Baby Corn,900,Asian,Beverage,0,1,1,0
+1343,Mushrooms with Oyster Sauce,500,Asian,Beverage,0,1,1,0
+1344,Mushrooms with Oyster Sauce,720,Asian,Beverage,0,1,1,0
+1345,Spicy Potatoes,630,Asian,Beverage,1,1,1,0
+1346,Spicy Potatoes,820,Asian,Beverage,0,1,1,0
+1347,Garlic Spinach,400,Asian,Side Dish,1,1,1,0
+1348,Garlic Spinach,530,Asian,Side Dish,1,1,1,0
+1349,Chinese Chilli Vegetables,530,Chinese,Side dish,1,1,1,0
+1350,Chinese Chilli Vegetables,760,Chinese,Side dish,1,1,1,0
+1351,Stir-Fried Pak Choi,530,Asian,Beverage,0,1,1,0
+1352,Stir-Fried Pak Choi,700,Asian,Beverage,0,1,1,0
+1353,Devilled Button Mushrooms,800,Asian,Side dish,0,1,1,0
+1354,House Special Vietnamese Rice,950,Asian,Main,0,1,1,0
+1355,House Special Vietnamese Rice,1200,Asian,Main,0,1,1,0
+1356,Spisia Chop Suey Rice,950,Asian,Main,0,1,1,0
+1357,Spisia Chop Suey Rice,1200,Asian,Main,0,1,1,0
+1358,Ginger Rice with Chicken,700,Asian,Main,0,1,1,0
+1359,Ginger Rice with Chicken,900,Asian,Main,0,1,1,0
+1360,Wok Fried Rice with Prawns,800,Asian,Main,0,1,1,0
+1361,Wok Fried Rice with Prawns,1050,Asian,Main,0,1,1,0
+1362,Wok Fried Rice with Chicken,750,Asian,Main,0,1,1,0
+1363,Wok Fried Rice with Chicken,900,Asian,Main,0,1,1,0
+1364,Wok Fried Rice with Beef,750,Asian,Main,0,1,1,0
+1365,Wok Fried Rice with Beef,900,Asian,Main,0,1,1,0
+1366,Wok Fried Rice with Vegetables and Egg,700,Asian,Main,0,1,1,0
+1367,Wok Fried Rice with Vegetables and Egg,900,Asian,Main,0,1,1,0
+1368,Wok Fried Rice with Bacon and Egg,750,Asian,Main,0,1,1,0
+1369,Wok Fried Rice with Bacon and Egg,950,Asian,Main,0,1,1,0
+1370,Seafood Rice,1280,Asian,Main,0,1,1,0
+1371,Pineapple Rice,960,Asian,Main,0,1,1,0
+1372,Spicy Thai Seafood Rice,900,Thai,Main,0,1,1,0
+1373,Spicy Thai Seafood Rice,1200,Thai,Main,0,1,1,0
+1374,Steamed Rice - Premium Basmati,330,Asian,Main,0,1,1,0
+1375,Steamed Rice - Premium Basmati,470,Asian,Main,0,1,1,0
+1376,Mixed Fried Rice,850,Asian,Main,0,1,1,0
+1377,Mixed Fried Rice,1050,Asian,Main,0,1,1,0
+1378,Nasi Goreng,1050,Indonesian,Main,0,1,1,0
+1379,Mongolian Rice,850,Asian,Main,0,1,1,0
+1380,Mongolian Rice,1180,Asian,Main,0,1,1,0
+1381,Savoury Rice,800,Asian,Main,0,1,1,0
+1382,Garlic Rice,650,Asian,Main,0,1,1,0
+1383,Spisia Special Kebab Rice,1450,Asian,Main,0,1,1,0
+1384,Vegetable Chop Suey Rice,900,Asian,Main,0,1,1,0
+1385,Indonesian Fried Rice,1200,Asian,Main,0,1,1,0
+1386,Thai Spicy Vegetable Rice,650,Asian,Main,0,1,1,0
+1387,Thai Spicy Vegetable Rice,840,Asian,Main,0,1,1,0
+1388,Prawns in Red Chilli and Garlic Sauce,1140,Asian,Main,0,1,1,0
+1389,Prawns in Red Chilli and Garlic Sauce,1380,Asian,Main,0,1,1,0
+1390,Spicy Prawns,1140,Asian,Main,0,1,1,0
+1391,Spicy Prawns,1380,Asian,Main,0,1,1,0
+1392,Thai Chilli Prawns,1140,Thai,Main,0,1,1,0
+1393,Thai Chilli Prawns,1380,Thai,Main,0,1,1,0
+1394,Devilled Prawns,1140,Asian,Main,0,1,1,0
+1395,Devilled Prawns,1380,Asian,Main,0,1,0,1
+1396,Hot Garlic Prawns,1140,Asian,Main,0,1,1,0
+1397,Hot Garlic Prawns,1380,Asian,Main,0,1,1,0
+1398,Sweet and Sour Prawns,1140,Chinese,Main,0,1,0,1
+1399,Sweet and Sour Prawns,1380,Chinese,Main,0,1,0,1
+1400,Hot Batter Prawns,1140,Asian,Main,0,1,1,0
+1401,Hot Batter Prawns,1380,Asian,Main,0,1,1,0
+1402,Indonesian Prawns,1140,Continental,Main,0,1,1,0
+1403,Indonesian Prawns,1380,Indonesian,Main,0,1,1,0
+1404,Peanut Prawns,1140,Asian,Main,0,1,0,1
+1405,Peanut Prawns,1380,Asian,Main,0,1,0,1
+1406,Kang Kung Prawns,900,Asian,Main,0,1,0,1
+1407,Kang Kung Prawns,1140,Asian,Main,0,1,0,1
+1408,Prawns with White Garlic Sauce,1140,Asian,Main,0,1,1,0
+1409,Prawns with White Garlic Sauce,1380,Asian,Main,0,1,1,0
+1410,Black Pepper Prawns,1140,Asian,Main,0,1,1,0
+1411,Black Pepper Prawns,1380,Asian,Main,0,1,1,0
+1412,Singapore Chilli Prawns,1140,Continental,Main,0,1,1,0
+1413,Singapore Chilli Prawns,1380,Chinese,Main,0,1,1,0
+1414,China Prawns,1140,Continental,Main,0,1,0,1
+1415,China Prawns,1180,Continental,Main,0,1,0,1
+1416,Prawns with Spinach,900,Asian,Main,0,1,1,0
+1417,Prawns with Spinach,1140,Asian,Main,0,1,1,0
+1418,Chilli Crab,420,Asian,Main,0,1,0,1
+1419,Fried Crab in Ginger and Garlic Sauce,420,Asian,Main,0,1,1,0
+1420,Sri Lankan Crab Curry,420,Sri Lankan,Main,0,1,1,0
+1421,Pepper Crab,420,Asian,Beverage,0,1,0,0
+1422,Roast chicken in mushroom sauce,820,International,Main,0,1,1,0
+1423,Roast chicken in mushroom sauce,1230,International,Main,0,1,0,1
+1424,Spicy chicken,820,Asian,Main,0,1,1,0
+1425,Spicy chicken,940,Asian,Main,0,1,1,0
+1426,Devilled chicken,820,Sri Lankan,Main,0,1,1,0
+1427,Devilled chicken,1230,Sri Lankan,Main,0,1,1,0
+1428,Dry red chilli chicken,700,Asian,Main,0,1,1,0
+1429,Dry red chilli chicken,920,Asian,Main,0,1,1,0
+1430,Diced chicken with cashew nuts,750,Asian,Main,1,1,1,0
+1431,Diced chicken with cashew nuts,920,Asian,Main,1,1,1,0
+1432,Lemon chicken,700,Asian,Main,0,1,1,0
+1433,Lemon chicken,920,Asian,Main,0,1,0,0
+1434,Sweet and sour chicken,800,Chinese,Main,0,1,0,1
+1435,Sweet and sour chicken,980,Chinese,Main,0,1,0,1
+1436,Hot garlic chicken,700,Asian,Beverage,0,1,1,0
+1437,Hot garlic chicken,920,Asian,Main,0,1,1,0
+1438,Hot batter chicken,740,Asian,Main,0,1,1,0
+1439,Hot batter chicken,940,Asian,Main,0,1,1,0
+1440,Chilli chicken with cashew nuts,750,Asian,Main,1,1,1,0
+1441,Chilli chicken with cashew nuts,940,Asian,Main,0,1,1,0
+1442,Manchurian chicken,700,International,Main,0,1,1,0
+1443,Manchurian chicken,940,International,Main,0,1,1,0
+1444,Pepper chicken,990,Chinese,Main,0,1,1,0
+1445,Pepper chicken,1230,Chinese,Main,0,1,1,0
+1446,Indonesian chicken,700,Indonesian,Main,0,1,1,0
+1447,Indonesian chicken,920,Indonesian,Main,0,1,1,0
+1448,Kang kung chicken,560,Asian,Main,0,1,1,0
+1449,Kang kung chicken,760,Asian,Main,0,1,1,0
+1450,Chicken bistu,990,Asian,Main,0,1,1,0
+1451,Chicken bistu,1230,Asian,Main,0,1,1,0
+1452,Chicken drumsticks,700,International,Starter,0,1,1,0
+1453,Chicken drumsticks,920,International,Main,0,1,1,0
+1454,Fried chicken with onion salad,690,Asian,Main,1,1,1,0
+1455,Fried chicken with onion salad,890,Asian,Main,0,1,1,0
+1456,Peanut chicken,860,Asian,Main,0,1,1,0
+1457,China chicken,780,Chinese,Main,0,1,1,0
+1458,China chicken,950,Chinese,Main,0,1,1,0
+1459,Singapore Chilli Fish,810,Chinese,Main,0,1,1,0
+1460,Singapore Chilli Fish,1040,Chinese,Main,0,1,1,0
+1461,Thai Style Fish,720,Thai,Main,0,1,1,0
+1462,Thai Style Fish,1000,Thai,Main,0,1,1,0
+1463,Sweet and Sour Fish,720,Chinese,Main,0,1,0,1
+1464,Sweet and Sour Fish,1000,Chinese,Main,0,1,0,1
+1465,Hot Batter Fish,810,Asian,Main,0,1,1,0
+1466,Hot Batter Fish,1020,Asian,Main,0,1,1,0
+1467,Spicy Fish,720,Asian,Main,0,1,1,0
+1468,Spicy Fish,1020,Asian,Main,0,1,1,0
+1469,Devilled Fish,800,Sri Lankan,Main,0,1,1,0
+1470,Devilled Fish,1020,Sri Lankan,Main,0,1,1,0
+1471,Fish Bistu,720,Asian,Main,0,1,1,0
+1472,Fish Bistu,1000,Asian,Main,0,1,1,0
+1473,Crispy Fish,660,Asian,Main,0,1,1,0
+1474,Crispy Fish,950,Asian,Main,0,1,1,0
+1475,Pepper Fish,800,Chinese,Main,0,1,1,0
+1476,Pepper Fish,1110,Chinese,Main,0,1,1,0
+1477,Hot Garlic Fish,800,Asian,Main,0,1,1,0
+1478,Hot Garlic Fish,1100,Asian,Main,0,1,1,0
+1479,Deep Fried Fish with Onion Salad,720,Chinese,Starter,0,1,1,0
+1480,Deep Fried Fish with Onion Salad,940,Chinese,Main,0,1,1,0
+1481,Black Pepper Fish – Roasted,800,Asian,Main,0,1,1,0
+1482,Black Pepper Fish – Roasted,1010,Asian,Main,0,1,1,0
+1483,Vanilla milkshake,360,International,Beverage,1,1,1,0
+1484,Strawberry milkshake,370,International,Beverage,1,1,1,0
+1485,Chocolate milkshake,370,International,Beverage,1,1,1,0
+1486,Mixed fruit milkshake,420,International,Beverage,1,1,1,0
+1487,Mango juice,320,Continental,Beverage,1,1,1,0
+1488,Pineapple juice,320,Continental,Beverage,1,1,1,0
+1489,Orange juice,450,Continental,Beverage,1,1,1,0
+1490,Mixed fruit juice,380,Continental,Beverage,1,1,1,0
+1491,Papaya juice,300,Continental,Beverage,1,1,1,0
+1492,Lime juice,300,Continental,Beverage,1,1,1,0
+1493,Lime and soda,300,Continental,Beverage,1,1,1,0
+1494,Snowfall,320,International,Beverage,1,1,1,0
+1495,Pepsi 300ml,150,International,Beverage,1,1,1,0
+1496,Pepsi,400,International,Beverage,1,1,1,0
+1497,7up 300ml,150,International,Beverage,1,1,1,0
+1498,Cream soda 400ml,150,Continental,Beverage,1,1,1,0
+1499,Ginger beer 400ml,150,Continental,Beverage,1,1,1,0
+1500,Soda,150,Continental,Beverage,1,1,1,0
+1501,Soda,250,Continental,Beverage,1,1,1,0
+1502,Soda 1500ml,350,Continental,Beverage,1,1,1,0
+1503,Mineral water 1000ml,100,Continental,Beverage,1,1,1,0
+1504,Fresh fruit salad,300,International,Beverage,1,1,1,0
+1505,Fresh fruit salad with ice cream,350,International,Dessert,1,1,1,0
+1506,Crème caramel,220,Western,Beverage,0,1,1,0
+1507,Watalappam,220,International,Beverage,1,1,1,0
+1508,Vanilla ice cream,300,Western,Dessert,1,1,1,0
+1509,Chocolate ice cream,320,Western,Dessert,1,1,1,0
+1510,Strawberry ice cream,320,Western,Dessert,1,1,1,0
+1511,Three scoops ice cream - vanilla/chocolate/strawberry,500,International,Dessert,1,1,1,0
+1512,Seasonal fruit platter,220,Continental,Beverage,1,1,1,0
+1513,Chocolate biscuit pudding,220,International,Dessert,0,1,1,0
+1514,Chocolate mousse,250,International,Dessert,0,1,1,0
+1515,Brownie,250,Continental,Beverage,1,1,1,0
+1516,Mixed grill,2280,International,Main,0,1,1,0
+1517,Up country pepper beef steak,1300,Chinese,Main,0,1,1,0
+1518,Fillet beef steak,1300,Western,Main,0,1,0,1
+1519,Mixed seafood platter,2050,Continental,Main,0,1,1,0
+1520,Fish and chips,990,Chinese,Main,0,1,0,1
+1521,Vegetables - Boiled and buttered vegetables,780,International,Side Dish,1,1,1,0
+1522,Chicken - Grilled chicken with boiled vegetables,960,International,Main,0,1,1,0
+1523,Beef - Grilled beef with boiled vegetables,1000,International,Main,0,1,1,0
+1524,Pork - Grilled pork with boiled vegetables,960,International,Main,0,1,1,0
+1525,Fish - Grilled fish with boiled vegetables,1000,International,Main,0,1,1,0
+1526,Fried sausages,800,International,Side Dish,0,1,1,0
+1527,Spicy sausages,900,International,Beverage,0,1,1,0
+1528,Devilled sausages,900,International,Side Dish,0,1,1,0
+1529,Silver beef,1000,Chinese,Main,0,1,1,0
+1530,Chicken with black bean sauce,1000,Chinese,Main,0,1,1,0
+1531,Black pepper pork,1000,Chinese,Main,0,1,1,0
+1532,Pepper fish,1000,Chinese,Main,0,1,1,0
+1533,Black pepper cuttlefish,1200,Chinese,Main,0,1,1,0
+1534,Sweet and sour sizzling prawns,1220,Chinese,Main,0,1,0,1

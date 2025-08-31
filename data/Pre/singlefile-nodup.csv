@@ -1,0 +1,1141 @@
+item_id,restaurent_name,item_name,description,cuisine,category,is_morning,is_afternoon,is_evening,is_sunny,is_rainy,portion_size,price
+1,Grand Seven,Crab Toast,Crispy bread triangles topped with crab mixer & Parmesan cheese.,Continental,Starter,1,1,1,0,1,,1375
+2,Grand Seven,Cheese Toast,Crispy bread triangles  topped with cheese & green chilies.,Continental,Starter,1,1,1,0,1,,1375
+3,Grand Seven,Prawn Cocktail,Boiled medium prawns on a bed of lettuce with lime wedge and cocktail sauce.,Continental,Starter,0,1,1,1,0,,1400
+4,Grand Seven,Sea Food Cocktail,"Diced fish, shrimp, cuttlefish served with parsley, tomatoes on bed of lettuce cocktail sauce.",Continental,Starter,0,1,1,1,0,,1400
+5,Grand Seven,Mixed Vegetable Cocktail,Diced vegetable light cocktail sauce served on bed of lettuce.,Continental,Starter,0,1,1,1,0,,1350
+6,Grand Seven,Chicken Mulligatawny,"Traditional Indian soup garnished with boiled rice, fried onion and a lime wedge.",Indian,Soup,0,1,1,1,0,,1175
+7,Grand Seven,Cream Of Spinach,Made with fresh garden spinach.,Continental,Soup,0,1,1,1,0,,1175
+8,Grand Seven,Cream Of Tomato,Made with fresh garam tomato.,Continental,Soup,0,1,1,1,0,,1175
+9,Grand Seven,Cream Of Mushrooom,Creamy mushroom soup with sliced mushroom.,Continental,Soup,0,1,1,1,0,,1175
+10,Grand Seven,Cream Of Vegetable,Creamy vegetable with diced vegetable.,Continental,Soup,0,1,1,1,0,,1125
+11,Grand Seven,Cream Of Chicken,Creamy chicken soup with diced chicken.,Continental,Soup,0,1,1,1,0,,1175
+12,Grand Seven,Smoked Chicken And Apple Salad,Bound with yogurt and peanut dressing.,Continental,Salad,1,1,1,1,0,,1400
+13,Grand Seven,Caesar Salad,"Lettuce tossed with egg, anchovies, bacon, parmesan cheese, croutons and a creamy dressing.",Continental,Salad,1,1,1,1,0,,1400
+14,Grand Seven,Chicken Caesar Salad,As above Caesar with grilled chicken strips.,Continental,Salad,1,1,1,1,0,,1475
+15,Grand Seven,Chef Salad,"Lettuce, ham, beef, cheese, tuna, thousand island or sundried chilly mayonnaise mixed dressing.",Continental,Salad,1,1,1,1,0,,1425
+16,Grand Seven,Mediterranean Tuna Salad,"Fresh tuna fillet with potato, green beans, tomato, onions, olives & boiled eggs toasted in mustard vinaigrette.",Mediterranean,Salad,1,1,1,1,0,,1400
+17,Grand Seven,Russian Salad,Boiled assorted vegetables mixed mayonnaise sauce & dressing.,Continental,Salad,1,1,1,1,0,,1350
+18,Grand Seven,Stir Fry Vegetables,Stir-fry vegetables served with rice.,Asian,Main,0,1,1,1,0,,1400
+19,Grand Seven,Vegetable Tempura,"Thick sliced mixed vegetables, deep fried battered in tempura served with spicy green chili sauce.",Asian,Main,0,1,1,1,0,,1250
+20,Grand Seven,Vegetable Platter,Batter fried mushroom & sautÃ© vegetable served with mashed potato or rice.,Continental,Main,0,1,1,1,0,,1300
+21,Grand Seven,Prawn Napolitana,SautÃ© medium prawns mixed with Italian style tomato cream sauce served on bed of spaghetti with parmesan cheese & garlic bread.,Italian,Main,0,1,1,0,1,,1750
+22,Grand Seven,Chicken Cacciatore,Herb flavored chicken cooked with garden vegetables and tomato sauce served on bed of spaghetti with parmesan cheese & garlic bread.,Italian,Main,0,1,1,0,1,,1625
+23,Grand Seven,Chicken Ala Carbonara,"Spaghetti tossed in boneless chicken or beef mixed with thick creamy sauce, mushroom and egg yolk served with parmesan cheese & garlic bread.",Italian,Main,0,1,1,0,1,,1625
+24,Grand Seven,Bolognaise,Spaghetti with minced meat sauce.,Italian,Main,0,1,1,0,1,,1625
+25,Grand Seven,Beef Stroganoff,Beef fillet with mushroom and served with pasta gravy sauce.,Continental,Main,0,1,1,0,1,,1650
+26,Grand Seven,Sea Food Macaroni,Diced sea food macaroni with cream sauce & cheese.,Italian,Main,0,1,1,0,1,,1750
+27,Grand Seven,Chicken In A Basket,Crumb fried supreme of chicken with paprika tartar sauce.,Continental,Main,0,1,1,0,1,,1650
+28,Grand Seven,Chicken Coq Au Vin,"Mushroom, onion, pepper and chicken with white wine and demi-glazed sauce served with rice and salad.",French,Main,0,1,1,0,1,,1575
+29,Grand Seven,Chilli Chicken,Spicy boneless chicken served with rice and salad.,Asian,Main,0,1,1,1,0,,1575
+30,Grand Seven,Chicken Cordon Bleu,"Crumb fried chicken breast stuffed with chicken ham & cheese served with mixed salad, French fries and white mushroom sauce.",French,Main,0,1,1,0,1,,1700
+31,Grand Seven,Chicken Kiev,"Crumb fry chicken breast topped with melted cheese, parmesan gratinated asparagus & French fries.",Continental,Main,0,1,1,0,1,,1650
+32,Grand Seven,Grilled Chicken Bockwurst,"Grilled chicken bockwurst served with mashed potato, carrots, onion & gravy.",Continental,Main,0,1,1,0,1,,1575
+33,Grand Seven,Roasted Chicken,"Roasted chicken served with roasted potato, coleslaw salad & red wine sauce.",Continental,Main,0,1,1,0,1,,2600
+35,Grand Seven,Vegetable Noodles,,Chinese,Main,0,1,1,1,0,2 Person,1400
+37,Grand Seven,Chicken Noodles,,Chinese,Main,0,1,1,1,0,2 Person,1575
+39,Grand Seven,Beef Noodles,,Chinese,Main,0,1,1,1,0,2 Person,1600
+41,Grand Seven,Pork Noodles,,Chinese,Main,0,1,1,1,0,2 Person,1600
+43,Grand Seven,Fish Noodles,,Chinese,Main,0,1,1,1,0,2 Person,1650
+45,Grand Seven,Prawn Noodles,,Chinese,Main,0,1,1,1,0,2 Person,1700
+47,Grand Seven,Sea Food Noodles,,Chinese,Main,0,1,1,1,0,2 Person,1700
+49,Grand Seven,Mixed Noodles,,Chinese,Main,0,1,1,1,0,2 Person,1650
+51,Grand Seven,Crispy Noodles With Sea Food,,Chinese,Main,0,1,1,1,0,2 Person,1750
+53,Grand Seven,Crispy Noodles With Mixed Meat,,Chinese,Main,0,1,1,1,0,2 Person,1700
+55,Grand Seven,"Hong Kong Fried Noodles - Vermicelli Sea Food, Mixed Meat",,Chinese,Main,0,1,1,1,0,2 Person,1750
+57,Grand Seven,Vegetable Kottu,,Sri Lankan,Main,0,1,1,1,0,,925
+58,Grand Seven,Cheese Kottu,,Sri Lankan,Main,0,1,1,1,0,,1100
+59,Grand Seven,Chicken / Beef / Pork Kottu,,Sri Lankan,Main,0,1,1,1,0,,2050
+60,Grand Seven,Sea Food Kottu,,Sri Lankan,Main,0,1,1,1,0,,1200
+61,Grand Seven,Mutton Kottu,,Sri Lankan,Main,0,1,1,1,0,,1275
+62,Grand Seven,Vegetable Set Lunch,"Vegetable Fried Rice, Kangkung with Garlic, Vegetable Chopsuey, Devilled Mushroom",Asian,Main,0,1,1,1,0,,900
+63,Grand Seven,Chicken Set Lunch,"Vegetable Fried Rice, Devilled Chicken, Vegetable Chopsuey, Chilli Paste",Asian,Main,0,1,1,1,0,,1050
+64,Grand Seven,Beef or Pork Set Lunch,"Vegetable Fried Rice, Devilled Pork or Beef, Vegetable Chopsuey, Chilli Paste",Asian,Main,0,1,1,1,0,,1100
+65,Grand Seven,Sea Food Set Lunch,"Vegetable Fried Rice, Devilled Fish or Prawns or Cuttle Fish, Vegetable Chopsuey, Chilli Paste",Asian,Main,0,1,1,1,0,,1150
+66,Grand Seven,Deep Fried Prawn Ball,,Chinese,Starter,0,1,1,1,0,,1000
+67,Grand Seven,Deep Fried Cuttle Fish Thai Style,,Chinese,Starter,0,1,1,1,0,2 Person,1400
+69,Grand Seven,Deep Fried Chicken Wing,,Chinese,Starter,0,1,1,1,0,2 Person,1050
+71,Grand Seven,Spring Roll Vegetable,,Chinese,Starter,1,1,1,1,0,2 Person,1155
+73,Grand Seven,Spring Roll Chicken,,Chinese,Starter,1,1,1,1,0,2 Person,1250
+75,Grand Seven,Assorted Dish,"Prawns, Toast Fried Wonton, Chicken Wing, Spring Roll",Chinese,Starter,0,1,1,1,0,2 Person,2050
+77,Grand Seven,Salad Spring Roll,,Chinese,Starter,1,1,1,1,0,,1125
+78,Grand Seven,Prawn Spring Roll,,Chinese,Starter,0,1,1,1,0,,1150
+79,Grand Seven,Prawn Toast,,Chinese,Starter,0,1,1,1,0,,1150
+80,Grand Seven,Fried Wonton,,Chinese,Starter,0,1,1,1,0,,1150
+81,Grand Seven,Chicken & Sweet Corn Soup,,Chinese,Soup,0,1,1,0,1,2 Person,1375
+83,Grand Seven,Crab Meat & Sweet Corn Soup,,Chinese,Soup,0,1,1,0,1,2 Person,1450
+85,Grand Seven,Vegetable Soup,,Chinese,Soup,0,1,1,0,1,2 Person,1350
+87,Grand Seven,Coriander Leaves with Sea Food Soup,,Chinese,Soup,0,1,1,0,1,2 Person,1350
+89,Grand Seven,Vegetable Hot & Sour Soup,,Chinese,Soup,0,1,1,0,1,2 Person,975
+91,Grand Seven,Tom Yum Soup,,Thai,Soup,0,1,1,0,1,2 Person,1350
+93,Grand Seven,Sea Food with Bean Curd Soup,,Chinese,Soup,0,1,1,0,1,2 Person,1500
+95,Grand Seven,Wonton Soup - Clear Soup,,Chinese,Soup,0,1,1,0,1,2 Person,1250
+97,Grand Seven,Chicken Hot and Sour Soup,,Chinese,Soup,0,1,1,0,1,2 Person,1325
+99,Grand Seven,Tomato and Egg Soup,,Chinese,Soup,0,1,1,0,1,2 Person,1225
+101,Grand Seven,Fried Chilli Pork,,Chinese,Main,0,1,1,1,0,,1500
+103,Grand Seven,Shredded Pork with Garlic Sauce,,Chinese,Main,0,1,1,1,0,,1500
+104,Grand Seven,Baked Pork in Spicy Salt - Pork Chop,,Chinese,Main,0,1,1,1,0,,1500
+105,Grand Seven,Devilled or Fried Pork,,Chinese,Main,0,1,1,1,0,,1575
+106,Grand Seven,Fried Beef Slice with Oyster Sauce,,Chinese,Main,0,1,1,1,0,,1755
+107,Grand Seven,Beef with Dry Red Chilli,,Chinese,Main,0,1,1,1,0,,1575
+108,Grand Seven,Devilled or Fried Beef,,Chinese,Main,0,1,1,1,0,,1575
+109,Grand Seven,Beef with Ginger & Spring Onion,,Chinese,Main,0,1,1,1,0,,1755
+110,Grand Seven,Pepper Pork,,Chinese,Main,0,1,1,1,0,,1500
+111,Grand Seven,Black Bean Pork,,Chinese,Main,0,1,1,1,0,,1500
+112,Grand Seven,Fried Pork in Hot Garlic Sauce,,Chinese,Main,0,1,1,1,0,,1500
+113,Grand Seven,Mutton Stew,,Chinese,Main,0,1,1,0,1,,2650
+114,Grand Seven,Pepper Lamb,,Chinese,Main,0,1,1,1,0,,2200
+115,Grand Seven,Pepper Lamb - Large,,Chinese,Main,0,1,1,1,0,,2750
+116,Grand Seven,Sea Food Platter,"Battered prawns and cuttlefish, grilled seer, baked or chili crab served with French fries, coleslaw & tartar sauce.",Continental,Main,0,1,1,0,1,,3250
+117,Grand Seven,Pub Battered Prawns,Crispy & tender golden color battered fry medium prawns served with coleslaw & tartar sauce.,Continental,Main,0,1,1,0,1,,1900
+118,Grand Seven,Baked or Chili Crab,"Export quality crab meat cooked with bechamel sauce, mixed cheese, and chef's special seafood sauce, and cheese served with rice & green salad.",Continental,Main,0,1,1,0,1,,1900
+119,Grand Seven,Spicy or Hot Garlic Prawns,"Medium size prawns mixed with chef's special garlic, ginger, oyster sauce served with rice and green salad.",Continental,Main,0,1,1,0,1,,1950
+120,Grand Seven,Darne of Seer or Crispy Seer,"Grilled or crispy fried seer served with rice, veggies & a light tartar sauce.",Continental,Main,0,1,1,0,1,,1950
+121,Grand Seven,Grilled Lobster,Grilled lobster with lemon garlic butter sauce served with French fries & coleslaw salad.,Continental,Main,0,1,1,0,1,,1950
+122,Grand Seven,Tender Cuttlefish with Spicy Thai Sauce,Tender cuttlefish cooked with spicy Thai sauce served with rice & green salad.,Thai,Main,0,1,1,0,1,,1950
+123,Grand Seven,Fish & Chips,"Crumb fried white fish fillet served with coleslaw, French fries & tartar sauce.",Continental,Main,0,1,1,0,1,,1950
+124,Grand Seven,Fish Ala Crill,Batter fried fish fillet with tomato sauce or tartar sauce served with French fries and coleslaw salad.,Continental,Main,0,1,1,0,1,,1850
+125,Grand Seven,Lean Pork,Served with French fries or rice or fettuccine with coleslaw and mustard sauce.,Continental,Main,0,1,1,0,1,,2250
+126,Grand Seven,Roasted or Grilled Pork Knuckle,Served with French fries or mashed potato with coleslaw salad & mustard sauce.,Continental,Main,0,1,1,0,1,,2250
+127,Grand Seven,Pork Schnitzel,Pan fried pork fillet served with mashed potato and green cucumber salad.,Continental,Main,0,1,1,0,1,,2150
+128,Grand Seven,Stir Fry Pork with Vegetable,Filled pork saute with garlic and vegetable served with rice or noodles.,Asian,Main,0,1,1,1,0,,1900
+129,Grand Seven,Pork Mustard,Lightly spicy mustard pork served with rice and salad.,Continental,Main,0,1,1,0,1,,1775
+130,Grand Seven,Pot of Tea or Coffee,,Continental,Beverage,1,1,1,1,0,3 Person,850
+131,Grand Seven,Milk Shake,Vanilla or chocolate or strawberry,Continental,Beverage,1,1,1,1,0,,600
+132,Grand Seven,Cup of Tea or Coffee,,Continental,Beverage,1,1,1,1,0,,400
+133,Grand Seven,Ice Coffee,,Continental,Beverage,1,1,1,1,0,,450
+134,Grand Seven,Orange Juice,,Continental,Beverage,1,1,1,1,0,,575
+135,Grand Seven,Pineapple Juice,,Continental,Beverage,1,1,1,1,0,,575
+136,Grand Seven,Papaya Juice,,Continental,Beverage,1,1,1,1,0,,575
+137,Grand Seven,Mango Juice,,Continental,Beverage,1,1,1,1,0,,625
+138,Grand Seven,Watermelon Juice,,Continental,Beverage,1,1,1,1,0,,575
+139,Grand Seven,Mixed Fruit Juice,,Continental,Beverage,1,1,1,1,0,,625
+140,Grand Seven,Fresh Lime Juice,,Continental,Beverage,1,1,1,1,0,,525
+141,Grand Seven,Lime with Soda,,Continental,Beverage,1,1,1,1,0,,550
+142,Grand Seven,Coke,,Continental,Beverage,1,1,1,1,0,,250
+143,Grand Seven,Sprite,,Continental,Beverage,1,1,1,1,0,,250
+144,Grand Seven,Ginger Beer,,Continental,Beverage,1,1,1,1,0,,250
+145,Grand Seven,Soda,,Continental,Beverage,1,1,1,1,0,,230
+146,Grand Seven,Mineral Water,,Continental,Beverage,1,1,1,1,0,,220
+147,Grand Seven,Lamb Chop,"Imported lamb chop marinated & grilled with herbs served with herb rice, green salad and fresh mint sauce.",Continental,Main,0,1,1,0,1,,3200
+148,Grand Seven,Pork Chop,"Grilled pork chop with mustard sauce, boiled vegetable or salad served with grilled pineapple and French fries.",Continental,Main,0,1,1,0,1,,2175
+149,Grand Seven,Mixed Grill,"Beef fillet, chicken, pork, mushroom, sausage, egg served with French fries, coleslaw salad & BBQ sauce.",Continental,Main,0,1,1,0,1,,3350
+150,Grand Seven,Pepper Steak,"Grilled marinated tenderloin steak served with grilled potato, coleslaw salad, French fries and BBQ sauce.",Continental,Main,0,1,1,0,1,,2400
+151,Grand Seven,Kebab - Chicken/Beef/Pork/Fish,"Grilled beef/chicken/pork/fish, tomato & cucumber served with yellow rice, salad & peanut sauce.",Asian,Main,0,1,1,0,1,,2050
+152,Grand Seven,Grand 7 Special Rice Dish,"Mixed fried rice, mixed salad with spicy one meat item or one seafood item.",Asian,Main,0,1,1,1,0,,2575
+153,Grand Seven,Mixed Nasigoreng,"Traditional Indonesian rice dish with beef, chicken, pork.",Indonesian,Main,0,1,1,1,0,,1450
+154,Grand Seven,Sea Food Nasigoreng,Traditional Indonesian rice dish with seafood.,Indonesian,Main,0,1,1,1,0,,1400
+155,Grand Seven,Sea Food Fried Rice,,Asian,Main,0,1,1,1,0,,1400
+156,Grand Seven,Mixed Fried Rice,"Chicken, beef, pork.",Asian,Main,0,1,1,1,0,,1400
+157,Grand Seven,Vegetable Fried Rice or Noodles,,Asian,Main,0,1,1,1,0,,1300
+158,Grand Seven,Vegetable Chopsuey Rice,,Asian,Main,0,1,1,1,0,,1325
+159,Grand Seven,Mixed Chopsuey Rice,"Chicken, beef, pork.",Asian,Main,0,1,1,1,0,,1475
+160,Grand Seven,Sea Food Chopsuey Rice,,Asian,Main,0,1,1,1,0,,1500
+161,Grand Seven,Chicken Biriyani,,Indian,Main,0,1,1,1,0,,1250
+162,Hot Master,Grilled Chicken,Tender grilled chicken served hot,International,Main,0,1,1,0,1,-,1800
+163,Hot Master,Grilled Fish,Fresh fish grilled to perfection,International,Main,0,1,1,0,1,-,2000
+164,Hot Master,Grilled Prawns,Succulent prawns grilled with seasoning,International,Main,0,1,1,0,1,-,2500
+165,Hot Master,Devilled Chicken,Spicy stir-fried chicken with vegetables,Sri Lankan,Main,0,1,1,1,0,-,1500
+166,Hot Master,Devilled Fish,Fish stir-fried with spicy sauce,Sri Lankan,Main,0,1,1,1,0,-,1700
+167,Hot Master,Devilled Prawns,Prawns stir-fried in hot and spicy sauce,Sri Lankan,Main,0,1,1,1,0,-,2000
+168,Hot Master,Hot Battered Cuttlefish,Crispy fried cuttlefish in spicy batter,Sri Lankan,Main,0,1,1,1,0,-,1800
+169,Hot Master,Hot Battered Prawns,Prawns coated in spicy batter and deep-fried,Sri Lankan,Main,0,1,1,1,0,-,2200
+170,Hot Master,Hot Battered Fish,"Fish fillets in spicy batter, deep-fried",Sri Lankan,Main,0,1,1,1,0,-,1900
+172,Hot Master,Hot Battered Chicken,Spicy battered fried chicken pieces,Sri Lankan,Main,0,1,1,1,0,-,1600
+173,Hot Master,Spicy Sausages,Sausages cooked with hot spices,International,Side,0,1,1,1,0,-,800
+174,Hot Master,Grilled Sausages,Lightly seasoned grilled sausages,International,Side,0,1,1,0,1,-,850
+177,Hot Master,Egg Noodles,,Asian,Main,0,1,1,1,0,Regular,1100
+181,Hot Master,Seafood Noodles,,Asian,Main,0,1,1,1,0,Regular,1450
+185,Hot Master,Sichuan Chicken,,Asian,Main,0,1,1,1,0,Regular,1450
+187,Hot Master,Sichuan Seafood,,Asian,Main,0,1,1,1,0,Regular,1550
+189,Hot Master,Sichuan Mixed,,Asian,Main,0,1,1,1,0,Regular,1650
+191,Hot Master,Nasi Goreng Chicken,,Indonesian,Main,0,1,1,1,0,,1400
+192,Hot Master,Nasi Goreng Seafood,,Indonesian,Main,0,1,1,1,0,,1500
+193,Hot Master,Nasi Goreng Mixed,,Indonesian,Main,0,1,1,1,0,,1600
+194,Hot Master,Vegetable Chop Suey,,Asian,Main,0,1,1,1,0,,2300
+195,Hot Master,Seafood Chop Suey,,Asian,Main,0,1,1,1,0,,2850
+196,Hot Master,Hot Master Special Mixed Chop Suey,,Asian,Main,0,1,1,1,0,,2950
+198,Hot Master,Roasted Chicken Kottu,,Sri Lankan,Main,0,1,1,1,0,Large,1600
+199,Hot Master,Seafood Kottu,,Sri Lankan,Main,0,1,1,1,0,Large,1800
+200,Hot Master,Hot Master Special Cheese Kottu,,Sri Lankan,Main,0,1,1,1,0,Large,1950
+201,Hot Master,Hot Master Mixed Kottu,,Sri Lankan,Main,0,1,1,1,0,Large,2450
+202,Hot Master,Hot Master Mixed Cheese Kottu,,Sri Lankan,Main,0,1,1,1,0,Large,2800
+203,Hot Master,Steamed Rice,,Asian,Main,0,1,1,1,0,Regular,600
+205,Hot Master,Vegetable Fried Rice,,Asian,Main,0,1,1,1,0,Regular,900
+207,Hot Master,Egg Fried Rice,,Asian,Main,0,1,1,1,0,Regular,1100
+209,Hot Master,Chicken Fried Rice,,Asian,Main,0,1,1,1,0,Regular,1350
+211,Hot Master,Seafood Fried Rice,,Asian,Main,0,1,1,1,0,Regular,1450
+221,Hot Master,Black Coffee - served with milk,"Hot beverage, medium-strong flavor, served with milk.",International,Beverage,1,1,1,0,1,,450
+222,Hot Master,Tea - served with milk,"Hot beverage, light flavor, served with milk.",International,Beverage,1,1,1,0,1,,320
+227,Hot Master,Coca Cola,"Cold, sweet carbonated cola drink.",International,Beverage,1,1,1,1,0,300ml,180
+232,Hot Master,Vanilla Milkshake,"Cold, creamy, sweet vanilla-flavored milkshake. Extra topping +300.",International,Beverage,1,1,1,1,0,,800
+233,Hot Master,Chocolate Milkshake,"Cold, creamy, rich chocolate-flavored milkshake. Extra topping +300.",International,Beverage,1,1,1,1,0,,880
+234,Hot Master,Banana Milkshake,"Cold, creamy, sweet banana-flavored milkshake.",International,Beverage,1,1,1,1,0,,800
+235,Hot Master,Strawberry Milkshake,"Cold, creamy, sweet strawberry-flavored milkshake.",International,Beverage,1,1,1,1,0,,980
+236,Hot Master,Mango Milkshake,"Cold, creamy, sweet mango-flavored milkshake.",International,Beverage,1,1,1,1,0,,950
+237,Hot Master,Papaya Milkshake,"Cold, creamy, sweet papaya-flavored milkshake.",International,Beverage,1,1,1,1,0,,850
+238,Hot Master,Vegetable soup,"Light, hot vegetable-based soup, served warm, mildly seasoned",International,Starter,1,1,1,0,1,-,550
+239,Hot Master,Chicken sweet corn soup,"Hot, thick chicken soup with sweet corn, mildly sweet and savory",Chinese,Starter,1,1,1,0,1,-,850
+240,Hot Master,Mixed Salad -with chicken +300,"Fresh mixed vegetables, optionally with chicken, served cold and light",International,Starter,1,1,1,1,0,-,1200
+241,Hot Master,Coleslaw salad,Creamy cold salad with shredded cabbage and carrots,International,Starter,1,1,1,1,0,-,900
+242,Hot Master,Creamy pasta,"Warm, rich creamy pasta with cheese sauce",Italian,Main,0,1,1,0,1,Regular,950
+244,Hot Master,Creamy chicken pasta,Creamy pasta with tender chicken pieces,Italian,Main,0,1,1,0,1,Regular,1300
+246,Hot Master,Creamy chicken cheese pasta,Creamy pasta with chicken and extra cheese,Italian,Main,0,1,1,0,1,Regular,1480
+248,Hot Master,Creamy seafood cheese pasta,Creamy pasta with seafood and cheese,Italian,Main,0,1,1,0,1,Regular,1600
+250,Hot Master,Hot master special nai miris pasta,Spicy pasta with nai miris chili flavor,Italian,Main,0,1,1,0,1,Regular,1700
+252,Hot Master,French fries,"Light, crispy fried potato sticks served hot",International,Side,1,1,1,0,1,-,950
+253,Hot Master,Fish and chips,"Deep-fried battered fish served with fries, hot and crispy",British,Main,0,1,1,0,1,-,1950
+254,Hot Master,Stir fried water spinach with cashew nuts,"Light stir-fried water spinach with crunchy cashew nuts, served hot",Thai,Main,1,1,1,1,0,,750
+255,Hot Master,Pineapple fried rice chicken,"Fried rice with pineapple and chicken, savory-sweet flavor, served hot",Thai,Main,0,1,1,1,0,,2300
+256,Hot Master,Pineapple fried rice seafood,"Fried rice with pineapple and seafood, savory-sweet flavor, served hot",Thai,Main,0,1,1,1,0,,2700
+257,Hot Master,Vanilla ice cream,"Cold, sweet vanilla-flavored ice cream",Western,Dessert,1,1,1,0,1,,400
+258,Hot Master,Chocolate ice cream,"Cold, sweet chocolate-flavored ice cream",Western,Dessert,1,1,1,0,1,,440
+259,Hot Master,Strawberry ice cream,"Cold, sweet strawberry-flavored ice cream",Western,Dessert,1,1,1,0,1,,440
+260,Hot Master,Mango ice cream,"Cold, sweet mango-flavored ice cream",Western,Dessert,1,1,1,0,1,,440
+261,Hot Master,Fruit salad with ice cream,"Fresh fruit salad served with ice cream, cold and sweet",Western,Dessert,1,1,1,0,1,,600
+262,Hot Master,Banana fritters with honey,Sweet fried banana fritters drizzled with honey,Asian,Dessert,1,1,1,0,1,,480
+263,Hot Master,Ice cream tower,"Tall layered ice cream dessert, sweet and cold",Western,Dessert,1,1,1,0,1,,1900
+264,Hot Master,Fresh Strawberry with ice cream mania,"Fresh strawberries served with ice cream, sweet and cold",Western,Dessert,1,1,1,0,1,,1800
+265,Hot Master,Hot master bartender special,"Fresh mint, lime & sprite",Cuban,Beverage,1,1,1,1,1,,750
+266,Hot Master,"Hot master carrot, lime & ginger","Carrot, lime, ginger drink",Asian,Beverage,1,1,1,1,1,,700
+267,Hot Master,Hot master mango gimmy,Mango-based drink,International,Beverage,1,1,1,1,1,,950
+268,Hot Master,Hot master ice coffee,Iced coffee beverage,International,Beverage,1,1,1,1,1,,800
+269,Hot Master,Classic Mojito,Refreshing lime & mint mocktail,Cuban,Beverage,1,1,1,1,1,,850
+270,Hot Master,Passion Mojito,"Passion fruit, lime & mint mocktail",Cuban,Beverage,1,1,1,1,1,,900
+271,Hot Master,Blackcurrant,Blackcurrant-flavored mocktail,International,Beverage,1,1,1,1,1,,950
+272,Hot Master,Lassi - Plain with salt,"Light, savory yogurt-based drink served chilled with a pinch of salt",Indian,Beverage,1,1,1,0,1,-,800
+273,Hot Master,Lassi Mango,Sweet mango-flavored yogurt-based drink served chilled,Indian,Beverage,1,1,1,0,1,-,950
+274,Hot Master,Lassi Banana,Sweet banana-flavored yogurt-based drink served chilled,Indian,Beverage,1,1,1,0,1,-,850
+275,Hot Master,Lassi Papaya,Sweet papaya-flavored yogurt-based drink served chilled,Indian,Beverage,1,1,1,0,1,-,900
+277,Hot Master,Fresh Lime Soda,Sparkling soda with lime juice served chilled,International,Beverage,1,1,1,0,1,-,550
+278,Hot Master,Fresh Passion Juice,Sweet and tangy passion fruit juice served chilled,International,Beverage,1,1,1,0,1,-,650
+279,Hot Master,Fresh Pineapple Juice,Sweet tropical pineapple juice served chilled,International,Beverage,1,1,1,0,1,-,750
+280,Hot Master,Fresh Papaya Juice,Sweet papaya juice served chilled,International,Beverage,1,1,1,0,1,-,650
+281,Hot Master,Fresh Melon Juice,Light and sweet melon juice served chilled,International,Beverage,1,1,1,0,1,-,650
+282,Hot Master,Fresh Banana Juice,Creamy banana juice served chilled,International,Beverage,1,1,1,0,1,-,650
+284,Hot Master,Fresh Mango Juice,Sweet tropical mango juice served chilled,International,Beverage,1,1,1,0,1,-,800
+285,Layerwarf,Chicken Rice And Curry,Steamed rice served with chicken curry and assorted side dishes,Sri Lankan,Main,0,1,1,1,0,-,1700
+286,Layerwarf,Prawn Rice And Curry,Steamed rice served with prawn curry and assorted side dishes,Sri Lankan,Main,0,1,1,1,0,-,1800
+287,Layerwarf,Egg Rice And Curry,Steamed rice served with egg curry and assorted side dishes,Sri Lankan,Main,0,1,1,1,0,-,1300
+288,Layerwarf,Chicken Curry,Spicy chicken curry prepared with Sri Lankan spices,Sri Lankan,Side Dish,0,1,1,1,0,-,850
+289,Layerwarf,Prawn Curry,Spicy prawn curry cooked with coconut milk and spices,Sri Lankan,Side Dish,0,1,1,1,0,-,1100
+290,Layerwarf,Egg Curry,Boiled eggs cooked in spiced curry gravy,Sri Lankan,Side Dish,0,1,1,1,0,-,550
+291,Layerwarf,Dhal Curry,Yellow lentils cooked in coconut milk and spices,Sri Lankan,Side Dish,0,1,1,1,0,-,280
+292,Layerwarf,Vegetable Curry,Mixed vegetables cooked with coconut milk and spices,Sri Lankan,Side Dish,0,1,1,1,0,-,380
+293,Layerwarf,Fried Egg,Fried egg cooked in oil,Sri Lankan,Side Dish,1,1,1,1,0,-,250
+294,Layerwarf,Boiled Egg,Hard-boiled egg served plain,Sri Lankan,Side Dish,1,1,1,1,0,-,200
+295,Layerwarf,Butter Chicken - Hopper Set Menu,Served with lunu miris & seeni sambol,Indian,Main,0,1,1,1,0,-,2000
+296,Layerwarf,Jaffna Chicken Curry - Hopper Set Menu,Served with lunu miris & seeni sambol,Sri Lankan,Main,0,1,1,1,0,-,2000
+297,Layerwarf,Paneer - Hopper Set Menu,Served with lunu miris & seeni sambol,Indian,Main,0,1,1,1,0,-,1800
+298,Layerwarf,Beef Kuruma - Hopper Set Menu,Served with lunu miris & seeni sambol,Indian,Main,0,1,1,1,0,-,2800
+299,Layerwarf,Mutton Korma - Hopper Set Menu,Served with lunu miris & seeni sambol,Indian,Main,0,1,1,1,0,-,2900
+300,Layerwarf,Extra Hopper,Additional plain hopper,Sri Lankan,Side Dish,1,1,1,1,0,-,280
+301,Layerwarf,Extra Egg Hopper,Additional hopper with egg,Sri Lankan,Side Dish,1,1,1,1,0,-,180
+302,Layerwarf,Chicken Curry - Add-on for Hopper Set Menu,Spicy chicken curry prepared with Sri Lankan spices,Sri Lankan,Side Dish,0,1,1,1,0,-,850
+303,Layerwarf,Dhal Curry - Add-on for Hopper Set Menu,Yellow lentils cooked in coconut milk and spices,Sri Lankan,Side Dish,0,1,1,1,0,-,280
+304,Layerwarf,Jaggery Hopper,Sweet hopper made with jaggery,Sri Lankan,Dessert,1,1,1,0,1,-,200
+305,Layerwarf,Milk Hopper,Sweet hopper made with milk,Sri Lankan,Dessert,1,1,1,0,1,-,600
+306,Layerwarf,Chicken kottu,"Stir-fried shredded roti with chicken, vegetables, and spices, served hot",Sri Lankan,Main,0,1,1,1,0,-,2500
+307,Layerwarf,Chicken cheese kottu,"Stir-fried shredded roti with chicken, cheese, vegetables, and spices, served hot",Sri Lankan,Main,0,1,1,1,0,-,2750
+308,Layerwarf,Seafood kottu,"Stir-fried shredded roti with mixed seafood, vegetables, and spices, served hot",Sri Lankan,Main,0,1,1,1,0,-,2800
+309,Layerwarf,Seafood cheese kottu,"Stir-fried shredded roti with seafood, cheese, vegetables, and spices, served hot",Sri Lankan,Main,0,1,1,1,0,-,2950
+310,Layerwarf,Egg kottu,"Stir-fried shredded roti with eggs, vegetables, and spices, served hot",Sri Lankan,Main,0,1,1,1,0,-,1950
+311,Layerwarf,Vegetable kottu,"Stir-fried shredded roti with vegetables and spices, served hot",Sri Lankan,Main,0,1,1,1,0,-,1800
+314,Layerwarf,Cheese Slice,Slice of cheese served as an add-on,Global,Side dish,1,1,1,0,0,-,300
+315,Layerwarf,Plain Dosa,"South Indian crepe made from fermented rice and lentil batter, served hot with sambar and chutneys",South Indian,Main,1,1,1,1,0,-,1400
+316,Layerwarf,Ghee Dosa,"South Indian crepe made from fermented rice and lentil batter, cooked with ghee, served hot with sambar and chutneys",South Indian,Main,1,1,1,1,0,-,1650
+317,Layerwarf,Masala Dosa,"South Indian crepe with spiced mashed potato filling, served hot with sambar and chutneys",South Indian,Main,1,1,1,1,0,-,1950
+318,Layerwarf,Chillie Cheese Dosa,"South Indian crepe with spicy chillies and melted cheese, served hot with sambar and chutneys",South Indian,Main,1,1,1,1,0,-,2550
+319,Layerwarf,Butter Chicken Naan Set Menu,"Soft naan bread served with rich, creamy butter chicken",Indian,Main,0,1,1,1,0,Not specified,2550
+320,Layerwarf,Chicken Kebab Naan Set Menu,Soft naan served with grilled spiced chicken kebabs,Indian,Main,0,1,1,1,0,Not specified,2200
+321,Layerwarf,Chicken Tikka Naan Set Menu,Naan served with spiced and grilled chicken tikka pieces,Indian,Main,0,1,1,1,0,Not specified,2700
+322,Layerwarf,Chicken Malai Tikka Naan Set Menu,"Naan served with creamy, mildly spiced chicken malai tikka",Indian,Main,0,1,1,1,0,Not specified,2900
+323,Layerwarf,Beef Kebab Naan Set Menu,Naan served with grilled and spiced beef kebabs,Indian,Main,0,1,1,1,0,Not specified,2600
+324,Layerwarf,Mutton Kebab Naan Set Menu,"Naan served with tender, spiced mutton kebabs",Indian,Main,0,1,1,1,0,Not specified,2750
+325,Layerwarf,Paneer Naan Set Menu,Naan served with grilled Indian cottage cheese,Indian,Main,0,1,1,1,0,Not specified,2100
+326,Layerwarf,Chicken Curry Parata Set Menu,Flaky parata served with spicy chicken curry,Indian,Main,0,1,1,1,0,Not specified,2200
+327,Layerwarf,Chicken Palandi Set Menu,Naan/parata served with chicken in palandi  curry,Indian,Main,0,1,1,1,0,Not specified,2550
+328,Layerwarf,Masala Fried Chicken Set Menu,Naan/parata served with spiced fried chicken,Indian,Main,0,1,1,1,0,Not specified,2200
+329,Layerwarf,Extra Parata,Additional flaky parata bread,Indian,Side Dish,0,1,1,1,0,Not specified,250
+330,Layerwarf,Extra Naan,Additional naan bread,Indian,Side Dish,0,1,1,1,0,Not specified,350
+331,Layerwarf,Extra Cheese Naan,Naan stuffed with cheese,Indian,Side Dish,0,1,1,1,0,Not specified,600
+332,Layerwarf,Extra Butter Naan,Naan brushed with butter,Indian,Side Dish,0,1,1,1,0,Not specified,450
+333,Layerwarf,Extra Lasooni Naan,Garlic-flavored naan bread,Indian,Side Dish,0,1,1,1,0,Not specified,400
+335,Layerwarf,Mutton Biriyani,Aromatic rice dish with spiced mutton,Indian,Main,0,1,1,1,0,Not specified,3200
+336,Layerwarf,Paneer Biriyani,Aromatic rice dish with spiced paneer,Indian,Main,0,1,1,1,0,Not specified,2400
+337,Layerwarf,Butter Chicken Kathi Roll,Indian flatbread wrap with butter chicken filling,Indian,Main,0,1,1,1,0,Not specified,2000
+338,Layerwarf,Pulled Beef Quorma Kathi Roll,Flatbread wrap with spiced pulled beef quorma filling,Indian,Main,0,1,1,1,0,Not specified,2200
+339,Layerwarf,Cheese & Onion Sausage Bun,"Soft bun filled with cheese, onion, and sausage, served warm",Western,Side dish,1,1,1,0,0,-,650
+340,Layerwarf,Malu Pav,Soft bread roll with Sri Lankan fish curry filling,Sri Lankan,Side dish,1,1,1,0,0,-,400
+341,Layerwarf,Chicken Keema Pav Bun,Bread bun with minced chicken curry filling,Indian,Side dish,1,1,1,0,0,-,400
+342,Layerwarf,Ala Boola,Deep-fried Sri Lankan potato snack,Sri Lankan,Side dish,1,1,1,0,0,-,350
+343,Layerwarf,Chinese Roll - Tuna,Deep-fried roll with tuna filling,Chinese,Side dish,1,1,1,0,0,-,450
+344,Layerwarf,Chinese Roll - Veg,Deep-fried roll with vegetable filling,Chinese,Side dish,1,1,1,0,0,-,350
+345,Layerwarf,Chinese Roll - Mutton,Deep-fried roll with mutton filling,Chinese,Side dish,1,1,1,0,0,-,750
+346,Layerwarf,"Chicken, Mushroom & Parmesan Pie","Baked pie with chicken, mushroom, and parmesan cheese",Western,Side dish,1,1,1,0,0,-,900
+347,Layerwarf,Butter Paneer Pie,Baked pie with butter paneer curry filling,Indian,Side dish,1,1,1,0,0,-,900
+348,Layerwarf,Beef Rendang Curry Puff,Puff pastry filled with spicy beef rendang curry,Indonesian,Side dish,1,1,1,0,0,-,850
+349,Layerwarf,Nonya Chicken Curry Puff,Puff pastry filled with Nonya-style chicken curry,Malaysian,Side dish,1,1,1,0,0,-,650
+350,Layerwarf,Tandoori Chicken Curry Puff,Puff pastry filled with spiced tandoori chicken,Indian,Side dish,1,1,1,0,0,-,600
+351,Layerwarf,Sambaar Curry Puff,Puff pastry filled with spicy sambaar curry,Indian,Side dish,1,1,1,0,0,-,600
+352,Layerwarf,Sri Lankan Crab Curry Puff,Puff pastry filled with crab curry,Sri Lankan,Side dish,1,1,1,0,0,-,850
+353,Layerwarf,Sausage & Egg Croissant,Flaky croissant with sausage and egg filling,French,Main,1,1,1,0,0,-,1200
+354,Layerwarf,Omelette Seeni Sambal Croissant,Croissant with omelette and caramelized onion sambal,Sri Lankan,Main,1,1,1,0,0,-,950
+355,Layerwarf,Smoked Salmon Croissant,Croissant with smoked salmon filling,Western,Main,1,1,1,0,0,-,1800
+356,Layerwarf,"Bacon, Egg & Cheese Croissant","Croissant with bacon, egg, and cheese",Western,Main,1,1,1,0,0,-,1400
+357,Layerwarf,Chilli Chicken Sandwich,Sandwich with spicy chilli chicken filling,Western,Main,1,1,1,0,0,-,2100
+358,Layerwarf,Beef Pastrami Sandwich,Sandwich with beef pastrami filling,Western,Main,1,1,1,0,0,-,2500
+359,Layerwarf,Bombay Sandwich,Indian-style sandwich with mixed spiced fillings,Indian,Main,1,1,1,0,0,-,2100
+360,Layerwarf,Grilled Cheese Sandwich,Toasted sandwich with melted cheese,Western,Main,1,1,1,0,0,-,1950
+361,Layerwarf,Japanese Egg Sando,Japanese-style egg salad sandwich,Japanese,Main,1,1,1,0,0,-,1750
+362,Layerwarf,Tuna Melt,Grilled sandwich with tuna and melted cheese,Western,Main,1,1,1,0,0,-,2500
+363,Layerwarf,Carrot Cake,"Light, moist cake made with grated carrots, served at room temperature, mildly sweet with spiced flavor",Western,Dessert,1,1,1,0,1,-,1200
+364,Layerwarf,Date Cake,"Moist, sweet cake made with dates, served at room temperature",Middle Eastern,Dessert,1,1,1,0,1,-,1250
+365,Layerwarf,Forest Berry Dark Chocolate Cake,"Rich dark chocolate cake layered with tart forest berries, served at room temperature",Western,Dessert,1,1,1,0,1,-,1500
+366,Layerwarf,Saffron Tres Leches,"Soft sponge cake soaked in three types of milk, infused with saffron, served chilled",Latin American,Dessert,0,1,1,0,1,-,1300
+367,Layerwarf,Coffee Tres Leches,"Soft sponge cake soaked in coffee-infused three milk mixture, served chilled",Latin American,Dessert,0,1,1,0,1,-,1300
+368,Layerwarf,Basque Cheesecake,"Burnt cheesecake with creamy center, mildly sweet, served chilled",Spanish,Dessert,0,1,1,0,1,-,2200
+369,Layerwarf,Matcha Basque Cheesecake,"Burnt cheesecake infused with matcha green tea, served chilled",Japanese,Dessert,0,1,1,0,1,-,2600
+370,Layerwarf,Gulab Jamun Cheesecake,Fusion cheesecake flavored with traditional Indian gulab jamun syrup,Indian,Dessert,0,1,1,0,1,-,2600
+371,Layerwarf,Croissant - Cinnamon,"Flaky butter croissant with cinnamon filling, served warm",French,Dessert,1,1,1,0,1,-,850
+372,Layerwarf,"Croissant - Strawberry, Rhubarb White Chocolate","Flaky croissant filled with strawberry, rhubarb, and white chocolate",French,Dessert,1,1,1,0,1,-,950
+373,Layerwarf,Croissant - Pain Au Chocolat,Classic croissant filled with rich chocolate,French,Dessert,1,1,1,0,1,-,950
+374,Layerwarf,Choux au Craquelin - Chocolate,Crisp cream puff with chocolate filling,French,Dessert,1,1,1,0,1,-,700
+375,Layerwarf,Choux au Craquelin - Coffee Cream,Crisp cream puff with coffee-flavored cream filling,French,Dessert,1,1,1,0,1,-,700
+376,Layerwarf,Choux au Craquelin - Matcha,Crisp cream puff with matcha-flavored cream filling,Japanese,Dessert,1,1,1,0,1,-,850
+377,Layerwarf,Choux au Craquelin - Vanilla,Crisp cream puff with vanilla cream filling,French,Dessert,1,1,1,0,1,-,750
+378,Layerwarf,Crêpes - Utter Banutter,Thin crepe with peanut butter filling,French,Dessert,1,1,1,0,1,-,950
+379,Layerwarf,Crêpes - Brown Sugar & Lemon,Thin crepe with brown sugar and lemon juice,French,Dessert,1,1,1,0,1,-,850
+380,Layerwarf,Chocolate Mousse,"Light and airy chocolate dessert, served chilled",French,Dessert,0,1,1,0,1,-,1150
+383,Layerwarf,Berry Tart,"Light, sweet dessert with fresh berries and creamy filling, served chilled",Western,Dessert,1,1,1,0,1,-,1400
+384,Layerwarf,Key Lime Tart,"Tangy and refreshing tart with key lime custard, served chilled",Western,Dessert,1,1,1,0,1,-,1200
+385,Layerwarf,Mango Tart,"Sweet tropical mango tart with creamy filling, served chilled",Western,Dessert,1,1,1,0,1,-,1200
+386,Layerwarf,Reese's Peanut Butter Cup Tart,"Rich tart with peanut butter filling and chocolate topping, served chilled",Western,Dessert,1,1,1,0,1,-,1400
+387,Layerwarf,Rhubarb Tart,"Tart with tangy rhubarb filling and sweet crust, served chilled",Western,Dessert,1,1,1,0,1,-,1200
+388,Layerwarf,Banoffee Tart,"Sweet banana and toffee tart with cream, served chilled",Western,Dessert,1,1,1,0,1,-,1200
+389,Layerwarf,Crème Brulee -Vanilla Cream,"Rich vanilla cream custard with caramelized sugar top, served chilled",French,Dessert,1,1,1,0,1,-,950
+390,Layerwarf,Jam Custard Doughnut,"Soft doughnut filled with sweet jam custard, served at room temperature",Western,Dessert,1,1,1,0,1,-,950
+391,Layerwarf,Passionfruit Cream Doughnut,"Doughnut with tangy passionfruit cream filling, served at room temperature",Western,Dessert,1,1,1,0,1,-,900
+392,Layerwarf,Salted Caramel Doughnut,"Doughnut with sweet and salty caramel filling, served at room temperature",Western,Dessert,1,1,1,0,1,-,950
+393,Layerwarf,Chocolate Chip Cookie – Gluten Free,Soft and chewy gluten-free cookie with chocolate chips,Western,Dessert,1,1,1,0,1,-,750
+394,Layerwarf,White Chocolate Chip Cookie,Cookie with sweet white chocolate chips,Western,Dessert,1,1,1,0,1,-,750
+395,Layerwarf,Chocolate Chip Cookie,Classic cookie with semi-sweet chocolate chips,Western,Dessert,1,1,1,0,1,-,850
+396,Layerwarf,White Chocolate & Macadamia Nuts Cookie,Cookie with white chocolate chips and macadamia nuts,Western,Dessert,1,1,1,0,1,-,850
+397,Layerwarf,Orange Chocolate Cookie,Cookie with chocolate and citrus orange flavor,Western,Dessert,1,1,1,0,1,-,750
+398,Layerwarf,Iced Latte,"Cold, creamy espresso-based drink served over ice; slightly bitter with a smooth milk flavor",International,Beverage,1,1,1,0,1,-,1100
+399,Layerwarf,Iced Americano,Refreshing chilled espresso with water; light-bodied and mildly bitter,International,Beverage,1,1,1,0,1,-,900
+400,Layerwarf,Iced Cappuccino,"Cold, creamy coffee drink with espresso, milk, and froth, served over ice",International,Beverage,1,1,1,0,1,-,1100
+401,Layerwarf,Vietnamese Iced Coffee,Strong dark coffee brewed with condensed milk and served over ice; rich and sweet,Vietnamese,Beverage,1,1,1,0,1,-,1300
+402,Layerwarf,Iced Matcha Latte,"Cold beverage with matcha green tea, milk, and light sweetness; refreshing earthy taste",Japanese,Beverage,1,1,1,0,1,-,1300
+403,Layerwarf,Cold Chocolate,"Chilled chocolate drink; sweet, creamy, and rich in cocoa flavor",International,Beverage,1,1,1,0,1,-,1200
+404,Layerwarf,Black Lemon Ice Tea,"Cold, tangy black tea with lemon; light and refreshing",International,Beverage,1,1,1,0,1,-,650
+405,Layerwarf,Green Ice Tea,Cold green tea served with ice; mildly grassy and refreshing,Japanese,Beverage,1,1,1,0,1,-,650
+406,Layerwarf,Black Tea & Tamarind Lovi Soda,"Iced black tea mixed with tamarind and lovi soda; tangy, sweet, and sparkling",Fusion,Beverage,1,1,1,0,1,-,800
+407,Layerwarf,"Chamomile, Apple & Cinnamon","Cold herbal infusion with chamomile, apple, and cinnamon; light, floral, and mildly sweet",International,Beverage,1,1,1,0,1,-,800
+408,Layerwarf,Jasmin Green Tea & Mandarin,"Iced jasmine green tea infused with mandarin; floral, citrusy, and refreshing",Asian Fusion,Beverage,1,1,1,0,1,-,1200
+409,Layerwarf,"Rooibos, Berry, Hibiscus","Cold rooibos tea blend with berries and hibiscus; fruity, tangy, and caffeine-free",International,Beverage,1,1,1,0,1,-,1250
+410,Layerwarf,Matcha Vera - Matcha & Aloe Vera,Cold matcha tea combined with aloe vera; refreshing and mildly sweet,Japanese,Beverage,1,1,1,0,1,-,1200
+411,Layerwarf,Espresso,"Strong, concentrated coffee shot served hot; bold and intense flavor",Italian,Beverage,1,1,1,0,0,-,700
+412,Layerwarf,Cappuccino,"Hot coffee drink made with espresso, steamed milk, and milk foam; creamy and slightly bitter",Italian,Beverage,1,1,1,0,0,-,950
+413,Layerwarf,Cafe Latte,Hot coffee beverage made with espresso and steamed milk; smooth and mild flavor,Italian,Beverage,1,1,1,0,0,-,950
+414,Layerwarf,Flat White,Espresso with micro-foamed milk; creamy texture with a strong coffee taste,Australian,Beverage,1,1,1,0,0,-,900
+415,Layerwarf,Americano,Hot black coffee made by diluting espresso with hot water; lighter in body,Italian,Beverage,1,1,1,0,0,-,850
+416,Layerwarf,Macchiato,Espresso topped with a small amount of milk foam; bold coffee flavor,Italian,Beverage,1,1,1,0,0,-,900
+417,Layerwarf,Cafe Mocha,Espresso with steamed milk and chocolate syrup; sweet and rich flavor,Italian,Beverage,1,1,1,0,0,-,1100
+418,Layerwarf,Matcha Latte,"Japanese matcha green tea powder with steamed milk; earthy, slightly sweet",Japanese,Beverage,1,1,1,0,0,-,1300
+419,Layerwarf,Golden Latte,Turmeric-based latte with steamed milk and spices; warm and mildly spiced,Italian,Beverage,1,1,1,0,0,-,1000
+420,Layerwarf,Hot Chocolate,"Warm, rich chocolate drink made with milk or water; sweet and comforting",International,Beverage,1,1,1,0,0,-,1200
+421,Layerwarf,Earl Grey,Hot tea flavored with bergamot; fragrant and citrusy,British,Beverage,1,1,1,0,0,-,650
+422,Layerwarf,Ceylon Tea,Traditional Sri Lankan black tea served hot; robust and aromatic,Sri Lankan,Beverage,1,1,1,0,0,-,650
+423,Layerwarf,English Breakfast,"Strong, full-bodied black tea blend served hot",British,Beverage,1,1,1,0,0,-,650
+424,Layerwarf,Masala Chai,"Indian spiced tea made with milk, black tea, and aromatic spices; warm and mildly sweet",Indian,Beverage,1,1,1,0,0,-,850
+425,Layerwarf,Dark Chocolate Ice Cream,"Rich, heavy ice cream with intense dark chocolate flavor, served cold",Western,Dessert,1,1,1,0,1,-,750
+426,Layerwarf,Salted Caramel & Honeycomb Ice Cream,"Sweet and salty ice cream with honeycomb pieces, served cold",Western,Dessert,1,1,1,0,1,-,750
+427,Layerwarf,Strawberry Ripple Ice Cream,"Light, fruity ice cream with strawberry sauce swirls, served cold",Western,Dessert,1,1,1,0,1,-,650
+428,Layerwarf,Passion Pavlova Ice Cream,"Tropical passionfruit-flavored ice cream with pavlova meringue pieces, served cold",Western,Dessert,1,1,1,0,1,-,600
+429,Layerwarf,Cookie Espresso Ice Cream,"Coffee-flavored ice cream with cookie chunks, served cold",Western,Dessert,1,1,1,0,1,-,650
+430,Layerwarf,Mint Choc Ice Cream,"Refreshing mint ice cream with chocolate pieces, served cold",Western,Dessert,1,1,1,0,1,-,650
+431,Layerwarf,Rocky Road Ice Cream,"Chocolate ice cream with marshmallow, nuts, and chocolate chunks, served cold",Western,Dessert,1,1,1,0,1,-,650
+432,Layerwarf,Butterscotch Ice Cream,"Sweet, caramelized butterscotch-flavored ice cream, served cold",Western,Dessert,1,1,1,0,1,-,650
+433,Layerwarf,Coconut & Jaggery Ice Cream,"Creamy coconut ice cream with traditional Sri Lankan jaggery sweetness, served cold",Sri Lankan,Dessert,1,1,1,0,1,-,650
+434,Layerwarf,Rum & Raisin Ice Cream,"Rum-flavored ice cream with raisins, served cold",Western,Dessert,1,1,1,0,1,-,650
+435,Layerwarf,Faluda Ice Cream,"Sweet South Asian dessert ice cream with rose syrup and mixed ingredients, served cold",South Asian,Dessert,1,1,1,0,1,-,650
+436,Layerwarf,Double Chocolate Ice Cream,"Rich chocolate ice cream with extra chocolate chunks, served cold",Western,Dessert,1,1,1,0,1,-,650
+437,Layerwarf,Ceylon Vanilla Ice Cream,"Smooth vanilla ice cream with Ceylon essence, served cold",Sri Lankan,Dessert,1,1,1,0,1,-,650
+438,Layerwarf,Vanilla Ice Cream,"Classic creamy vanilla ice cream, served cold",Western,Dessert,1,1,1,0,1,-,650
+439,Layerwarf,Double Chocolate Milk Shake,"Rich and creamy milkshake made with dark choc ice cream, chocolate sauce, double choc chips & wafers",Western,Beverage,0,1,1,0,1,-,1600
+440,Layerwarf,Ceylon Vanilla Milk Shake,"Smooth vanilla ice cream milkshake with marshmallow, custard cookie, meringue & white chocolate",Western,Beverage,0,1,1,0,1,-,1400
+441,Layerwarf,Salted Caramel Milk Shake,Creamy salted caramel ice cream milkshake with honeycomb & butter cookie,Western,Beverage,0,1,1,0,1,-,1600
+442,Layerwarf,Tropical Milk Shake,"Exotic milkshake with passionfruit ice cream, banana, coconut cookie, Bounty bar & meringue",Western,Beverage,0,1,1,0,1,-,1600
+443,Layerwarf,Espresso & Cookie Milk Shake,Coffee & cookie ice cream milkshake with espresso Kalo & coffee Tim Tam,Western,Beverage,0,1,1,0,1,-,1400
+444,Layerwarf,Strawberry Faluda Milk Shake,"Falooda ice cream milkshake with strawberry, rose & baklava",South Asian,Beverage,0,1,1,0,1,-,1800
+445,Layerwarf,Margy 2.0 Pizza,"Tomato, fior di latte, sun-dried cherry tomato, olive oil & basil. Served hot, light to medium texture.",Italian,Main,0,1,1,0,1,,2950
+446,Layerwarf,Hot Honey Pepperoni Pizza,"Tomato, fior di latte, beef pepperoni, pickled peppers, hot honey & parm. Savory-spicy, served hot.",Italian,Main,0,1,1,0,1,,3650
+447,Layerwarf,Truffle Hunter Pizza,"Garlic cream, fior di latte, blue cheese smoked cheese, truffle, Parmesan & black pepper. Rich, hot.",Italian,Main,0,1,1,0,1,,3950
+448,Layerwarf,Firebird!!! Pizza,"Pizza sauce, Sri Lankan chicken, mozzarella, chopped onion, pickled capsicum. Spicy, savory, hot.",talian,Main,0,1,1,0,1,,3450
+449,Layerwarf,Papa Lamb Pasta,"Lamb ragu, pappardelle, gremolata & parmesan. Rich, savory, served hot.",Italian,Main,0,1,1,0,1,-,3500
+450,Layerwarf,Spicy Catch Pasta,"Prawns, chili flakes, tomato cream sauce, cherry tomatoes, rigatoni & parmesan. Medium spicy.",Italian,Main,0,1,1,0,1,-,3200
+451,Layerwarf,Truffle Cream Pillows Pasta,"Potato gnocchi, garlic cream, truffle & parmesan. Creamy, aromatic, served hot.",Italian,Main,0,1,1,0,1,-,3650
+452,Layerwarf,Full Chicken,"Whole roasted Peri Peri or Colombo style chicken, served hot, savoury, and mildly spicy",International,Main,0,1,1,0,1,Full Chicken,6450
+453,Layerwarf,Half Chicken,"Half portion roasted Peri Peri or Colombo style chicken, served hot, savoury, and mildly spicy",International,Main,0,1,1,0,1,Half Chicken,3600
+454,Layerwarf,Quarter Chicken,"Quarter portion roasted Peri Peri or Colombo style chicken, served hot, savoury, and mildly spicy",International,Main,0,1,1,0,1,Quarter Chicken,2950
+455,Layerwarf,Full Roast Chicken & 4 Large Sides,Full Peri Peri or Colombo style chicken with 4 hearty sides,International,Main Combo,0,1,1,0,1,Full Chicken + 4 Large Sides,9600
+456,Layerwarf,Half Roast Chicken & 4 Small Sides,Half Peri Peri or Colombo style chicken with 4 smaller side portions,International,Main Combo,0,1,1,0,1,Half Chicken + 4 Small Sides,5950
+457,Layerwarf,Quarter Roast Chicken & 2 Small Sides,Quarter Peri Peri or Colombo style chicken with 2 smaller side portions,International,Main Combo,0,1,1,0,1,Quarter Chicken + 2 Small Sides,3900
+458,Layerwarf,Grilled Corn Ribs,"Lightly charred sweet corn ribs, served hot and savoury",International,Side Dish,0,1,1,0,1,Not Available,—
+459,Layerwarf,Classic Mac & Cheese,Creamy baked macaroni with cheese sauce,Western,Side Dish,0,1,1,0,1,Not Available,—
+460,Layerwarf,Truffle Cauliflower Cheese,Cauliflower baked with truffle-flavoured cheese sauce,Western,Side Dish,0,1,1,0,1,Not Available,—
+461,Layerwarf,Fattoush Salad,"Fresh mixed greens, vegetables, and herbs with tangy dressing",Middle Eastern,Side Dish,1,1,1,1,0,Not Available,—
+462,Layerwarf,Charred Broccoli,Smoky grilled broccoli florets,International,Side Dish,0,1,1,0,1,Not Available,—
+463,Layerwarf,Yorkshire Pudding & Gravy,"Soft, airy Yorkshire pudding with rich gravy",British,Side Dish,0,1,1,0,1,Not Available,—
+464,Layerwarf,Patatas Bravas,Crispy fried potatoes with spicy tomato sauce,Spanish,Side Dish,0,1,1,0,1,Not Available,—
+465,Layerwarf,Fries,"Crispy potato fries, available with chicken salt, peri peri, salt & vinegar",International,Side Dish,0,1,1,0,1,Not Available,—
+466,Layerwarf,Lebanese Falafel Wrap,"Green falafel, labne, Lebanese slaw, tahini, lemon; light and fresh, served cold",Middle Eastern,Main,1,1,1,1,0,-,1600
+467,Layerwarf,Spicy Crispy Chicken Wrap,"Crispy chicken tenders, hot sauce, lettuce, ranch, tomato, cucumber; medium spicy, served warm",Middle Eastern,Main,0,1,1,1,0,-,1950
+468,Layerwarf,Chicken Shawarma,"Arabic chicken, toum, sumac onions, pickled chili, tomato; savory, aromatic, served warm",Middle Eastern,Main,0,1,1,1,0,-,2100
+469,Layerwarf,Chilli Beef & Cheese Shawarma,"Arabic style beef, mozzarella, pickled chili, labne, tomato; spicy and cheesy, served warm",Middle Eastern,Main,0,1,1,1,0,-,2450
+470,Layerwarf,Chicken Snack Pack,"Fries, chicken shawarma, mozzarella, onions, pickles, hot sauce, toum, BBQ sauce; hearty, served hot",International,Main,0,1,1,1,0,-,2150
+471,Layerwarf,Beef Snack Pack,"Fries, beef shawarma, mozzarella, onions, pickles, hot sauce, toum, BBQ sauce; hearty, served hot",International,Main,0,1,1,1,0,-,2800
+472,Layerwarf,The Icon Burger,"Smash pattie, cheddar, pickles, onions, lettuce; medium heaviness, served hot, savory flavor",American,Main,0,1,1,1,0,—,2500
+473,Layerwarf,Animal Style Burger,"Smash pattie, fresh onion, cheddar, burger sauce, pickles, lettuce, tomato, mustard; medium heaviness, hot, tangy-savory",American,Main,0,1,1,1,0,—,2500
+474,Layerwarf,Animal Style Double Smash Burger,"Double smash pattie, fresh onion, cheddar, burger sauce, pickles, lettuce, tomato, mustard; heavier, hot, tangy-savory",American,Main,0,1,1,1,0,—,3250
+475,Layerwarf,Classic Smash Burger,"Smash pattie, grilled onions, cheddar, burger sauce, pickles; medium heaviness, hot, savory",American,Main,0,1,1,1,0,—,2400
+476,Layerwarf,Double Smash Burger,"Double smash patties, cheddar, burger sauce, grilled onions, pickles; heavy, hot, savory",American,Main,0,1,1,1,0,—,3150
+477,Layerwarf,Crispy Chicken Classic Burger,"Fried chicken, cheese, mayo, pickles, lettuce; medium heaviness, hot, savory",American,Main,0,1,1,1,0,—,2200
+478,Layerwarf,Hot Honey Chicken Burger,"Fried chicken, cheese, mayo, nai miris sauce, pickles, lettuce; hot, spicy-sweet",American,Main,0,1,1,1,0,—,2300
+479,Layerwarf,Korean Chicken Burger,"Fried chicken, slaw, gochujang mayo, pickled rabu; hot, spicy-sweet, medium heaviness",Korean,Main,0,1,1,1,0,—,2600
+480,Layerwarf,The Big Catch Burger,"Crumbed barramundi, green ranch, pickled onions, cheddar, iceberg lettuce. Served warm, savory with crunchy texture and creamy sauce.",Western,Main,0,1,1,0,1,Not specified,2500
+481,Layerwarf,Prawns Star Burger,"Prawn katsu, jalapeno, BBQ sauce, aioli, coleslaw. Served warm, mildly spicy, creamy and tangy.",Western,Main,0,1,1,0,1,Not specified,2650
+482,Layerwarf,Possible Cheeseburger - Vegan,"Plant patty, vegan cheddar, burger sauce, dill pickles, onions. Served warm, savory with plant-based ingredients.",Western,Main,0,1,1,0,1,Not specified,2100
+487,Layerwarf,Mac & Cheese,"Creamy pasta with cheese sauce, comfort food, served hot",Western,Side dish,0,1,1,0,1,-,1600
+489,Layerwarf,Yorkshire Pudding,"Light and airy baked pudding, savory, served hot with gravy",British,Side dish,0,1,1,0,1,-,600
+492,Layerwarf,Detox,"Light, refreshing cold juice with cucumber, apple, lemon, kale, celery, mint & gotu kola",International,Beverage,1,1,1,1,0,Not specified,1400
+493,Layerwarf,Life of Papaya,"Cold, sweet and tangy juice with papaya, beets, carrots, lemon & ginger",International,Beverage,1,1,1,1,0,Not specified,1400
+494,Layerwarf,Night Vision,"Cold, tangy juice with orange, carrot, ginger, turmeric & narang",International,Beverage,1,1,1,1,0,Not specified,1400
+495,Layerwarf,Glowed Up!,"Cold, sweet juice with watermelon, ambul dodang, jambola & passionfruit",International,Beverage,1,1,1,1,0,Not specified,1400
+496,Layerwarf,Spicy Tiger,"Cold, mildly spicy juice with pineapple, orange, thambili & chilli flakes",International,Beverage,1,1,1,1,0,Not specified,1400
+497,Layerwarf,Booster,"Cold, sweet juice with papaya, jambola, thambili & narang",International,Beverage,1,1,1,1,0,Not specified,1400
+498,Layerwarf,Paradise Now,"Cold, tropical juice with guava, soursop & thambili",International,Beverage,1,1,1,1,0,Not specified,1400
+499,Layerwarf,Layards Lemonade,"Cold, citrus juice with lime, narang, ambul dodang, lemon & activated charcoal",International,Beverage,1,1,1,1,0,Not specified,1400
+500,Layerwarf,Thambili,"Fresh king coconut water, naturally sweet and cooling",Sri Lankan,Beverage,1,1,1,1,0,Not specified,750
+501,Layerwarf,Oxidant Intolerant Smoothie,"Avocado, apple, pineapple, kale, gotu kola, thambili, moringa, psyllium husk & banana. Served chilled, refreshing, nutrient-rich smoothie, slightly sweet with tropical flavors.",International,Beverage,1,1,1,1,0,Not specified,1450
+502,Layerwarf,Life in Colour Smoothie,"Watermelon, pomegranate, thambili, banana, rambutan, coconut milk, passionfruit, mint, psyllium husk & strawberry rhubarb jam. Served chilled, sweet and tangy, fruit-rich smoothie.",International,Beverage,1,1,1,1,0,Not specified,1450
+503,Layerwarf,Wakey Wakey Smoothie,"Coffee, banana, coconut milk, psyllium husk, cacao, thambili & dates. Served chilled, slightly creamy and energizing with coffee notes.",International,Beverage,1,1,1,1,0,Not specified,1450
+504,Layerwarf,Amba Yaluwa Smoothie,"Mango, chai spice, banana, coconut milk, psyllium husk, passionfruit, turmeric, Greek yoghurt, thambili, ginger & honey. Served chilled, tropical and spiced smoothie with creamy texture.",International,Beverage,1,1,1,1,0,Not specified,1450
+505,Layerwarf,All the Green Salad,"Butterhead, oak, iceberg lettuce, cabbage, cucumber, peas, avocado, green bell pepper, zucchini, basil, green beans, broccoli, kale, mint, pickled snake gourd, gotukola, lime and coriander crema; light, fresh, cold-served salad",International,Salad,1,1,1,1,0,Not specified,1600
+506,Layerwarf,South East Rainbow Slaw - Chicken Salad,"Chicken, cabbage, rice noodle, papaya, knol knol, cucumber, carrot, sprouts, pickled snake gourd, radish, peanuts, mint, coriander, Vietnamese dressing; light to medium, cold-served, fresh and tangy",Southeast Asian,Salad,0,1,1,1,0,Not specified,1600
+507,Layerwarf,Taco Salad Salad,"Quinoa, avocado, grilled corn, cherry tomato, pickled onion, coriander, lime, cabbage, bell pepper, feta; fresh, cold-served salad with tangy and creamy flavors",Mexican,Salad,0,1,1,1,0,Not specified,2400
+508,Layerwarf,Mediterranean Salad,"Roast beets & pumpkin, sunflower seeds, pumpkin seeds, parsley, lemon, pomegranate, almond, cucumber, quinoa, heenati rice, cherry tomato, pickled onion, kale, feta, balsamic dressing & Italian vinaigrette dressing; hearty, cold-served salad",Mediterranean,Salad,1,1,1,1,0,Not specified,1500
+509,Layerwarf,All Rounder Salad,"Lettuce, avocado, cucumber, radish, croutons, soft boiled egg, tomato, herbs, parmesan aioli; light to medium, cold-served salad",International,Salad,1,1,1,1,0,Not specified,1100
+510,Layerwarf,Chicken Yakitori Bowl,"Your choice of Yakitori with sticky rice, Japanese pickles, Japanese mayo, wakame salad",Japanese,Main,0,1,1,0,1,Not specified,2550
+511,Layerwarf,Beef Yakitori Bowl,"Your choice of Yakitori with sticky rice, Japanese pickles, Japanese mayo, wakame salad",Japanese,Main,0,1,1,0,1,Not specified,2700
+512,Layerwarf,Mushroom Yakitori Bowl,"Your choice of Yakitori with sticky rice, Japanese pickles, Japanese mayo, wakame salad",Japanese,Main,0,1,1,0,1,Not specified,2650
+513,Layerwarf,Chicken Bulgogi Bowl,"Your choice of bulgogi with bibimbap, fried egg, pickles, kimchi, bulgogi sauce",Korean,Main,0,1,1,0,1,Not specified,2550
+514,Layerwarf,Beef Bulgogi Bowl,"Your choice of bulgogi with bibimbap, fried egg, pickles, kimchi, bulgogi sauce",Korean,Main,0,1,1,0,1,Not specified,2700
+515,Layerwarf,Mushroom Bulgogi Bowl,"Your choice of bulgogi with bibimbap, fried egg, pickles, kimchi, bulgogi sauce",Korean,Main,0,1,1,0,1,Not specified,2650
+516,Layerwarf,Korean Corndog - Sausage,"Sausage corndog, crispy coating",Korean,Snack,1,1,1,0,1,Not specified,1350
+517,Layerwarf,Korean Corndog - Sausage & Cheese,"Sausage & cheese corndog, crispy coating",Korean,Snack,1,1,1,0,1,Not specified,1600
+518,Layerwarf,Kway Tao Noodle - Chicken,"Light to medium Asian noodle dish with chicken, served hot; savory with soy-based seasoning",Asian,Main,0,1,1,0,1,Not specified,2750
+519,Layerwarf,Kway Tao Noodle - Prawn,"Light to medium Asian noodle dish with prawns, served hot; savory with soy-based seasoning",Asian,Main,0,1,1,0,1,Not specified,2850
+520,Layerwarf,Kway Tao Noodle - Beef,"Light to medium Asian noodle dish with beef, served hot; savory with soy-based seasoning",Asian,Main,0,1,1,0,1,Not specified,2900
+521,Layerwarf,Pad Thai - Chicken,"Medium Thai noodle dish with chicken, tamarind flavor, slightly sweet and tangy, served hot",Thai,Main,0,1,1,0,1,Not specified,2700
+522,Layerwarf,Pad Thai - Prawn,"Medium Thai noodle dish with prawns, tamarind flavor, slightly sweet and tangy, served hot",Thai,Main,0,1,1,0,1,Not specified,2800
+523,Layerwarf,Pad Thai - Mixed,"Medium Thai noodle dish with mixed meats/seafood, tamarind flavor, slightly sweet and tangy, served hot",Thai,Main,0,1,1,0,1,Not specified,2950
+524,Layerwarf,Beef Noodle Soup - Classic,"Medium-heavy beef broth noodle soup, savory, served hot",Asian,Main,0,1,1,0,1,Not specified,2600
+525,Layerwarf,Beef Noodle Soup - Spicy,"Medium-heavy beef broth noodle soup with chili heat, served hot",Asian,Main,0,1,1,0,1,Not specified,2700
+526,Layerwarf,Seafood Laksa,"Medium-heavy spicy coconut-based noodle soup with seafood, served hot",Malaysian,Main,0,1,1,0,1,Not specified,2600
+527,Layerwarf,Khao Soi Noodle Soup,"Thai coconut curry noodle soup with rich flavor, served hot",Thai,Main,0,1,1,0,1,Not specified,2300
+528,Layerwarf,Shitake Mushroom Dumplings,"Steamed dumplings filled with shitake mushroom, light, savory, served hot",Asian,Starter,0,1,1,0,1,6 pcs,1800
+529,Layerwarf,Spicy Boys Dumplings,"Steamed dumplings with spicy filling, light, served hot",Asian,Starter,0,1,1,0,1,6 pcs,1600
+530,Layerwarf,Prawn Wonton,"Steamed or fried wontons filled with prawns, light, served hot",Asian,Starter,0,1,1,0,1,6 pcs,1800
+531,Layerwarf,Beef Cheek Potstickers,"Pan-fried dumplings with beef cheek filling, rich flavor, served hot",Asian,Starter,0,1,1,0,1,Not specified,2250
+532,Layerwarf,Chinese Style Egg Fried Rice,"Light stir-fried rice with egg, served hot; option of chicken, beef, mushroom, prawn, or cuttlefish",Chinese,Main,0,1,1,0,1,-,1700
+533,Layerwarf,Chinese Style Egg Fried Rice - Chicken,Chinese-style egg fried rice with chicken,Chinese,Main,0,1,1,0,1,-,2150
+534,Layerwarf,Chinese Style Egg Fried Rice - Beef,Chinese-style egg fried rice with beef,Chinese,Main,0,1,1,0,1,-,2400
+535,Layerwarf,Chinese Style Egg Fried Rice - Mushroom,Chinese-style egg fried rice with mushroom,Chinese,Main,0,1,1,0,1,-,2150
+536,Layerwarf,Chinese Style Egg Fried Rice - Prawn,Chinese-style egg fried rice with prawn,Chinese,Main,0,1,1,0,1,-,2400
+537,Layerwarf,Chinese Style Egg Fried Rice - Cuttlefish,Chinese-style egg fried rice with cuttlefish,Chinese,Main,0,1,1,0,1,-,2200
+538,Layerwarf,Kimchi Fried Rice,"Korean-style fried rice with kimchi, served hot; option of chicken, bulgogi beef, mushroom, prawn, or cuttlefish",Korean,Main,0,1,1,0,1,-,2300
+539,Layerwarf,Kimchi Fried Rice - Chicken,Kimchi fried rice with chicken,Korean,Main,0,1,1,0,1,-,2750
+540,Layerwarf,Kimchi Fried Rice - Bulgogi Beef,Kimchi fried rice with bulgogi beef,Korean,Main,0,1,1,0,1,-,2950
+541,Layerwarf,Kimchi Fried Rice - Mushroom,Kimchi fried rice with mushroom,Korean,Main,0,1,1,0,1,-,2750
+542,Layerwarf,Kimchi Fried Rice - Prawn,Kimchi fried rice with prawn,Korean,Main,0,1,1,0,1,-,2900
+543,Layerwarf,Kimchi Fried Rice - Cuttlefish,Kimchi fried rice with cuttlefish,Korean,Main,0,1,1,0,1,-,2800
+544,Layerwarf,Japanese Golden Katsu Curry - Chicken,Japanese-style curry with crispy chicken katsu,Japanese,Main,0,1,1,0,1,-,2500
+545,Layerwarf,Hainanese Chicken Rice,"Steamed chicken with fragrant rice, served with condiments",Singaporean,Main,0,1,1,0,1,-,2700
+546,Layerwarf,Nasi Goreng,Indonesian-style fried rice with spices and condiments,Indonesian,Main,0,1,1,0,1,-,2550
+547,Layerwarf,Nasi Lemak & Beef Rendang,Malaysian coconut rice served with beef rendang,Malaysian,Main,0,1,1,0,1,-,2700
+548,Layerwarf,Nasi Lemak & Ayam Goreng,Malaysian coconut rice served with fried chicken,Malaysian,Main,0,1,1,0,1,-,2500
+549,Layerwarf,Satay Skewers - Chicken,"Served with satay sauce; tender chicken skewers, savoury, warm, medium-heavy",Southeast Asian,Starter,0,1,1,0,1,2 pcs,1100
+550,Layerwarf,Satay Skewers - Beef,"Served with satay sauce; marinated beef skewers, savoury, warm, medium-heavy",Southeast Asian,Starter,0,1,1,0,1,2 pcs,1600
+551,Layerwarf,Satay Skewers - Mushroom,"Served with satay sauce; grilled mushrooms, savoury, warm, light",Southeast Asian,Starter,0,1,1,0,1,2 pcs,1600
+552,Layerwarf,Yakitori Skewers - Chicken,"Served with Japanese mayonnaise; grilled chicken skewers, savoury, warm, medium-heavy",Japanese,Starter,0,1,1,0,1,2 pcs,1100
+553,Layerwarf,Yakitori Skewers - Beef,"Served with Japanese mayonnaise; grilled beef skewers, savoury, warm, medium-heavy",Japanese,Starter,0,1,1,0,1,2 pcs,1600
+554,Layerwarf,Yakitori Skewers - Mushroom,"Served with Japanese mayonnaise; grilled mushrooms, savoury, warm, light",Japanese,Starter,0,1,1,0,1,2 pcs,1600
+555,Layerwarf,Bulgogi Skewers - Chicken,"Served with Japanese mayonnaise; Korean-style marinated chicken skewers, warm, savoury",Korean,Starter,0,1,1,0,1,2 pcs,1200
+556,Layerwarf,Bulgogi Skewers - Beef,"Served with Japanese mayonnaise; Korean-style marinated beef skewers, warm, savoury",Korean,Starter,0,1,1,0,1,2 pcs,1700
+557,Layerwarf,Bulgogi Skewers - Mushroom,"Served with Japanese mayonnaise; Korean-style marinated mushrooms, warm, savoury",Korean,Starter,0,1,1,0,1,2 pcs,1600
+558,Layerwarf,Spicy Tuna Maki,"8 pcs sushi roll with spicy tuna filling, served cold, light yet flavorful with a spicy kick",Japanese,Main,0,1,1,0,1,8 pcs,2250
+559,Layerwarf,Vegetable & Cream Cheese Maki,"8 pcs sushi roll with fresh vegetables and cream cheese, served cold and refreshing",Japanese,Main,0,1,1,1,1,8 pcs,1650
+560,Layerwarf,Salmon Maki,"8 pcs sushi roll with fresh salmon, served cold, light and rich in flavor",Japanese,Main,0,1,1,0,1,8 pcs,2950
+561,Layerwarf,Tuna Maki,"8 pcs sushi roll with fresh tuna, served cold, light and fresh taste",Japanese,Main,0,1,1,0,1,8 pcs,2200
+562,Layerwarf,Avocado Maki,"8 pcs sushi roll with creamy avocado filling, served cold, mild and refreshing",Japanese,Main,0,1,1,1,1,8 pcs,1450
+563,Layerwarf,Cucumber Maki,"8 pcs sushi roll with crisp cucumber filling, served cold, light and refreshing",Japanese,Main,0,1,1,1,1,8 pcs,1350
+564,Layerwarf,Smoked Salmon & Cream Cheese Futomaki,"Large sushi roll with smoked salmon and cream cheese, rich and creamy flavor",Japanese,Main,0,1,1,0,1,Futomaki roll,2950
+565,Layerwarf,King Fish Maki,"8 pcs sushi roll with fresh king fish, mild yet flavorful, served cold",Japanese,Main,0,1,1,0,1,8 pcs,1950
+566,Layerwarf,Salmon Nigiri,"4 pcs sushi with fresh salmon slices over vinegared rice, served cold",Japanese,Main,0,1,1,0,1,4 pcs,1700
+567,Layerwarf,Tuna Nigiri,"4 pcs sushi with fresh tuna slices over vinegared rice, served cold",Japanese,Main,0,1,1,0,1,4 pcs,1450
+568,Layerwarf,King Fish Nigiri,"4 pcs sushi with fresh king fish slices over vinegared rice, served cold",Japanese,Main,0,1,1,0,1,4 pcs,1300
+569,Layerwarf,Tofu Nigiri,"4 pcs sushi with tofu over vinegared rice, mild flavor, vegetarian option",Japanese,Main,0,1,1,1,1,4 pcs,1200
+570,Marine Spice,Veg Kurma Masala,"Delicious veg kurma masala, a fragrant blend of vegetables and spices. Medium-heavy, served hot.",Indian,Main,0,1,1,0,1,-,1100
+571,Marine Spice,Paneer Tikka Masala,"Delicate grilled paneer in herbs, rich and creamy tomato gravy. Medium-heavy, served hot.",Indian,Main,0,1,1,0,1,-,1650
+572,Marine Spice,Chicken Kadai,"Spiced red curry & chunks of tender chicken. Medium-heavy, served hot.",Indian,Main,0,1,1,0,1,-,1600
+573,Marine Spice,Chicken Chettinad,"South Indian delight with tender spicy chunks & rich Chettinad gravy. Medium-heavy, spicy, served hot.",Indian,Main,0,1,1,0,1,-,1800
+574,Marine Spice,Butter Chicken Masala,"Delicious creamy chicken gravy with rich Indian spices and butter. Medium-heavy, mildly spicy, served hot.",Indian,Main,0,1,1,0,1,-,1890
+575,Marine Spice,Prawn Kadai,"Juicy prawns cooked in aromatic kadai masala. Medium-heavy, served hot.",Indian,Main,0,1,1,0,1,-,1890
+576,Marine Spice,Prawn Chettinad,"Spicy South Indian delicacy with tender prawns in Chettinad gravy. Medium-heavy, spicy, served hot.",Indian,Main,0,1,1,0,1,-,1770
+577,Marine Spice,Coconut Prawn Masala,"Prawns cooked in coconut gravy with Indian spices. Medium-heavy, served hot.",Indian,Main,0,1,1,0,1,-,1890
+578,Marine Spice,Beef Kadai,"Beef chunks cooked in traditional kadai masala. Medium-heavy, served hot.",Indian,Main,0,1,1,0,1,-,1890
+579,Marine Spice,Beef Chettinad,"Spicy South Indian delicacy with tender beef in Chettinad gravy. Medium-heavy, spicy, served hot.",Indian,Main,0,1,1,0,1,-,1890
+580,Marine Spice,Mutton Kadai,"Juicy mutton cooked in traditional kadai masala. Medium-heavy, served hot.",Indian,Main,0,1,1,0,1,-,1840
+581,Marine Spice,Mutton Chettinad,"Authentic South Indian mutton dish with bold spices. Medium-heavy, spicy, served hot.",Indian,Main,0,1,1,0,1,-,1990
+582,Marine Spice,Plain Naan,"Soft oven-baked Indian flatbread. Light, served warm.",Indian,Side Dish,1,1,1,1,0,-,310
+583,Marine Spice,Garlic Naan,"Soft oven-baked naan infused with garlic butter. Light, served warm.",Indian,Side Dish,1,1,1,1,0,-,370
+584,Marine Spice,Ghee Naan,"Rich buttery ghee naan, perfect with curries. Light-medium, served warm.",Indian,Side Dish,1,1,1,1,0,-,420
+585,Marine Spice,Butter Naan,"Soft oven-baked naan brushed with creamy butter. Light, served warm.",Indian,Side Dish,1,1,1,1,0,-,440
+586,Marine Spice,Cheese Naan,"Fluffy naan with melted cheese filling. Medium, served warm.",Indian,Side Dish,1,1,1,1,0,-,490
+587,Marine Spice,Chicken Dum Biriyani,"Delicately layered rice & tender chicken with Indian spices. Medium-heavy, served hot.",Indian,Main,0,1,1,0,1,-,1760
+588,Marine Spice,Prawn Dum Biriyani,"Authentic biryani with prawns & Indian spices. Medium-heavy, served hot.",Indian,Main,0,1,1,0,1,-,1990
+589,Marine Spice,Beef Dum Biriyani,"Beef biryani with Indian spices, layered & slow-cooked. Medium-heavy, served hot.",Indian,Main,0,1,1,0,1,-,1990
+590,Marine Spice,Hyderabadi Chicken Biriyani,"Spicy Hyderabadi-style biryani with chicken. Medium-heavy, spicy, served hot.",Indian,Main,0,1,1,0,1,-,1840
+591,Marine Spice,Hyderabadi Beef Biriyani,"Hyderabadi-style beef biryani with bold spices. Medium-heavy, spicy, served hot.",Indian,Main,0,1,1,0,1,-,2170
+592,Marine Spice,Hyderabadi Mutton Biriyani,"Authentic Hyderabadi mutton biryani with rich spices. Medium-heavy, spicy, served hot.",Indian,Main,0,1,1,0,1,-,2290
+593,Marine Spice,Water,"Chilled bottled water, light and refreshing",International,Beverage,1,1,1,1,1,500ml,110
+595,Marine Spice,7UP,"Carbonated lemon-lime soft drink, sweet and fizzy",International,Beverage,1,1,1,1,1,-,310
+596,Marine Spice,Pepsi,"Carbonated cola soft drink, sweet and fizzy",International,Beverage,1,1,1,1,1,-,310
+597,Marine Spice,Mirinda,"Carbonated orange soft drink, sweet and fizzy",International,Beverage,1,1,1,1,1,-,310
+598,Marine Spice,Mountain Dew,"Carbonated citrus soft drink, sweet and energizing",International,Beverage,1,1,1,1,1,-,310
+600,Marine Spice,Lime Juice,"Fresh lime juice, tangy and refreshing",International,Beverage,1,1,1,1,0,-,590
+608,Marine Spice,Falooda,"Sweet layered dessert drink with milk, basil seeds, jelly, and ice cream",South Asian,Dessert/Beverage,0,1,1,0,1,-,800
+609,Marine Spice,Bombay Falooda,"Rich sweet dessert drink with milk, basil seeds, jelly, nuts, and ice cream",South Asian,Dessert/Beverage,0,1,1,0,1,-,890
+610,Marine Spice,Curacao Blue Mojito,Refreshing mojito with curacao blue flavor,International,Beverage,0,1,1,1,0,-,870
+611,Marine Spice,Green Mint Mojito,Refreshing mojito with fresh mint flavor,International,Beverage,0,1,1,1,0,-,870
+612,Marine Spice,Passion Pepper Mojito,Mojito with passionfruit and pepper for a tangy-spicy taste,International,Beverage,0,1,1,1,0,-,870
+613,Marine Spice,Shirley Red Temple Mojito,Sweet red mojito mocktail,International,Beverage,0,1,1,1,0,-,870
+614,Marine Spice,Black Current Mojito,Refreshing blackcurrant-flavored mojito,International,Beverage,0,1,1,1,0,-,870
+615,Marine Spice,Red Apple Mojito,Refreshing red apple-flavored mojito,International,Beverage,0,1,1,1,0,-,870
+616,Marine Spice,Green Apple Mojito,Refreshing green apple-flavored mojito,International,Beverage,0,1,1,1,0,-,870
+617,Marine Spice,Strawberry Mojito,Refreshing strawberry-flavored mojito,International,Beverage,0,1,1,1,0,-,870
+618,Marine Spice,Salt Lassi,Savory yogurt-based chilled drink,South Asian,Beverage,1,1,1,0,1,-,620
+619,Marine Spice,Sweet Lassi,Sweet yogurt-based chilled drink,South Asian,Beverage,1,1,1,0,1,-,680
+620,Marine Spice,Mango Lassi,Mango-flavored yogurt-based chilled drink,South Asian,Beverage,1,1,1,0,1,-,790
+621,Marine Spice,Brownie,Rich chocolate brownie,International,Dessert,0,1,1,0,1,-,520
+622,Marine Spice,Brownie with Ice Cream,Rich chocolate brownie served with vanilla ice cream,International,Dessert,0,1,1,0,1,-,840
+623,Marine Spice,Watalappan,Sri Lankan coconut milk-based jaggery pudding,Sri Lankan,Dessert,0,1,1,0,1,-,320
+624,Marine Spice,Ice Cream,Two scoops of ice cream,International,Dessert,1,1,1,0,1,2 scoops,590
+626,Marine Spice,Jalapeno,Fresh sliced jalapenos,International,Side Dish,0,1,1,1,0,-,140
+627,Marine Spice,Mayonnaise,Creamy mayonnaise,International,Side Dish,1,1,1,0,1,-,140
+628,Marine Spice,Steam Rice,Steamed plain white rice,International,Side Dish,1,1,1,1,0,-,190
+630,Marine Spice,Veg Kottu,"A warm Sri Lankan chopped roti dish with assorted vegetables, served hot with mild spices",Sri Lankan,Main,0,1,1,0,1,Regular,1140
+632,Marine Spice,Egg Kottu,"Chopped roti stir-fried with egg, vegetables, spices; served hot",Sri Lankan,Main,0,1,1,0,1,Regular,1480
+634,Marine Spice,Paneer Kottu,"Chopped roti with cottage cheese, vegetables, Sri Lankan spices; served hot",Sri Lankan,Main,0,1,1,0,1,Regular,1840
+636,Marine Spice,Chicken Kottu,"Chopped roti stir-fried with chicken, vegetables, spices; served hot",Sri Lankan,Main,0,1,1,0,1,Regular,1840
+638,Marine Spice,Beef Kottu,"Chopped roti with tender beef strips, vegetables, Sri Lankan spices; served hot",Sri Lankan,Main,0,1,1,0,1,Regular,2280
+642,Marine Spice,Hummus,"Smooth, creamy chickpea dip served cold, light and savory",Middle Eastern,Starter,1,1,1,1,0,-,960
+643,Marine Spice,French Fries,"Crispy deep-fried potato sticks, light and savory",Western,Side Dish,1,1,1,1,0,-,1160
+644,Marine Spice,Falafel - 5 pcs,"Fried chickpea patties served warm, spiced and savory",Middle Eastern,Starter,1,1,1,1,0,5 pcs,1000
+645,Marine Spice,Hot Butter Prawns,"Crispy prawns in spiced butter coating, warm and rich",Asian,Starter,0,1,1,0,1,-,2290
+646,Marine Spice,Hot Butter Cuttle Fish,"Crispy cuttlefish in spiced butter coating, warm and rich",Asian,Starter,0,1,1,0,1,-,2260
+647,Marine Spice,Golden Crispy Panko Prawns,"Breaded prawns with panko crumbs, deep-fried and warm",Asian,Starter,0,1,1,0,1,-,2490
+648,Marine Spice,Chicken Nuggets,"Bite-sized breaded chicken pieces, fried and warm",Western,Starter,1,1,1,0,1,-,700
+649,Marine Spice,Fish and Chips,"Battered fish fillet with crispy fries, served warm",Western,Main,0,1,1,0,1,-,1990
+650,Marine Spice,French Fries Loader Cheese,"Fries topped with melted cheese, warm and savory",Western,Side Dish,0,1,1,0,1,-,1480
+651,Marine Spice,French Fries Loader Cheese Chicken,"Fries topped with melted cheese and chicken, savory",Western,Side Dish,0,1,1,0,1,-,1640
+652,Marine Spice,Golden Crispy Panko Fish,"Breaded fish with panko crumbs, deep-fried and warm",Asian,Starter,0,1,1,0,1,-,2490
+654,Marine Spice,Chicken Sweet Corn Soup,"Creamy soup with chicken and sweet corn, warm",Chinese,Soup,0,1,1,0,1,-,990
+655,Marine Spice,Sweet Corn Soup,"Light and creamy corn soup, served warm",Chinese,Soup,1,1,1,0,1,-,790
+656,Marine Spice,Chicken Club Sandwich,"Layered sandwich with chicken, lettuce, tomato, mayo",Western,Sandwich,1,1,1,1,0,-,1020
+657,Marine Spice,Chicken Submarine ECO,"Long bread sandwich with chicken filling, warm",Western,Sandwich,0,1,1,0,1,-,1040
+658,Marine Spice,Beef Submarine ECO,"Long bread sandwich with beef filling, warm",Western,Sandwich,0,1,1,0,1,-,1290
+659,Marine Spice,Chicken Submarine,"Sub sandwich with seasoned chicken filling, warm",Western,Sandwich,0,1,1,0,1,-,1550
+660,Marine Spice,Crispy Chicken Submarine,"Sub sandwich with crispy chicken, warm",Western,Sandwich,0,1,1,0,1,-,1550
+661,Marine Spice,Beef Submarine,"Sub sandwich with seasoned beef filling, warm",Western,Sandwich,0,1,1,0,1,-,1670
+662,Marine Spice,Crispy Fish Submarine,"Sub sandwich with crispy fish filling, warm",Western,Sandwich,0,1,1,0,1,-,1590
+663,Marine Spice,Chicken Burger,Grilled chicken patty in a bun with condiments,Western,Burger,0,1,1,0,1,-,920
+664,Marine Spice,Beef Burger,Grilled beef patty in a bun with condiments,Western,Burger,0,1,1,0,1,-,1290
+665,Marine Spice,Veg Burger,Vegetable patty in a bun with condiments,Western,Burger,0,1,1,0,1,-,1020
+666,Marine Spice,Chicken Patty Burger,"Grilled chicken patty burger, savory",Western,Burger,0,1,1,0,1,-,1250
+667,Marine Spice,Crispy Chicken Burger,"Breaded chicken burger, crispy and savory",Western,Burger,0,1,1,0,1,-,1480
+668,Marine Spice,Beef Patty Burger,"Grilled beef patty burger, savory",Western,Burger,0,1,1,0,1,-,1780
+669,Marine Spice,Crispy Fish Burger,"Breaded fish fillet burger, crispy and savory",Western,Burger,0,1,1,0,1,-,1480
+670,Marine Spice,Crispy Mushroom Burger,"Breaded mushroom patty burger, savory",Western,Burger,0,1,1,0,1,-,990
+671,Marine Spice,Chicken Shawarma Eco,"Light and flavorful chicken shawarma served with wrap bread, salad, and sauce",Middle Eastern,Main,0,1,1,0,1,Not specified,990
+672,Marine Spice,Beef Shawarma Eco,Tender beef shawarma wrap served with salad and sauce,Middle Eastern,Main,0,1,1,0,1,Not specified,1110
+674,Marine Spice,Beef Shawarma,Traditional beef shawarma served hot with salad and sauce,Middle Eastern,Main,0,1,1,0,1,Not specified,1790
+675,Marine Spice,Mix Shawarma,Combination of chicken and beef shawarma in a wrap with salad,Middle Eastern,Main,0,1,1,0,1,Not specified,1650
+676,Marine Spice,Arab Chicken Shawarma,Spiced Arab-style chicken shawarma served with wrap bread,Middle Eastern,Main,0,1,1,0,1,Not specified,1706
+677,Marine Spice,Arab Beef Shawarma,Arab-style beef shawarma with spices and wrap bread,Middle Eastern,Main,0,1,1,0,1,Not specified,2290
+678,Marine Spice,Arab Mix Shawarma,Combination of Arab-style chicken and beef shawarma,Middle Eastern,Main,0,1,1,0,1,Not specified,1990
+679,Marine Spice,Veg Fried Rice,"Stir-fried rice with vegetables, served hot",Chinese,Main,0,1,1,0,1,Small,1170
+681,Marine Spice,Paneer Fried Rice,Fried rice with spiced paneer and vegetables,Chinese,Main,0,1,1,0,1,Small,1880
+683,Marine Spice,Prawn Fried Rice,Fried rice with prawns and vegetables,Chinese,Main,0,1,1,0,1,Small,2070
+685,Marine Spice,Beef Fried Rice,Fried rice with beef and vegetables,Chinese,Main,0,1,1,0,1,Small,2170
+689,Marine Spice,Mix Fried Rice,"Fried rice with chicken, beef, and prawns",Chinese,Main,0,1,1,0,1,Small,2240
+693,Marine Spice,Chicken Nasi Goreng,Indonesian-style fried rice with chicken,Indonesian,Main,0,1,1,0,1,Small,1980
+695,Marine Spice,Seafood Nasi Goreng,Indonesian-style fried rice with seafood,Indonesian,Main,0,1,1,0,1,Small,2240
+697,Marine Spice,Mix Nasi Goreng,"Fried rice with chicken, beef, and seafood",Indonesian,Main,0,1,1,0,1,Small,2240
+699,Marine Spice,Beef Nasi,Fried rice with beef,Indonesian,Main,0,1,1,0,1,Small,2240
+701,Marine Spice,Panner Nasi,Fried rice with paneer,Indonesian,Main,0,1,1,0,1,Small,2240
+703,Marine Spice,Mongolian Seafood Fried Rice,Fried rice with seafood in Mongolian spices,Mongolian,Main,0,1,1,0,1,Small,2290
+705,Marine Spice,Mongolian Chicken Rice,Mongolian-style fried rice with chicken,Mongolian,Main,0,1,1,0,1,Not specified,1970
+706,Marine Spice,Mongolian Beef Rice,Mongolian-style fried rice with beef,Mongolian,Main,0,1,1,0,1,Not specified,2390
+707,Marine Spice,Mongolian Panner Rice,Mongolian-style fried rice with paneer,Mongolian,Main,0,1,1,0,1,Not specified,2190
+708,Marine Spice,Thai Rice,Thai-style fried rice with herbs and spices,Thai,Main,0,1,1,0,1,Not specified,2110
+709,Marine Spice,Paneer Devilled,Stir-fried paneer in spicy sauce,Sri Lankan,Main,0,1,1,0,1,Not specified,1450
+710,Marine Spice,Chicken Devilled,Spicy stir-fried chicken with vegetables,Sri Lankan,Main,0,1,1,0,1,Not specified,1710
+711,Marine Spice,Beef Devilled,Spicy stir-fried beef with vegetables,Sri Lankan,Main,0,1,1,0,1,Not specified,1900
+712,Marine Spice,Prawn Devilled,Spicy stir-fried prawns with vegetables,Sri Lankan,Main,0,1,1,0,1,Not specified,1940
+714,Marine Spice,Chilli Beef,Spicy beef stir-fry with chilies,Chinese,Main,0,1,1,0,1,Not specified,1940
+715,Marine Spice,Chilli Cuttlefish,Spicy cuttlefish stir-fry with chilies,Chinese,Main,0,1,1,0,1,Not specified,1940
+716,Marine Spice,Chilli Fish,Spicy fish stir-fry with chilies,Chinese,Main,0,1,1,0,1,Not specified,1940
+717,Marine Spice,Sweet & Sour Chicken,Chicken stir-fry in sweet and tangy sauce,Chinese,Main,0,1,1,0,1,Not specified,1940
+718,Marine Spice,Sweet & Sour Cuttlefish,Cuttlefish stir-fry in sweet and tangy sauce,Chinese,Main,0,1,1,0,1,Not specified,1940
+719,Marine Spice,Sweet & Sour Fish,Fish stir-fry in sweet and tangy sauce,Chinese,Main,0,1,1,0,1,Not specified,1940
+720,Marine Spice,Sweet & Sour Prawns,Prawn stir-fry in sweet and tangy sauce,Chinese,Main,0,1,1,0,1,Not specified,1940
+721,Marine Spice,Veg Dum Biriyani,"Flavorful and aromatic South Asian dish made with basmati rice, vegetables, and a blend of spices, slow-cooked for rich taste",Indian,Main,0,1,1,0,1,-,1490
+724,Marine Spice,Paneer Dum Biriyani,"Vegetarian biriyani with paneer, basmati rice, and spices, slow-cooked for aromatic richness",Indian,Main,0,1,1,0,1,-,1990
+725,Marine Spice,Prawns Dum Biriyani,"Fragrant basmati rice with prawns and spices, slow-cooked to lock in flavors",Indian,Main,0,1,1,0,1,-,1990
+726,Marine Spice,Fish Dum Biriyani,"Basmati rice with marinated fish, spices, and herbs, slow-cooked for flavorful taste",Indian,Main,0,1,1,0,1,-,1990
+727,Marine Spice,Hyderabadi Veg Biriyani,"Popular aromatic Hyderabadi-style biriyani made with vegetables, basmati rice, and spices, cooked in layers",Indian,Main,0,1,1,0,1,-,1440
+729,Marine Spice,Hyderabadi Paneer Biriyani,Paneer-based Hyderabadi biriyani with aromatic spices and basmati rice,Indian,Main,0,1,1,0,1,-,2170
+730,Marine Spice,Hyderabadi Prawns Biriyani,"Hyderabadi-style biriyani with prawns, aromatic spices, and basmati rice",Indian,Main,0,1,1,0,1,-,2170
+733,Marine Spice,French Fries Shooter,"Crispy golden fries served in a shooter-style presentation, light snack",International,Starter,1,1,1,1,0,-,990
+734,Marine Spice,Stuffed Sausages,"Savory sausages stuffed with herbs, vegetables, and cheese, served hot",International,Starter,0,1,1,1,0,-,990
+735,Marine Spice,Crispy Drumsticks  Chicken,"Crunchy coated chicken drumsticks, hot and savory",International,Starter,0,1,1,1,0,-,1390
+736,Marine Spice,Crispy Drumsticks Chicken,"Golden fried chicken drumsticks, hot and savory",International,Starter,0,1,1,1,0,-,1290
+737,Marine Spice,Arabian Smoke Rice,"Fragrant spiced Arabian-style rice served warm, medium-heavy",Middle Eastern,Main,0,1,1,1,0,-,1890
+739,Marine Spice,Lime with Mint,"Fresh lime juice blended with mint leaves, chilled",International,Beverage,1,1,1,0,1,-,790
+741,Marine Spice,Shirley Rad Temple Mojito,"Colorful mojito variation with sweet, tangy flavors",International,Beverage,1,1,1,0,1,-,870
+742,Marine Spice,Blackcurrant Mojito,"Cold drink with blackcurrant flavor, mint, and soda",International,Beverage,1,1,1,0,1,-,870
+743,Marine Spice,Iced Coffee,"Chilled coffee served over ice, sweetened",International,Beverage,1,1,1,0,1,-,990
+744,Marine Spice,Choco Milo,Cold chocolate malt drink,International,Beverage,1,1,1,0,1,-,790
+745,Marine Spice,Avocado Juice,"Smooth blended avocado drink, chilled",International,Beverage,1,1,1,0,1,-,790
+746,Marine Spice,Chicken Kabab,"Grilled marinated chicken skewers served hot with sides, savory and mildly spiced",Middle Eastern,Main,0,1,1,1,0,2 skewers,1690
+747,Marine Spice,Chicken Tikka,"Spiced and grilled chicken skewer, juicy and aromatic",Indian,Main,0,1,1,1,0,1 skewer,1690
+748,Marine Spice,Half BBQ Chicken,"Half portion of barbecued chicken with smoky flavor, served hot with sides",International,Main,0,1,1,1,0,Half chicken,2490
+749,Marine Spice,Chinese Full Fish,"Whole fish cooked in Chinese style sauce with vegetables, served hot",Chinese,Main,0,1,1,1,0,Whole fish,4490
+750,Marine Spice,Fish Tawa,"Pan-fried fish slice seasoned with spices, served hot",South Asian,Main,0,1,1,1,0,One slice,2290
+751,Marine Spice,Sausage Twists,"Fried sausage rolls with crispy coating, served hot",International,Starter,0,1,1,1,0,2 pcs,1290
+752,Marine Spice,Chicken Shish Tawook,Middle Eastern style marinated chicken skewer grilled to perfection,Middle Eastern,Main,0,1,1,1,0,1 skewer,1890
+753,Marine Spice,Beef Kofta,"Grilled minced beef skewers with spices, served hot",Middle Eastern,Main,0,1,1,1,0,2 skewers,2390
+754,Marine Spice,Beef Urfaly,Juicy grilled beef skewers prepared in Urfaly style seasoning,Middle Eastern,Main,0,1,1,1,0,2 skewers,2390
+755,Marine Spice,Big MS Burger,"Large burger with multiple patties, cheese, lettuce, tomato, and sauce, served hot",Western,Main,0,1,1,1,0,1 burger,2490
+756,Marine Spice,Egg Stuffed Pinwheel,"Pastry rolls stuffed with egg filling, served warm",International,Starter,1,1,1,1,0,2 pcs,790
+759,Marine Spice,Hot Butter Mushroom,"Savory deep-fried mushrooms tossed in hot butter sauce, served warm",International,Starter,0,1,1,0,1,Not specified,1490
+762,Atthas Restaurent,Cole Slaw Salad,Light and creamy salad with shredded cabbage and carrots in tangy mayonnaise dressing. Served chilled.,International,Salad,1,1,1,0,1,-,400
+763,Atthas Restaurent,BBQ Salad,Fresh vegetable salad with smoky BBQ-flavored dressing. Served cold.,International,Salad,1,1,1,0,1,-,500
+764,Atthas Restaurent,Veg Salad,"Crisp and fresh mix of seasonal vegetables, lightly seasoned. Served chilled.",International,Salad,1,1,1,0,1,-,500
+765,Atthas Restaurent,Add-on Chicken,Tender cooked chicken pieces to complement salads. Served warm.,International,Add-on,1,1,1,1,0,-,200
+766,Atthas Restaurent,Club Sandwich - Chicken,"Toast slice bread, chicken ham, fried egg, lettuce, sliced tomato, mayo mix, American slice cheese. Served warm.",International,Sandwich,1,1,1,1,0,-,1300
+767,Atthas Restaurent,Chicken Mayo Wrap,"Tortilla wrap, seasoned chicken, fresh vegetable mix, mayo mix. Served warm.",International,Wrap,1,1,1,1,0,Regular,800
+769,Atthas Restaurent,Chicken Kebab Wrap,"Tortilla wrap, grilled chicken kebab, fresh vegetable mix, mayo mix, American slice cheese. Served warm.",Middle Eastern,Wrap,1,1,1,1,0,Regular,800
+774,Atthas Restaurent,Coffee Milkshake,"Chilled coffee-flavored milkshake, slightly bitter-sweet, served with milk and ice cream.",Western,Beverage,1,1,1,0,1,-,800
+775,Atthas Restaurent,Mocha Milkshake,Cold blend of coffee and chocolate flavors with milk and ice cream.,Western,Beverage,1,1,1,0,1,-,900
+776,Atthas Restaurent,Irish Milkshake,"Chilled milkshake with Irish cream flavor, sweet and creamy.",Western,Beverage,1,1,1,0,1,-,950
+778,Atthas Restaurent,Green Mint Milkshake,Refreshing mint-flavored cold milkshake with sweet creamy taste.,Western,Beverage,1,1,1,0,1,-,950
+779,Atthas Restaurent,Almond Milkshake,"Creamy almond-flavored milkshake, nutty and sweet, served chilled.",Western,Beverage,1,1,1,0,1,-,1000
+780,Atthas Restaurent,Blueberry Milkshake,"Fruity blueberry-flavored sweet milkshake, served cold.",Western,Beverage,1,1,1,0,1,-,1050
+781,Atthas Restaurent,Caramel Milkshake,Sweet caramel-flavored cold milkshake with creamy texture.,Western,Beverage,1,1,1,0,1,-,1050
+782,Atthas Restaurent,Brownie Milkshake,"Cold chocolate milkshake blended with brownie pieces, rich and sweet.",Western,Beverage,1,1,1,0,1,-,1100
+783,Atthas Restaurent,Whipping Cream - Addon,Freshly whipped cream topping for milkshakes.,Western,Add-on,0,1,1,0,1,-,300
+784,Atthas Restaurent,Virgin Mojito,"Refreshing non-alcoholic mint and lime drink, served cold.",International,Beverage,0,1,1,1,1,-,750
+786,Atthas Restaurent,Mango Mojito,"Tropical mango-flavored mint mojito, refreshing and cold.",International,Beverage,0,1,1,1,1,-,750
+788,Atthas Restaurent,Raspberry Mojito,"Sweet and tangy raspberry-flavored mojito, served chilled.",International,Beverage,0,1,1,1,1,-,800
+789,Atthas Restaurent,Blueberry Mojito,"Fruity blueberry-flavored refreshing mojito, served cold.",International,Beverage,0,1,1,1,1,-,800
+791,Atthas Restaurent,Blue Hawaiian Mix Mojito,"Tropical blend of pineapple, coconut, and mint flavors, served cold.",International,Beverage,0,1,1,1,1,-,950
+792,Atthas Restaurent,Lime and Mint Margarita - Virgin,"Non-alcoholic margarita with lime and mint, served cold.",Mexican,Beverage,0,1,1,1,1,-,850
+793,Atthas Restaurent,Passion & Mint Margarita - Virgin,Sweet passionfruit and mint blend in a virgin margarita.,Mexican,Beverage,0,1,1,1,1,-,890
+794,Atthas Restaurent,Strawberry & Mint Margarita - Virgin,"Fruity strawberry and mint non-alcoholic margarita, served chilled.",Mexican,Beverage,0,1,1,1,1,-,890
+797,Atthas Restaurent,Water Melon Juice,"Fresh watermelon juice, juicy and cooling, served chilled",International,Beverage,1,1,1,1,1,-,600
+801,Atthas Restaurent,Passion Fruit Juice,"Refreshing passion fruit juice, tangy-sweet, served chilled",International,Beverage,1,1,1,1,1,-,700
+802,Atthas Restaurent,Mix Fruit Juice,"Blend of seasonal fruits, balanced sweetness and tang, served chilled",International,Beverage,1,1,1,1,1,-,700
+805,Atthas Restaurent,Faluda With Ice Cream,"Sweet milk-based dessert drink with vermicelli, rose syrup, basil seeds, topped with ice cream",Indian,Dessert/Beverage,1,1,1,0,1,-,700
+806,Atthas Restaurent,Vanilla Frappe,"Cold coffee shake with vanilla flavor, sweet and creamy",International,Beverage,0,1,1,0,1,-,650
+807,Atthas Restaurent,Almond Frappe,"Cold coffee shake with almond flavor, nutty and sweet",International,Beverage,0,1,1,0,1,-,700
+808,Atthas Restaurent,Irish Frappe,"Cold coffee shake with Irish cream flavor, sweet and creamy",International,Beverage,0,1,1,0,1,-,700
+809,Atthas Restaurent,Caramel Frappe,"Cold coffee shake with caramel flavor, sweet and rich",International,Beverage,0,1,1,0,1,-,750
+810,Atthas Restaurent,Mocha Frappe,"Cold coffee shake with chocolate flavor, sweet and creamy",International,Beverage,0,1,1,0,1,-,750
+811,Atthas Restaurent,Hazelnut Frappe,"Cold coffee shake with hazelnut flavor, sweet and nutty",International,Beverage,0,1,1,0,1,-,750
+812,Atthas Restaurent,Rotti,"Soft, plain flatbread served warm, light and mild in flavor",Sri Lankan,Side dish,1,1,1,1,0,-,200
+813,Atthas Restaurent,Spicy Rotti,"Flatbread with added spices, served warm with a mild to medium heat",Sri Lankan,Side dish,1,1,1,1,0,-,250
+814,Atthas Restaurent,Butter Rotti,"Soft flatbread infused with butter, rich and warm",Sri Lankan,Side dish,1,1,1,1,0,-,250
+815,Atthas Restaurent,Garlic Butter Rotti,"Soft flatbread infused with garlic and butter, aromatic and savory",Sri Lankan,Side dish,1,1,1,1,0,-,300
+816,Atthas Restaurent,Garlic Cheese Rotti,"Flatbread with garlic and melted cheese, served warm and hearty",Sri Lankan,Side dish,1,1,1,1,0,-,400
+817,Atthas Restaurent,Egg Bullseye,"Fried egg with runny yolk, light breakfast-style dish",International,Side dish,1,1,1,1,0,-,150
+818,Atthas Restaurent,Beef Kebab,"Grilled skewered beef, savory and tender, served hot",Middle Eastern,Side dish,0,1,1,1,0,-,700
+819,Atthas Restaurent,Crispy Chicken Boneless,"Deep-fried boneless chicken pieces, crunchy exterior and tender inside",International,Side dish,0,1,1,1,0,-,600
+820,Atthas Restaurent,Chicken Tikka Kebab - 1 Stick,"Grilled marinated chicken skewer, spiced and served hot",Indian,Side dish,0,1,1,1,0,-,700
+821,Atthas Restaurent,Tangy BBQ Meatballs - Beef,"Beef meatballs in tangy BBQ sauce, hot and savory",International,Side dish,0,1,1,1,0,-,900
+822,Atthas Restaurent,Tangy BBQ Meatballs - Chicken,"Chicken meatballs in tangy BBQ sauce, hot and savory",International,Side dish,0,1,1,1,0,-,900
+823,Atthas Restaurent,Beef Keema,"Minced beef cooked with spices, rich and savory",Indian,Side dish,0,1,1,1,0,-,950
+824,Atthas Restaurent,Devil Beef,Spicy stir-fried beef with vegetables,Chinese fusion,Main,0,1,1,1,0,-,950
+825,Atthas Restaurent,Devil Chicken,Spicy stir-fried chicken with vegetables,Chinese fusion,Main,0,1,1,1,0,-,950
+826,Atthas Restaurent,Devil Beef Meatballs,Spicy beef meatballs stir-fried with vegetables,Chinese fusion,Main,0,1,1,1,0,-,850
+827,Atthas Restaurent,Devil Prawns,Spicy stir-fried prawns with vegetables,Chinese fusion,Main,0,1,1,1,0,-,1050
+828,Atthas Restaurent,Devil Mix,Spicy stir-fried mix of meats/seafood with vegetables,Chinese fusion,Main,0,1,1,1,0,-,1050
+830,Atthas Restaurent,Chopsuey,Stir-fried vegetables and/or meat in light savory sauce,Chinese,Main,0,1,1,1,0,-,850
+831,Atthas Restaurent,Atthas Grilled Beef Steak Salads,"SKK Tenderloin Steak, seasoned with salt and pepper, served with vegetable salad; hearty and savory, served hot",Western,Main,0,1,1,1,0,-,1800
+832,Atthas Restaurent,Atthas Grilled Chicken Salads,"Grilled marinated chicken breast served with vegetable salad; light and healthy, served hot",Western,Main,0,1,1,1,0,-,1600
+833,Atthas Restaurent,Chicken Biriyani with Egg & Raita,"Chicken Basmathi Biriyani served with egg, raita, and coriander sauce; aromatic, mildly spiced, served hot",Indian,Main,0,1,1,1,0,Regular,1250
+835,Atthas Restaurent,Chicken Biriyani with Chicken Tikka,"Chicken Basmathi Biriyani served with chicken tikka, egg, raita, and coriander sauce; richer and spicier, served hot",Indian,Main,0,1,1,1,0,Regular,1800
+837,Atthas Restaurent,Chicken Biriyani Sawan - Pre Order Only,"Chicken Basmathi Biriyani Sawan served with deep fried full chicken, 6 eggs, raita, and coriander sauce; festive and hearty",Indian,Main,0,1,1,1,0,-,9000
+838,Atthas Restaurent,Chicken String Hopper Biriyani Sawan - Pre Order Only,"Chicken String Hopper Biriyani Sawan served with deep fried full chicken, 6 eggs, raita, and coriander sauce; unique and hearty",Sri Lankan,Main,0,1,1,1,0,-,9000
+840,Atthas Restaurent,Mozzarella Cheese,"Soft, stretchy mozzarella cheese, mild flavor, served as an add-on",Italian,Add-on,1,1,1,0,0,-,300
+841,Atthas Restaurent,Honey Mustard,"Sweet and tangy honey mustard sauce, smooth texture",Western,Add-on,1,1,1,0,0,-,150
+842,Atthas Restaurent,Thousand Island,Creamy and tangy Thousand Island sauce with a hint of sweetness,Western,Add-on,1,1,1,0,0,-,150
+843,Atthas Restaurent,Garlic Dip,"Creamy dip infused with garlic flavor, smooth and savory",Western,Add-on,1,1,1,0,0,-,130
+844,Atthas Restaurent,Sweet & Spicy Sauce,"Balanced sweet and spicy sauce, smooth texture",Japanese,Add-on,1,1,1,0,0,-,150
+845,Atthas Restaurent,Spicy Mayo,Creamy mayonnaise blended with chili for a spicy kick,Japanese,Add-on,1,1,1,0,0,-,150
+846,Atthas Restaurent,Chilli Paste,"Spicy chili paste with rich flavor, medium heat",Asian,Add-on,1,1,1,0,0,-,150
+847,Atthas Restaurent,Single Espresso,"Strong, concentrated coffee shot, served hot",Italian,Beverage,1,1,1,0,1,-,300
+848,Atthas Restaurent,Double Espresso,"Two shots of concentrated coffee, intense and aromatic",Italian,Beverage,1,1,1,0,1,-,400
+851,Atthas Restaurent,Café Latte,"Espresso with more steamed milk, smooth and mild",Italian,Beverage,1,1,1,0,1,-,600
+852,Atthas Restaurent,Caramel Latte,"Latte sweetened with caramel syrup, smooth and sweet",Italian,Beverage,1,1,1,0,1,-,700
+853,Atthas Restaurent,Café Mocha - Chocolate Coffee,"Latte with chocolate syrup, rich and sweet",Italian,Beverage,1,1,1,0,1,-,700
+854,Atthas Restaurent,Ice Latte,"Chilled espresso with milk over ice, refreshing",Italian,Beverage,0,1,1,1,0,-,600
+855,Atthas Restaurent,Ice Mocha,"Iced coffee with chocolate flavor, creamy and sweet",Italian,Beverage,0,1,1,1,0,-,700
+856,Atthas Restaurent,Cardamom Tea,"Aromatic tea infused with cardamom, served hot",South Asian,Beverage,1,1,1,0,1,-,380
+857,Atthas Restaurent,Black Tea,"Strong brewed tea, served hot",South Asian,Beverage,1,1,1,0,1,-,200
+858,Atthas Restaurent,Hot Milk,"Warm milk, plain, smooth texture",Western,Beverage,1,1,1,0,1,-,350
+859,Atthas Restaurent,Black Tea with Milk,"Strong brewed tea with milk, large serving",South Asian,Beverage,1,1,1,0,1,L,350
+860,Atthas Restaurent,Ice Tea,"Chilled tea served over ice, refreshing",Western,Beverage,0,1,1,1,0,L,360
+862,Atthas Restaurent,Hazelnut Hot Chocolate,"Hot chocolate with hazelnut flavor, rich and nutty",Western,Beverage,1,1,1,0,1,-,900
+874,Atthas Restaurent,Chicken Cheese Kottu,"Kottu Manda with egg, fried chicken breast, cheese wedges, fresh milk, and fresh vegetable mix. Served hot, rich and cheesy.",Sri Lankan,Main,0,1,1,0,1,Regular,1350
+877,Atthas Restaurent,Beef Cheese Kottu,"Kottu Manda with egg, stewed beef, cheese wedges, fresh milk, and fresh vegetable mix. Served hot, rich and cheesy.",Sri Lankan,Main,0,1,1,0,1,Regular,1400
+880,Atthas Restaurent,Crispy Chicken Kottu,"Kottu Manda with egg, fresh vegetable mix, spices, and crispy chicken breast. Served hot.",Sri Lankan,Main,0,1,1,0,1,Regular,1000
+882,Atthas Restaurent,Mix Kottu,"Kottu Manda with egg, stewed beef, fried chicken breast, fried shrimp, fried sausage, fresh vegetable mix, and spices.",Sri Lankan,Main,0,1,1,0,1,Regular,1300
+884,Atthas Restaurent,Chicken Chop Suey Rice,"Boiled Basmathi rice & egg, seasoned with salt and pepper, served with vegetables and chicken chop suey.",Asian,Main,0,1,1,0,1,Regular,1300
+885,Atthas Restaurent,Chop Suey Rice,"Boiled Basmathi rice & egg, seasoned with salt and pepper, served with vegetables chop suey.",Asian,Main,0,1,1,0,1,Regular,1000
+887,Atthas Restaurent,Potato Wedges,"Chunky potato wedges, seasoned and deep-fried, served hot",Western,Appetizer,0,1,1,0,1,-,700
+888,Atthas Restaurent,Attha’s New York Chicken Strips,"Crispy fried seasoned chicken strips, served hot",Western,Appetizer,0,1,1,0,1,-,900
+889,Atthas Restaurent,Battered Prawns,"Crispy battered deep-fried prawns, served hot",Western,Appetizer,0,1,1,0,1,-,950
+890,Atthas Restaurent,Chicken & Chips,Fried chicken pieces served with crispy potato chips,Western,Appetizer/Main,0,1,1,0,1,-,1500
+891,Atthas Restaurent,Calamari - Fried Cuttlefish,"Deep-fried battered cuttlefish rings, served hot",Western,Appetizer,0,1,1,0,1,-,1000
+892,Atthas Restaurent,Crispy Chicken Wings - 4pc,"Spicy deep-fried chicken wings , served hot",Western,Appetizer,0,1,1,0,1,-,990
+893,Atthas Restaurent,Extra Crispy Chicken Wing - 1pc,Single piece of spicy deep-fried chicken wing,Western,Appetizer,0,1,1,0,1,-,250
+894,Atthas Restaurent,Kids Cheese Toast,"Toasted bread with melted cheese, served warm",Western,Kids Meal,1,1,0,0,1,-,600
+895,Atthas Restaurent,Kids Egg Mayo Sandwich,Soft bread sandwich with boiled egg and mayonnaise filling,Western,Kids Meal,1,1,0,0,1,-,600
+896,Atthas Restaurent,Kids Scrambled Egg Sandwich,Soft bread sandwich with scrambled egg filling,Western,Kids Meal,1,1,0,0,1,-,600
+897,Atthas Restaurent,Kids Egg Cheese Fried Rice,"Fried rice with egg and cheese, mild seasoning",Asian,Kids Meal,1,1,0,1,0,-,600
+898,Atthas Restaurent,Kids Mac & Cheese Pasta,Creamy macaroni pasta with melted cheese,Western,Kids Meal,1,1,0,0,1,-,600
+899,Atthas Restaurent,Vegetable Submarine,"Submarine bun with fresh vegetable mix, lettuce, mayo mix, and American slice cheese",Western,Main,0,1,1,0,1,-,950
+900,Atthas Restaurent,Attha’s Penne Arabiata,Penne pasta topped with marinara sauce and mozzarella cheese,Italian,Main,0,1,1,0,1,-,950
+903,Atthas Restaurent,Veg Noodles,Noodles with fresh vegetable mix and spices,Asian,Main,0,1,1,1,0,-,850
+906,Atthas Restaurent,Spicy Chicken Submarine,"Submarine Bun, Spicy Seasoned Grilled Chicken Mix, Lettuce and Cabbage Mix, Mayo Mix, American Slice Cheese. Medium-heavy, spicy, served hot.",Western,Main,0,1,1,0,1,Regular,1250
+912,Atthas Restaurent,Crispy Prawns Submarine,"Submarine Bun, Deep Fried Prawns, Lettuce and Cabbage Mix, Mayo Mix, American Slice Cheese. Medium-heavy, seafood, served hot.",Western,Main,0,1,1,0,1,Regular,1400
+914,Atthas Restaurent,French Fries - Addon,"Deep fried potato fries, crispy, served hot.",Western,Side dish,1,1,1,0,1,—,300
+915,Atthas Restaurent,Tomato Chicken Pasta,"Penne Pasta, Chicken Breast, Topped with Marinara Sauce and Mozzarella Cheese. Medium-heavy, savory, served hot.",Italian,Main,0,1,1,0,1,—,1250
+916,Atthas Restaurent,Spaghetti Meatballs - Beef/Chicken Marinara Sauce,"Spaghetti Pasta, Beef or Chicken Meatballs, Tossed with Marinara Sauce and Mozzarella Cheese. Heavy, savory, served hot.",Italian,Main,0,1,1,0,1,—,1250
+917,Atthas Restaurent,Spicy Chow Mein Spaghetti - Beef/Chicken,"Spaghetti Pasta, Fresh Vegetable Mix, Chili Flakes, Soy and Tomato Sauce Mix, Beef or Chicken Meatballs/Chicken Breast. Medium-heavy, spicy, served hot.",Asian,Main,0,1,1,0,1,—,1300
+918,Atthas Restaurent,Spicy Shrimps Pasta,"Penne Pasta, Pan Seared Shrimp, Chili Flakes, Marinara Sauce, Tomato Sauce Mix and Mozzarella Cheese. Medium-heavy, spicy, served hot.",Italian,Main,0,1,1,0,1,—,1300
+919,Atthas Restaurent,Mac & Cheese Pasta,"Elbow Pasta, Cream and Cheese Sauce. Medium, creamy, served hot.",Western,Main,1,1,1,0,1,—,1500
+920,Atthas Restaurent,Alfredo Cheesy Pasta - No Meat,"Penne Pasta, Cream and Herb Mix, Mozzarella Cheese. Medium, creamy, served hot.",Italian,Main,1,1,1,0,1,—,1500
+921,Atthas Restaurent,Alfredo Cheesy Chicken Pasta,"Penne Pasta, Chicken Breast, Cream and Herb Mix, Mozzarella Cheese. Medium-heavy, creamy, served hot.",Italian,Main,0,1,1,0,1,—,1800
+922,Atthas Restaurent,Alfredo Cheesy Shrimp Pasta,"Penne Pasta, Pan Seared Shrimp, Cream and Spicy Mix, Mozzarella Cheese. Medium-heavy, creamy-spicy, served hot.",Italian,Main,0,1,1,0,1,—,2100
+923,Atthas Restaurent,Atthas Special Beef Cheese Steak,"Submarine bun, grilled minced beef, vegetable mix, cheddar cheese sauce; hearty and savory, served hot",American,Main,0,1,1,0,1,-,1900
+926,Atthas Restaurent,Chicken 2 Patty Burger,"Burger bun, two grilled SKK chicken patties, pickled cucumber, lettuce, tomato, raw onion, mayo mix, two American slice cheese; rich, hearty, served hot",American,Main,0,1,1,0,1,-,990
+928,Atthas Restaurent,Double Crispy Chicken Burger,"Burger bun, two deep fried chicken breasts, pickled cucumber, lettuce, tomato, mayo mix, two American slice cheese; extra crispy, filling, served hot",American,Main,0,1,1,0,1,-,1350
+930,Atthas Restaurent,SKK Beef Burger,"Burger bun, grilled SKK beef patty, fresh vegetable mix, mayo mix, American slice cheese; juicy and savory, served hot",American,Main,0,1,1,0,1,-,900
+932,Atthas Restaurent,Attha’s Smokehouse Beef Burger,"Burger bun, two grilled SKK beef patties, crispy onion rings, pickled cucumber, lettuce, tomato, mayo mix, two American slice cheese; smoky, hearty, served hot",American,Main,0,1,1,0,1,-,1500
+934,Atthas Restaurent,Double Cheese Beef Burger,"Burger bun, two grilled SKK beef patties, pickled cucumber, lettuce, tomato, mayo mix, two American slice cheese; cheesy, rich, served hot",American,Main,0,1,1,0,1,-,1450
+936,Atthas Restaurent,Crispy Prawn Burger,"Burger bun, deep fried prawns, pickled cucumber, lettuce, tomato, mayo mix, American slice cheese; crispy seafood flavor, served hot",American,Main,0,1,1,0,1,-,1500
+938,Atthas Restaurent,Hybrid Burger - Chicken & Beef,"Burger bun, deep fried chicken breast, grilled SKK beef patty, pickled cucumber, lettuce, tomato, mayo mix, two American slice cheese; mixed meat, hearty, served hot",American,Main,0,1,1,0,1,-,1700
+940,Atthas Restaurent,Beef Fillet Steak Burger,"Burger bun, grilled SKK beef fillet steak, lettuce, tomato, mayo mix, American slice cheese; premium cut beef, juicy, served hot",American,Main,0,1,1,0,1,-,1900
+942,Atthas Restaurent,Chicken Mongolian Rice,"Boiled Basmathi Rice, Crispy Mongolian Chicken Breast, Fresh Vegetable Mix, Homemade Mongolian Sauce with Bullseye; hot, savory, medium spiced",Asian,Main,0,1,1,1,0,Regular,1500
+944,Atthas Restaurent,Beef Mongolian Rice,"Boiled Basmathi Rice, Deep Fried Marinated Beef, Fresh Vegetable Mix, Homemade Mongolian Sauce with Bullseye; hot, savory, medium spiced",Asian,Main,0,1,1,1,0,Regular,1600
+946,Atthas Restaurent,Mix Mongolian Rice,"Boiled Basmathi Rice, Stewed Beef, Fried Chicken Breast, Fried Prawns, Fried Sausage, Fresh Vegetable Mix, Homemade Mongolian Sauce with Bullseye; heavy, hot, mixed meats",Asian,Main,0,1,1,1,0,Regular,1800
+948,Atthas Restaurent,Egg Mongolian Rice,"Boiled Basmathi Rice, Fresh Vegetable Mix, Homemade Mongolian Sauce with Bullseye; vegetarian-friendly, hot, light-medium",Asian,Main,0,1,1,1,0,—,1100
+956,Atthas Restaurent,Crispy Chicken Fried Rice,"Boiled Basmathi Rice, Egg, Fresh Vegetable Mix, Crispy Chicken Breast, served with Dry Shrimp Chilli Paste",Asian,Main,0,1,1,1,0,Regular,1000
+994,Atthas Restaurent,Lime & Mint Virgin Margarita,Cold non-alcoholic drink with lime and mint flavor,Western,Beverage,1,1,1,1,0,-,500
+995,Atthas Restaurent,Passion & Mint Virgin Margarita,Cold non-alcoholic drink with passionfruit and mint flavor,Western,Beverage,1,1,1,1,0,-,600
+1001,Lamori,Chicken Fried Rice / Noodles,"Fragrant short grain basmati or fresh Cantonese wheat noodles with fried chicken, served hot, savory and filling",Asian,Main,0,1,1,0,1,-,1650
+1002,Lamori,Seafood Rice / Noodles,"Fragrant short grain basmati or fresh Cantonese wheat noodles with seafood mix, served hot",Asian,Main,0,1,1,0,1,-,1750
+1003,Lamori,Egg Fried Rice / Noodles,"Fragrant short grain basmati or fresh Cantonese wheat noodles with egg, served hot, light and savory",Asian,Main,1,1,1,0,1,-,1250
+1004,Lamori,Vegetable Fried Rice / Noodles,"Fragrant short grain basmati or fresh Cantonese wheat noodles with fresh vegetables, served hot, light vegetarian dish",Asian,Main,1,1,1,0,1,-,1550
+1005,Lamori,Mix Fried Rice / Noodles,"Fragrant short grain basmati or fresh Cantonese wheat noodles with mixed meats and seafood, served hot",Asian,Main,0,1,1,0,1,-,1950
+1007,Lamori,Chili Chicken,"Spicy stir-fried chicken with chili seasoning, served hot",Asian,Main,0,1,1,0,1,-,1750
+1009,Lamori,Chicken Stew,"Stewed chicken with light seasoning, warm and savory",Asian,Main,0,1,1,1,0,-,1750
+1010,Lamori,Hot Butter Chicken,"Deep-fried chicken coated with hot butter sauce, crispy outside",Asian,Main,0,1,1,0,1,-,1750
+1011,Lamori,Pepper Chicken,"Spicy chicken with black pepper seasoning, served hot",Asian,Main,0,1,1,0,1,-,1750
+1012,Lamori,Spicy Black Chicken Curry,"Rich black curry with spicy chicken, served hot",Asian,Main,0,1,1,0,1,-,1750
+1013,Lamori,Pork Stew,"Slow-cooked pork with mild seasoning, savory",Asian,Main,0,1,1,1,0,-,1750
+1014,Lamori,Chili Pork,"Spicy pork stir-fry with chili, served hot",Asian,Main,0,1,1,0,1,-,1750
+1015,Lamori,Black Pork Curry,"Spicy black curry with pork, served hot",Asian,Main,0,1,1,0,1,-,1750
+1016,Lamori,Kochchi Pork,"Spicy kochchi chili pork curry, very hot",Asian,Main,0,1,1,0,1,-,1750
+1017,Lamori,Devilled Pork,Pork pieces in spicy devilled sauce,Asian,Main,0,1,1,0,1,-,1750
+1019,Lamori,Hot Butter Cuttlefish,"Deep-fried cuttlefish coated in hot butter sauce, crispy",Asian,Main,0,1,1,0,1,-,1950
+1020,Lamori,Buttered Prawns,Prawns cooked in buttery sauce,Asian,Main,0,1,1,0,1,-,1850
+1022,Lamori,Fish Stew,Fish cooked in mild stew sauce,Asian,Main,0,1,1,1,0,-,1950
+1023,Lamori,Fish Devilled,Spicy devilled fish pieces,Asian,Main,0,1,1,0,1,-,1950
+1025,Lamori,Vegetable Chop-suey,Stir-fried vegetables with light seasoning,Asian,Main,1,1,1,1,0,-,1350
+1026,Lamori,Boiled Vegetables,Lightly boiled vegetables,Asian,Side Dish,1,1,1,1,0,-,1150
+1027,Lamori,Morning Glory,Stir-fried morning glory leaves,Asian,Side Dish,1,1,1,1,0,-,1050
+1028,Lamori,Black Pork Curry with Coconut Sambal and Home-made Roast Paan,"Hearty and flavorful black pork curry served with spicy coconut sambal and freshly baked roast paan bread; served hot, mildly to moderately spicy",Sri Lankan,Main,0,1,1,1,0,-,1750
+1029,Lamori,Nasi Goreng - Chicken & Seafood,"Indonesian-style fried rice with chicken and seafood, flavored with soy sauce and spices, served hot",Indonesian,Main,0,1,1,1,0,-,1950
+1030,Lamori,Mix Chop-suey Rice,"Stir-fried rice with a mix of meats and vegetables in a light savory sauce, served hot",Asian Fusion,Main,0,1,1,1,0,-,1950
+1032,Lamori,Aglio e Olio,"Pasta tossed with virgin olive oil and freshly chopped parsley; light, aromatic, served hot",Italian,Main,0,1,1,0,0,-,1750
+1033,Lamori,Chicken Alfredo,Pasta in a creamy Parmesan cheese sauce with tender chicken pieces; rich and hearty,Italian,Main,0,1,1,0,1,-,2200
+1034,Lamori,Chicken Arrabiata,"Pasta with spicy red sauce served with chicken; tangy, spicy, served hot",Italian,Main,0,1,1,1,0,-,2200
+1035,Lamori,Seafood Napolitana,"Pasta with herby red sauce served with seafood; savory, aromatic, served hot",Italian,Main,0,1,1,1,0,-,2550
+1038,Lamori,Mixed Kottu,"Ceylonese roti stir-fried with a mix of meats and vegetables; hearty, served hot",Sri Lankan,Main,0,1,1,1,0,-,1750
+1039,Lamori,Add Cheese,Extra cheese topping for kottu dishes; creamy and rich,International,Add-on,0,1,1,0,1,-,450
+1041,Lamori,Crumbed Chicken with Fries,Breaded deep-fried chicken served with French fries; hot and crispy,International,Side Dish,0,1,1,1,0,-,1950
+1042,Lamori,Crumbed Fish with Fries,"Breaded deep-fried fish served with French fries; hot, light, and crispy",International,Side Dish,0,1,1,1,0,-,2350
+1043,Lamori,Fried Chicken,"Deep-fried chicken pieces; crispy outside, juicy inside; served hot",International,Side Dish,0,1,1,1,0,250g,1650
+1044,Lamori,Fried Pork,"Deep-fried pork pieces; savory, crispy outside, tender inside",International,Side Dish,0,1,1,1,0,250g,1650
+1045,Lamori,Grilled Mullet with Vegetables,Grilled mullet fish served with seasonal vegetables; light and healthy,International,Main,0,1,1,1,0,-,2750
+1046,Lamori,Mix Grilled Platter,Assorted grilled meats and seafood served with sides; hearty and flavorful,International,Main,0,1,1,1,0,-,4950
+1047,Lamori,Home-made Fish Fingers,"Breaded deep-fried fish sticks; crispy outside, soft inside",International,Side Dish,0,1,1,1,0,250g,1850
+1048,Lamori,Fresh Cut Fruits,"Seasonal fresh fruit platter; light, refreshing, served cold",International,Side Dish/Dessert,1,1,1,0,1,-,1650
+1050,Lamori,Coca Cola Zero,"Sugar-free carbonated soft drink, served chilled",International,Beverage,0,1,1,1,0,-,300
+1052,Lamori,Sprite Zero,"Sugar-free lemon-lime flavored carbonated soft drink, served chilled",International,Beverage,0,1,1,1,0,-,300
+1055,Lamori,Tonic,"Quinine-flavored carbonated drink, served chilled",International,Beverage,0,1,1,1,0,-,300
+1056,Lamori,Mix Fruit Cordial Jug,"Sweet mixed fruit flavored cordial drink, served chilled",International,Beverage,0,1,1,1,0,1000ml,1450
+1057,Lamori,Black Currant Jug,"Sweet and tangy black currant flavored cordial drink, served chilled",International,Beverage,0,1,1,1,0,1000ml,1450
+1058,Lamori,Red Bull,"Energy drink with caffeine and taurine, served chilled",International,Beverage,0,1,1,1,0,-,1000
+1059,Lamori,Red Bull Sugar Free,"Sugar-free energy drink with caffeine and taurine, served chilled",International,Beverage,0,1,1,1,0,-,1000
+1069,Lamori,Water Bottle,"Bottled drinking water, served chilled",International,Beverage,1,1,1,1,0,500ml,200
+1071,Lamori,Jelly with Ice Cream,Light dessert of flavored jelly served with ice cream,International,Dessert,0,1,1,0,1,-,650
+1072,Lamori,Watallapan,"Traditional Sri Lankan dessert made with coconut milk, jaggery, eggs, and spices",Sri Lankan,Dessert,0,1,1,0,1,-,650
+1073,Lamori,Caramel Pudding,Creamy dessert with caramel topping,International,Dessert,0,1,1,0,1,-,650
+1074,Lamori,Ice Cream 3 Scoops - Vanilla / Chocolate / Strawberry,"Three scoops of ice cream, choice of vanilla, chocolate, or strawberry flavors",International,Dessert,1,1,1,0,1,3 scoops,900
+1075,Tango,Stir Fried Mixed Vegetables,"Combination of vegetables and garlic, light and savory, served hot",Asian,Main,0,1,1,1,0,-,1150
+1076,Tango,Tofu with Mapo Sauce,"Tofu flavored with mapo sauce, mildly spicy, served hot",Chinese,Main,0,1,1,1,0,-,1260
+1078,Tango,Chili & Garlic Kankung,"Stir fried Kang Kung flavored with chili and garlic, spicy and aromatic",Asian,Side Dish,0,1,1,1,0,-,1090
+1080,Tango,Pan Fried Mixed Vegetables with Cashew Nuts,"Variety of pan fried vegetables served with cashew nuts, savory and nutty",Asian,Main,0,1,1,1,0,-,1420
+1081,Tango,Spinach with Garlic,"Fresh spinach served with onion and garlic, light and healthy",Asian,Side Dish,1,1,1,1,0,-,1090
+1082,Tango,Crispy Fried Mixed Vegetables,"Fried mixed vegetables, crispy texture, savory",Asian,Side Dish,0,1,1,1,0,-,1420
+1083,Tango,Stir Fried Bok Choy with Garlic,"Garlic cloves, fresh ginger, vegetable oil, oyster sauce, lightly seasoned",Asian,Side Dish,0,1,1,1,0,-,1300
+1084,Tango,Mapo Bean Curd with Spicy Vegetable Sauce,"Bean curd with spicy vegetable sauce, hot and bold flavor",Chinese,Main,0,1,1,1,0,-,1600
+1085,Tango,Garlic Beans,"A little butter, minced garlic, and lemon-pepper seasoning",Asian,Side Dish,0,1,1,1,0,-,1380
+1086,Tango,Batter Fried Mixed Vegetables,"Buttermilk and egg battered vegetables, deep fried, served crispy",Asian,Side Dish,0,1,1,1,0,-,1300
+1087,Tango,Deep Fried Sliced Fish with Black Bean Sauce,"Deep fried fish served with black bean sauce, medium-heavy, served hot, savory with umami flavor",Asian,Main,0,1,1,0,1,-,2080
+1088,Tango,Pepper Style Fish,"Pepper-spiced fish served with onion and garlic, medium-heavy, hot, spicy",Asian,Main,0,1,1,0,1,-,1860
+1089,Tango,Sweet and Sour Fish,"Batter fried fish slices served with a sweet and sour sauce, medium, hot, sweet-tangy",Asian,Main,0,1,1,0,1,-,1860
+1090,Tango,Fried Fish with Thai Lemon Sauce,"Deep fried fish served with a special Thai lemon sauce, medium-heavy, hot, citrusy",Thai,Main,0,1,1,0,1,-,1970
+1091,Tango,Grilled Seer Fish with French Fries,"Grilled seer fish slices served with French fries and garlic butter sauce, heavy, hot, savory",Western,Main,0,1,1,0,1,-,2630
+1092,Tango,Thai Style Steamed Fish,"Steamed fish served with special soy sauce and coriander leaves, light-medium, hot, savory",Thai,Main,0,1,1,0,1,-,1970
+1094,Tango,Fried Fish,"Simply fried fish, medium-heavy, hot, savory",Asian,Main,0,1,1,0,1,-,1860
+1096,Tango,Golden Fried Handella,"Deep fried Handella fish, crispy, medium-heavy, hot, savory",Asian,Main,0,1,1,0,1,-,1750
+1097,Tango,Crumbed Fish with French Fries,"Crumb-coated fried fish served with French fries, heavy, hot, savory",Western,Main,0,1,1,0,1,-,2300
+1098,Tango,Cantonese Fried Fish with Cream Corn,"Cantonese-style fried fish topped with creamy corn sauce, medium-heavy, hot, savory-sweet",Cantonese,Main,0,1,1,0,1,-,1990
+1099,Tango,Soya Sauce Deep Fried Crispy Fish,"Deep fried crispy fish with soy sauce, medium-heavy, hot, savory",Asian,Main,0,1,1,0,1,-,1890
+1100,Tango,Stir Fry Fish,"Stir-fried fish with vegetables and spices, medium-heavy, hot, savory",Asian,Main,0,1,1,0,1,-,1890
+1101,Tango,Fried Pork with Dry Red Chili,"Deep fried pork served with dry red chili; savory and spicy, medium-heavy, served hot",Asian,Main,0,1,1,1,0,Not specified,1700
+1102,Tango,Diced Pork Black Bean Sauce,"Diced pork flavored with black bean sauce; rich umami taste, medium-heavy, served hot",Chinese,Main,0,1,1,1,0,Not specified,1970
+1103,Tango,Pan Fried Pork with Vegetables,"Pan fried pork served with vegetables and special sauce; savory, medium-heavy, served hot",Asian,Main,0,1,1,1,0,Not specified,1700
+1106,Tango,Black Pepper Pork,"Fried pork flavored with black pepper sauce; peppery and savory, medium-heavy, served hot",Chinese,Main,0,1,1,1,0,Not specified,1700
+1107,Tango,Pork Black Curry,"Black pepper, Sri Lankan Roasted Curry Powder, tamarind, bay leaves, and pork; spicy, rich, heavy, served hot",Sri Lankan,Main,0,1,1,1,0,Not specified,1750
+1108,Tango,Crispy Fried Pork,"Deep fried crispy pork; crunchy texture, savory, medium-heavy, served hot",Asian,Main,0,1,1,1,0,Not specified,1750
+1109,Tango,Peking Pork Rib,"Fried pork rib flavored with oyster sauce and served with vegetables; savory, slightly sweet, medium-heavy, served hot",Chinese,Main,0,1,1,1,0,Not specified,1860
+1110,Tango,Pork and Pepper Stir-Fry,"Stir-fried pork with pepper; peppery, savory, medium-heavy, served hot",Chinese,Main,0,1,1,1,0,Not specified,1700
+1111,Tango,Breaded Pork with Tartar Sauce,"Breaded fried pork served with tartar sauce; crispy, savory, creamy sauce, served hot",Western,Main,0,1,1,1,0,Not specified,1700
+1112,Tango,Pork Belly Stir-Fry,"Stir-fried pork belly slices; rich, fatty, savory, medium-heavy, served hot",Asian,Main,0,1,1,1,0,Not specified,1860
+1113,Tango,Stir Fry Broccoli with Crispy Fried Pork Belly,"Stir-fried broccoli served with crispy fried pork belly; balanced with vegetables, savory, medium-heavy, served hot",Asian,Main,0,1,1,1,0,Not specified,1860
+115,Tango,Thai Style Spicy Cuttle Fish,"Fried cuttlefish spiced with Thai spices; hot, spicy, and aromatic",Thai,Main,0,1,1,0,1,-,1920
+116,Tango,Cuttle Fish with Oyster Sauce,Fried cuttlefish served with oyster sauce and vegetables; savory and slightly sweet,Asian,Main,0,1,1,0,1,-,1860
+117,Tango,Batter Fried Cuttle Fish,"Batter-coated deep fried cuttlefish; light, crispy, and served hot",Asian,Main,0,1,1,0,1,-,1800
+118,Tango,Salt and Pepper Cuttle Fish,"Fried cuttlefish flavored with salt and pepper; light, crispy, and savory",Chinese,Main,0,1,1,0,1,-,1860
+119,Tango,Devilled Cuttle Fish,Fried cuttlefish flavored with rich Sri Lankan spices and sauce; spicy and aromatic,Sri Lankan,Main,0,1,1,0,1,-,1800
+120,Tango,Black Pepper Cuttle Fish,Fried cuttlefish flavored with black pepper sauce; savory and mildly spicy,Asian,Main,0,1,1,0,1,-,1800
+121,Tango,Black Bean Cuttle Fish,"Squid with black bean sauce, bell pepper, black bean, and soy sauce; savory and hearty",Chinese,Main,0,1,1,0,1,-,2080
+122,Tango,Spicy Stir-Fry Cuttle Fish,Fried cuttlefish stir-fried with chili spices; hot and bold in flavor,Asian,Main,0,1,1,0,1,-,1860
+123,Tango,Chinese Stir-Fry Cuttle Fish with Cucumber,"Fried cuttlefish stir-fried with cucumber; fresh, mild, and savory",Chinese,Main,0,1,1,0,1,-,1860
+124,Tango,Cuttle Fish with Spinach,Fried cuttlefish with spinach; fresh greens and savory seafood flavor,Asian,Main,0,1,1,0,1,-,1860
+125,Tango,Stir-Fry Cuttle Fish with Chili and Garlic Sauce,"Fried cuttlefish stir-fried with chili and garlic sauce; spicy, garlicky, and aromatic",Asian,Main,0,1,1,0,1,-,1860
+1126,Tango,Cheese & Onion Pasta,"Pasta flavored with mozzarella and parmesan cheese, olive oil; served hot with onion and cheese",Italian,Main,0,1,1,0,1,-,1750
+1127,Tango,Cheese & Chicken Pasta,"Pasta flavored with mozzarella and parmesan cheese, olive oil, and chicken; served hot",Italian,Main,0,1,1,0,1,-,1860
+1128,Tango,Seafood Pasta,"Pasta flavored with mozzarella and parmesan cheese, olive oil, and seafood; served hot",Italian,Main,0,1,1,0,1,-,1970
+1129,Tango,Vegetable Pasta,"Pasta flavored with vegetable, mozzarella and parmesan cheese, olive oil; served hot",Italian,Main,0,1,1,0,1,-,1640
+1130,Tango,Spaghetti with Garlic Mushrooms and Chicken,"Spaghetti flavored with garlic, chicken, mushrooms, mozzarella, parmesan cheese, and olive oil",Italian,Main,0,1,1,0,1,-,1970
+1131,Tango,Spaghetti Carbonara,"Spaghetti flavored with bacon, creamy sauce, mozzarella, parmesan cheese, and olive oil",Italian,Main,0,1,1,0,1,-,2190
+1132,Tango,Spaghetti Bolognese Beef or Chicken,"Spaghetti flavored with tomatoes, mozzarella, parmesan cheese, and olive oil",Italian,Main,0,1,1,0,1,-,2300
+1114,Tango,Tango Special Singapore Chili Prawns,"Fried prawns served with spicy sauce, spring onion, and egg; medium-heavy dish, served hot and mildly spicy.",Singaporean,Main,0,1,1,0,1,-,1850
+1115,Tango,Sweet and Sour Prawns,"Batter-fried prawns served with sweet and sour sauce; sweet-tangy flavor, medium-heavy, served hot.",Asian,Main,0,1,1,0,1,-,1850
+1116,Tango,Fried Prawns with Black Pepper Sauce,"Fried prawns flavored with black pepper sauce; savory-spicy, medium-heavy, served hot.",Asian,Main,0,1,1,0,1,-,1850
+1117,Tango,Thai Style Prawns with Red Curry Paste,"Fried prawns flavored with Thai red curry paste; spicy, aromatic, medium-heavy, served hot.",Thai,Main,0,1,1,0,1,-,2080
+1119,Tango,Kan Kung Prawns,"Combination of kang kung and prawns served with soy sauce; savory, medium-heavy, served hot.",Asian,Main,0,1,1,0,1,-,1850
+1120,Tango,Batter Fried Prawns,"Deep-fried battered prawns; crispy, savory, medium-heavy, served hot.",Asian,Main,0,1,1,0,1,-,1850
+1121,Tango,Garlic Prawns,"Fried prawns flavored with garlic; savory, aromatic, medium-heavy, served hot.",Continental,Main,0,1,1,0,1,-,1970
+1123,Tango,Golden Fry Prawns with Sesame Seed,"Battered prawns mixed with sesame seed served with soy sauce; nutty, savory, medium-heavy, served hot.",Asian,Main,0,1,1,0,1,-,1960
+1124,Tango,Salted Egg Prawns,"Prawns coated with salted egg seasoning; rich, savory, medium-heavy, served hot.",Asian,Main,0,1,1,0,1,-,1950
+1125,Tango,Stir-Fry Seasame Prawns,"Prawns stir-fried with sesame flavoring; savory, nutty, served hot.",Asian,Main,0,1,1,0,1,-,1950
+1126,Tango,Wild Mushroom Soup,"Light creamy soup made from fresh mushrooms, fresh milk, rock salt, and herbs or vegetables; served hot",Western,Starter,1,1,1,0,1,Regular,540
+1128,Tango,Cream of Chicken Soup,"Thick creamy soup made with chicken stock, chicken pieces, and cream; served hot",Western,Starter,1,1,1,0,1,Regular,540
+1130,Tango,Tom Yum Seafood Soup,Spicy and sour Thai soup cooked with seafood; served hot,Thai,Starter,0,1,1,0,1,Regular,650
+1132,Tango,Sweet Corn Chicken Soup,"Light Chinese-style soup with shredded chicken, sweet corn kernels, and eggs; served hot",Chinese,Starter,1,1,1,0,1,Regular,540
+1134,Tango,Peking Hot and Sour Soup,"Hot and sour soup with chicken, shiitake mushroom, bean curd, eggs, and prawns; served hot",Chinese,Starter,0,1,1,0,1,Regular,650
+1136,Tango,Clear Vegetable Soup,Light and clear soup prepared with vegetables; served hot,Continental,Starter,1,1,1,0,1,Regular,490
+1138,Tango,Wonton Soup,"Light broth with spinach, noodles, and chicken, prawns, or pork-filled wontons; served hot",Chinese,Starter,0,1,1,0,1,Regular,650
+1140,Tango,Cashew Nuts,"Lightly seasoned cashew nuts, served warm, crunchy and savory",Sri Lankan,Side dish,1,1,1,1,0,-,1750
+1145,Tango,BBQ Chicken 01 Piece,Grilled chicken piece with smoky barbecue flavor,Western,Main,0,1,1,1,0,1 piece,1390
+1146,Tango,BBQ Fish 01 Piece,Grilled fish piece with smoky barbecue seasoning,Western,Main,0,1,1,1,0,1 piece,1490
+1147,Tango,BBQ Pork 01 Piece,Grilled pork piece with smoky barbecue flavor,Western,Main,0,1,1,1,0,1 piece,1490
+1149,Tango,Fruit Platter,"Fresh seasonal fruit platter for 4 people, served chilled",Continental,Dessert / Side,1,1,1,1,1,4 pax,1760
+1150,Tango,Shirley Temple,"Sprite, grenadine syrup, lime juice top up with fresh cream. Sweet, cold, light and refreshing drink.",International,Beverage,1,1,1,1,1,-,1160
+1151,Tango,Frozen Margarita,"Blue curacao, lime, elder flavour, sugar syrup. Cold, tangy and sweet mocktail.",Mexican,Beverage,0,1,1,1,1,-,1200
+1152,Tango,Pinecolada,"Pineapple syrup, coconut cream, sugar syrup. Cold, creamy, sweet tropical drink.",Caribbean,Beverage,1,1,1,1,1,-,1090
+1155,Tango,Pineapple Mojito,"Pineapple syrup, sugar syrup, soda, lime and mint. Cold, fruity and refreshing.",Cuban,Beverage,1,1,1,1,1,-,1090
+1156,Tango,Apple Mojito,"Apple syrup, sugar syrup, soda, lime and mint. Cold, crisp apple flavour with mint.",Cuban,Beverage,1,1,1,1,1,-,1090
+1157,Tango,Peach Mint Mojito,"Peach syrup, sugar syrup, soda, lime and mint. Cold, fruity and minty.",Cuban,Beverage,1,1,1,1,1,-,1090
+1158,Tango,Mango Fizzy,"Mango puree, lemon juice, ginger, mint leaves, sugar syrup. Cold, fruity, tangy with slight spice.",International,Beverage,1,1,1,1,1,-,1090
+1159,Tango,Orange Fizzy,"Orange juice, lemon juice, ginger, sugar syrup. Cold, citrusy and lightly spicy.",International,Beverage,1,1,1,1,1,-,1090
+1160,Tango,Strawberry Fizzy,"Strawberry juice, lemonade, lime juice, sugar syrup. Cold, sweet and tangy.",International,Beverage,1,1,1,1,1,-,1090
+1161,Tango,Blue Berry Fizzy,"Blueberry juice, mint syrup, soda, sugar syrup. Cold, fruity and refreshing.",International,Beverage,1,1,1,1,1,-,1090
+1162,Tango,Peach Ice Tea,"Sugar syrup, black tea, peach slice, mint leaves. Cold, sweetened tea with peach flavour.",International,Beverage,1,1,1,1,1,-,940
+1163,Tango,Lemon Ice Tea,"Sugar syrup, black tea, fresh lemon juice and lemon slice. Cold, citrusy iced tea.",International,Beverage,1,1,1,1,1,-,940
+1164,Tango,Combination Salad with Vinaigrette,"Light and fresh mixed vegetable salad dressed with vinaigrette, served chilled",International,Starter,1,1,1,1,0,Not specified,1200
+1165,Tango,Hawaiian Chicken Salad,"Light salad with chicken, pineapple, and vegetables, served chilled",Hawaiian,Starter,1,1,1,1,0,Not specified,1530
+1166,Tango,Tango Special Seafood Salad,"Chilled salad with assorted seafood, fresh vegetables, and dressing",International,Starter,1,1,1,1,0,Not specified,1750
+1167,Tango,Cucumber and Pineapple Salad,Refreshing cucumber and pineapple mix with light dressing,International,Starter,1,1,1,1,0,Not specified,1090
+1168,Tango,Green Vegetable Salad,Fresh assorted green vegetables with light dressing,International,Starter,1,1,1,1,0,Not specified,1260
+1171,Tango,Greek Salad,"Salad with tomatoes, cucumber, feta cheese, olives, and olive oil",Greek,Starter,1,1,1,1,0,Not specified,1750
+1172,Tango,Beetroot Salad,"Salad with beetroot, fresh greens, and light dressing",International,Starter,1,1,1,1,0,Not specified,1490
+1173,Tango,Shrimp Pineapple Salad,"Cold salad with shrimp, pineapple, and vegetables",International,Starter,1,1,1,1,0,Not specified,1890
+1174,Tango,Thai Beef Salad,"Thai-style salad with marinated beef, herbs, and dressing",Thai,Starter,1,1,1,1,0,Not specified,1990
+1175,Tango,Thai Chicken Salad,"Thai-style salad with chicken, fresh herbs, and light spicy dressing",Thai,Starter,1,1,1,1,0,Not specified,1790
+1176,Tango,Thai Shrimp Salad,"Thai-style salad with shrimp, herbs, and light spicy dressing",Thai,Starter,1,1,1,1,0,Not specified,1890
+1177,Tango,Calamari Salad,"Chilled salad with calamari, vegetables, and dressing",International,Starter,1,1,1,1,0,Not specified,1790
+1178,Tango,Nicoise Tuna Salad,"French-style salad with tuna, boiled eggs, olives, and vegetables",French,Starter,1,1,1,1,0,Not specified,1790
+1179,Tango,Carrot Beetroot Salad,"Chilled salad with carrot, beetroot, and light dressing",International,Starter,1,1,1,1,0,Not specified,1490
+1180,Tango,Kan Kung Beef,"Combination of beef and kang kung served with oyster sauce; savory, warm, medium-heavy",Sri Lankan,Main,0,1,1,0,1,-,2070
+1181,Tango,Stir Fried Beef with Oyster Sauce,"Stir fried beef flavored with oyster sauce and served with vegetables; savory, warm, medium-heavy",Asian,Main,0,1,1,0,1,-,2070
+1182,Tango,Thai Style Beef and Curry,"Beef curry flavored with Thai red curry paste; spicy, aromatic, heavy",Thai,Main,0,1,1,0,1,-,2070
+1183,Tango,Beef Stew,"Beef stew prepared with potato, carrots, capsicum, pepper and mustard; hearty, warm, mild spice",Western,Main,0,1,1,0,1,-,1960
+1184,Tango,Black Pepper Beef,"Fried beef flavored with black pepper sauce; peppery, savory, medium-heavy",Asian,Main,0,1,1,0,1,-,2070
+1185,Tango,Devilled Beef,"Fried beef flavored with rich Sri Lankan spices and sauce; spicy, tangy, warm",Sri Lankan,Main,0,1,1,0,1,-,2070
+1186,Tango,Mongolian Beef,"Stir fried beef mixed with special Mongolian flavors and bell peppers; savory, aromatic",Mongolian,Main,0,1,1,0,1,-,2190
+1187,Tango,Szechuan Beef,"Stir fried beef flavored with Szechuan pepper; spicy, numbing, aromatic",Chinese,Main,0,1,1,0,1,-,2190
+1188,Tango,Chinese Beef and Onion Stir Fry,"Stir fried beef with onions, savory sauce; warm, mild spice",Chinese,Main,0,1,1,0,1,-,2190
+1189,Tango,Beef and Broccoli,"Stir fried beef with broccoli in savory sauce; warm, mild spice, balanced texture",Chinese,Main,0,1,1,0,1,-,2190
+1190,Tango,Stir-Fry Beef,"Simple stir fried beef with vegetables and light seasoning; warm, savory",Asian,Main,0,1,1,0,1,-,2190
+1191,Tango,Beef Kung Pao,"Stir fried beef with Kung Pao sauce, peppers, and nuts; spicy-sweet, warm",Chinese,Main,0,1,1,0,1,-,2190
+1193,Tango,Indonesian Nasigurang,"Indonesian-style fried rice served with fried egg and prawn crackers, medium-heavy, hot, savory",Indonesian,Main,0,1,1,1,0,One size,1860
+1194,Tango,Mongolian Rice,"Premium basmati rice flavored with Mongolian sauce and served with chicken and kang kung, hot, savory",Mongolian,Main,0,1,1,1,0,Regular,1850
+1196,Tango,Seafood Paella Rice,"Special rice dish made with seafood and tomato paste, medium-heavy, hot, savory",Spanish,Main,0,1,1,1,0,Regular,1850
+1198,Tango,Mongolian Rice Mixed,"Premium basmati rice flavored with Mongolian sauce and served with chicken and seafood, medium-heavy",Mongolian,Main,0,1,1,1,0,Regular,1960
+1200,Tango,Spicy Thai Rice,"Premium basmati rice flavored with Mongolian sauce and served with chicken and seafood, spicy, hot",Thai,Main,0,1,1,1,0,Regular,1860
+1202,Tango,Chicken Chao Fan,"Premium basmati fried rice with chicken, hot, savory",Asian,Main,0,1,1,1,0,Regular,1370
+1204,Tango,Tango Special Mixed Chop Suey Rice,"Premium basmati fried rice served with chop suey, chicken, and seafood, hot, savory",Asian,Main,0,1,1,1,0,Regular,1960
+1206,Tango,Mixed Chao Fan,"Premium basmati fried rice with chicken and seafood, hot, savory",Asian,Main,0,1,1,1,0,Regular,1850
+1208,Tango,Mexican Rice,"Spicy rice with colourful vegetables, chicken, or seafood, hot, savory",Mexican,Main,0,1,1,1,0,Regular,2190
+1210,Tango,Singapore Fried Mee Hoon,"Singapore fried noodles with chicken, eggs, carrots, and spring onion. Savory, medium-heavy, served hot.",Singaporean,Main,0,1,1,0,1,-,1640
+1211,Tango,Seafood Mee Hoon,"Singapore fried noodles with seafood, carrots, and spring onion. Savory, medium-heavy, served hot.",Singaporean,Main,0,1,1,0,1,-,1740
+1212,Tango,Stir-Fry Chinese Egg Chow Mein,"Stir-fried Chinese chow mein with eggs, vegetables. Light-medium, served hot.",Chinese,Main,0,1,1,0,1,-,1740
+1213,Tango,Kung Pao Chow Mein,"Stir-fried chow mein with spicy Kung Pao sauce, vegetables. Spicy, medium-heavy, served hot.",Chinese,Main,0,1,1,0,1,-,1740
+1214,Tango,Crispy Fried Chow Mein,"Crispy fried chow mein flavored with chicken and vegetable sauce. Light-medium, served hot.",Chinese,Main,0,1,1,0,1,Regular,1380
+1216,Tango,Prawn Chow Mein,"Stir-fried prawn chow mein mixed with egg vegetables. Savory, medium-heavy, served hot.",Chinese,Main,0,1,1,0,1,-,1530
+1217,Tango,Tango Special Mixed Chow Mein,"Stir-fried chow mein served with chicken and seafood. Savory, heavy, served hot.",Asian,Main,0,1,1,0,1,Regular,1640
+1219,Tango,Egg Chow Mein,"Stir-fried chow mein with egg vegetables. Light-medium, served hot.",Chinese,Main,0,1,1,0,1,Regular,1310
+1221,Tango,Vegetable Chow Mein,"Stir-fried chow mein served with vegetables. Light-medium, served hot.",Chinese,Main,0,1,1,0,1,Regular,1200
+1223,Tango,Chicken Chow Mein,"Stir-fried chow mein served with chicken. Savory, medium-heavy, served hot.",Chinese,Main,0,1,1,0,1,Regular,1420
+1225,Tango,Seafood Chow Mein,"Stir-fried chow mein served with seafood. Savory, medium-heavy, served hot.",Chinese,Main,0,1,1,0,1,Regular,1530
+1227,Tango,Bami Goreng,"Indonesian-style fried noodles with shrimp and chicken. Savory, slightly spicy, served hot.",Indonesian,Main,0,1,1,0,1,Regular,1750
+1229,Tango,Deep Fried Vegetable Spring Rolls,"Crispy rolls filled with a mixed vegetable stuffing; light, crunchy, served hot",Asian,Starter,0,1,1,0,1,Not specified,1090
+1230,Tango,Deep Fried Chicken Spring Rolls,"Crispy rolls filled with mixed vegetable and chicken stuffing; light, crunchy, served hot",Asian,Starter,0,1,1,0,1,Not specified,1200
+1231,Tango,Deep Fried Prawns with Salad Dressing,"Battered prawns deep fried and served with vegetable salad; medium weight, served hot with fresh salad",Asian,Starter,0,1,1,0,1,Not specified,2080
+1232,Tango,Golden Fried Cashew Nuts,"Fried cashew nuts served with curry leaves; light, nutty, served hot",Asian,Starter,1,1,1,0,1,Not specified,1750
+1234,Tango,Mac and Cheese,"Creamy pasta baked with cheese; medium-heavy, cheesy, served hot",Western,Side Dish,1,1,1,0,1,Not specified,1320
+1236,Tango,Chicken Lollipop with Spicy Sauce,"Deep fried chicken drumettes served with a spicy sauce; medium weight, hot and mildly spicy",Asian,Starter,0,1,1,0,1,Not specified,1310
+1237,Tango,Honey Ginger Grilled Salmon,"Grilled salmon fillet glazed with honey and ginger, served hot; light and mildly sweet with savory notes",Western,Main,0,1,1,0,1,-,4050
+1238,Tango,Grilled Chicken with Rosemary and Bacon,"Tender grilled chicken seasoned with rosemary and wrapped in bacon, served hot",Western,Main,0,1,1,0,1,-,3950
+1239,Tango,Grilled Hawaiian Pork Chop,"Pork chop grilled and topped with Hawaiian-style pineapple glaze, sweet and savory",Western,Main,0,1,1,0,1,-,3730
+1240,Tango,Grilled King Fish Vegetable,"King fish grilled with assorted vegetables, served hot",Western,Main,0,1,1,0,1,-,3840
+1241,Tango,King Fish Cream Sauce,"Grilled king fish topped with creamy sauce, rich and savory",Western,Main,0,1,1,0,1,-,3730
+1242,Tango,Grilled Chicken Boiled Vegetable,"Grilled chicken served with boiled vegetables, mild flavor",Western,Main,0,1,1,0,1,-,3290
+1243,Tango,Chicken with Cream Sauce,"Chicken fillet topped with creamy sauce, rich and hearty",Western,Main,0,1,1,0,1,-,3290
+1244,Tango,Grilled Beef Steak,"Thick grilled beef steak, savory and juicy",Western,Main,0,1,1,0,1,-,4390
+1245,Tango,Grilled Lamb Chop,"Tender lamb chops grilled and seasoned, savory",Western,Main,0,1,1,0,1,-,5270
+1246,Tango,Lasagna Beef / Chicken or Vegetable,"Layered pasta baked with cheese, meat or vegetables, served hot",Western,Main,0,1,1,0,1,-,2190
+1247,Tango,Beef Pilau with Mash Potato Mushroom Sauce,"Spiced rice pilaf served with beef, mashed potatoes, and mushroom sauce",Western,Main,0,1,1,0,1,-,4550
+1248,Tango,Chicken Breast Grilled Pepper Sauce or Mushroom Sauce,Grilled chicken breast topped with pepper or mushroom sauce,Western,Main,0,1,1,0,1,-,3950
+1249,Tango,Grilled Salmon with Lemon Butter Sauce,Salmon fillet grilled and served with tangy lemon butter sauce,Western,Main,0,1,1,0,1,-,4050
+1251,Tango,Stir Fried Boneless Chicken with Dry Chili,"Stir-fried boneless chicken with dry chili, savory and moderately spicy, served hot",Asian,Main,0,1,1,1,0,-,1860
+1252,Tango,Boneless Chicken Lemon Sauce,"Tender boneless chicken served with tangy lemon sauce, light and citrusy, served hot",Asian,Main,0,1,1,1,0,-,1860
+1253,Tango,Dried Chicken Cashew Nuts,"Stir-fried chicken with roasted cashew nuts, mildly sweet and nutty, served hot",Asian,Main,0,1,1,1,0,-,1860
+1254,Tango,Fried Chicken Honey Black Pepper,"Crispy fried chicken coated in honey and black pepper sauce, sweet and peppery, served hot",Asian,Main,0,1,1,1,0,-,1920
+1255,Tango,Black Pepper Chicken,"Stir-fried chicken with a rich black pepper sauce, savory and slightly spicy, served hot",Asian,Main,0,1,1,1,0,-,1750
+1257,Tango,Crispy Chicken Wings,"Deep-fried crispy chicken wings, savory and mildly spiced",American,Main,0,1,1,1,0,-,1750
+1261,Tango,Chicken Manchurian,"Indo-Chinese chicken dish cooked with soy sauce, garlic, ginger, and chili",Indo-Chinese,Main,0,1,1,1,0,-,2080
+1262,Tango,Szechuan Chicken,Spicy stir-fried chicken with bold Szechuan pepper flavors,Chinese,Main,0,1,1,1,0,-,2080
+1263,Tango,Mongolian Chicken,Stir-fried chicken with Mongolian sauce and vegetables,Asian,Main,0,1,1,1,0,-,2080
+1264,Tango,Kung Pao Chicken,"Classic Chinese stir-fry with chicken, peanuts, and chili peppers",Chinese,Main,0,1,1,1,0,-,2080
+1265,Tango,Crispy Sesame Chicken,Fried chicken coated in sesame seeds and sweet-savory sauce,Asian,Main,0,1,1,1,0,-,2080
+1266,Tango,Stir-Fry Mix Vegetable with Chicken,Stir-fried chicken with assorted vegetables in savory sauce,Asian,Main,0,1,1,1,0,-,2080
+1267,Tango,Crispy Lamb Szechuan Style,"Deep fried lamb served with sesame seed and vegetables; savory, medium spicy, served hot",Chinese,Main,0,1,1,0,1,Not specified,3290
+1268,Tango,Fried Lamb with Dry Chili,"Deep fried lamb served with dry chili; hot and spicy, served hot",Chinese,Main,0,1,1,1,0,Not specified,3290
+1269,Tango,Stir Fried Lamb with Spring Onion and Ginger,"Lamb stir fried with spring onion and ginger; aromatic, mild heat, served hot",Chinese,Main,0,1,1,0,1,Not specified,3400
+1270,Tango,Stir Fried Lamb with Black Pepper,"Fried lamb flavored with black pepper sauce; peppery, savory, served hot",Chinese,Main,0,1,1,0,1,Not specified,3290
+1271,Tango,Devilled Lamb,"Fried lamb flavored with rich Sri Lankan spices and sauce; spicy, bold flavor, served hot",Sri Lankan,Main,0,1,1,1,0,Not specified,3290
+1272,Tango,Fried Lamb with Black Pepper and Garlic,"Fried lamb flavored with black pepper and garlic; robust and aromatic, served hot",Chinese,Main,0,1,1,0,1,Not specified,3400
+1273,Tango,Lamb Stew,"Lamb stew prepared with potato, carrots, capsicum, pepper, and mustard; hearty, mildly spicy, served hot",Western,Main,0,1,1,0,1,Not specified,3290
+1274,Tango,Cumin Lamb Stir Fry,"Lamb stir fried with cumin, carrots, capsicum, and pepper; aromatic, earthy spice, served hot",Chinese,Main,0,1,1,0,1,Not specified,3400
+1275,Tango,Mongolian Lamb,"Mongolian-style lamb stir fry; savory-sweet flavor profile, served hot",Mongolian,Main,0,1,1,0,1,Not specified,3400
+1276,Tango,Indian Masala Chicken Kottu,"Hearty Sri Lankan kottu roti stir-fried with Indian masala spices and chicken, served hot",Indian,Main,0,1,1,1,0,-,1300
+1277,Tango,Chicken & Cheese Kottu,"Rich kottu roti with chunks of chicken and melted cheese, hot and savory",Sri Lankan,Main,0,1,1,1,0,-,1520
+1280,Tango,Tango Special Mixed Kottu,"Signature mixed kottu with chicken, seafood, vegetables, and spices",Sri Lankan,Main,0,1,1,1,0,-,1630
+1284,Tango,Pork Kottu,"Savory kottu roti with pork pieces, vegetables, and spices",Sri Lankan,Main,0,1,1,1,0,-,1640
+1285,Tango,Fish Kottu,Light seafood kottu with fish pieces and vegetables,Sri Lankan,Main,0,1,1,1,0,-,1300
+1286,Tango,Mongolian Kottu,"Kottu roti stir-fried with Mongolian-style sauce, meat, and vegetables",Mongolian,Main,0,1,1,1,0,-,1590
+1287,Tango,Palandi Kottu,"Kottu roti with creamy palandi  sauce, mildly spiced",Sri Lankan,Main,0,1,1,1,0,-,1590
+1288,Tango,Thai Kottu,"Kottu roti infused with Thai spices and herbs, aromatic and flavorful",Thai,Main,0,1,1,1,0,-,1590
+1289,Tango,Sri Lankan Omelette,"Omelette made with onion, spring onion and green chili; light, hot, savory",Sri Lankan,Main,1,1,1,1,0,-,980
+1290,Tango,Cheese & Chicken Omelette,"Omelette made with chicken and cheese; hot, savory, medium weight",Western,Main,1,1,1,1,0,-,1530
+1291,Tango,Cheese Omelette,"Omelette made with cheese; hot, creamy, light to medium",Western,Main,1,1,1,1,0,-,1300
+1292,Tango,Seafood Omelette,"Omelette made with cheese and seafood; savory, hot, medium weight",Western,Main,1,1,1,1,0,-,1530
+1293,Tango,Chinese Omelette,"Chinese-style omelette with mixed fillings; hot, savory",Chinese,Main,1,1,1,1,0,-,1530
+1294,Tango,Tango Special Mix Omelette,"Omelette with mixed fillings; hearty, hot, savory",Sri Lankan,Main,1,1,1,1,0,-,1530
+1296,Tango,Sea Food Mixed Grill,"Fish, cuttlefish, prawns served with BBQ sauce; hearty, hot, smoky",Western,Main,0,1,1,1,0,-,5010
+1297,Tango,Mixed Grill Chicken,"Chicken leg, two sausages, pineapple, tomatoes, fried egg, French fries served with BBQ sauce; hot, filling",Western,Main,0,1,1,1,0,-,3580
+1298,Spicia,Seafood Tom Yum,"A hot and sour Thai soup with assorted seafood, served hot and tangy with herbs",Thai,Soup,0,1,1,1,0,Small,840
+1300,Spicia,Chicken Tom Yum,"A hot and sour Thai soup with chicken, served hot with herbs and spices",Thai,Soup,0,1,1,1,0,Small,600
+1302,Spicia,Sweet Corn Soup - Crab,"Sweet corn soup with crab, served warm and mildly sweet",Chinese,Soup,0,1,1,0,1,Small,750
+1304,Spicia,Sweet Corn Soup - Chicken,"Sweet corn soup with chicken, served warm and mildly sweet",Chinese,Soup,0,1,1,0,1,Small,530
+1306,Spicia,Sweet Corn Soup - Vegetable,"Sweet corn soup with vegetables, served warm and mildly sweet",Chinese,Soup,0,1,1,0,1,Small,480
+1308,Spicia,Mixed Mee Hoon Soup,"Oriental noodle soup with a combination of meat and seafood, served hot",Asian,Soup,0,1,1,1,0,Small,770
+1310,Spicia,Seafood Soup,"A clear soup with assorted seafood, served hot",Asian,Soup,0,1,1,1,0,Small,840
+1312,Spicia,Prawn and Cucumber Soup,"Light prawn soup with cucumber, served warm",Asian,Soup,0,1,1,0,1,-,900
+1313,Spicia,Spicy Vegetable Soup,Hot vegetable soup with spices,Asian,Soup,0,1,1,1,0,-,770
+1314,Spicia,Chicken Hot and Spicy Soup,Hot chicken soup with chili spices,Asian,Soup,0,1,1,1,0,-,850
+1315,Spicia,Spicy Beef Soup,Spicy beef broth served hot,Asian,Soup,0,1,1,1,0,-,1000
+1316,Spicia,Cream of Mushroom and Spinach Soup,"Creamy mushroom and spinach soup, served hot",Western,Soup,0,1,1,0,1,-,950
+1317,Spicia,Cream of Chicken,"A rich creamy soup with chicken pieces, garnished with coriander",Western,Soup,0,1,1,0,1,-,950
+1318,Spicia,Laksa Seafood Soup,Spicy soup with seafood and coconut milk,Malaysian,Soup,0,1,1,1,0,-,1150
+1319,Spicia,Tomato Egg Soup,Sweet and sour tomato soup with egg,Asian,Soup,0,1,1,0,1,-,750
+1320,Spicia,Chinese Omelette - Vegetables,Chinese omelette with vegetables,Chinese,Omelette,1,1,1,0,1,-,690
+1321,Spicia,Chinese Omelette - Chicken,Chinese omelette with chicken,Chinese,Omelette,1,1,1,0,1,-,810
+1322,Spicia,Chinese Omelette - Prawn,Chinese omelette with prawn,Chinese,Omelette,1,1,1,0,1,-,950
+1326,Spicia,Chicken Omelette - Sri Lankan Style,Sri Lankan style chicken omelette,Sri Lankan,Omelette,1,1,1,0,1,-,690
+1327,Spicia,Mixed Omelette,Omelette with assorted fillings,Global,Omelette,1,1,1,0,1,-,890
+1328,Spicia,Bacon and Sausages Omelette,Omelette with bacon and sausages,Western,Omelette,1,1,1,0,1,-,890
+1329,Spicia,Kang Kung with Garlic,Stir-fried kang kung with garlic and dry chillies in a mild sauce; light and warm vegetable dish,Asian,Side dish,0,1,1,1,0,Small,360
+1331,Spicia,Mixed Vegetables with Mushrooms and Baby Corn,Assorted vegetables stir-fried with mushrooms and baby corn in a mild sauce,Asian,Side dish,0,1,1,1,0,Small,530
+1333,Spicia,Chop Suey,Assorted vegetables stir-fried in a mild sauce; light and warm,Asian,Side dish,0,1,1,1,0,Small,480
+1335,Spicia,String Beans Szechuan Style with Cashew,Dry braised string beans in a spicy sauce with cashews; warm and moderately spicy,Asian,Side dish,0,1,1,1,0,Small,500
+1337,Spicia,Devilled Mushrooms,Mushrooms stir-fried in a spicy sauce; warm and savory,Asian,Side dish,0,1,1,1,0,Small,530
+1339,Spicia,Hot Batter Mushrooms,Deep-fried mushrooms in a crispy batter; hot and crunchy,Asian,Side dish,0,1,1,1,0,Small,530
+1341,Spicia,Hot Batter Baby Corn,Deep-fried baby corn in a crispy batter; hot and crunchy,Asian,Side dish,0,1,1,1,0,Small,720
+1343,Spicia,Mushrooms with Oyster Sauce,Deep-fried mushrooms in oyster sauce; warm and savory,Asian,Side dish,0,1,1,1,0,Small,500
+1345,Spicia,Spicy Potatoes,Fried potato wedges in a spicy sauce; hot and flavorful,Asian,Side dish,0,1,1,1,0,Small,630
+1347,Spicia,Garlic Spinach,Stir-fried spinach with garlic and dry chillies in a mild sauce,Asian,Side dish,0,1,1,1,0,Small,400
+1349,Spicia,Chinese Chilli Vegetables,Stir-fried assorted mixed vegetables served with garlic sauce,Chinese,Side dish,0,1,1,1,0,Small,530
+1351,Spicia,Stir-Fried Pak Choi,Stir-fried pak choi with garlic and onions; light and fresh,Asian,Side dish,0,1,1,1,0,Small,530
+1353,Spicia,Devilled Button Mushrooms,Mushrooms stir-fried in a spicy sauce; hot and savory,Asian,Side dish,0,1,1,1,0,Regular,800
+1354,Spicia,House Special Vietnamese Rice,"Fried rice tossed with prawns, cuttlefish, chicken, and vegetables. Savory, medium-heavy, served hot.",Vietnamese,Main,0,1,1,1,0,Small,950
+1356,Spicia,Spisia Chop Suey Rice,"Creamy vegetable chop suey fried rice with a combination of meat and seafood. Medium-heavy, creamy, served hot.",Asian,Main,0,1,1,1,0,Small,950
+1358,Spicia,Ginger Rice with Chicken,"Stir fried ginger-flavoured rice with chicken. Medium spice, aromatic, served hot.",Asian,Main,0,1,1,1,0,Small,700
+1360,Spicia,Wok Fried Rice with Prawns,"Stir-fried rice with vegetables, egg, and prawns. Savory, served hot.",Asian,Main,0,1,1,1,0,Small,800
+1362,Spicia,Wok Fried Rice with Chicken,"Stir-fried rice with vegetables, egg, and chicken. Savory, served hot.",Asian,Main,0,1,1,1,0,Small,750
+1364,Spicia,Wok Fried Rice with Beef,"Stir-fried rice with vegetables, egg, and beef. Savory, served hot.",Asian,Main,0,1,1,1,0,Small,750
+1366,Spicia,Wok Fried Rice with Vegetables and Egg,"Stir-fried rice with vegetables and egg. Light-medium, vegetarian-friendly, served hot.",Asian,Main,0,1,1,1,0,Small,700
+1368,Spicia,Wok Fried Rice with Bacon and Egg,"Stir-fried rice with vegetables, bacon, and egg. Savory, served hot.",Asian,Main,0,1,1,1,0,Small,750
+1370,Spicia,Seafood Rice,"Rice with assorted seafood stir-fried in a tangy sauce. Medium spice, served hot.",Asian Seafood,Main,0,1,1,1,0,Regular,1280
+1371,Spicia,Pineapple Rice,"Pineapple fried rice with cashew nuts, carrots, and sliced chicken. Sweet-savory, served hot.",Thai,Main,0,1,1,1,0,Regular,960
+1372,Spicia,Spicy Thai Seafood Rice,"Assorted seafood fried rice, Thai style, spicy, served hot.",Thai,Main,0,1,1,1,0,Small,900
+1374,Spicia,Steamed Rice - Premium Basmati,"Steamed premium basmati rice, light, neutral flavor, served hot.",Asian,Side,1,1,1,1,0,Small,330
+1381,Spicia,Savoury Rice,"Stir-fried butter rice with vegetables and meat. Mild flavor, served hot.",Asian,Main,0,1,1,1,0,Regular,800
+1382,Spicia,Garlic Rice,"Garlic-flavored rice tossed with spring onions and sausages. Savory, aromatic, served hot.",Asian,Main,0,1,1,1,0,Regular,650
+1383,Spicia,Spisia Special Kebab Rice,"Stir-fried yellow rice topped with chicken, beef, fish, or sausages in kebab style. Savory, served hot.",Asian,Main,0,1,1,1,0,Regular,1450
+1384,Spicia,Vegetable Chop Suey Rice,"Rice topped with chop suey vegetables. Light-medium, vegetarian, served hot.",Asian,Main,0,1,1,1,0,Regular,900
+1385,Spicia,Indonesian Fried Rice,"Fried rice mixed with prawns and dry chicken. Savory, served hot.",Indonesian,Main,0,1,1,1,0,Regular,1200
+1386,Spicia,Thai Spicy Vegetable Rice,"Spicy stir-fried rice with vegetables, Thai style, served hot.",Thai,Main,0,1,1,1,0,Small,650
+1388,Spicia,Prawns in Red Chilli and Garlic Sauce,"Stir fried prawns with garlic, chillies, tomato, and oyster sauce; medium-heavy, served hot, spicy and savory",Asian,Main,0,1,1,0,1,Small,1140
+1390,Spicia,Spicy Prawns,"Stir fried prawns in a spicy sauce; medium-heavy, served hot, spicy",Asian,Main,0,1,1,0,1,Small,1140
+1392,Spicia,Thai Chilli Prawns,"Deep fried prawns in a hot/sweet Thai sauce; medium-heavy, sweet-spicy",Thai,Main,0,1,1,0,1,Small,1140
+1396,Spicia,Hot Garlic Prawns,"Pan fried prawns in a hot garlic sauce; medium-heavy, spicy-garlicky",Asian,Main,0,1,1,0,1,Small,1140
+1400,Spicia,Hot Batter Prawns,"Deep fried prawns with bell pepper in chilli oil; medium-heavy, spicy",Asian,Main,0,1,1,0,1,Small,1140
+1402,Spicia,Indonesian Prawns,Prawns in Indonesian-style mild and sweet creamy curry,Indonesian,Main,0,1,1,1,0,Small,1140
+1404,Spicia,Peanut Prawns,"Battered fried prawns with chilli pieces, spring onions, topped with crunchy peanuts; medium-heavy, spicy",Asian,Main,0,1,1,0,1,Small,1140
+1406,Spicia,Kang Kung Prawns,"Stir fried prawns and kang kung in garlic-infused soya sauce; savory, mild",Asian,Main,0,1,1,1,0,Small,900
+1408,Spicia,Prawns with White Garlic Sauce,"Stir fried prawns with white garlic sauce; savory, mild",Asian,Main,0,1,1,1,0,Small,1140
+1410,Spicia,Black Pepper Prawns,"Roasted prawns with black pepper soya sauce; medium-heavy, peppery",Asian,Main,0,1,1,0,1,Small,1140
+1412,Spicia,Singapore Chilli Prawns,"Light batter fried prawns with spring onions, chilli sauce, and egg; spicy, savory",Singaporean,Main,0,1,1,0,1,Small,1140
+1414,Spicia,China Prawns,Chinese-style prawns in savory sauce,Chinese,Main,0,1,1,1,0,Small,1140
+1416,Spicia,Prawns with Spinach,Stir fried prawns with spinach; mild savory flavor,Asian,Main,0,1,1,1,0,Small,900
+1418,Spicia,Chilli Crab,"Spicy crab dish with chillies; served hot, savory",Asian,Main,0,1,1,0,1,400g min,420
+1419,Spicia,Fried Crab in Ginger and Garlic Sauce,Crab fried with ginger and garlic; savory and aromatic,Asian,Main,0,1,1,1,0,400g min,420
+1420,Spicia,Sri Lankan Crab Curry,"Traditional Sri Lankan crab curry; spicy, coconut-based",Sri Lankan,Main,0,1,1,0,1,400g min,420
+1421,Spicia,Pepper Crab,"Crab cooked in pepper sauce; spicy, savory",Asian,Main,0,1,1,0,1,400g min,420
+1422,Spicia,Roast chicken in mushroom sauce,"Roasted chicken with oyster mushrooms in black mushroom sauce; savory, served hot",Global,Main,0,1,1,0,1,Small,820
+1424,Spicia,Spicy chicken,Sliced chicken in a spicy sauce; hot and bold flavor,Global,Main,0,1,1,1,0,Small,820
+1426,Spicia,Devilled chicken,"Fried chicken with chili and tomato sauce; spicy, tangy",Global,Main,0,1,1,1,0,Small,820
+1428,Spicia,Dry red chilli chicken,"Chicken with dry chili and celery; hot, aromatic",Asian,Main,0,1,1,1,0,Small,700
+1430,Spicia,Diced chicken with cashew nuts,Diced chicken and cashew nuts in oyster sauce; mild nutty flavor,Asian,Main,0,1,1,0,1,Small,750
+1432,Spicia,Lemon chicken,Deep fried chicken strips in orange and lemon sauce; tangy and sweet,Asian,Main,0,1,1,0,1,Small,700
+1434,Spicia,Sweet and sour chicken,Batter fried chicken in sweet and sour sauce; balanced flavor,Asian,Main,0,1,1,0,1,Small,800
+1436,Spicia,Hot garlic chicken,Pan fried sliced chicken in hot garlic sauce; garlicky and spicy,Asian,Main,0,1,1,1,0,Small,700
+1438,Spicia,Hot batter chicken,Deep fried chicken strips with bell pepper in chili oil; crispy and spicy,Asian,Main,0,1,1,1,0,Small,740
+1440,Spicia,Chilli chicken with cashew nuts,"Chicken in spicy thick sauce with carrots, red chilies, roasted cashew nuts",Asian,Main,0,1,1,1,0,Small,750
+1442,Spicia,Manchurian chicken,Light batter fried chicken in hot & sweet tamarind sauce topped with coriander,Indonesian,Main,0,1,1,1,0,Small,700
+1444,Spicia,Pepper chicken,Roasted chicken in black pepper soya sauce with capsicum and onion rings,Asian,Main,0,1,1,1,0,Small,990
+1446,Spicia,Indonesian chicken,Chicken in Indonesian style mild sweet creamy curry,Indonesian,Main,0,1,1,0,1,Small,700
+1448,Spicia,Kang kung chicken,Stir fried chicken and kang kung in garlic infused soya sauce,Asian,Main,0,1,1,0,1,Small,560
+1450,Spicia,Chicken bistu,Deep fried chicken with oyster and soya sauce,Asian,Main,0,1,1,0,1,Small,990
+1452,Spicia,Chicken drumsticks,Butter fried drumsticks with hot garlic sauce,Asian,Main,0,1,1,1,0,Small,700
+1454,Spicia,Fried chicken with onion salad,Deep fried chicken strips with tangy onion salad,Asian,Main,0,1,1,0,1,Small,690
+1456,Spicia,Peanut chicken,"Chicken cooked with peanut flavor; nutty, savory",Asian,Main,0,1,1,0,1,-,860
+1457,Spicia,China chicken,Chinese-style chicken preparation,Chinese,Main,0,1,1,0,1,Small,780
+1459,Spicia,Singapore Chilli Fish,"Light batter fried fish with spring onions, chilli sauce and egg. Served hot, mildly spicy with a crispy texture and tangy notes.",Singaporean,Main,0,1,1,1,0,Small,810
+1461,Spicia,Thai Style Fish,"Light batter fried fish with a Thai touch served in coconut cream with kaffir leaves. Creamy and aromatic, medium spice.",Thai,Main,0,1,1,1,0,Small,720
+1465,Spicia,Hot Batter Fish,"Deep fried fish strips with bell pepper in chilli oil. Crispy, hot and spicy.",Asian,Main,0,1,1,1,0,Small,810
+1467,Spicia,Spicy Fish,"Batter fried fish in a spicy sauce. Medium-heavy, served hot.",Asian,Main,0,1,1,1,0,Small,720
+1471,Spicia,Fish Bistu,"Deep fried fish with oyster and soya sauce. Savoury, slightly salty, served hot.",Asian,Main,0,1,1,1,0,Small,720
+1473,Spicia,Crispy Fish,"Deep fried fish with hot sauce. Crispy texture, spicy flavour.",Asian,Main,0,1,1,1,0,Small,660
+1475,Spicia,Pepper Fish,"Roasted fish in a black pepper soya sauce. Peppery, savoury, hot served.",Asian,Main,0,1,1,1,0,Small,800
+1477,Spicia,Hot Garlic Fish,"Pan fried sliced fish in a hot garlic sauce. Savoury, aromatic, spicy.",Asian,Main,0,1,1,1,0,Small,800
+1479,Spicia,Deep Fried Fish with Onion Salad,Deep fried fish slices served with a tangy onion salad. Crispy and refreshing combination.,Asian,Main,0,1,1,1,0,Small,720
+1481,Spicia,Black Pepper Fish – Roasted,"Roasted fish with black pepper in soya sauce. Peppery, savoury, served hot.",Asian,Main,0,1,1,1,0,Small,800
+1483,Spicia,Vanilla milkshake,"Creamy, sweet, cold vanilla-flavored milkshake",International,Beverage,1,1,1,1,0,-,360
+1484,Spicia,Strawberry milkshake,"Creamy, sweet, cold strawberry-flavored milkshake",International,Beverage,1,1,1,1,0,-,370
+1485,Spicia,Chocolate milkshake,"Creamy, sweet, cold chocolate-flavored milkshake",International,Beverage,1,1,1,1,0,-,370
+1486,Spicia,Mixed fruit milkshake,Creamy cold milkshake with a blend of mixed fruits,International,Beverage,1,1,1,1,0,-,420
+1487,Spicia,Mango juice,"Fresh, sweet mango juice served cold",International,Beverage,1,1,1,1,0,-,320
+1488,Spicia,Pineapple juice,"Fresh, tangy-sweet pineapple juice served cold",International,Beverage,1,1,1,1,0,-,320
+1489,Spicia,Orange juice,"Fresh, tangy orange juice served cold",International,Beverage,1,1,1,1,0,-,450
+1490,Spicia,Mixed fruit juice,Fresh blend of assorted fruit juices served cold,International,Beverage,1,1,1,1,0,-,380
+1491,Spicia,Papaya juice,"Fresh, smooth, sweet papaya juice served cold",International,Beverage,1,1,1,1,0,-,300
+1492,Spicia,Lime juice,Refreshing tangy lime juice served cold,International,Beverage,1,1,1,1,0,-,300
+1493,Spicia,Lime and soda,"Sparkling lime-flavored drink, refreshing and tangy",International,Beverage,1,1,1,1,0,-,300
+1494,Spicia,Snowfall,"Sweet, cold beverage",International,Beverage,1,1,1,1,0,-,320
+1495,Spicia,Pepsi 300ml,Chilled carbonated cola drink,International,Beverage,1,1,1,1,0,300ml,150
+1497,Spicia,7up 300ml,Chilled lemon-lime carbonated drink,International,Beverage,1,1,1,1,0,300ml,150
+1498,Spicia,Cream soda 400ml,"Sweet, chilled cream soda drink",International,Beverage,1,1,1,1,0,400ml,150
+1499,Spicia,Ginger beer 400ml,Chilled ginger-flavored carbonated drink,International,Beverage,1,1,1,1,0,400ml,150
+1502,Spicia,Soda 1500ml,Chilled soda water,International,Beverage,1,1,1,1,0,1500ml,350
+1503,Spicia,Mineral water 1000ml,Chilled bottled mineral water,International,Beverage,1,1,1,1,0,1000ml,100
+1504,Spicia,Fresh fruit salad,"Fresh, light, sweet fruit mix served cold",International,Dessert,1,1,1,1,0,-,300
+1505,Spicia,Fresh fruit salad with ice cream,Fresh fruit salad served with a scoop of ice cream,International,Dessert,1,1,1,1,0,-,350
+1506,Spicia,Crème caramel,"Soft, sweet caramel custard served cold",Western,Dessert,0,1,1,1,0,-,220
+1507,Spicia,Watalappam,Sweet Sri Lankan coconut jaggery pudding,Sri Lankan,Dessert,0,1,1,1,0,-,220
+1511,Spicia,Three scoops ice cream - vanilla/chocolate/strawberry,Trio of ice cream scoops in assorted flavors,International,Dessert,1,1,1,1,0,-,500
+1512,Spicia,Seasonal fruit platter,Assorted fresh fruits served cold,Asian,Dessert,1,1,1,1,0,-,220
+1513,Spicia,Chocolate biscuit pudding,Chilled layered chocolate biscuit dessert,Western,Dessert,0,1,1,1,0,-,220
+1514,Spicia,Chocolate mousse,"Smooth, chilled chocolate dessert",Western,Dessert,0,1,1,1,0,-,250
+1516,Spicia,Mixed grill,"Crab, prawns, fish, chicken, pork and beef altogether served with a fried egg and boiled vegetables; hearty, heavy, hot-served platter",International,Main,0,1,1,0,1,-,2280
+1517,Spicia,Up country pepper beef steak,"Grilled fillet beef with a pineapple pepper sauce; heavy, hot, peppery-sweet",Western,Main,0,1,1,0,1,-,1300
+1518,Spicia,Fillet beef steak,"Grilled beef with boiled vegetables served with BBQ sauce; heavy, hot, smoky-sweet",Western,Main,0,1,1,0,1,-,1300
+1519,Spicia,Mixed seafood platter,"Assorted seafood platter; medium-heavy, hot, savoury seafood flavors",Seafood,Main,0,1,1,0,1,-,2050
+1521,Spicia,Vegetables - Boiled and buttered vegetables,"Boiled vegetables tossed in butter; light-medium, hot, mildly savoury",International,Side Dish,1,1,1,0,1,-,780
+1522,Spicia,Chicken - Grilled chicken with boiled vegetables,"Grilled chicken with boiled vegetables; medium, hot, savoury",International,Main,0,1,1,0,1,-,960
+1523,Spicia,Beef - Grilled beef with boiled vegetables,"Grilled beef served with boiled vegetables; medium-heavy, hot, savoury",International,Main,0,1,1,0,1,-,1000
+1524,Spicia,Pork - Grilled pork with boiled vegetables,"Grilled pork with boiled vegetables; medium-heavy, hot, savoury",International,Main,0,1,1,0,1,-,960
+1525,Spicia,Fish - Grilled fish with boiled vegetables,"Grilled fish with boiled vegetables; medium, hot, savoury",International,Main,0,1,1,0,1,-,1000
+1526,Spicia,Fried sausages,"Deep fried sausages with onion rings; medium, hot, savoury",International,Side Dish,0,1,1,0,1,-,800
+1527,Spicia,Spicy sausages,"Fried sausages in a spicy sauce; medium, hot, spicy",International,Side Dish,0,1,1,0,1,-,900
+1528,Spicia,Devilled sausages,"Fried sausages with tomato sauce; medium, hot, tangy-savoury",International,Side Dish,0,1,1,0,1,-,900
+1529,Spicia,Silver beef,"Deep fried beef combined with black bean sauce and oyster sauce; medium-heavy, hot, savoury umami",Chinese,Main,0,1,1,0,1,-,1000
+1530,Spicia,Chicken with black bean sauce,"Deep fried chicken, combined with black bean sauce; medium, hot, savoury umami",Chinese,Main,0,1,1,0,1,-,1000
+1531,Spicia,Black pepper pork,"Roasted pork with black pepper in a soya sauce; medium-heavy, hot, peppery-savoury",Chinese,Main,0,1,1,0,1,-,1000
+1532,Spicia,Pepper fish,"Roasted fish in a black pepper soya sauce; medium, hot, peppery-savoury",Chinese,Main,0,1,1,0,1,-,1000
+1533,Spicia,Black pepper cuttlefish,"Roasted cuttlefish with black pepper in a soya sauce; medium, hot, peppery-savoury",Chinese,Main,0,1,1,0,1,-,1200
+1534,Spicia,Sweet and sour sizzling prawns,"Deep fried prawns topped with a sweet and sour sauce; medium, hot, tangy-sweet",Chinese,Main,0,1,1,0,1,-,1220

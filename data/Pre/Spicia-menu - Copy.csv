@@ -1,0 +1,238 @@
+item_id,item_name,price
+1298,Seafood Tom Yum,840
+1299,Seafood Tom Yum,1160
+1300,Chicken Tom Yum,600
+1301,Chicken Tom Yum,840
+1302,Sweet Corn Soup - Crab,750
+1303,Sweet Corn Soup - Crab,1000
+1304,Sweet Corn Soup - Chicken,530
+1305,Sweet Corn Soup - Chicken,780
+1306,Sweet Corn Soup - Vegetable,480
+1307,Sweet Corn Soup - Vegetable,700
+1308,Mixed Mee Hoon Soup,770
+1309,Mixed Mee Hoon Soup,1120
+1310,Seafood Soup,840
+1311,Seafood Soup,1160
+1312,Prawn and Cucumber Soup,900
+1313,Spicy Vegetable Soup,770
+1314,Chicken Hot and Spicy Soup,850
+1315,Spicy Beef Soup,1000
+1316,Cream of Mushroom and Spinach Soup,950
+1317,Cream of Chicken,950
+1318,Laksa Seafood Soup,1150
+1319,Tomato Egg Soup,750
+1320,Chinese Omelette - Vegetables,690
+1321,Chinese Omelette - Chicken,810
+1322,Chinese Omelette - Prawn,950
+1323,Sri Lankan Omelette,360
+1324,Fried Egg,300
+1325,Cheese Omelette,480
+1326,Chicken Omelette - Sri Lankan Style,690
+1327,Mixed Omelette,890
+1328,Bacon and Sausages Omelette,890
+1329,Kang Kung with Garlic,360
+1330,Kang Kung with Garlic,420
+1331,Mixed Vegetables with Mushrooms and Baby Corn,530
+1332,Mixed Vegetables with Mushrooms and Baby Corn,700
+1333,Chop Suey,480
+1334,Chop Suey,660
+1335,String Beans Szechuan Style with Cashew,500
+1336,String Beans Szechuan Style with Cashew,670
+1337,Devilled Mushrooms,530
+1338,Devilled Mushrooms,710
+1339,Hot Batter Mushrooms,530
+1340,Hot Batter Mushrooms,670
+1341,Hot Batter Baby Corn,720
+1342,Hot Batter Baby Corn,900
+1343,Mushrooms with Oyster Sauce,500
+1344,Mushrooms with Oyster Sauce,720
+1345,Spicy Potatoes,630
+1346,Spicy Potatoes,820
+1347,Garlic Spinach,400
+1348,Garlic Spinach,530
+1349,Chinese Chilli Vegetables,530
+1350,Chinese Chilli Vegetables,760
+1351,Stir-Fried Pak Choi,530
+1352,Stir-Fried Pak Choi,700
+1353,Devilled Button Mushrooms,800
+1354,House Special Vietnamese Rice,950
+1355,House Special Vietnamese Rice,1200
+1356,Spisia Chop Suey Rice,950
+1357,Spisia Chop Suey Rice,1200
+1358,Ginger Rice with Chicken,700
+1359,Ginger Rice with Chicken,900
+1360,Wok Fried Rice with Prawns,800
+1361,Wok Fried Rice with Prawns,1050
+1362,Wok Fried Rice with Chicken,750
+1363,Wok Fried Rice with Chicken,900
+1364,Wok Fried Rice with Beef,750
+1365,Wok Fried Rice with Beef,900
+1366,Wok Fried Rice with Vegetables and Egg,700
+1367,Wok Fried Rice with Vegetables and Egg,900
+1368,Wok Fried Rice with Bacon and Egg,750
+1369,Wok Fried Rice with Bacon and Egg,950
+1370,Seafood Rice,1280
+1371,Pineapple Rice,960
+1372,Spicy Thai Seafood Rice,900
+1373,Spicy Thai Seafood Rice,1200
+1374,Steamed Rice - Premium Basmati,330
+1375,Steamed Rice - Premium Basmati,470
+1376,Mixed Fried Rice,850
+1377,Mixed Fried Rice,1050
+1378,Nasi Goreng,1050
+1379,Mongolian Rice,850
+1380,Mongolian Rice,1180
+1381,Savoury Rice,800
+1382,Garlic Rice,650
+1383,Spisia Special Kebab Rice,1450
+1384,Vegetable Chop Suey Rice,900
+1385,Indonesian Fried Rice,1200
+1386,Thai Spicy Vegetable Rice,650
+1387,Thai Spicy Vegetable Rice,840
+1388,Prawns in Red Chilli and Garlic Sauce,1140
+1389,Prawns in Red Chilli and Garlic Sauce,1380
+1390,Spicy Prawns,1140
+1391,Spicy Prawns,1380
+1392,Thai Chilli Prawns,1140
+1393,Thai Chilli Prawns,1380
+1394,Devilled Prawns,1140
+1395,Devilled Prawns,1380
+1396,Hot Garlic Prawns,1140
+1397,Hot Garlic Prawns,1380
+1398,Sweet and Sour Prawns,1140
+1399,Sweet and Sour Prawns,1380
+1400,Hot Batter Prawns,1140
+1401,Hot Batter Prawns,1380
+1402,Indonesian Prawns,1140
+1403,Indonesian Prawns,1380
+1404,Peanut Prawns,1140
+1405,Peanut Prawns,1380
+1406,Kang Kung Prawns,900
+1407,Kang Kung Prawns,1140
+1408,Prawns with White Garlic Sauce,1140
+1409,Prawns with White Garlic Sauce,1380
+1410,Black Pepper Prawns,1140
+1411,Black Pepper Prawns,1380
+1412,Singapore Chilli Prawns,1140
+1413,Singapore Chilli Prawns,1380
+1414,China Prawns,1140
+1415,China Prawns,1180
+1416,Prawns with Spinach,900
+1417,Prawns with Spinach,1140
+1418,Chilli Crab,420
+1419,Fried Crab in Ginger and Garlic Sauce,420
+1420,Sri Lankan Crab Curry,420
+1421,Pepper Crab,420
+1422,Roast chicken in mushroom sauce,820
+1423,Roast chicken in mushroom sauce,1230
+1424,Spicy chicken,820
+1425,Spicy chicken,940
+1426,Devilled chicken,820
+1427,Devilled chicken,1230
+1428,Dry red chilli chicken,700
+1429,Dry red chilli chicken,920
+1430,Diced chicken with cashew nuts,750
+1431,Diced chicken with cashew nuts,920
+1432,Lemon chicken,700
+1433,Lemon chicken,920
+1434,Sweet and sour chicken,800
+1435,Sweet and sour chicken,980
+1436,Hot garlic chicken,700
+1437,Hot garlic chicken,920
+1438,Hot batter chicken,740
+1439,Hot batter chicken,940
+1440,Chilli chicken with cashew nuts,750
+1441,Chilli chicken with cashew nuts,940
+1442,Manchurian chicken,700
+1443,Manchurian chicken,940
+1444,Pepper chicken,990
+1445,Pepper chicken,1230
+1446,Indonesian chicken,700
+1447,Indonesian chicken,920
+1448,Kang kung chicken,560
+1449,Kang kung chicken,760
+1450,Chicken bistu,990
+1451,Chicken bistu,1230
+1452,Chicken drumsticks,700
+1453,Chicken drumsticks,920
+1454,Fried chicken with onion salad,690
+1455,Fried chicken with onion salad,890
+1456,Peanut chicken,860
+1457,China chicken,780
+1458,China chicken,950
+1459,Singapore Chilli Fish,810
+1460,Singapore Chilli Fish,1040
+1461,Thai Style Fish,720
+1462,Thai Style Fish,1000
+1463,Sweet and Sour Fish,720
+1464,Sweet and Sour Fish,1000
+1465,Hot Batter Fish,810
+1466,Hot Batter Fish,1020
+1467,Spicy Fish,720
+1468,Spicy Fish,1020
+1469,Devilled Fish,800
+1470,Devilled Fish,1020
+1471,Fish Bistu,720
+1472,Fish Bistu,1000
+1473,Crispy Fish,660
+1474,Crispy Fish,950
+1475,Pepper Fish,800
+1476,Pepper Fish,1110
+1477,Hot Garlic Fish,800
+1478,Hot Garlic Fish,1100
+1479,Deep Fried Fish with Onion Salad,720
+1480,Deep Fried Fish with Onion Salad,940
+1481,Black Pepper Fish – Roasted,800
+1482,Black Pepper Fish – Roasted,1010
+1483,Vanilla milkshake,360
+1484,Strawberry milkshake,370
+1485,Chocolate milkshake,370
+1486,Mixed fruit milkshake,420
+1487,Mango juice,320
+1488,Pineapple juice,320
+1489,Orange juice,450
+1490,Mixed fruit juice,380
+1491,Papaya juice,300
+1492,Lime juice,300
+1493,Lime and soda,300
+1494,Snowfall,320
+1495,Pepsi 300ml,150
+1496,Pepsi,400
+1497,7up 300ml,150
+1498,Cream soda 400ml,150
+1499,Ginger beer 400ml,150
+1500,Soda,150
+1501,Soda,250
+1502,Soda 1500ml,350
+1503,Mineral water 1000ml,100
+1504,Fresh fruit salad,300
+1505,Fresh fruit salad with ice cream,350
+1506,Crème caramel,220
+1507,Watalappam,220
+1508,Vanilla ice cream,300
+1509,Chocolate ice cream,320
+1510,Strawberry ice cream,320
+1511,Three scoops ice cream - vanilla/chocolate/strawberry,500
+1512,Seasonal fruit platter,220
+1513,Chocolate biscuit pudding,220
+1514,Chocolate mousse,250
+1515,Brownie,250
+1516,Mixed grill,2280
+1517,Up country pepper beef steak,1300
+1518,Fillet beef steak,1300
+1519,Mixed seafood platter,2050
+1520,Fish and chips,990
+1521,Vegetables - Boiled and buttered vegetables,780
+1522,Chicken - Grilled chicken with boiled vegetables,960
+1523,Beef - Grilled beef with boiled vegetables,1000
+1524,Pork - Grilled pork with boiled vegetables,960
+1525,Fish - Grilled fish with boiled vegetables,1000
+1526,Fried sausages,800
+1527,Spicy sausages,900
+1528,Devilled sausages,900
+1529,Silver beef,1000
+1530,Chicken with black bean sauce,1000
+1531,Black pepper pork,1000
+1532,Pepper fish,1000
+1533,Black pepper cuttlefish,1200
+1534,Sweet and sour sizzling prawns,1220

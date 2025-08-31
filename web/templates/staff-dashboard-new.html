@@ -1,0 +1,335 @@
+{% extends "staff-base.html" %}
+
+{% block title %}Staff Dashboard - Food Recommendation System{% endblock %}
+
+{% block page_title %}Staff Dashboard{% endblock %}
+
+{% block extra_head %}
+<style>
+    .card-hover {
+        transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+        <!-- Welcome Section -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Restaurant Staff Dashboard</h1>
+            <p class="text-gray-600">Manage the food recommendation system and monitor system performance.</p>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-6">
+            <!-- Train Models Card -->
+            <div class="bg-white rounded-xl shadow-sm border card-hover cursor-pointer" onclick="navigateToTrain()">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-purple-100 rounded-lg">
+                            <i data-lucide="brain" class="w-8 h-8 text-purple-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Train Models</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Train machine learning models for better recommendations.</p>
+                    <div class="flex items-center text-purple-600 font-medium text-sm">
+                        <span>Train Now</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Generate Predictions Card -->
+            <div class="bg-white rounded-xl shadow-sm border card-hover cursor-pointer" onclick="navigateToPredict()">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-green-100 rounded-lg">
+                            <i data-lucide="cpu" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Generate Predictions</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Use AI to predict food categories, cuisines, and context tags.</p>
+                    <div class="flex items-center text-green-600 font-medium text-sm">
+                        <span>Generate</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Get Recommendations Card -->
+            <div class="bg-white rounded-xl shadow-sm border card-hover cursor-pointer" onclick="navigateToRecommend()">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-blue-100 rounded-lg">
+                            <i data-lucide="heart" class="w-8 h-8 text-blue-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Get Recommendations</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Generate personalized food recommendations for customers.</p>
+                    <div class="flex items-center text-blue-600 font-medium text-sm">
+                        <span>Recommend</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manage Menu Card -->
+            <div class="bg-white rounded-xl shadow-sm border card-hover cursor-pointer" onclick="navigateToMenu()">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-orange-100 rounded-lg">
+                            <i data-lucide="menu" class="w-8 h-8 text-orange-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Manage Menu</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Add, edit, and manage restaurant menu items and their properties.</p>
+                    <div class="flex items-center text-orange-600 font-medium text-sm">
+                        <span>Manage</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manage Users Card -->
+            <div class="bg-white rounded-xl shadow-sm border card-hover cursor-pointer" onclick="navigateToUsers()">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-blue-100 rounded-lg">
+                            <i data-lucide="users" class="w-8 h-8 text-blue-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Manage Users</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Manage customer accounts and staff member permissions.</p>
+                    <div class="flex items-center text-blue-600 font-medium text-sm">
+                        <span>Manage</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manage Ratings Card -->
+            <div class="bg-white rounded-xl shadow-sm border card-hover cursor-pointer" onclick="navigateToRatings()">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-yellow-100 rounded-lg">
+                            <i data-lucide="star" class="w-8 h-8 text-yellow-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Manage Ratings</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Monitor and manage customer ratings and feedback.</p>
+                    <div class="flex items-center text-yellow-600 font-medium text-sm">
+                        <span>Manage</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Info Card -->
+            <div class="bg-white rounded-xl shadow-sm border card-hover cursor-pointer" onclick="navigateToInfo()">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-gray-100 rounded-lg">
+                            <i data-lucide="info" class="w-8 h-8 text-gray-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">System Info</h3>
+                    <p class="text-gray-600 mb-4 text-sm">View system information and performance metrics.</p>
+                    <div class="flex items-center text-gray-600 font-medium text-sm">
+                        <span>View Info</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">System Statistics</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Total Menu Items -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-orange-100 rounded-lg">
+                            <i data-lucide="utensils" class="w-6 h-6 text-orange-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Menu Items</p>
+                            <p id="total-menu-items" class="text-2xl font-bold text-gray-900">---</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Users -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-blue-100 rounded-lg">
+                            <i data-lucide="users" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Total Users</p>
+                            <p id="total-users-stat" class="text-2xl font-bold text-gray-900">---</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Ratings -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-yellow-100 rounded-lg">
+                            <i data-lucide="star" class="w-6 h-6 text-yellow-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Total Ratings</p>
+                            <p id="total-ratings-stat" class="text-2xl font-bold text-gray-900">---</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Average Rating -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-green-100 rounded-lg">
+                            <i data-lucide="trending-up" class="w-6 h-6 text-green-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Avg Rating</p>
+                            <p id="avg-rating-stat" class="text-2xl font-bold text-gray-900">---</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity Section -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Recent Activity</h2>
+            <div class="bg-white rounded-lg shadow-sm border">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-900">System Activity</h3>
+                </div>
+                <div id="activity-feed" class="divide-y divide-gray-200">
+                    <!-- Activity items will be populated here -->
+                    <div class="px-6 py-4">
+                        <p class="text-gray-500 text-center">Loading recent activity...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Navigation functions
+    function navigateToTrain() {
+        window.location.href = '/train';
+    }
+
+    function navigateToPredict() {
+        window.location.href = '/predict';
+    }
+
+    function navigateToRecommend() {
+        window.location.href = '/recommend';
+    }
+
+    function navigateToMenu() {
+        window.location.href = '/manage-menu';
+    }
+
+    function navigateToUsers() {
+        window.location.href = '/manage-users';
+    }
+
+    function navigateToRatings() {
+        window.location.href = '/manage-ratings';
+    }
+
+    function navigateToOrders() {
+        window.location.href = '/manage-orders';
+    }
+
+    function navigateToInfo() {
+        window.location.href = '/info';
+    }
+
+    // Load dashboard statistics
+    function loadDashboardStats() {
+        // Load menu items count
+        fetch('/api/menu-items')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('total-menu-items').textContent = data.items.length;
+                }
+            })
+            .catch(error => console.error('Error loading menu stats:', error));
+
+        // Load users count
+        fetch('/api/users')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('total-users-stat').textContent = data.users.length;
+                }
+            })
+            .catch(error => console.error('Error loading user stats:', error));
+
+        // Load ratings count and average
+        fetch('/api/ratings')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const ratings = data.ratings;
+                    document.getElementById('total-ratings-stat').textContent = ratings.length;
+                    
+                    if (ratings.length > 0) {
+                        const avgRating = ratings.reduce((sum, rating) => sum + rating.rating, 0) / ratings.length;
+                        document.getElementById('avg-rating-stat').textContent = avgRating.toFixed(1);
+                    } else {
+                        document.getElementById('avg-rating-stat').textContent = '0.0';
+                    }
+                }
+            })
+            .catch(error => console.error('Error loading rating stats:', error));
+    }
+
+    // Load recent activity
+    function loadRecentActivity() {
+        // Mock activity data - in a real app, this would come from an API
+        const activities = [
+            { type: 'user', message: 'New user registered', time: '2 minutes ago', icon: 'user-plus', color: 'blue' },
+            { type: 'rating', message: 'New rating submitted for Pizza', time: '15 minutes ago', icon: 'star', color: 'yellow' },
+            { type: 'menu', message: 'Menu item updated: Pasta', time: '1 hour ago', icon: 'edit', color: 'orange' },
+            { type: 'training', message: 'ML models training completed', time: '2 hours ago', icon: 'brain', color: 'purple' },
+            { type: 'user', message: 'Staff member logged in', time: '3 hours ago', icon: 'shield', color: 'red' }
+        ];
+
+        const activityDiv = document.getElementById('activity-feed');
+        const activityHTML = activities.map(activity => {
+            return `
+                <div class="px-6 py-4 flex items-center">
+                    <div class="p-2 bg-${activity.color}-100 rounded-lg mr-4">
+                        <i data-lucide="${activity.icon}" class="w-4 h-4 text-${activity.color}-600"></i>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-sm text-gray-900">${activity.message}</p>
+                        <p class="text-xs text-gray-500">${activity.time}</p>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        activityDiv.innerHTML = activityHTML;
+        lucide.createIcons(); // Re-initialize icons
+    }
+
+    // Initialize dashboard when DOM content is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        loadDashboardStats();
+        loadRecentActivity();
+    });
+</script>
+{% endblock %}

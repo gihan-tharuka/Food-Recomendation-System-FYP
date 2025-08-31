@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Savory Delights{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-food-orange to-red-500 rounded-3xl overflow-hidden mb-12 text-white">
+        <div class="px-8 py-16 text-center">
+            <h1 class="text-5xl font-bold mb-6">About Savory Delights</h1>
+            <p class="text-xl max-w-3xl mx-auto">Where culinary excellence meets cutting-edge AI technology to create unforgettable dining experiences.</p>
+        </div>
+    </div>
+
+    <!-- Our Story -->
+    <div class="grid md:grid-cols-2 gap-12 mb-16">
+        <div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
+            <div class="space-y-4 text-gray-600">
+                <p>Founded with a passion for exceptional cuisine and innovative technology, Savory Delights represents the perfect fusion of traditional culinary arts and modern AI-powered personalization.</p>
+                <p>Our journey began with a simple vision: to help every guest discover their perfect meal through the power of artificial intelligence, while maintaining the warmth and quality of traditional fine dining.</p>
+                <p>Today, we use advanced machine learning algorithms to analyze your preferences, dietary requirements, and past dining experiences to recommend dishes that will truly delight your palate.</p>
+            </div>
+        </div>
+        <div class="bg-gradient-to-br from-food-orange to-red-500 rounded-2xl p-8 text-white">
+            <h3 class="text-2xl font-bold mb-6">Our Mission</h3>
+            <p class="text-lg mb-6">To revolutionize the dining experience by combining culinary excellence with AI-powered personalization, ensuring every guest discovers their perfect meal.</p>
+            <div class="grid grid-cols-2 gap-4 text-center">
+                <div>
+                    <div class="text-3xl font-bold">500+</div>
+                    <div class="text-sm opacity-90">Menu Items</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold">10K+</div>
+                    <div class="text-sm opacity-90">Happy Customers</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold">95%</div>
+                    <div class="text-sm opacity-90">Satisfaction Rate</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold">24/7</div>
+                    <div class="text-sm opacity-90">AI Service</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Values -->
+    <div class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Our Values</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                <div class="bg-food-orange bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="heart" class="w-8 h-8 text-food-orange"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Quality First</h3>
+                <p class="text-gray-600">We source only the finest ingredients and prepare each dish with meticulous attention to detail.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                <div class="bg-food-green bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="brain" class="w-8 h-8 text-food-green"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Innovation</h3>
+                <p class="text-gray-600">We leverage AI technology to personalize your dining experience and discover new flavors.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                <div class="bg-food-blue bg-opacity-20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="users" class="w-8 h-8 text-food-blue"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Customer Focus</h3>
+                <p class="text-gray-600">Every decision we make is centered around creating exceptional experiences for our guests.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Meet Our Team</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+                <div class="w-24 h-24 bg-gradient-to-br from-food-orange to-red-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <i data-lucide="chef-hat" class="w-12 h-12 text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Chef Michael Rodriguez</h3>
+                <p class="text-food-orange font-medium mb-2">Executive Chef</p>
+                <p class="text-gray-600 text-sm">20+ years of culinary excellence with Michelin-starred experience.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+                <div class="w-24 h-24 bg-gradient-to-br from-food-green to-green-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <i data-lucide="cpu" class="w-12 h-12 text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Dr. Sarah Chen</h3>
+                <p class="text-food-green font-medium mb-2">AI Technology Director</p>
+                <p class="text-gray-600 text-sm">Expert in machine learning and recommendation systems.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+                <div class="w-24 h-24 bg-gradient-to-br from-food-blue to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <i data-lucide="smile" class="w-12 h-12 text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Emma Thompson</h3>
+                <p class="text-food-blue font-medium mb-2">Customer Experience Manager</p>
+                <p class="text-gray-600 text-sm">Ensuring every guest has an exceptional dining experience.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="bg-white rounded-3xl shadow-xl p-12 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Ready to Experience Savory Delights?</h2>
+        <p class="text-xl text-gray-600 mb-8">Join us for an unforgettable culinary journey powered by AI technology.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="/menu" class="bg-food-orange text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-colors flex items-center justify-center space-x-2">
+                <i data-lucide="book-open" class="w-6 h-6"></i>
+                <span>View Menu</span>
+            </a>
+            <a href="/recommend" class="bg-food-green text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-600 transition-colors flex items-center justify-center space-x-2">
+                <i data-lucide="sparkles" class="w-6 h-6"></i>
+                <span>Get Recommendations</span>
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    lucide.createIcons();
+});
+</script>
+{% endblock %}

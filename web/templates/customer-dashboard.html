@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - Food Recommendation System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i data-lucide="chef-hat" class="w-8 h-8 text-orange-500"></i>
+                    <span class="ml-2 text-xl font-bold text-gray-900">Food Recommendations</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="user" class="w-5 h-5 text-gray-600"></i>
+                        <span id="user-name" class="text-gray-700 font-medium"></span>
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Customer</span>
+                    </div>
+                    <button onclick="logout()" class="flex items-center space-x-2 px-4 py-2 text-red-600 hover:bg-red-50 rounded-md transition-colors">
+                        <i data-lucide="log-out" class="w-4 h-4"></i>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <!-- Welcome Section -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Welcome to Your Dashboard</h1>
+            <p class="text-gray-600">Discover delicious food recommendations tailored just for you!</p>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Get Recommendations Card -->
+            <div class="bg-white rounded-xl shadow-sm border card-hover cursor-pointer" onclick="navigateToRecommendations()">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-orange-100 rounded-lg">
+                            <i data-lucide="sparkles" class="w-8 h-8 text-orange-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Get Recommendations</h3>
+                    <p class="text-gray-600 mb-4">Discover personalized food recommendations based on your preferences and dietary needs.</p>
+                    <div class="flex items-center text-orange-600 font-medium">
+                        <span>Explore Now</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Orders Card -->
+            <div class="bg-white rounded-xl shadow-sm border card-hover cursor-pointer" onclick="navigateToOrders()">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-green-100 rounded-lg">
+                            <i data-lucide="shopping-bag" class="w-8 h-8 text-green-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">My Orders</h3>
+                    <p class="text-gray-600 mb-4">Track your orders, view order history, and reorder your favorite meals.</p>
+                    <div class="flex items-center text-green-600 font-medium">
+                        <span>View Orders</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manage My Ratings Card -->
+            <div class="bg-white rounded-xl shadow-sm border card-hover cursor-pointer" onclick="navigateToRatings()">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-yellow-100 rounded-lg">
+                            <i data-lucide="star" class="w-8 h-8 text-yellow-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Manage My Ratings</h3>
+                    <p class="text-gray-600 mb-4">View and manage your food ratings to improve future recommendations.</p>
+                    <div class="flex items-center text-yellow-600 font-medium">
+                        <span>View Ratings</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manage My Account Card -->
+            <div class="bg-white rounded-xl shadow-sm border card-hover cursor-pointer" onclick="navigateToAccount()">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-blue-100 rounded-lg">
+                            <i data-lucide="user-cog" class="w-8 h-8 text-blue-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Manage My Account</h3>
+                    <p class="text-gray-600 mb-4">Update your profile information, preferences, and account settings.</p>
+                    <div class="flex items-center text-blue-600 font-medium">
+                        <span>Manage Account</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity Section -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Recent Activity</h2>
+            <div class="bg-white rounded-xl shadow-sm border">
+                <div class="p-6">
+                    <div id="recent-activity" class="space-y-4">
+                        <!-- Activity items will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Check authentication and load user info
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuth();
+            loadRecentActivity();
+        });
+
+        function checkAuth() {
+            const userData = sessionStorage.getItem('currentUser');
+            if (!userData) {
+                window.location.href = '/login';
+                return;
+            }
+
+            const user = JSON.parse(userData);
+            
+            // Check if user is customer
+            if (user.role !== 'customer') {
+                // Redirect staff to staff dashboard
+                window.location.href = '/staff-dashboard';
+                return;
+            }
+
+            document.getElementById('user-name').textContent = user.name;
+        }
+
+        function navigateToRecommendations() {
+            window.location.href = '/recommend';
+        }
+
+        function navigateToOrders() {
+            window.location.href = '/my-orders';
+        }
+
+        function navigateToRatings() {
+            window.location.href = '/my-ratings';
+        }
+
+        function navigateToAccount() {
+            window.location.href = '/account';
+        }
+
+        function logout() {
+            sessionStorage.removeItem('currentUser');
+            window.location.href = '/login';
+        }
+
+        function loadRecentActivity() {
+            const userData = sessionStorage.getItem('currentUser');
+            if (!userData) return;
+
+            const user = JSON.parse(userData);
+            
+            // Load recent ratings/activity
+            fetch(`/api/user-ratings?user_id=${user.user_id}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        displayRecentActivity(data.ratings);
+                    } else {
+                        document.getElementById('recent-activity').innerHTML = 
+                            '<p class="text-gray-500 text-center py-4">No recent activity found.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading recent activity:', error);
+                    document.getElementById('recent-activity').innerHTML = 
+                        '<p class="text-gray-500 text-center py-4">Unable to load recent activity.</p>';
+                });
+        }
+
+        function displayRecentActivity(ratings) {
+            const activityDiv = document.getElementById('recent-activity');
+            
+            if (Object.keys(ratings).length === 0) {
+                activityDiv.innerHTML = '<p class="text-gray-500 text-center py-4">No ratings yet. Start by getting recommendations!</p>';
+                return;
+            }
+
+            let activityHTML = '';
+            const ratingEntries = Object.entries(ratings).slice(0, 5); // Show last 5 ratings
+            
+            ratingEntries.forEach(([itemId, rating]) => {
+                const stars = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+                activityHTML += `
+                    <div class="flex items-center justify-between py-3 border-b border-gray-100 last:border-b-0">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-orange-100 rounded-lg">
+                                <i data-lucide="utensils" class="w-4 h-4 text-orange-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-900">Food Item #${itemId}</p>
+                                <p class="text-sm text-gray-500">You rated this item</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-yellow-400 text-lg">${stars}</span>
+                            <span class="text-sm text-gray-500">${rating}/5</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            activityDiv.innerHTML = activityHTML;
+            lucide.createIcons(); // Re-initialize icons
+        }
+    </script>
+</body>
+</html>

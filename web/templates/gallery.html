@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+
+{% block title %}Gallery - Savory Delights{% endblock %}
+
+{% block content %}
+    <!-- Header Section -->
+    <div class="text-center mb-12">
+        <h1 class="text-5xl font-bold text-gray-800 mb-4">Our Gallery</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Take a visual journey through our restaurant, showcasing our beautiful ambiance, exquisite dishes, and memorable moments.</p>
+    </div>
+
+    <!-- Gallery Categories -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button onclick="filterGallery('all')" class="gallery-filter active bg-food-orange text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-600 transition-colors">
+            All
+        </button>
+        <button onclick="filterGallery('dishes')" class="gallery-filter bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+            Dishes
+        </button>
+        <button onclick="filterGallery('restaurant')" class="gallery-filter bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+            Restaurant
+        </button>
+        <button onclick="filterGallery('kitchen')" class="gallery-filter bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+            Kitchen
+        </button>
+        <button onclick="filterGallery('events')" class="gallery-filter bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+            Events
+        </button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+        <!-- Dishes -->
+        <div class="gallery-item dishes cursor-pointer group" onclick="openLightbox('Signature Beef Wellington', 'Our award-winning beef wellington with perfect pastry and tender meat.')">
+            <div class="relative rounded-xl aspect-square overflow-hidden group-hover:scale-105 transition-transform">
+                <img src="{{ url_for('static', filename='images/Wellington.jpg') }}" alt="Signature Beef Wellington" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+                    <h3 class="text-white font-bold text-lg p-4">Signature Beef Wellington</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item dishes cursor-pointer group" onclick="openLightbox('Fresh Seafood Platter', 'Ocean-fresh seafood prepared with our signature herbs and spices.')">
+            <div class="relative rounded-xl aspect-square overflow-hidden group-hover:scale-105 transition-transform">
+                <img src="{{ url_for('static', filename='images/cold-seafood-platter.jpeg') }}" alt="Fresh Seafood Platter" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+                    <h3 class="text-white font-bold text-lg p-4">Fresh Seafood Platter</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item dishes cursor-pointer group" onclick="openLightbox('Artisan Pasta Collection', 'Handmade pasta with authentic Italian flavors and premium ingredients.')">
+            <div class="relative rounded-xl aspect-square overflow-hidden group-hover:scale-105 transition-transform">
+                <img src="{{ url_for('static', filename='images/pasta.jpg') }}" alt="Artisan Pasta Collection" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+                    <h3 class="text-white font-bold text-lg p-4">Artisan Pasta Collection</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item dishes cursor-pointer group" onclick="openLightbox('Decadent Desserts', 'Luxurious desserts crafted by our pastry chef to end your meal perfectly.')">
+            <div class="relative rounded-xl aspect-square overflow-hidden group-hover:scale-105 transition-transform">
+                <img src="{{ url_for('static', filename='images/dessert.jpeg') }}" alt="Decadent Desserts" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+                    <h3 class="text-white font-bold text-lg p-4">Decadent Desserts</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Restaurant -->
+        <div class="gallery-item restaurant cursor-pointer group" onclick="openLightbox('Elegant Dining Room', 'Our sophisticated dining area with warm ambiance and premium furnishings.')">
+            <div class="relative rounded-xl aspect-square overflow-hidden group-hover:scale-105 transition-transform">
+                <img src="{{ url_for('static', filename='images/room.png') }}" alt="Elegant Dining Room" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+                    <h3 class="text-white font-bold text-lg p-4">Elegant Dining Room</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item restaurant cursor-pointer group" onclick="openLightbox('Private Dining Area', 'Intimate spaces perfect for special occasions and business meetings.')">
+            <div class="relative rounded-xl aspect-square overflow-hidden group-hover:scale-105 transition-transform">
+                <img src="{{ url_for('static', filename='images/Private Dining Room.jpg') }}" alt="Private Dining Area" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+                    <h3 class="text-white font-bold text-lg p-4">Private Dining Area</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item restaurant cursor-pointer group" onclick="openLightbox('Bar & Lounge', 'Stylish bar area with premium spirits and signature cocktails.')">
+            <div class="relative rounded-xl aspect-square overflow-hidden group-hover:scale-105 transition-transform">
+                <img src="{{ url_for('static', filename='images/bar.jpg') }}" alt="Bar & Lounge" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+                    <h3 class="text-white font-bold text-lg p-4">Bar & Lounge</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kitchen -->
+        <div class="gallery-item kitchen cursor-pointer group" onclick="openLightbox('State-of-the-art Kitchen', 'Modern kitchen equipped with the latest culinary technology.')">
+            <div class="relative rounded-xl aspect-square overflow-hidden group-hover:scale-105 transition-transform">
+                <img src="{{ url_for('static', filename='images/kitchen.jpeg') }}" alt="State-of-the-art Kitchen" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+                    <h3 class="text-white font-bold text-lg p-4">State-of-the-art Kitchen</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item kitchen cursor-pointer group" onclick="openLightbox('Chef at Work', 'Our talented chefs crafting culinary masterpieces with passion.')">
+            <div class="relative rounded-xl aspect-square overflow-hidden group-hover:scale-105 transition-transform">
+                <img src="{{ url_for('static', filename='images/cheff.jpg') }}" alt="Chef at Work" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+                    <h3 class="text-white font-bold text-lg p-4">Chef at Work</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Events -->
+        <div class="gallery-item events cursor-pointer group" onclick="openLightbox('Wedding Reception', 'Beautiful wedding celebrations in our elegant event space.')">
+            <div class="relative rounded-xl aspect-square overflow-hidden group-hover:scale-105 transition-transform">
+                <img src="{{ url_for('static', filename='images/Private Dining Room.jpg') }}" alt="Wedding Reception" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+                    <h3 class="text-white font-bold text-lg p-4">Wedding Reception</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item events cursor-pointer group" onclick="openLightbox('Corporate Events', 'Professional venues for business meetings and corporate gatherings.')">
+            <div class="relative rounded-xl aspect-square overflow-hidden group-hover:scale-105 transition-transform">
+                <img src="{{ url_for('static', filename='images/cooporate.jpg') }}" alt="Corporate Events" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+                    <h3 class="text-white font-bold text-lg p-4">Corporate Events</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item events cursor-pointer group" onclick="openLightbox('Birthday Celebrations', 'Memorable birthday parties with personalized service and ambiance.')">
+            <div class="relative rounded-xl aspect-square overflow-hidden group-hover:scale-105 transition-transform">
+                <img src="{{ url_for('static', filename='images/birthday.jpeg') }}" alt="Birthday Celebrations" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end">
+                    <h3 class="text-white font-bold text-lg p-4">Birthday Celebrations</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
+        <div class="max-w-4xl w-full">
+            <div class="relative bg-white rounded-2xl overflow-hidden">
+                <button onclick="closeLightbox()" class="absolute top-4 right-4 z-10 bg-black bg-opacity-50 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-70 transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+                
+                <div class="aspect-video bg-gradient-to-br from-food-orange to-red-500 flex items-center justify-center text-white">
+                    <div class="text-center">
+                        <i id="lightbox-icon" data-lucide="image" class="w-24 h-24 mx-auto mb-4"></i>
+                        <h2 id="lightbox-title" class="text-3xl font-bold mb-2"></h2>
+                        <p id="lightbox-description" class="text-lg opacity-90"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="bg-white rounded-3xl shadow-xl p-12 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Experience It Yourself</h2>
+        <p class="text-xl text-gray-600 mb-8">Visit us and create your own memorable moments at Savory Delights.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="/contact" class="bg-food-orange text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-colors flex items-center justify-center space-x-2">
+                <i data-lucide="phone" class="w-6 h-6"></i>
+                <span>Make a Reservation</span>
+            </a>
+            <a href="/menu" class="bg-food-green text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-600 transition-colors flex items-center justify-center space-x-2">
+                <i data-lucide="book-open" class="w-6 h-6"></i>
+                <span>View Menu</span>
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function filterGallery(category) {
+    const items = document.querySelectorAll('.gallery-item');
+    const buttons = document.querySelectorAll('.gallery-filter');
+    
+    // Update active button
+    buttons.forEach(btn => {
+        btn.classList.remove('active', 'bg-food-orange', 'text-white');
+        btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+    });
+    
+    event.target.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+    event.target.classList.add('active', 'bg-food-orange', 'text-white');
+    
+    // Filter items
+    items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+            item.style.display = 'block';
+            item.style.animation = 'fadeIn 0.5s ease-in-out';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+function openLightbox(title, description) {
+    document.getElementById('lightbox-title').textContent = title;
+    document.getElementById('lightbox-description').textContent = description;
+    document.getElementById('lightbox').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    lucide.createIcons();
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+}
+
+// Close lightbox when clicking outside the content
+document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeLightbox();
+    }
+});
+
+// Initialize icons
+document.addEventListener('DOMContentLoaded', function() {
+    lucide.createIcons();
+});
+
+// Add CSS animation for filter transitions
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
+`;
+document.head.appendChild(style);
+</script>
+{% endblock %}

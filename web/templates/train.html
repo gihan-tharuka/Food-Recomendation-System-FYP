@@ -1,0 +1,199 @@
+{% extends "staff-base.html" %}
+
+{% block title %}Train Models - Staff Dashboard{% endblock %}
+
+{% block page_title %}Train Models{% endblock %}
+
+{% block content %}
+<div class="bg-white rounded-2xl shadow-xl p-8">
+    <div class="flex items-center mb-6">
+        <div class="bg-food-orange bg-opacity-20 rounded-full p-3 mr-4">
+            <i data-lucide="zap" class="w-8 h-8 text-food-orange"></i>
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold text-gray-800">Train AI Models</h2>
+            <p class="text-gray-600">Train the recommendation system with your data</p>
+        </div>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-6 mb-6">
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-800 mb-2">Cuisine Model</h3>
+            <p class="text-sm text-gray-600">Predicts food cuisine types</p>
+        </div>
+        <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-800 mb-2">Category Model</h3>
+            <p class="text-sm text-gray-600">Classifies food categories</p>
+        </div>
+        <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-4">
+            <h3 class="font-semibold text-gray-800 mb-2">Tags Model</h3>
+            <p class="text-sm text-gray-600">Generates descriptive tags</p>
+        </div>
+    </div>
+    
+    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+        <div class="flex">
+            <div class="flex-shrink-0">
+                <i data-lucide="alert-triangle" class="w-5 h-5 text-yellow-400"></i>
+            </div>
+            <div class="ml-3">
+                <p class="text-sm text-yellow-700">
+                    <strong>Note:</strong> Training may take several minutes. Make sure your training data is properly formatted.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="flex justify-center">
+        <button onclick="trainModels()" 
+                class="bg-food-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors flex items-center space-x-3 text-lg">
+            <i data-lucide="play" class="w-6 h-6"></i>
+            <span>Start Training</span>
+        </button>
+    </div>
+    
+    <div id="training-progress" class="hidden mt-8">
+        <div class="bg-gray-100 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Training Progress</h3>
+            <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-600">Initializing...</span>
+                    <div class="w-1/2 bg-gray-200 rounded-full h-2">
+                        <div class="bg-food-orange h-2 rounded-full transition-all duration-300" style="width: 0%" id="progress-bar"></div>
+                    </div>
+                </div>
+                <div id="training-log" class="bg-white rounded border p-4 h-32 overflow-y-auto text-sm font-mono text-gray-700">
+                    Training log will appear here...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="training-results" class="hidden mt-6">
+    <div class="bg-white rounded-2xl shadow-xl p-8">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Training Results</h3>
+        <div id="results-content" class="space-y-4">
+            <!-- Results will be populated here -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Training specific JavaScript
+function trainModels() {
+    showLoading('Training models...');
+    document.getElementById('training-progress').classList.remove('hidden');
+    
+    const progressBar = document.getElementById('progress-bar');
+    const trainingLog = document.getElementById('training-log');
+    
+    // Simulate progress
+    let progress = 0;
+    const progressInterval = setInterval(() => {
+        progress += Math.random() * 15;
+        if (progress > 90) progress = 90;
+        progressBar.style.width = progress + '%';
+    }, 500);
+    
+    // Add log messages
+    const logMessages = [
+        'Loading training data...',
+        'Preprocessing data...',
+        'Training cuisine model...',
+        'Training category model...',
+        'Training tags model...',
+        'Validating models...',
+        'Saving models...'
+    ];
+    
+    let logIndex = 0;
+    const logInterval = setInterval(() => {
+        if (logIndex < logMessages.length) {
+            trainingLog.innerHTML += logMessages[logIndex] + '\n';
+            trainingLog.scrollTop = trainingLog.scrollHeight;
+            logIndex++;
+        }
+    }, 1000);
+    
+    fetch('/api/train', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        clearInterval(progressInterval);
+        clearInterval(logInterval);
+        progressBar.style.width = '100%';
+        
+        hideLoading();
+        
+        if (data.success) {
+            trainingLog.innerHTML += 'Training completed successfully!\n';
+            showMessage('Models trained successfully!', 'success');
+            document.getElementById('training-results').classList.remove('hidden');
+            
+            // Show detailed results if available
+            let resultsHTML = `
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                        <i data-lucide="check-circle" class="w-6 h-6 text-green-600 mb-2"></i>
+                        <h4 class="font-semibold text-green-800">Cuisine Model</h4>
+                        <p class="text-sm text-green-600">Trained successfully</p>
+                        ${data.results && data.results.cuisine ? 
+                            `<p class="text-xs text-green-500 mt-1">Accuracy: ${(data.results.cuisine.accuracy * 100).toFixed(2)}%</p>` : ''}
+                    </div>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                        <i data-lucide="check-circle" class="w-6 h-6 text-green-600 mb-2"></i>
+                        <h4 class="font-semibold text-green-800">Category Model</h4>
+                        <p class="text-sm text-green-600">Trained successfully</p>
+                        ${data.results && data.results.category ? 
+                            `<p class="text-xs text-green-500 mt-1">Accuracy: ${(data.results.category.accuracy * 100).toFixed(2)}%</p>` : ''}
+                    </div>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                        <i data-lucide="check-circle" class="w-6 h-6 text-green-600 mb-2"></i>
+                        <h4 class="font-semibold text-green-800">Tags Model</h4>
+                        <p class="text-sm text-green-600">Trained successfully</p>
+                        ${data.results && data.results.tags ? 
+                            `<p class="text-xs text-green-500 mt-1">ROC AUC: ${(data.results.tags.macro_roc_auc * 100).toFixed(2)}%</p>` : ''}
+                    </div>
+                </div>
+            `;
+            
+            // Add detailed metrics if available
+            if (data.results) {
+                resultsHTML += `
+                    <div class="mt-6 bg-gray-50 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-800 mb-3">Training Details</h4>
+                        <div class="text-sm text-gray-600 space-y-1">
+                            ${data.results.cuisine ? `<p>• Cuisine Model Accuracy: ${(data.results.cuisine.accuracy * 100).toFixed(2)}%</p>` : ''}
+                            ${data.results.category ? `<p>• Category Model Accuracy: ${(data.results.category.accuracy * 100).toFixed(2)}%</p>` : ''}
+                            ${data.results.tags ? `<p>• Tags Model Macro ROC AUC: ${(data.results.tags.macro_roc_auc * 100).toFixed(2)}%</p>` : ''}
+                            ${data.results.tags ? `<p>• Tags Model Micro ROC AUC: ${(data.results.tags.micro_roc_auc * 100).toFixed(2)}%</p>` : ''}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('results-content').innerHTML = resultsHTML;
+        } else {
+            trainingLog.innerHTML += 'Error: ' + data.message + '\n';
+            showMessage('Training failed: ' + data.message, 'error');
+        }
+        
+        trainingLog.scrollTop = trainingLog.scrollHeight;
+    })
+    .catch(error => {
+        clearInterval(progressInterval);
+        clearInterval(logInterval);
+        hideLoading();
+        trainingLog.innerHTML += 'Error: ' + error.message + '\n';
+        showMessage('Training failed: ' + error.message, 'error');
+    });
+}
+</script>
+{% endblock %}
